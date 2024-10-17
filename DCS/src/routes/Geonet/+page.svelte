@@ -5,7 +5,8 @@
 
 <style>
     div{
-        border-color: black;
+        border: 2px solid black;
+        margin: 0.5em;
         
     }
 </style>
