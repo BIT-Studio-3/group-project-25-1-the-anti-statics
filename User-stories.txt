@@ -1,0 +1,23 @@
+As a First responder
+I want to be able to get the relevant data I need as fast as possible
+So I can be informed on all the relevant information that I need
+
+As a Fenz person 
+I want to see areas affected by emergencies 
+So I know where to respond
+
+As a River and geotechnical engineer
+I want to be able to access data on fault lines
+To be able to identify areas of high likelihood of a rock slide
+
+As a fisherman
+I want to be able to monitor oceanic disasters
+So that I can lower my chance to encounter one
+
+As a Pilot
+I want to be able to monitor areas of high volcanic activity
+So that I can avoid volcanic ash
+
+As a civil defence member
+I want to have access to all local information that could be factors in a disaster
+So that I can be as prepared as possible when responding to a disaster
