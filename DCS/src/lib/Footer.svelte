@@ -26,5 +26,41 @@
         padding:10px;
         text-align: center;
     }
-    
+    * {
+        font-family: sans-serif;
+        color: #444;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    footer {
+        display: flex;
+        width: 100%;
+        position: relative;
+        top: 0;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 4px 5px #333;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        flex-flow: space-around;
+    }
+
+    nav ul li {
+        list-style: none;
+        padding: 0.5em;
+    }
+
 </style>
