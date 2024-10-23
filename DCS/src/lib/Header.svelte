@@ -1,12 +1,12 @@
 <header>
     <h1>The GPTs Disaster Management System</h1>
+
     <div class="dropdown">
-        <button class="dropbutton"></button>
-        <div class="dropdown-content">
-            <a href='#'>Civil Defence</a>
-            <a href='#'>Police</a>
-            <a href='#'>Fire and Emergency</a>
-            <a href='#'>Metservice</a>
+        <button class="dropdownbutton">Dropdown for other services</button>
+        <div class="dropdowncontent">
+            <a href="google.com">Police</a>
+            <a href="google.com">Fire and Emergency</a>
+            <a href="google.com">Metservice</a>
         </div>
     </div>
 </header>
@@ -23,11 +23,21 @@
     }
 
     .dropdown {
-        position: relative;
-        display: inline-block;
+        margin-top: 1em;
     }
 
-    .dropdown-content {
+    .dropdownbutton {
+        width: 15vh;
+        height: 5vh;
+    }
+
+    .dropdowncontent {
+        display: none;
+        position: absolute;        
+    }
+
+    .dropdown:hover .dropdowncontent{
         display: block;
     }
+
 </style>
