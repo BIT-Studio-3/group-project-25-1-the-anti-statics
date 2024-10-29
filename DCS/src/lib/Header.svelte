@@ -26,12 +26,12 @@
 
     header {
         display: flex;
-        width: 100%;
-        position: relative;
-        top: 0;
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
+        width: 100%;
+        position: relative;
+        top: 0;
         box-shadow: 0 4px 5px #333;
     }
 
@@ -44,7 +44,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        flex-flow: space-around;
+        justify-content: space-around;
     }
 
     nav ul li {
