@@ -15,11 +15,6 @@
 </div>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-    }
 
     .AlertsCard{
         display: flex;
@@ -35,6 +30,7 @@
         font-size: 180%;
         text-align: center;
     }
+    
 </style>
 
 <Footer />

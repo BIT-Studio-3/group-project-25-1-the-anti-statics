@@ -60,15 +60,10 @@
 <Footer />
 
 <style>
-    * {
-        padding: 0;
-        margin: 0;
-        font-family: sans-serif;
-        color: #333
-    }
 
     h1 {
         margin-top: 0.5em;
+        margin-left: 1em;
     }
 
     .cardcontainer {
@@ -77,6 +72,8 @@
         gap: 1em;
         margin-top: 1em;
         margin-bottom: 1em;
+        margin-left: 2em;
+        margin-right: 2em;
     }
 
     .volcanocard {
