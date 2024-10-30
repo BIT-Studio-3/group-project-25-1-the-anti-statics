@@ -6,7 +6,7 @@
   onMount(() => {
     console.log(window); // Now safe to access 'window' since this runs only in the browser
   });
-  
+
   const RSS_URL = `https://cors-anywhere.herokuapp.com/https://alerthub.civildefence.govt.nz/rss/pwp`;
   fetch(RSS_URL)
     .then((response) => response.text())
