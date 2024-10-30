@@ -4,7 +4,7 @@
   import { onMount } from "svelte";
   
   onMount(() => {
-    console.log(window); // Now safe to access 'window' since this runs only in the browser
+    console.log(window); //Now safe to use new window twice, would crash before.
   });
 
   const RSS_URL = `https://cors-anywhere.herokuapp.com/https://alerthub.civildefence.govt.nz/rss/pwp`;
