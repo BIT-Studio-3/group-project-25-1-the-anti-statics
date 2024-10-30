@@ -1,5 +1,5 @@
 <header>
-    <h1>The GPTs Disaster Management System</h1>
+    <h1><a href="/">The GPTs Disaster Management System</a></h1>
 
     <nav>
         <ul>
@@ -15,10 +15,6 @@
 </header>
 
 <style>
-    * {
-        font-family: sans-serif;
-        color: #444;
-    }
 
     a {
         text-decoration: none;
@@ -29,10 +25,12 @@
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
-        width: 100%;
+        width: calc(100% - 4em);
         position: relative;
         top: 0;
         box-shadow: 0 4px 5px #333;
+        padding: 2em;
+        margin-bottom: 0.5em;
     }
 
     nav {

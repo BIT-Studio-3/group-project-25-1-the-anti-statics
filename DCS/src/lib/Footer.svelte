@@ -19,16 +19,10 @@
 </footer>
 
 <style>
-    footer {
-        background: #689FD4;
-    }
+
     p{
         padding:10px;
         text-align: center;
-    }
-    * {
-        font-family: sans-serif;
-        color: #444;
     }
 
     a {
@@ -37,13 +31,17 @@
 
     footer {
         display: flex;
-        width: 100%;
+        width: calc(100% - 3em);
         position: relative;
         top: 0;
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
         box-shadow: 0 4px 5px #333;
+        background: #689FD4;
+        padding: 1em;
+        margin: 0.5em;
+        justify-self: center;
     }
 
     nav {
