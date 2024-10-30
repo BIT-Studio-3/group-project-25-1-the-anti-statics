@@ -2,7 +2,7 @@
   import Header from "$lib/Header.svelte";
   import Footer from "$lib/Footer.svelte";
   import { onMount } from "svelte";
-  
+
   onMount(() => {
     console.log(window); //Now safe to use new window twice, would crash before.
   });
@@ -13,16 +13,14 @@
     .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
     .then((url1) => console.log(url1));
 
-    const RSS_URL2=`https://cors-anywhere.herokuapp.com/https://alerts.metservice.com/cap/rss`
-    fetch(RSS_URL2)
+  const RSS_URL2 = `https://cors-anywhere.herokuapp.com/https://alerts.metservice.com/cap/rss`;
+  fetch(RSS_URL2)
     .then((response) => response.text())
     .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
     .then((url2) => console.log(url2));
-
 </script>
 
 <Header />
-
 
 <div class="card">
   <h3>Red Heavy Rain Warning</h3>
