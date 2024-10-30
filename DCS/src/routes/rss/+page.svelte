@@ -2,81 +2,42 @@
   import Header from "$lib/Header.svelte";
   import Footer from "$lib/Footer.svelte";
   import { onMount } from "svelte";
+  export let data = {};
 
-  let mergedAlerts = [];
+  console.log(data);
 
-  const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // CORS Anywhere proxy URL to access RSS'
 
-  const feeds = [
-    `${proxyUrl}https://alerthub.civildefence.govt.nz/rss/pwp`,
-    `${proxyUrl}https://alerts.metservice.com/cap/rss`,
-    `${proxyUrl}https://api.geonet.org.nz/cap/1.2/GPA1.0/feed/atom1.0/quake`
-  ];
-
-  const fetchAndMergeFeeds = async () => {
-    try {
-      const fetchPromises = feeds.map(feed => fetch(feed).then(response => response.text()));
-      const results = await fetchPromises;
-      
-      results.forEach(result => {
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(result, "text/xml");
-        
-        const items = Array.from(xmlDoc.querySelectorAll('item'));
-        items.forEach(item => {
-          mergedAlerts.push({
-            title: item.querySelector('title').textContent,
-            link: item.querySelector('link').textContent,
-            description: item.querySelector('description').textContent,
-          });
-        });
-      });
-    } catch (error) {
-      console.error('Error fetching or parsing feeds:', error);
-    }
-  };
-
-  onMount(() => {
-    fetchAndMergeFeeds();
-  });
 </script>
 
 <Header />
 
 
-  <h1>Alert Feed</h1>
-  <ul>
-    {#each mergedAlerts as alert}
-      <li>
-        <a href={alert.link} target="_blank">{alert.title}</a>
-        <p>{alert.description}</p>
-      </li>
-    {/each}
-  </ul>
-
-  <div class="card">
-    <h3>Red Heavy Rain Warning</h3>
-    <p>Dunedin, N. Otago and coastal Clutha</p>
-    <p>Until 9pm Friday</p>
-    <p>Expect 70-100mm of rain on top of what has already fallen. Heaviest rain around eastern hills</p>
-  </div>
+<div class="card">
+  <h3>Red Heavy Rain Warning</h3>
+  <p>Dunedin, N. Otago and coastal Clutha</p>
+  <p>Until 9pm Friday</p>
+  <p>
+    Expect 70-100mm of rain on top of what has already fallen. Heaviest rain
+    around eastern hills
+  </p>
+</div>
 
 <Footer />
 
 <style>
-h1{
-  font-size: 2em;
-}
-h3{
-  background-color:orangered;
-  padding: 4px;
-  border-radius: 5px;
-}
-.card{
-padding: 10px;
-margin: 10px;
-border:2px solid black;
-border-radius: 5px;
-width: 10em;
-}
+  h1 {
+    font-size: 2em;
+  }
+  h3 {
+    background-color: orangered;
+    padding: 4px;
+    border-radius: 5px;
+  }
+  .card {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 10em;
+  }
 </style>
