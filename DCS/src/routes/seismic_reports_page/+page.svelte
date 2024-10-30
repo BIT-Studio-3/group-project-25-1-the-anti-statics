@@ -9,7 +9,7 @@
 <Header />
 <h1>Quakes</h1>
 <div class="container">
-    <details open>
+    <details close>
         <summary><h2>MMI 5 Quakes</h2></summary>
         <div class="item">
             {#each data.quakes.features as thing}
@@ -25,7 +25,7 @@
             {/each}
         </div>
     </details>
-    <details open>
+    <details close>
         <summary><h2>MMI 6 Quakes</h2></summary>
         <div class="item">
             {#each data.quakes2.features as thing}
@@ -86,5 +86,15 @@
     }
     .container {
         display: grid;
+    }
+    details {
+        padding: 10px;
+        background-color: #B7DAF8;
+        border-radius: 5px;
+    }
+    summary {
+        background-color: #689fd4;
+        color: white;
+        padding: 10px;
     }
 </style>
