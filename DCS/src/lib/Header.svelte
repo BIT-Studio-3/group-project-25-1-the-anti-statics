@@ -7,7 +7,7 @@
             <li><a href="/seismic_reports_page">Seismic Activity</a></li>
             <li><a href="/road_conditions_page">Road Conditions</a></li>
             <li><a href="/tides_page">Tidal Data</a></li>
-            <li><a href="/volcanic_acticity_page">Volcanic Activity</a></li>
+            <li><a href="/volcanic_activity_page">Volcanic Activity</a></li>
             <li><a href="/fire_and_emergency_page">Fire and Emergency Reports</a></li>
         </ul>
     </nav>
