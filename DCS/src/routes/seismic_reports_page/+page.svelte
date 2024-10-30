@@ -3,7 +3,6 @@
     import Footer from "$lib/Footer.svelte";
 
     export let data;
-    console.log(data);
 </script>
 
 <Header />
