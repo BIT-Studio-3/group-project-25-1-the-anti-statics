@@ -23,8 +23,10 @@
   }
   h3 {
     background-color: orangered;
+    color: black;
     padding: 4px;
     border-radius: 5px;
+    margin-bottom: 5px;
   }
   .card {
     padding: 10px;
