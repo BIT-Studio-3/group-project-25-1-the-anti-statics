@@ -49,7 +49,13 @@
     nav ul li {
         list-style: none;
         padding: 0.5em;
+        white-space: nowrap;
     }
-
+    @media(max-height:1024px){
+        h1{
+            white-space: nowrap;
+            font-size:larger;
+        }
+    }
 
 </style>
