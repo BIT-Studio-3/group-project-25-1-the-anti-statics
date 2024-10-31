@@ -97,7 +97,7 @@
     }
     div {
         border: 2px solid black;
-        margin: 1.6em;
+        margin: 0.6em;
     }
     details {
         padding: 0.5em;
@@ -109,7 +109,7 @@
         background-color: #689fd4;
         color: white;
         list-style-position: outside;
-        margin-left: 30px;
+        margin-left: 10px;
         padding: 10px 10px 10px 20px;
         border-radius: 5px;
     }
