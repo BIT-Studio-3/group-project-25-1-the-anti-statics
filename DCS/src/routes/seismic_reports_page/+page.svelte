@@ -17,9 +17,13 @@
             <p>Coordinates (y, x):</p>
             <p>{thing.geometry.coordinates}</p>
             <p>Depth:</p>
-            <p>{thing.properties.depth}</p>
+            <p>{thing.properties.depth.toFixed(3)} KM</p>
             <p>Time:</p>
-            <p>{thing.properties.time}</p>
+            <p>
+                Date: {thing.properties.time
+                    .replace(/[T]/g, " Time: ")
+                    .replace(/[Z]/g, " ")}
+            </p>
         </div>
     {/each}
 </details>
@@ -31,9 +35,13 @@
             <p>Coordinates (y, x):</p>
             <p>{thing.geometry.coordinates}</p>
             <p>Depth:</p>
-            <p>{thing.properties.depth}</p>
+            <p>{thing.properties.depth.toFixed(3)} KM</p>
             <p>Time:</p>
-            <p>{thing.properties.time}</p>
+            <p>
+                {thing.properties.time
+                    .replace(/[TZ]/g, " ")
+                    .replace(/[Z]/g, " ")}
+            </p>
         </div>
     {/each}
 </details>
@@ -45,9 +53,13 @@
             <p>Coordinates (y, x):</p>
             <p>{thing.geometry.coordinates}</p>
             <p>Depth:</p>
-            <p>{thing.properties.depth}</p>
+            <p>{thing.properties.depth.toFixed(3)} KM</p>
             <p>Time:</p>
-            <p>{thing.properties.time}</p>
+            <p>
+                {thing.properties.time
+                    .replace(/[TZ]/g, " ")
+                    .replace(/[Z]/g, " ")}
+            </p>
         </div>
     {/each}
 </details>
@@ -59,9 +71,13 @@
             <p>Coordinates (y, x):</p>
             <p>{thing.geometry.coordinates}</p>
             <p>Depth:</p>
-            <p>{thing.properties.depth}</p>
+            <p>{thing.properties.depth.toFixed(3)} KM</p>
             <p>Time:</p>
-            <p>{thing.properties.time}</p>
+            <p>
+                {thing.properties.time
+                    .replace(/[TZ]/g, " ")
+                    .replace(/[Z]/g, " ")}
+            </p>
         </div>
     {/each}
 </details>
