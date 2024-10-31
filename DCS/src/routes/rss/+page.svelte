@@ -1,31 +1,17 @@
 <script>
   import { onMount } from "svelte";
-
-  onMount(() => {
-    console.log(window); //Now safe to use new window twice, would crash before.
-  });
-
-  const RSS_URL = `https://cors-anywhere.herokuapp.com/https://alerthub.civildefence.govt.nz/rss/pwp`;
-  fetch(RSS_URL)
-    .then((response) => response.text())
-    .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
-    .then((url1) => console.log(url1));
-
-  const RSS_URL2 = `https://cors-anywhere.herokuapp.com/https://alerts.metservice.com/cap/rss`;
-  fetch(RSS_URL2)
-    .then((response) => response.text())
-    .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
-    .then((url2) => console.log(url2));
 </script>
 
-<div class="card">
-  <h3>Red Heavy Rain Warning</h3>
-  <p>Dunedin, N. Otago and coastal Clutha</p>
-  <p>Until 9pm Friday</p>
-  <p>
-    Expect 70-100mm of rain on top of what has already fallen. Heaviest rain
-    around eastern hills
-  </p>
+<Header />
+
+<div>
+  <iframe
+    title="rss"
+    class="rss"
+    src="https://rss.app/embed/v1/wall/G4sXEJ0UJN3Owjow"
+    frameborder="0"
+  ></iframe>
+
 </div>
 
 <style>
@@ -34,8 +20,10 @@
   }
   h3 {
     background-color: orangered;
+    color: black;
     padding: 4px;
     border-radius: 5px;
+    margin-bottom: 5px;
   }
   .card {
     padding: 10px;
@@ -43,5 +31,9 @@
     border: 2px solid black;
     border-radius: 5px;
     width: 10em;
+  }
+  .rss {
+    width: 50%;
+    height: 29em;
   }
 </style>

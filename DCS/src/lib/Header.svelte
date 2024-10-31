@@ -15,6 +15,7 @@
             <a href="/volcanic_activity_page"><li class:active={route === "/volcanic_activity_page"}>Volcanic Activity</li></a>
             <a href="/fire_and_emergency_page"><li class:active={route === "/fire_and_emergency_page"}>Fire and Emergency Reports</li></a>
             <a href="/rss"><li class:active={route === "/rss"}>RSS Feed</li></a>
+
         </ul>
     </nav>
 
@@ -64,6 +65,7 @@
     li {
         list-style: none;
         padding: 0.5em;
+
         font-size: 120%;
         text-align: center;
     }
@@ -73,9 +75,9 @@
     }
 
     .active {
-        /*box-shadow: 0px 0px 3px #555 inset; */
         background-color: #689FD4;
         font-weight: bold;
     }
+
 
 </style>
