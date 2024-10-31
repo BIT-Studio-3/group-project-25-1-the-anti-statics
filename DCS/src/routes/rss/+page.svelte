@@ -40,8 +40,10 @@
   }
   h3 {
     background-color: orangered;
+    color: black;
     padding: 4px;
     border-radius: 5px;
+    margin-bottom: 5px;
   }
   .card {
     padding: 10px;
@@ -49,5 +51,8 @@
     border: 2px solid black;
     border-radius: 5px;
     width: 10em;
+  }
+  p{
+    margin:0.5em;
   }
 </style>
