@@ -1,6 +1,4 @@
 <script>
-    import Header from "$lib/Header.svelte";
-    import Footer from "$lib/Footer.svelte";
 
     //This API requires a key we can't access. I will mock up an example version of it.
     async function getFENZ() {
@@ -11,7 +9,3 @@
       console.log(result);
     }
   </script>
-  
-  <Header />
-  
-  <Footer />

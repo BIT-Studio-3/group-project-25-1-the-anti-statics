@@ -1,7 +1,4 @@
-<script>
-    import Header from '$lib/Header.svelte';
-    import Footer from '$lib/Footer.svelte';
-    
+<script>    
     export let data;
     const volcanos = data.volcanos;
     console.log(volcanos);
@@ -40,16 +37,16 @@
     }
 
     displayVolcanoCards();
+
+    
 </script>
 
-<Header />
-
-<h1>Volcanic Activity</h1>
+<h2>Volcanic Activity</h2>
 
 <div class="cardcontainer">
     {#each volcanoCards as card}
         <div class="volcanocard" id={card.id} style="background-color: {getCardBackground(card)};">
-            <h2>{card.title}</h2>
+            <h3>{card.title}</h3>
             <p>Activity: {card.activity}</p>
             <p>Hazard Level: {card.hazardLevel}</p>
             <p>Hazards: {card.hazards}</p>
@@ -57,13 +54,21 @@
     {/each}
 </div>
 
-<Footer />
-
 <style>
 
-    h1 {
+    h2 {
         margin-top: 0.5em;
         margin-left: 1em;
+        font-size: 180%;
+    }
+
+    h3 {
+        background-color: inherit;
+        font-size: 150%;
+    }
+
+    p {
+        background-color: inherit;
     }
 
     .cardcontainer {
@@ -79,7 +84,7 @@
     .volcanocard {
         border: 2px solid black;
         padding: 0.8em;
-        background: #f9f9f9;
+        background: inherit;
         border-radius: 5px;
     }
 </style>

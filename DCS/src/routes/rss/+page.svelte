@@ -1,6 +1,4 @@
 <script>
-  import Header from "$lib/Header.svelte";
-  import Footer from "$lib/Footer.svelte";
   import { onMount } from "svelte";
 
   onMount(() => {
@@ -20,8 +18,6 @@
     .then((url2) => console.log(url2));
 </script>
 
-<Header />
-
 <div class="card">
   <h3>Red Heavy Rain Warning</h3>
   <p>Dunedin, N. Otago and coastal Clutha</p>
@@ -31,8 +27,6 @@
     around eastern hills
   </p>
 </div>
-
-<Footer />
 
 <style>
   h1 {
