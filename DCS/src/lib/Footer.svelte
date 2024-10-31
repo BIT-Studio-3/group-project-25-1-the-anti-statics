@@ -23,10 +23,12 @@
     p{
         padding:10px;
         text-align: center;
+        background-color: inherit;
     }
 
     a {
         text-decoration: none;
+        background-color: inherit;
     }
 
     footer {
@@ -47,6 +49,7 @@
     nav {
         display: flex;
         flex-direction: row;
+        background-color: inherit;
     }
 
     nav ul {
@@ -54,11 +57,13 @@
         flex-direction: row;
         flex-wrap: nowrap;
         flex-flow: space-around;
+        background-color: inherit;
     }
 
     nav ul li {
         list-style: none;
         padding: 0.5em;
+        background-color: inherit;
     }
 
 </style>

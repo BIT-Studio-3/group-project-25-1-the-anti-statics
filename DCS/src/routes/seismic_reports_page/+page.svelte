@@ -1,12 +1,9 @@
+
 <script>
-    // Importing Header and Footer tag from library
-    import Header from "$lib/Header.svelte";
-    import Footer from "$lib/Footer.svelte";
     // exporting quake data
     export let data;
 </script>
 
-<Header />
 <!-- Page title -->
 <h1>Quakes</h1>
 <div class="container">
@@ -89,7 +86,6 @@
         {/each}
     </details>
 </div>
-<Footer />
 
 <style>
     * {
@@ -118,3 +114,4 @@
         border: none;
     }
 </style>
+

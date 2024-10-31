@@ -1,6 +1,4 @@
 <script>
-  import Header from "$lib/Header.svelte";
-  import Footer from "$lib/Footer.svelte";
   import { onMount } from "svelte";
 </script>
 
@@ -13,9 +11,8 @@
     src="https://rss.app/embed/v1/wall/G4sXEJ0UJN3Owjow"
     frameborder="0"
   ></iframe>
-</div>
 
-<Footer />
+</div>
 
 <style>
   h1 {
