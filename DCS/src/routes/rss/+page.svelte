@@ -6,16 +6,6 @@
 
 <Header />
 
-<!-- <div class="card">
-  <h3>Red Heavy Rain Warning</h3>
-  <p>Dunedin, N. Otago and coastal Clutha</p>
-  <p>Until 9pm Friday</p>
-  <p>
-    Expect 70-100mm of rain on top of what has already fallen. Heaviest rain
-    around eastern hills
-  </p>
-</div> -->
-
 <div>
   <iframe
     title="rss"
