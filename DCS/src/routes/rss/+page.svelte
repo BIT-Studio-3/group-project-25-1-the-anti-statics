@@ -2,8 +2,6 @@
   import { onMount } from "svelte";
 </script>
 
-<Header />
-
 <div>
   <iframe
     title="rss"
@@ -33,7 +31,7 @@
     width: 10em;
   }
   .rss {
-    width: 50%;
+    width: 100%;
     height: 29em;
   }
 </style>
