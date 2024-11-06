@@ -33,6 +33,7 @@
     .PageContentContainer {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         height: 100%;
         width: 100%;
     }
@@ -48,6 +49,8 @@
 
     .AlertsList li {
         margin-top: 0.5em;
+        list-style: none;
+        padding-left: 0.5em;
     }
 
     .pinmap {
