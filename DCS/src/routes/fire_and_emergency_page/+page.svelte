@@ -5,7 +5,7 @@
 
 <div class="card">
   <h1>
-    Emergency: <h3>Severe</h3>
+    Emergency: <h3 id="Severe">Severe</h3>
   </h1>
   <p class="headers">Incident Number:</p><p>F4081881</p>
   <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
@@ -17,7 +17,7 @@
 
 <div class="card">
   <h1>
-    Emergency: <h3>Severe</h3>
+    Emergency: <h3 id="Moderate">Moderate</h3>
   </h1>
   <p class="headers">Incident Number:</p><p>F4081881</p>
   <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
@@ -29,7 +29,7 @@
 
 <div class="card">
   <h1>
-    Emergency: <h3>Severe</h3>
+    Emergency: <h3 id="Severe">Severe</h3>
   </h1>
   <p class="headers">Incident Number:</p><p>F4081881</p>
   <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
@@ -41,7 +41,7 @@
 
 <div class="card">
   <h1>
-    Emergency: <h3>Severe</h3>
+    Emergency: <h3 id="Extreme">Extreme</h3>
   </h1>
   <p class="headers">Incident Number:</p><p>F4081881</p>
   <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
@@ -57,9 +57,9 @@
     margin: 4px;
   }
   h3 {
-    background-color: orangered;
     color: black;
     padding: 4px;
+    border: 2px solid black;
     border-radius: 5px;
     margin-bottom: 5px;
     width:fit-content;
@@ -69,7 +69,7 @@
     margin: 10px;
     border: 2px solid black;
     border-radius: 5px;
-    width:min-content;
+    width:calc(min-content + 2em);
     float:left
   }
   p{
@@ -77,5 +77,14 @@
   }
   .headers{
     font-weight:900;
+  }
+  #Moderate{
+    background-color: yellow;
+  }
+  #Severe{
+    background-color: orange;
+  }
+  #Extreme{
+    background-color: red;
   }
 </style>
