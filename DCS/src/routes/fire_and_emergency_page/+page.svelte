@@ -1,24 +1,60 @@
 <script>
   import Header from "$lib/Header.svelte";
   import Footer from "$lib/Footer.svelte";
-  async function getFENZ() {
-    const response = await fetch(
-      "https://gw.api.fireandemergency.nz/incr/v1/cadEvents/{CADnumber}"
-    );
-    const result = await response.json;
-    console.log(result);
-  }
 </script>
 
-<div>
-<h1>Emergency Alert: <h3>Severe</h3></h1>
-A severe flood warning has been issued by the Environmental Agency for the North Bank of the Humber Esturary.
-There might be overtopping effecting sea front areas as a result of high spring tides and tidal surge between 3am and 8am. Call 111 if in immediate danger.
+<div class="card">
+  <h1>
+    Emergency: <h3>Severe</h3>
+  </h1>
+  <p class="headers">Incident Number:</p><p>F4081881</p>
+  <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
+  <p class="headers">Location:</p><p>Doyleston, Selwyn District</p>
+  <p class="headers">Duration:</p><p>00:00:00</p>
+  <p class="headers">Attending Stations/Brigades:</p><p>Leeston</p>
+  <p class="headers">Call Type:</p><p>Vegetation Fire</p>
+</div>
+
+<div class="card">
+  <h1>
+    Emergency: <h3>Severe</h3>
+  </h1>
+  <p class="headers">Incident Number:</p><p>F4081881</p>
+  <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
+  <p class="headers">Location:</p><p>Doyleston, Selwyn District</p>
+  <p class="headers">Duration:</p><p>00:00:00</p>
+  <p class="headers">Attending Stations/Brigades:</p><p>Leeston</p>
+  <p class="headers">Call Type:</p><p>Vegetation Fire</p>
+</div>
+
+<div class="card">
+  <h1>
+    Emergency: <h3>Severe</h3>
+  </h1>
+  <p class="headers">Incident Number:</p><p>F4081881</p>
+  <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
+  <p class="headers">Location:</p><p>Doyleston, Selwyn District</p>
+  <p class="headers">Duration:</p><p>00:00:00</p>
+  <p class="headers">Attending Stations/Brigades:</p><p>Leeston</p>
+  <p class="headers">Call Type:</p><p>Vegetation Fire</p>
+</div>
+
+<div class="card">
+  <h1>
+    Emergency: <h3>Severe</h3>
+  </h1>
+  <p class="headers">Incident Number:</p><p>F4081881</p>
+  <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
+  <p class="headers">Location:</p><p>Doyleston, Selwyn District</p>
+  <p class="headers">Duration:</p><p>00:00:00</p>
+  <p class="headers">Attending Stations/Brigades:</p><p>Leeston</p>
+  <p class="headers">Call Type:</p><p>Vegetation Fire</p>
 </div>
 
 <style>
   h1 {
     font-size: 2em;
+    margin: 4px;
   }
   h3 {
     background-color: orangered;
@@ -26,12 +62,20 @@ There might be overtopping effecting sea front areas as a result of high spring 
     padding: 4px;
     border-radius: 5px;
     margin-bottom: 5px;
+    width:fit-content;
   }
   .card {
     padding: 10px;
     margin: 10px;
     border: 2px solid black;
     border-radius: 5px;
-    width: 10em;
+    width:min-content;
+    float:left
+  }
+  p{
+    margin: 3px;
+  }
+  .headers{
+    font-weight:900;
   }
 </style>
