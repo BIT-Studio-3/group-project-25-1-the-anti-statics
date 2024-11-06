@@ -24,15 +24,15 @@
     function getCardBackground(card) {
         switch(card.hazardLevel) {
             case 1:
-                return '#FFFF00';
+                return '#3D995D';
             case 2:
-                return '#FFD700';
+                return '#0000FF';
             case 3:
-                return '#FF7F00';
+                return '#FFFF00';
             case 4:
-                return '#FF4500';
+                return '#FF6600';
             case 5:
-                return '#FF0000';
+                return '#FE0000';
         }
     }
 
@@ -69,6 +69,7 @@
 
     p {
         background-color: inherit;
+        color: #222;
     }
 
     .cardcontainer {
