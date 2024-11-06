@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 <footer>
     <p>Copyright © 2024 Otago Polytechnic</p>
     <p>New Zealand 0800 762 786
