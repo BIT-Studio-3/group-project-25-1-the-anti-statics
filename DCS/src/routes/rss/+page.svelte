@@ -32,6 +32,6 @@
   }
   .rss {
     width: 100%;
-    height: 29em;
+    height: 100vh;
   }
 </style>
