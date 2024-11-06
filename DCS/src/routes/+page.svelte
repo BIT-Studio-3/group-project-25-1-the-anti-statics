@@ -1,24 +1,40 @@
-<script>
-    import Header from '../lib/Header.svelte';
-    import Footer from '../lib/Footer.svelte';
-</script>
+<div class="PageContentContainer">
+    <div class="AlertsCard">
+        <h3>Recent Alerts</h3>
+        <ul class="AlertsList">
+            <li>A cave has collapsed in Southland<br>
+                1 injury, 1 unknown<br>
+            <em>1/11/2024 10:20am</em></li>
+            <li>Theres been a mutiny in Nelson<br>
+                <em>18/10/2024 9:32am</em></li>
+        </ul>
+    </div>
 
-<Header />
-
-<div class="AlertsCard">
-    <h3>Recent Alerts</h3>
-    <ul class="AlertsList">
-        <li>Theres been a mutiny in Nelson<br>
-            18/10/2024 9:32am</li>
-        <li> </li>
-    </ul>
+    <figure class="pinmap">
+        <h3>Active Disasters</h3>
+        <img src="src\lib\Images\New_Zealand_Regions.png" alt="A map of New Zealand">
+    </figure>
+    
 </div>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
+
+    h3 {
+        margin-top: 0.5em;
+        font-size: 180%;
+        text-align: center;
+    }
+
+    img {
+        max-height: 90%;
+        width: auto;
+    }
+
+    .PageContentContainer {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
     }
 
     .AlertsCard{
@@ -27,15 +43,23 @@
         border: solid;
         width: 25em;
         min-height: 80vh;
+        justify-self: left;
+    }
+
+    .AlertsList li {
         margin-top: 0.5em;
     }
 
-    .AlertsCard h3 {
-        margin-top: 0.5em;
-        font-size: 180%;
+    .pinmap {
+        max-height: 100%;
+        width: auto;
+        border: solid;
         text-align: center;
+        background-color: #B7DAF8;
     }
+
+    .pinmap h3 {
+        background-color: #B7DAF8;
+    }
+
 </style>
-
-<Footer />
-
