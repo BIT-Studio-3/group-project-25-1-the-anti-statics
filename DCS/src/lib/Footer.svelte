@@ -33,7 +33,7 @@
 
     footer {
         display: flex;
-        width: calc(100% - 3em);
+        width: 90%;
         position: relative;
         top: 0;
         flex-wrap: nowrap;
@@ -64,6 +64,17 @@
         list-style: none;
         padding: 0.5em;
         background-color: inherit;
+    }
+
+    @media (max-width: 600px) {
+
+        footer {
+            font-size: 70%;
+        }
+     
+        nav ul {
+            flex-direction: column;
+        }
     }
 
 </style>
