@@ -13,7 +13,7 @@
 <div>
 <h1>Emergency Alert: <h3>Severe</h3></h1>
 A severe flood warning has been issued by the Environmental Agency for the North Bank of the Humber Esturary.
-There might be overtopping effecting sea front areas as a result of high spring tides and tidal surge between 3am and 8am. Call 111 for immediate assisstance.
+There might be overtopping effecting sea front areas as a result of high spring tides and tidal surge between 3am and 8am. Call 111 if in immediate danger.
 </div>
 
 <style>
