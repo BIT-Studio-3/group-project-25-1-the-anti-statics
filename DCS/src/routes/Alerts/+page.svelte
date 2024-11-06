@@ -69,14 +69,6 @@
     font-family: sans-serif;
     color: #333;
   }
-  .container {
-    display: grid;
-    grid-template-columns: 10% 90%;
-    
-  }
-  label{
-    align-self:center;
-  }
   textarea {
     vertical-align: top;
     height: 10em;
@@ -86,14 +78,25 @@
     border-color: black;
     border: solid;
     padding: 1em;
-    display: block;
+    align-items: start;
   }
   label {
-    display: inline-block;
-    min-width: 90px;
     text-align: right;
+    padding-top: 8px;
   }
   div {
     padding: 0.5em;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 10% 90%;
+  }
+  @media (max-width: 1281px){ 
+    .container{
+      display:block
+    }
+    textarea{
+      width: auto;
+    }
   }
 </style>
