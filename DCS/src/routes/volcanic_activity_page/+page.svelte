@@ -63,16 +63,6 @@
             <p>Hazards: {card.hazards}</p>
         </div>
     {/each}
-    <div
-    class="volcanocard"
-    id={32}
-    style="background-color: {getCardBackground(5)}"
->    
-        <h3>Test</h3>
-        <p>Activity: Test</p>
-        <p>Hazard Level: Test</p>
-        <p>Hazards: 5</p></div>
-
 </div>
 
 <style>
