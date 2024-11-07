@@ -21,17 +21,19 @@
     }
 
     function getCardBackground(card) {
-        switch (card.hazardLevel) {
+        switch (card) {
             case 0:
                 return "#3D995D";
             case 1:
-                return "#0000FF";
+                return "#00AFFF";
             case 2:
                 return "#FFFF00";
             case 3:
                 return "#FF6600";
             case 4:
                 return "#FE0000";
+            case 5:
+                return "#999888";
         }
     }
 
@@ -41,18 +43,19 @@
 <h2>Volcanic Activity</h2>
 <h3>Colour Code:</h3>
 <div class="Code">
-    <div class="one">1 █</div>
-    <div class="two">2 █</div>
-    <div class="three">3 █</div>
-    <div class="four">4 █</div>
-    <div class="five">5 █</div>
+    <p> 0 </p><div class="zero">█</div>
+    <p> 1 </p><div class="one">█</div>
+    <p> 2 </p><div class="two">█</div>
+    <p> 3 </p><div class="three">█</div>
+    <p> 4 </p><div class="four">█</div>
+    <p> 5 </p><div class="five">█</div>
 </div>
 <div class="cardcontainer">
     {#each volcanoCards as card}
         <div
             class="volcanocard"
             id={card.id}
-            style="background-color: {getCardBackground(card)};"
+            style="background-color: {getCardBackground(card.hazardLevel)};"
         >
             <h3>{card.title}</h3>
             <p>Activity: {card.activity}</p>
@@ -60,6 +63,16 @@
             <p>Hazards: {card.hazards}</p>
         </div>
     {/each}
+    <div
+    class="volcanocard"
+    id={32}
+    style="background-color: {getCardBackground(5)}"
+>    
+        <h3>Test</h3>
+        <p>Activity: Test</p>
+        <p>Hazard Level: Test</p>
+        <p>Hazards: 5</p></div>
+
 </div>
 
 <style>
@@ -99,30 +112,35 @@
         padding: 0.8em;
         margin-left: 1em;
         display:flex;
+        padding: 0.2em;
     }
     h3{
         font-size: large;
         margin-left: 1em;
     }
 
-    .one {
+    .zero {
         color: #3d995d;
-        padding: 0.2em;
+        border: solid black 2px;
+    }
+    .one {
+        color: #0000ff;
+        border: solid black 2px;
     }
     .two {
-        color: #0000ff;
-        padding: 0.2em;
+        color: #ffff00;
+        border: solid black 2px;
     }
     .three {
-        color: #ffff00;
-        padding: 0.2em;
+        color: #ff6600;
+        border: solid black 2px;
     }
     .four {
-        color: #ff6600;
-        padding: 0.2em;
-    }
-    .five {
         color: #fe0000;
-        padding: 0.2em;
+        border: solid black 2px;
+    }
+    .five{
+        color: #999888;
+        border: solid black 2px;    
     }
 </style>
