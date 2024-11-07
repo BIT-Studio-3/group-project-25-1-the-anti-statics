@@ -90,14 +90,14 @@
   }
   input {
     max-width: fit-content;
-    margin: 10px;
+    margin: 0.5em;
   }
   select{
     max-width: fit-content;
-    margin: 10px;
+    margin: 0.5em;
   }
   textarea{
-    margin: 10px;
+    margin: 0.5em;
   }
   @media (max-width: 1281px) {
     .container {
@@ -105,6 +105,9 @@
     }
     textarea {
       width: auto;
+    }
+    label {
+      align-self:center;
     }
   }
 </style>
