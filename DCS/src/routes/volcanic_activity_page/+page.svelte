@@ -22,15 +22,15 @@
 
     function getCardBackground(card) {
         switch (card.hazardLevel) {
-            case 1:
+            case 0:
                 return "#3D995D";
-            case 2:
+            case 1:
                 return "#0000FF";
-            case 3:
+            case 2:
                 return "#FFFF00";
-            case 4:
+            case 3:
                 return "#FF6600";
-            case 5:
+            case 4:
                 return "#FE0000";
         }
     }
@@ -98,6 +98,7 @@
     .Code {
         padding: 0.8em;
         margin-left: 1em;
+        display:flex;
     }
     h3{
         font-size: large;
