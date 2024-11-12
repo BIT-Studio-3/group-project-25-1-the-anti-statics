@@ -9,6 +9,7 @@
             <li><a href="/tides_page">Tidal Data</a></li>
             <li><a href="/volcanic_activity_page">Volcanic Activity</a></li>
             <li><a href="/fire_and_emergency_page">Fire and Emergency Reports</a></li>
+            <li><a href="/Alerts">Post an Alert</a></li>
         </ul>
     </nav>
 
