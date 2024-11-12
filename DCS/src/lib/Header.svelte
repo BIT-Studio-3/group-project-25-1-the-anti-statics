@@ -15,7 +15,7 @@
             <a href="/volcanic_activity_page" class="secondrow"><li class:active={route === "/volcanic_activity_page"}>Volcanic Activity</li></a>
             <a href="/fire_and_emergency_page" class="secondrow"><li class:active={route === "/fire_and_emergency_page"}>Fire and Emergency Reports</li></a>
             <a href="/rss" class="secondrow"><li class:active={route === "/rss"}>RSS Feed</li></a>
-
+            <a href="/alert_system" class="secondrow"><li class:active={route === "/alert_system"}>Post an Alert</li></a>
         </ul>
     </nav>
 
