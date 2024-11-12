@@ -3,13 +3,13 @@
 
     <nav>
         <ul>
-            <li><a href="/weather_reports_page">Weather Reports</a></li>
-            <li><a href="/seismic_reports_page">Seismic Activity</a></li>
-            <li><a href="/road_conditions_page">Road Conditions</a></li>
-            <li><a href="/tides_page">Tidal Data</a></li>
-            <li><a href="/volcanic_activity_page">Volcanic Activity</a></li>
-            <li><a href="/fire_and_emergency_page">Fire and Emergency Reports</a></li>
-            <li><a href="/Alerts">Post an Alert</a></li>
+            <a href="/weather_reports_page"><li class:active={route === "/weather_reports_page"}>Weather Reports</li></a>
+            <a href="/seismic_reports_page"><li class:active={route === "/seismic_reports_page"}>Seismic Activity</li></a>
+            <a href="/road_conditions_page"><li class:active={route === "/road_conditions_page"}>Road Conditions</li></a>
+            <a href="/volcanic_activity_page"><li class:active={route === "/volcanic_activity_page"}>Volcanic Activity</li></a>
+            <a href="/fire_and_emergency_page"><li class:active={route === "/fire_and_emergency_page"}>Fire and Emergency Reports</li></a>
+            <a href="/rss"><li class:active={route === "/rss"}>RSS Feed</li></a>
+            <a href="/Alerts"><li class:active={route === "/Alerts"}>Post an Alert</li></a>
         </ul>
     </nav>
 
