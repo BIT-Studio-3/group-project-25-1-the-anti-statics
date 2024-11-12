@@ -1,5 +1,11 @@
+<script>
+    import { page } from "$app/stores";
+
+    $: route = $page.route.id;
+</script>
+
 <header>
-    <h1>The GPTs Disaster Management System</h1>
+    <h1><a href="/">The GPTs Disaster Management System</a></h1>
 
     <nav>
         <ul>
@@ -16,13 +22,19 @@
 </header>
 
 <style>
-    * {
-        font-family: sans-serif;
-        color: #444;
-    }
 
     a {
         text-decoration: none;
+        background-color: inherit;
+        border-right: 1px solid grey;
+    }
+
+    a:last-child {
+        border-right: 0px;
+    }
+
+    h1 a {
+        border-right: 0px;
     }
 
     header {
@@ -30,10 +42,12 @@
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
-        width: 100%;
+        width: calc(100% - 4em);
         position: relative;
         top: 0;
         box-shadow: 0 4px 5px #333;
+        padding: 2em;
+        margin-bottom: 0.5em;
     }
 
     nav {
@@ -48,9 +62,21 @@
         justify-content: space-around;
     }
 
-    nav ul li {
+    li {
         list-style: none;
         padding: 0.5em;
+
+        font-size: 120%;
+        text-align: center;
+    }
+
+    nav ul li:hover {
+        background-color: lightgrey;
+    }
+
+    .active {
+        background-color: #689FD4;
+        font-weight: bold;
     }
 
 

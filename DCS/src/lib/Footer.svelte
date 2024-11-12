@@ -19,36 +19,37 @@
 </footer>
 
 <style>
-    footer {
-        background: #689FD4;
-    }
+
     p{
         padding:10px;
         text-align: center;
-    }
-    * {
-        font-family: sans-serif;
-        color: #444;
+        background-color: inherit;
     }
 
     a {
         text-decoration: none;
+        background-color: inherit;
     }
 
     footer {
         display: flex;
-        width: 100%;
+        width: calc(100% - 3em);
         position: relative;
         top: 0;
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
         box-shadow: 0 4px 5px #333;
+        background: #689FD4;
+        padding: 1em;
+        margin: 0.5em;
+        justify-self: center;
     }
 
     nav {
         display: flex;
         flex-direction: row;
+        background-color: inherit;
     }
 
     nav ul {
@@ -56,11 +57,13 @@
         flex-direction: row;
         flex-wrap: nowrap;
         flex-flow: space-around;
+        background-color: inherit;
     }
 
     nav ul li {
         list-style: none;
         padding: 0.5em;
+        background-color: inherit;
     }
 
 </style>
