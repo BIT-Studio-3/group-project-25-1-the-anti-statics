@@ -9,6 +9,7 @@
 
     <nav>
         <ul>
+
             <a href="/weather_reports_page"><li class:active={route === "/weather_reports_page"}>Weather Reports</li></a>
             <a href="/seismic_reports_page"><li class:active={route === "/seismic_reports_page"}>Seismic Activity</li></a>
             <a href="/road_conditions_page"><li class:active={route === "/road_conditions_page"}>Road Conditions</li></a>
@@ -27,6 +28,7 @@
         text-decoration: none;
         background-color: inherit;
         border-right: 1px solid grey;
+        align-self: center;
     }
 
     a:last-child {
@@ -42,12 +44,13 @@
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
-        width: calc(100% - 4em);
+        max-width: 100%;
         position: relative;
         top: 0;
         box-shadow: 0 4px 5px #333;
         padding: 2em;
         margin-bottom: 0.5em;
+        box-sizing: border-box;
     }
 
     nav {
@@ -55,7 +58,7 @@
         flex-direction: row;
     }
 
-    nav ul {
+    ul {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -65,7 +68,6 @@
     li {
         list-style: none;
         padding: 0.5em;
-
         font-size: 120%;
         text-align: center;
     }
@@ -77,6 +79,33 @@
     .active {
         background-color: #689FD4;
         font-weight: bold;
+    }
+
+    @media (max-width: 800px) {
+
+        header {
+            padding: 1em;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            justify-content: stretch;
+        }
+        a:last-child {
+            border-right: 1px solid grey;
+        }
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            display: none;
+        }
+
+        header {
+            font-size: 70%;
+        }
     }
 
 

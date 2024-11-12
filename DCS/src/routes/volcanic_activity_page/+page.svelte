@@ -79,7 +79,9 @@
 
     p {
         background-color: inherit;
+        padding-top: 0.4em;
         color: #222;
+
     }
 
     .cardcontainer {
@@ -98,6 +100,25 @@
         background: inherit;
         border-radius: 5px;
     }
+
+
+    @media(max-width: 1000px) {
+
+        .cardcontainer {
+            margin-left: 0;
+            margin-right: 0;
+            gap: 0.4em;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .volcanocard {
+            padding: 0.4em;
+        }
+
+        p {
+            padding-top: 0.2em;
+        }
+
     .Code {
         padding: 0.8em;
         margin-left: 1em;
@@ -132,5 +153,6 @@
     .five{
         color: #999888;
         border: solid black 2px;    
+
     }
 </style>

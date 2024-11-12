@@ -12,11 +12,11 @@
         {#each data.quakes.features as thing}
             <div>
                 <h2>{thing.properties.locality}</h2>
-                <p>Coordinates (y, x):</p>
+                <h3>Coordinates (y, x):</h3>
                 <p>{thing.geometry.coordinates}</p>
-                <p>Depth:</p>
+                <h3>Depth:</h3>
                 <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <p>Time:</p>
+                <h3>Time:</h3>
                 <p>
                     Date: {thing.properties.time
                         .replace(/[T]/g, " Time: ")
@@ -32,11 +32,11 @@
         {#each data.quakes2.features as thing}
             <div>
                 <h2>{thing.properties.locality}</h2>
-                <p>Coordinates (y, x):</p>
+                <h3>Coordinates (y, x):</h3>
                 <p>{thing.geometry.coordinates}</p>
-                <p>Depth:</p>
+                <h3>Depth:</h3>
                 <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <p>Time:</p>
+                <h3>Time:</h3>
                 <p>
                     {thing.properties.time
                         .replace(/[TZ]/g, " ")
@@ -52,11 +52,11 @@
         {#each data.quakes3.features as thing}
             <div>
                 <h2>{thing.properties.locality}</h2>
-                <p>Coordinates (y, x):</p>
+                <h3>Coordinates (y, x):</h3>
                 <p>{thing.geometry.coordinates}</p>
-                <p>Depth:</p>
+                <h3>Depth:</h3>
                 <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <p>Time:</p>
+                <h3>Time:</h3>
                 <p>
                     {thing.properties.time
                         .replace(/[TZ]/g, " ")
@@ -72,11 +72,11 @@
         {#each data.quakes4.features as thing}
             <div>
                 <h2>{thing.properties.locality}</h2>
-                <p>Coordinates (y, x):</p>
+                <h3>Coordinates (y, x):</h3>
                 <p>{thing.geometry.coordinates}</p>
-                <p>Depth:</p>
+                <h3>Depth:</h3>
                 <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <p>Time:</p>
+                <h3>Time:</h3>
                 <p>
                     {thing.properties.time
                         .replace(/[TZ]/g, " ")
@@ -88,19 +88,28 @@
 </div>
 
 <style>
-    * {
-        font-family: sans-serif;
-    }
+
     div {
         border: 2px solid black;
         margin: 0.6em;
     }
+
+    h3 {
+        padding-left: 0.3em;
+    }
+
+    p {
+        padding-top: 0.1em;
+        padding-left: 0.8em;
+    }
+
     details {
         padding: 0.5em;
         background-color: #b7daf8;
         border-radius: 0.5em;
         padding-left: 10px;
     }
+
     summary {
         background-color: #689fd4;
         color: white;
@@ -109,9 +118,11 @@
         padding: 10px 10px 10px 20px;
         border-radius: 5px;
     }
+
     .container{
         padding:1em;
         border: none;
     }
+
 </style>
 
