@@ -6,7 +6,7 @@
   <iframe
     title="rss"
     class="rss"
-    src="https://rss.app/embed/v1/wall/G4sXEJ0UJN3Owjow"
+    src="https://rss.app/embed/v1/wall/LgTbpx1cNjP0QQF4"
     frameborder="0"
   ></iframe>
 
