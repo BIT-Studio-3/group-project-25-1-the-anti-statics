@@ -1,10 +1,3 @@
-<script>
-  import Header from "$lib/Header.svelte";
-  import Footer from "$lib/Footer.svelte";
-</script>
-
-<Header />
-
 <h1>Alerts</h1>
 <p>
   This where users will be able to post alerts. They will be able to choose
@@ -59,8 +52,6 @@
   </div>
 </form>
 
-<Footer />
-
 <style>
   * {
     font-family: sans-serif;
@@ -90,14 +81,14 @@
   }
   input {
     max-width: fit-content;
-    margin: 10px;
+    margin: 0.5em;
   }
   select{
     max-width: fit-content;
-    margin: 10px;
+    margin: 0.5em;
   }
   textarea{
-    margin: 10px;
+    margin: 0.5em;
   }
   @media (max-width: 1281px) {
     .container {
@@ -105,6 +96,9 @@
     }
     textarea {
       width: auto;
+    }
+    label {
+      align-self:center;
     }
   }
 </style>
