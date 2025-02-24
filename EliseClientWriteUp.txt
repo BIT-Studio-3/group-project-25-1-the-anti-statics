@@ -1,0 +1,114 @@
+Emergency Response System. 
+This is not only a natural disaster response system.
+An emergency is defined as any event where a relevant emergency response team is triggered.
+This could even be used in a pandemic. What data is available?
+A local problem. We won't fix it all at once. 
+We don't have good emergency management.
+First issue is information. It's out there, but it's all in different places. Must be very active in checking in with all the different places.
+
+Lots of other countries have systems like this however we can't look at them. Maybe after some phone calls.
+Communication is the hardest problem, especially under stress.
+
+How do you think this system will help people?
+The idea is to help inform people. There's innate chaos with what is trying to be captured here. 
+A central platform that helps to deal with the chaos is what is needed. 
+
+Any preferences or design examples? Not necessarily. 
+	1. Simple
+	2. Clean
+	3. Stays out of the way
+	4. Calming
+	5. Kind of familiar. It shouldn't be alien. Day to day apps that people use, borrow from that. 
+		a. While people are under stress they want something familiar.
+
+How severe should a weather event be to register?
+There's lots of information out there. For starters yes, weather alerts is one. But that isn't only it. 
+However this should be useable all the time, not only during an emergency. 
+
+Fire Emergency NZ, police, emergency management groups within a city council etc. This is just the emergency usage. 
+
+How do we determine success? There's never a finished software project. It's successful if the needs its trying to meet are currently met. We'll never meet them all. Prioritise needs that are required early on. Define what we will try to solve first.
+
+First place is the database we will need. Fetching data from elsewhere (APIs).
+
+How widespread should this be? 
+Firstly it should inform those who're local to a weather event. This could be the first goal.
+Later, this could be expanded.
+
+Alternatively, could consider the region to be NZ and start broad.
+
+The data is always key, it's the main aim for this. Form over function. However, the design MUST make this as accessible as possible.
+
+What would this need to have to be useful for end users?
+Take geographical information from various places (weather data, earthquake data, flood prone data, volcano information) on different platforms and collate it, make it easy to access and clearly presented.
+
+Not our job to predict events. The institutions that hold this data are the people to do that. Our job is to show what is current to users.
+
+What special needs would it require? (Accessibility)
+Must be useable to people from all manners of society. However the page can't be slow. There won't be control over the quickness of access to the data from the original systems, however we can't take a long time to display that data.
+
+Suspected that often people in this line of work will have access to tablets, so mobile yes but definitely tablet compatibility. 
+
+What could stop this system from being as useful?
+Stuff out of our control:
+	1. Not able to access good data. Hard to get, doesn't exist, rate limited.
+
+Stuff in our control
+	1. UX design that people can use.
+	2. Visual clutter
+	3. Bugs
+	4. Unexpected system.
+	
+	
+Follow Jakob's Ten Usability Heuristics
+
+Highly potential that professionally made platforms made to meet these needs in the past haven't met the design functionality requirements.
+
+Most users will have higher than average knowledge on natural disasters. 
+This isn't really for the general public, this is mostly for those involved in natural disaster response.
+Having said that, often in these events volunteers get recruited and they often don't have that knowledge, so it must be accessible. 
+
+Heaps of organisations get triggered when a  disaster happens, and communication between them is the biggest issue. The way they connect with each other isn't efficient. Some are run at national level with small local teams, others are all run at council level. Sometimes even community boards can be triggered, on an even smaller level. (This can't be solved until we've made a database)
+Bottomline no one knows what is going on in an emergency. 
+ 
+The starting priority is the wide spread of information currently. Step one is collating that. Right now it's all on separate websites. 
+Leading on from that is making sure that is all easy to interpret. 
+
+Not really our job to get it into peoples hands, so informing the relevant people of this isn't in the task.
+
+Main thing: don't spend time and effort on developing something you GUESSED would be useful. You'll likely have to throw it away. Rule 6: Make the simplest possible version then add incremental improvements.
+If you build something awesome, before implementing ASK if it is actually awesome. Don't guess. 
+
+The user interaction required is to give flexibility around what is displayed and how. We are pulling together a lot of info and will have options for that.
+Currently no logins/passwords etc. Maybe next semester.
+
+Multilanguage? No. Cultural considerations? Yes. Te Tiriti compliant. How that looks we will find out as we go.
+
+End users?
+	1. Fire and Emergency
+	2. Search and rescue
+	3. Police
+	4. Civil Defence
+	5. Community Boards
+	6. Anyone expected to respond in an emergency but not just anyone off the street.
+	7. This is NOT public facing
+
+Therefore usability must be tailored to a large group of people. 
+
+
+Ideally possible for this to work offline as well as long as it was clear when the data was last refreshed. 
+
+Communication is a problem - should this be solved in the web app? For example will this eventually provide communication channels for the different emergency teams?
+	- Yes but not this sem. Not top priority.
+
+
+If there is an emergency currently happening that data should be top priority and loaded first without having to fiddle with the settings.
+
+
+Volcano data
+Earthquake data -geonet
+Tide data
+Weather data
+Map information - open maps
+
+

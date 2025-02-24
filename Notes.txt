@@ -1,0 +1,18 @@
+Simplest website:
+
+It must show earthquake data, weather data, ongoing incident reports, tides, volcano lookouts
+
+Would be nice to have:
+
+power grid updates, Traffic, 
+
+It must prioritise loading as efficiently as possible
+
+It must be easy to navigate
+
+The website should only contain natural disasters nothing related to crime or terrorist activities
+
+Follow the 7 studio rules.
+
+RSS feed
+
