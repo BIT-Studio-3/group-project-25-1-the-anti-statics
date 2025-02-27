@@ -1,4 +1,4 @@
-let map;
+/*let map;
 
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
@@ -21,4 +21,4 @@ function initMap1() {
     trafficLayer.setMap(map);
   }
   
-  //window.initMap = initMap;
+  window.initMap = initMap;*/
