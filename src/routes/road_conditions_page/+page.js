@@ -11,7 +11,7 @@ async function initMap() {
 
 initMap();
 
-function initMap() {
+function initMap1() {
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 13,
       center: { lat: 34.04924594193164, lng: -118.24104309082031 },
@@ -21,4 +21,4 @@ function initMap() {
     trafficLayer.setMap(map);
   }
   
-  window.initMap = initMap;
+  //window.initMap = initMap;
