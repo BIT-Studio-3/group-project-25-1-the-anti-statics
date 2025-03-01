@@ -1,5 +1,7 @@
 # Team Standards
  
+## Workflow Guidelines
+
 **1. Team Unity**
 We shall all work as team, and ensure everyone is supported and on the same path.
  
@@ -17,3 +19,5 @@ If someone selected as scrum master, is off for a period of time, some one else 
  
 **6. Customer Satisfaction** 
 Keep the customer happy and get regular feedback, so we know our project is meeting their needs.
+
+## Git & GitHub Rules
