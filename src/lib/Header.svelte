@@ -5,7 +5,7 @@
 </script>
 
 <header>
-    <h1><a href="/">The GPTs Disaster Management System</a></h1>
+    <h1><a href="/">The Anti-Statics Disaster Management System</a></h1>
 
     <nav>
         <ul>
