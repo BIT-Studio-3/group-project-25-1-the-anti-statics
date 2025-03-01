@@ -83,6 +83,8 @@ The **STAGING** branch is where all continous staged changes are pushed to, to p
 
 The only commits than can merged into **main** should be commits from the **STAGING** branch
 
+When creating pull requests on feature branches, make sure the **STAGING** branch is the base branch for the feature branch to be compared to.
+
 **6. Merging own Pull Requests**
 
 **Never** merge your own pull request. It's crucial to have someone in your team to review your code before merging.
