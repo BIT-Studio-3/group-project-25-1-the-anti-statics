@@ -2,12 +2,9 @@
 <script>
     import { onMount } from 'svelte';
     import maplibre from 'maplibre-gl';
-    const { Map } = maplibre; 
     
     let mapContainer;
     let map;
-    let zoom;
-    let center = {};
   
     onMount(() => {
       map = new maplibre.Map({
