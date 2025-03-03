@@ -1,3 +1,8 @@
+<script>
+    import { selectedAgency } from '$lib/stores.js';
+
+</script>
+
 <div class="PageContentContainer">
     <div class="AlertsCard">
         <h3>Recent Alerts</h3>
