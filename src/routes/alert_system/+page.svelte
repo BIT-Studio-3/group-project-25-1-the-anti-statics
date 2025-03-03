@@ -1,3 +1,7 @@
+<script>
+    
+</script>
+
 <h1>Alerts</h1>
 <p>
   This where users will be able to post alerts. They will be able to choose
@@ -8,7 +12,7 @@
   nothing. Once we learn more about logins, this page will be functional.
 </p>
 
-<form>
+<form id="alert">
   <h2>Post Alert:</h2>
   <div class="container">
     <label for="title">Title:</label>
