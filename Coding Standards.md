@@ -95,4 +95,33 @@ When opening a pull request ensure you link it to an issue by scrolling down the
 
 Then simply just click on the '⚙️' icon next to 'Development' and a little dropdown should appear, and from there you can link the issue
 
+
+### Commit Message Conventions
+
+You should follow the **conventional commits** convention when committing changes to your repository. A **conventional commit** consists of a **type**, **scope** and **description**. The **type** and **description** are mandatory, while the **scope** is optional. The **type** must be one of the following:
+
+- **build**: Changes that affect the build system or external dependencies
+- **chore**: Regular code maintenance, such as refactoring or updating dependencies
+- **ci**: Changes to our CI configuration files and scripts
+- **docs**: Documentation only changes
+- **feat**: A new feature
+- **fix**: A bug fix
+- **perf**: A code change that improves performance
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **test**: Adding missing tests or correcting existing tests
+
+The **scope** is a phrase describing the codebase section affected by the change. For example, you can use the scope `javascript` if you are working on the **formative assessment** for **JavaScript**. If you are working on the **formative assessment** for **HTML**, use the scope `html`.
+
+The **description** is a short description of the change. It should be written in the imperative mood, meaning it should be written as if you are giving a command or instruction. For example, "add a new feature" instead of "added a new feature".
+
+Here are some examples of **conventional commits**:
+
+- `feat(javascript): add a new feature`
+- `fix(html): fix a bug`
+- `docs(css): update documentation`
+
+> **Resource:** <https://www.conventionalcommits.org/en/v1.0.0/>
+
 further changes can be made :)
+
