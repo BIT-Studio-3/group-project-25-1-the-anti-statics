@@ -28,5 +28,10 @@
 </section>
 
 <style>
-    
+    section{
+        display: flex;
+        background-color: aqua;
+        padding: 0.2em 1em 0.2em 1em;
+        justify-content: center;
+    }
 </style>
