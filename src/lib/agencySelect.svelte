@@ -30,7 +30,7 @@
 <style>
     section{
         display: flex;
-        background-color: aqua;
+        border-right: 1px solid grey;
         padding: 0.2em 1em 0.2em 1em;
         justify-content: center;
     }
