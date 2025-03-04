@@ -16,9 +16,17 @@
     $: agencies = agencyMap[$page.url.pathname] || ["All"]; // Default to "All" if page not found
 </script>
 
-<select bind:value={$selectedAgency}>
+<section>
+    <p>🔍</p>
+
+    <select bind:value={$selectedAgency}>
     <option value="All">All</option>
     {#each agencies as agency}
         <option value={agency}>{agency}</option>
     {/each}
-</select>
+    </select>
+</section>
+
+<style>
+    
+</style>
