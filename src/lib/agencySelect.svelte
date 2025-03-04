@@ -1,12 +1,13 @@
 <script>
     import { selectedAgency } from "$lib/stores.js";
+    export let agencies = [];
 </script>
 
 <select bind:value={$selectedAgency}>
     <option value="All">All</option>
-    <option value="FENZ">FENZ</option>
-    <option value="GeoNet">GeoNet</option>
-    <option value="USAR">USAR</option>
+    {#each agencies as agency}
+        <option value={agency}>{agency}</option>
+    {/each}
 </select>
 
 <style>
