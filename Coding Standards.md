@@ -95,6 +95,18 @@ When opening a pull request ensure you link it to an issue by scrolling down the
 
 Then simply just click on the '⚙️' icon next to 'Development' and a little dropdown should appear, and from there you can link the issue
 
+## Housekeeping
+
+**1. Don't place your local repo on OneDrive**
+
+When a team member clones the website repo on their local machine, it is
+best practice to avoid cloning into a OneDrive folder, as all sorts of weird and unprecedented issues can occur. These issues can cause the website instance on your local machine to break. 
+
+https://dustinbriles.com/onedrive-and-git-dont-do-it/
+
+
+further changes can be made :)
+
 
 ### Commit Message Conventions
 
@@ -123,5 +135,13 @@ Here are some examples of **conventional commits**:
 
 > **Resource:** <https://www.conventionalcommits.org/en/v1.0.0/>
 
+## Housekeeping 
+
+**1. Don't place your local repo on OneDrive** 
+When a team member clones the website repo on their local machine, it is best practice to avoid cloning into a OneDrive folder, as all sorts of weird and unprecedented issues can occur. These issues can cause the website instance on your local machine to break. 
+
+https://dustinbriles.com/onedrive-and-git-dont-do-it/ 
+
 further changes can be made :)
+
 
