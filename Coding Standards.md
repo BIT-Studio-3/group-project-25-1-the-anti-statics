@@ -145,6 +145,9 @@ https://dustinbriles.com/onedrive-and-git-dont-do-it/
 **2. Installing new Node Modules**
 If a team member implements a feature that uses newly installed node modules, it is a great opportunity for the team to run **npm i** to install the newly installed modules
 
+**Note:** When a team member is on another team member's feature branch testing out their feature, and they don't have a newly installed node module, run **npm i** to install it. When running the website on **localhost** and a missing module error message pops up, stop the server, then run **npm i** in the terminal and restart the server.
+
+
 further changes can be made :)
 
 
