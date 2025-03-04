@@ -142,6 +142,9 @@ When a team member clones the website repo on their local machine, it is best pr
 
 https://dustinbriles.com/onedrive-and-git-dont-do-it/ 
 
+**2. Installing new Node Modules**
+If a team member implements a feature that uses newly installed node modules, it is a great opportunity for the team to run **npm i** to install the newly installed modules
+
 further changes can be made :)
 
 
