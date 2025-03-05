@@ -1,3 +1,6 @@
+<script>
+    import Map from '../lib/Map.svelte';
+</script>
 <div class="PageContentContainer">
     <div class="AlertsCard">
         <h3>Recent Alerts</h3>
@@ -12,7 +15,7 @@
 
     <figure class="pinmap">
         <h3>Active Disasters</h3>
-        <img src="src\lib\Images\New_Zealand_Regions.png" alt="A map of New Zealand">
+        <Map />
     </figure>
     
 </div>
@@ -55,7 +58,7 @@
 
     .pinmap {
         max-height: 100%;
-        width: auto;
+        width: 600px;
         border: solid;
         text-align: center;
         background-color: #B7DAF8;
