@@ -8,21 +8,12 @@
     }
 
     function handleSubmit() {
-        const jsonData = JSON.stringify(formAlert);
-        sessionStorage.setItem('alert', jsonData);
-        console.log(jsonData);
+        const alertData = JSON.stringify(formAlert);
+        console.log(alertData);
     }
 </script>
 
 <h1>Alerts</h1>
-<p>
-  This where users will be able to post alerts. They will be able to choose
-  emergency type, level, and region.
-</p>
-<p>
-  Alerts will show up in a feed on another page. This form currently does
-  nothing. Once we learn more about logins, this page will be functional.
-</p>
 
 <form on:submit|preventDefault={handleSubmit}>
   <h2>Post Alert:</h2>
