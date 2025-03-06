@@ -12,7 +12,7 @@
 6. Did standup meetings both in and outside of class
 7. Created and agreed on team and coding standards
 8. Deployed the website to Netlify
-9. Created Staging branch
+9. Created a staging branch
 10. We all contributed something to the project
 11. The use of issue labels on GitHub to categorize and prioritize issues
 
