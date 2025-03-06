@@ -3,7 +3,7 @@
 
     $: route = $page.route.id;
 
-    import AgencySelect from "$lib/AgencySelect.svelte";
+    import AgencySelect from "$lib/agencySelect.svelte";
 </script>
 
 <header>
