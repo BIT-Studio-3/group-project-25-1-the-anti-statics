@@ -1,4 +1,4 @@
-# The Anti-Statics Sprint Summaries Branch
+# The Anti-Statics Sprint Retrospectives Branch
 
 The purpose for this branch is for each scrum master at the end of each sprint to document what went well in a sprint, what could be improved on in the next sprint as well as what could be done differently.
 
