@@ -1,4 +1,4 @@
-# Sprint 1 Summary
+# Sprint 1 Retrospective
 
 ## Scrum Master: Samuel Batchelor
 
