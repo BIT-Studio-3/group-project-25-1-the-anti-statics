@@ -7,7 +7,6 @@
         "/weather_reports_page": ["MetService", "NEMA"],
         "/seismic_reports_page": ["GeoNet", "NEMA", "NZDF"],
         "/road_conditions_page": ["Waka Kotahi", "KiwiRail", "NZ Police", "Local Councils"],
-        "/volcanic_activity_page": ["GeoNet", "NEMA", "Airways NZ", "CDEM"],
         "/fire_and_emergency_page": ["FENZ", "NZ Police", "DOC", "NEMA"]
     };
 
