@@ -9,7 +9,7 @@
 <header>
     <h1><a href="/">The Anti-Statics Disaster Management System</a></h1>
 
-    <nav>
+    <nav> /* Condensing soon */
         <ul>
             <a href="/weather_reports_page" class="firstrow"><li class:active={route === "/weather_reports_page"}>Weather Reports</li></a>
             <a href="/seismic_reports_page" class="firstrow"><li class:active={route === "/seismic_reports_page"}>Seismic Activity</li></a>
