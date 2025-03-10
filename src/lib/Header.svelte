@@ -2,10 +2,12 @@
     import { page } from "$app/stores";
 
     $: route = $page.route.id;
+
+    import AgencySelect from "$lib/agencySelect.svelte";
 </script>
 
 <header>
-    <h1><a href="/">The GPTs Disaster Management System</a></h1>
+    <h1><a href="/">The Anti-Statics Disaster Management System</a></h1>
 
     <nav>
         <ul>
@@ -16,6 +18,11 @@
             <a href="/fire_and_emergency_page" class="secondrow"><li class:active={route === "/fire_and_emergency_page"}>Fire and Emergency Reports</li></a>
             <a href="/rss" class="secondrow"><li class:active={route === "/rss"}>RSS Feed</li></a>
             <a href="/alert_system" class="secondrow"><li class:active={route === "/alert_system"}>Post an Alert</li></a>
+
+            <AgencySelect />
+
+            <a href="/Resources_Availability_Form" class="secondrow"><li class:active={route === "/Resources_Availability_Form"}>Resources_Availability_Form</li></a>
+
         </ul>
     </nav>
 
