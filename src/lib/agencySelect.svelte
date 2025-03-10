@@ -4,7 +4,7 @@
 
     // Define which agencies should be available on each page
     const agencyMap = {
-        "/weather_reports_page": ["MetService", "NEMA", "Waka Kotahi", "FENZ"],
+        "/weather_reports_page": ["MetService", "NEMA"],
         "/seismic_reports_page": ["GeoNet", "NEMA", "NZDF", "CDEM"],
         "/road_conditions_page": ["Waka Kotahi", "KiwiRail", "NZ Police", "Local Councils"],
         "/volcanic_activity_page": ["GeoNet", "NEMA", "Airways NZ", "CDEM"],
