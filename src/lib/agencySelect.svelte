@@ -6,7 +6,7 @@
     const agencyMap = {
         "/weather_reports_page": ["MetService", "NEMA"],
         "/seismic_reports_page": ["GeoNet", "NEMA", "NZDF"],
-        "/road_conditions_page": ["Waka Kotahi", "KiwiRail", "NZ Police", "Local Councils"],
+        "/road_conditions_page": ["Waka Kotahi", "KiwiRail", "NZ Police", "Local Council"],
         "/fire_and_emergency_page": ["FENZ", "NZ Police", "DOC", "NEMA"]
     };
 
