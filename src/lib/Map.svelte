@@ -5,6 +5,7 @@
     
     let mapContainer;
     let map;
+    const location =  { lng: 170.5028, lat: -45.8788, title: 'Dunedin' };
   
     onMount(() => {
       map = new maplibre.Map({
