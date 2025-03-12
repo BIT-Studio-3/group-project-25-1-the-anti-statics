@@ -5,7 +5,11 @@
     
     let mapContainer;
     let map;
-    const location =  { lng: 170.5028, lat: -45.8788, title: 'Dunedin' };
+    const locations =  [
+      { lng: 177.1028, lat: -30.9999, title: 'Dunedin' },
+      { lng: 179.7817, lat: -24.5321, title: 'Nelson' },
+      { lng: 174.7028, lat: -30.9999, title: 'Invercargill' }
+    ];
   
     onMount(() => {
       map = new maplibre.Map({
@@ -16,6 +20,11 @@
       });
   
       map.addControl(new maplibre.NavigationControl(), 'top-left');
+      // locations.forEach(location => {
+      // new maplibre.Marker()
+      // .setLngLat([location.lng, location.lat]) 
+      // .addTo(map); 
+  //});
     });
   </script>
   
