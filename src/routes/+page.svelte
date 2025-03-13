@@ -5,27 +5,21 @@
 
   //Export the load function
   export let data;
-  const { alerts, error } = data;
+  const { alerts, error, message } = data;
 </script>
 
 <div class="PageContentContainer">
   {#if error}
     <div>{error}</div>
-  {:else if alerts.length === 0}
-    <p>No alerts..</p>
+  {:else if message}
+    <p>No alerts available.</p>
   {:else}
     <div class="AlertsCard">
       <h3>Recent Alerts</h3>
       <ul class="AlertsList">
-        <li>
-          A cave has collapsed in Southland<br />
-          1 injury, 1 unknown<br />
-          <em>1/11/2024 10:20am</em>
-        </li>
-        <li>
-          Theres been a mutiny in Nelson<br />
-          <em>18/10/2024 9:32am</em>
-        </li>
+        {#each alerts as alert}
+          <li>{alert}</li>
+        {/each}
       </ul>
     </div>
   {/if}
