@@ -12,7 +12,7 @@
   {#if error}
     <div>{error}</div>
   {:else if message}
-    <p>No alerts available.</p>
+    <p>{message}</p>
   {:else}
     <div class="AlertsCard">
       <h3>Recent Alerts</h3>
