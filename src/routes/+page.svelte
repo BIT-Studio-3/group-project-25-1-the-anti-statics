@@ -11,6 +11,8 @@
 <div class="PageContentContainer">
   {#if error}
     <div>{error}</div>
+  {:else if alerts.length === 0}
+    <p>No alerts..</p>
   {:else}
     <div class="AlertsCard">
       <h3>Recent Alerts</h3>
