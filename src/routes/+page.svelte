@@ -6,6 +6,10 @@
 
 
     import Map from '../lib/Map.svelte';
+
+    //Export the load function
+    export let data;
+    const {alerts, error} = data;
 </script>
 
 <div class="PageContentContainer">
