@@ -34,36 +34,20 @@
   });
 </script>
 
-<main>
-  <div class="map-wrap">
-    <div class="map" bind:this={mapContainer}></div>
-    <a href="https://www.maptiler.com" class="watermark">
-      <img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler logo"/>
-    </a>
-  </div>
-</main>
+<div class="map-wrap">
+  <div class="map" bind:this={mapContainer}></div>
+</div>
 
 <style>
   .map-wrap {
     position: relative;
     width: 100%;             
-    height: 100vh;            
+    height: calc(100vh - 77px);
   }
-
 
   .map {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;           
     height: 100%;           
-  }
-
-
-  .watermark {
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    z-index: 999;
   }
 </style>
