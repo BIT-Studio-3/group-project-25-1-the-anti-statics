@@ -9,25 +9,25 @@
   let mapContainer;
   let map;
 
-  const locations =  [
-    { lng: 177.1028, lat: -30.9999, title: 'Dunedin' },
-    { lng: 179.7817, lat: -24.5321, title: 'Nelson' },
-    { lng: 174.7028, lat: -30.9999, title: 'Invercargill' }
-  ];
+  const locations = [
+  { lng: 170.5028, lat: -45.8788, title: 'Dunedin' },
+  { lng: 172.6365, lat: -43.5321, title: 'Christchurch' },
+  { lng: 175.2793, lat: -37.7870, title: 'Hamilton' },
+];
 
   onMount(() => {
     map = new maplibre.Map({
       container: mapContainer,
       style: "https://api.maptiler.com/maps/streets/style.json?key=TF6Py0XR1AgDeYc7OFw8",
       center: [171.8890, -40.9006], 
-      zoom: 5, 
+      zoom: 4.5, 
     });
 
     map.addControl(new maplibre.NavigationControl(), 'top-left');
     
     locations.forEach(location => {
       new Marker({color: "#FF0000"})
-      .setLngLat(location.lng, location.lat)
+      .setLngLat([location.lng, location.lat])
       .addTo(map);
    
     });
