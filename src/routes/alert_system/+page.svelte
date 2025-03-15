@@ -1,3 +1,21 @@
+<script>
+  //Import post alert function
+  import { postAlert } from './post-functions/postAlert.js';  // Import the postAlert function
+  //Import post alert function variables
+  let postError = ''; 
+  let data = null; 
+  let error = ''; 
+
+  let title = '';
+  let type = '';
+  let level = '';
+  let region = '';
+  let description = '';
+
+</script>
+
+
+
 <h1>Alerts</h1>
 <p>
   This where users will be able to post alerts. They will be able to choose
