@@ -13,7 +13,7 @@ export async function postAlert(alertData) {
       }
   
       const data = await response.json();
-      return data; // Return the response data (e.g., the created alert)
+      return {data}; // Return the response data (e.g., the created alert)
     } catch (error) {
       //Console the error
       console.log(error);
