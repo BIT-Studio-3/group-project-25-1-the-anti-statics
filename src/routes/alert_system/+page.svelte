@@ -27,17 +27,15 @@
       description
     };
 
-    // Clear previous errors
-    postError = '';
-    error = '';
-    data = null;
+    // Call the postAlert function and destructure the result
+    const { postError: resultPostError, data: resultData, error: resultError } = await postAlert(alertData);
 
-    // Call the postAlert function and handle the result
-    const result = await postAlert(alertData);
-
-    if (result.data) {
-      // If there is a 'data' property, alert was successfully posted
-      data = result.data;
+    // Update the state with the result values
+    postError = resultPostError;
+    data = resultData;
+    error = resultError;
+    
+    if (resultData) {
       alert('Alert posted successfully!');
       
       // Reset form fields
@@ -46,13 +44,6 @@
       level = '';
       region = '';
       description = '';
-      
-    } else if (result.postError) {
-      // If there is a 'postError', display it to the user
-      postError = result.postError;
-    } else if (result.error) {
-      // If there is an 'error' (like server unreachable), display it to the user
-      error = result.error;
     }
   };
 
