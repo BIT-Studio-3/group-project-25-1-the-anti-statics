@@ -21,10 +21,10 @@
     // Form data object
     const alertData = {
       title,
-      type,
-      level,
+      emergencyType: type,   // Assuming you are using 'emergencyType' on the backend
+      alertLevel: level,
       region,
-      description
+      description,
     };
 
     // Call the postAlert function and use the result directly
@@ -34,6 +34,12 @@
     postError = result.postError;
     data = result.data;
     error = result.error;
+
+    // Log the result for debugging
+    console.log('Result from postAlert:', result);
+    console.log('Post error:', postError);
+    console.log('Post data:', data);
+    console.log('Error:', error);
     
     if (result.data) {
       alert('Alert posted successfully!');
