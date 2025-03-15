@@ -1,5 +1,7 @@
 export async function postAlert(alertData) {
     try {
+      console.log('Posting alert with data:', alertData);
+      
       const response = await fetch('http://localhost:3000/api/v1/alerts', {
         method: 'POST',
         headers: {
