@@ -12,6 +12,50 @@
   let region = '';
   let description = '';
 
+
+
+  // Function to handle form submission
+  const submitAlert = async (event) => {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Form data object
+    const alertData = {
+      title,
+      type,
+      level,
+      region,
+      description
+    };
+
+    // Clear previous errors
+    postError = '';
+    error = '';
+    data = null;
+
+    // Call the postAlert function and handle the result
+    const result = await postAlert(alertData);
+
+    if (result.data) {
+      // If there is a 'data' property, alert was successfully posted
+      data = result.data;
+      alert('Alert posted successfully!');
+      
+      // Reset form fields
+      title = '';
+      type = '';
+      level = '';
+      region = '';
+      description = '';
+      
+    } else if (result.postError) {
+      // If there is a 'postError', display it to the user
+      postError = result.postError;
+    } else if (result.error) {
+      // If there is an 'error' (like server unreachable), display it to the user
+      error = result.error;
+    }
+  };
+
 </script>
 
 
