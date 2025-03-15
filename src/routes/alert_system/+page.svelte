@@ -27,15 +27,15 @@
       description
     };
 
-    // Call the postAlert function and destructure the result
-    const { postError: resultPostError, data: resultData, error: resultError } = await postAlert(alertData);
+    // Call the postAlert function and use the result directly
+    const result = await postAlert(alertData);
 
-    // Update the state with the result values
-    postError = resultPostError;
-    data = resultData;
-    error = resultError;
+    // Update the state with the result values directly
+    postError = result.postError;
+    data = result.data;
+    error = result.error;
     
-    if (resultData) {
+    if (result.data) {
       alert('Alert posted successfully!');
       
       // Reset form fields
@@ -61,16 +61,14 @@
   nothing. Once we learn more about logins, this page will be functional.
 </p>
 
-<form>
+<form on:submit={submitAlert}>
   <h2>Post Alert:</h2>
   <div class="container">
     <label for="title">Title:</label>
-
-    <input typ="text" id="title" name="alert-title" />
+    <input type="text" id="title" bind:value={title} required />
 
     <label for="type">Emergency type:</label>
-
-    <select for="type" id="type">
+    <select bind:value={type} required>
       <option value="">Please select an emergency type</option>
       <option value="fire">Fire</option>
       <option value="flood">Flooding</option>
@@ -78,8 +76,7 @@
     </select>
 
     <label for="level">Select alert level:</label>
-
-    <select name="level" id="level">
+    <select bind:value={level} required>
       <option value="one">1</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -88,8 +85,7 @@
     </select>
 
     <label for="region">Choose Region:</label>
-
-    <select name="region" id="region">
+    <select bind:value={region} required>
       <option value="">Please select a region</option>
       <option value="otago">Otago</option>
       <option value="canterbury">Canterbury</option>
@@ -97,13 +93,24 @@
     </select>
 
     <label for="description">Description:</label>
-
-    <textarea id="description" name="description"></textarea>
+    <textarea id="description" bind:value={description} required></textarea>
   </div>
   <div>
     <button type="submit">Submit</button>
   </div>
 </form>
+
+{#if postError}
+  <p style="color: red;">{postError}</p>
+{/if}
+
+{#if error}
+  <p style="color: red;">{error}</p>
+{/if}
+
+{#if data}
+  <p style="color: green;">Alert posted successfully!</p>
+{/if}
 
 <style>
   * {
