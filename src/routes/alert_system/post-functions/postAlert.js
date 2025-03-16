@@ -2,11 +2,6 @@ export async function postAlert(alertData) {
   try {
     console.log("Posting alert with data:", alertData);
 
-    // Check if alertLevel is valid
-    if (isNaN(alertData.alertLevel)) {
-      return { postError: "Invalid alert level. It must be a number." };
-    }
-
     alertData.alertLevel = parseInt(alertData.alertLevel);
     const response = await fetch("http://localhost:3000/api/v1/alerts", {
       method: "POST",
