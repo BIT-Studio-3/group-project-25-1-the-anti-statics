@@ -1,22 +1,42 @@
 <script>
-
     import { selectedAgency } from '$lib/stores.js';
-
-
-
-
+    import AlertCard from '../lib/alertCard.svelte';
     import Map from '../lib/Map.svelte';
+
+    let alerts = [
+        {
+            title: "Flood Warning",
+            type: "Flood",
+            level: "2",
+            region: "Canterbury",
+            description: "Heavy rain has caused flooding in the area. Please take caution."
+        },
+        {
+            title: "Earthquake Alert",
+            type: "Earthquake",
+            level: "3",
+            region: "Otago",
+            description: "A 5.0 magnitude earthquake has been detected in the area."
+        },
+        {
+            title: "Fire Watch",
+            type: "Fire",
+            level: "3",
+            region: "Southland",
+            description: "A fire warning has been issued for the area. Please take caution."
+        }
+    ];
 </script>
 
 <div class="PageContentContainer">
-    <div class="AlertsCard">
+    <div class="AlertsCards">
         <h3>Recent Alerts</h3>
         <ul class="AlertsList">
-            <li>A cave has collapsed in Southland<br>
-                1 injury, 1 unknown<br>
-            <em>1/11/2024 10:20am</em></li>
-            <li>Theres been a mutiny in Nelson<br>
-                <em>18/10/2024 9:32am</em></li>
+            {#each alerts as alert}
+                <li>
+                    <AlertCard obj={alert} />
+                </li>
+            {/each}
         </ul>
     </div>
 
@@ -35,11 +55,6 @@
         text-align: center;
     }
 
-    img {
-        max-height: 90%;
-        width: auto;
-    }
-
     .PageContentContainer {
         display: flex;
         flex-direction: row;
@@ -48,13 +63,14 @@
         width: 100%;
     }
 
-    .AlertsCard{
+    .AlertsCards{
         display: flex;
         flex-direction: column;
         border: solid;
-        width: 25em;
-        min-height: 80vh;
+        width: 50vh;
+        height: 84vh;
         justify-self: left;
+        overflow-y:auto;
     }
 
     .AlertsList li {
