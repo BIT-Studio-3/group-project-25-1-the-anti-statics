@@ -20,7 +20,7 @@
   <div class="container">
     <label for="title">Title:</label>
 
-    <input typ="text" id="title" name="alert-title" bind:value={formAlert.title}/>
+    <input type="text" id="title" name="alert-title" bind:value={formAlert.title}/>
 
     <label for="type">Emergency type:</label>
 
@@ -97,15 +97,64 @@
   textarea{
     margin: 0.5em;
   }
-  @media (max-width: 1281px) {
-    .container {
-      display: block;
-    }
-    textarea {
-      width: auto;
-    }
-    label {
-      align-self:center;
-    }
+  @media (max-width: 1200px) {
+  .container {
+    display: block; /* Stack the form fields vertically */
+  }
+
+  textarea {
+    width: 100%; /* Ensure textarea takes full width */
+  }
+
+  label {
+    align-self: center; /* Align labels properly */
+  }
+
+  input, select {
+    width: 100%; /* Ensure input/select fields take full width */
+    margin: 0.5em 0; /* Add space between fields */
+  }
+}
+
+/* For mobile devices (phones in portrait mode) */
+@media (max-width: 768px) {
+  textarea {
+    width: 100%; /* Ensure textarea takes full width on small screens */
+  }
+
+  .container {
+    display: block; /* Stack the form fields vertically */
+  }
+
+  label {
+    font-size: 0.9em; /* Adjust font size for labels */
+    text-align: left; /* Align labels to the left on mobile */
+  }
+
+  input, select {
+    width: 100%; /* Ensure input/select fields take full width */
+    margin: 0.5em 0; /* Add space between fields */
+  }
+
+  button {
+    width: 100%; /* Ensure the submit button takes full width */
+    padding: 1em; /* Add padding for better usability */
+  }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+  label {
+    font-size: 0.85em; /* Further reduce label font size */
+  }
+
+  input, select {
+    width: 100%; /* Ensure input/select fields take full width */
+  }
+
+  button {
+    padding: 1em; /* Ensure button is touch-friendly */
+    font-size: 1em; /* Adjust font size for button */
+  }
   }
 </style>

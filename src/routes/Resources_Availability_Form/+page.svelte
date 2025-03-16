@@ -88,5 +88,51 @@
     button:hover /* Hover effect for button */{
       background-color: #45a049;
     }
+    @media (max-width: 1200px) {
+    main {
+        padding: 1.5rem; /* Reduce padding for tablets */
+        max-width: 500px; /* Reduce form width */
+    }
+
+    input, textarea, button {
+        font-size: 1.1rem; /* Slightly larger font for readability */
+    }
+
+    button {
+        padding: 0.9rem; /* Adjust button padding */
+    }
+}
+
+/* For mobile devices (phones in portrait mode) */
+@media (max-width: 768px) {
+    main {
+        padding: 1.2rem; /* Reduce padding for smaller screens */
+        max-width: 100%; /* Ensure form takes full width on small screens */
+    }
+
+    input, textarea, button {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    button {
+        padding: 1rem; /* Adjust button padding */
+    }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+    main {
+        padding: 1rem; /* Further reduce padding */
+        max-width: 100%; /* Ensure form takes full width on very small screens */
+    }
+
+    input, textarea, button {
+        font-size: 0.9rem; /* Adjust font size for very small screens */
+    }
+
+    button {
+        padding: 0.9rem; /* Adjust button padding for small screens */
+    }
+}
   </style>
   
