@@ -6,6 +6,8 @@
   //Export the load function
   export let data;
   const { alerts, error, message } = data;
+
+  import { format } from 'date-fns';
 </script>
 
 <div class="PageContentContainer">
@@ -23,6 +25,9 @@
           <li>{alert.alertLevel}</li>
           <li>{alert.region}</li>
           <li>{alert.description}</li>
+
+          <li>Alerted posted at: {format(new Date(alert.createdAt), 'MM/dd/yyyy hh:mm a')}</li>
+          <li>Updated at: {format(new Date(alert.updatedAt), 'MM/dd/yyyy hh:mm a')}</li>
         {/each}
       </ul>
     </div>
