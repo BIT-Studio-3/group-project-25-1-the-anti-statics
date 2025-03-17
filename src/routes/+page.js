@@ -15,7 +15,7 @@ export async function load() {
         console.log(alerts);
         
         //Return the data
-        return {alerts};
+        return {alerts: alerts.data};
     } catch (error) {
         //Console the error
         console.log('Error fetching data:', error);
