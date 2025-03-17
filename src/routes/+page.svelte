@@ -55,12 +55,22 @@
         width: 25em;
         min-height: 80vh;
         justify-self: left;
+        background-color: #ECA869;
     }
 
     .AlertsList li {
         margin-top: 0.5em;
         list-style: none;
         padding-left: 0.5em;
+        background-color: #ECA869;
+    }
+
+    .AlertsList em{
+        background-color: #ECA869;
+    }
+
+    .AlertsCard h3{
+        background-color: #ECA869;
     }
 
     .pinmap {

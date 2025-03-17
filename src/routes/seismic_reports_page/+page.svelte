@@ -105,13 +105,13 @@
 
     details {
         padding: 0.5em;
-        background-color: #b7daf8;
+        background-color: #eed5be;
         border-radius: 0.5em;
         padding-left: 10px;
     }
 
     summary {
-        background-color: #689fd4;
+        background-color: #ECA869;
         color: white;
         list-style-position: outside;
         margin-left: 10px;

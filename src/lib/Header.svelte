@@ -29,7 +29,9 @@
 </header>
 
 <style>
-
+*{
+    background-color: #B5D5C5;
+}
     a {
         text-decoration: none;
         background-color: inherit;
