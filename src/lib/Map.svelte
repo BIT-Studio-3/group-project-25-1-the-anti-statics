@@ -1,7 +1,7 @@
 <!-- https://docs.maptiler.com/svelte/?utm_medium=social&utm_source=youtube&utm_campaign=2022-08%20|%20cloud%20|%20maps%20in&utm_content=map%20in%20svelte&utm_term=desklink -->
 <script>
   import { onMount } from 'svelte';
-  import maplibre from 'maplibre-gl';
+  //import maplibre from 'maplibre-gl';
   import {Map, MapStyle, Marker, config} from '@maptiler/sdk';
   import '@maptiler/sdk/dist/maptiler-sdk.css';
 
@@ -15,15 +15,16 @@
   { lng: 175.2793, lat: -37.7870, title: 'Hamilton' },
 ];
 
+config.apiKey = 'TF6Py0XR1AgDeYc7OFw8';
+
+
   onMount(() => {
-    map = new maplibre.Map({
+    map = new Map({
       container: mapContainer,
-      style: "https://api.maptiler.com/maps/streets/style.json?key=TF6Py0XR1AgDeYc7OFw8",
+      style: MapStyle.STREETS,
       center: [171.8890, -40.9006], 
       zoom: 4.5, 
     });
-
-    map.addControl(new maplibre.NavigationControl(), 'top-left');
     
     locations.forEach(location => {
       new Marker({color: "#FF0000"})
