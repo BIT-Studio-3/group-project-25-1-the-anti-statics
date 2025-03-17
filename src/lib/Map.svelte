@@ -2,7 +2,7 @@
 <script>
   import { onMount } from 'svelte';
   import maplibre from 'maplibre-gl';
-  import {Marker} from '@maptiler/sdk';
+  import {Map, MapStyle, Marker, config} from '@maptiler/sdk';
   import '@maptiler/sdk/dist/maptiler-sdk.css';
 
   
