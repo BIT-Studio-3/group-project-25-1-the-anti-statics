@@ -102,7 +102,9 @@
         padding: 0.8em;
         margin-left: 1em;
         display:flex;
-        padding: 0.2em;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        flex-direction: row;
     }
     h3{
         font-size: large;
@@ -111,26 +113,113 @@
 
     .zero {
         color: #3d995d;
-        border: solid black 2px;
     }
     .one {
         color: #0000ff;
-        border: solid black 2px;
     }
     .two {
         color: #ffff00;
-        border: solid black 2px;
     }
     .three {
         color: #ff6600;
-        border: solid black 2px;
     }
     .four {
         color: #fe0000;
-        border: solid black 2px;
     }
     .five{
-        color: #999888;
-        border: solid black 2px;    
+        color: #999888;  
+    }
+    .zero, .one, .two, .three, .four, .five {
+        width: 60px; /* Set fixed width */
+        height: 30px; /* Set fixed height */
+        display: inline-block;
+        border-radius: 4px; /* Optional rounded corners */
+    }
+    @media (max-width: 1200px) {
+        /* For tablets and smaller desktops */
+        .cardcontainer {
+            grid-template-columns: repeat(2, 1fr); /* Adjust the grid to 2 columns */
+            margin-left: 1.5em;
+            margin-right: 1.5em;
+        }
+
+        h2 {
+            font-size: 1.8rem; /* Adjust heading size */
+        }
+
+        h3 {
+            font-size: 1.4rem; /* Adjust font size for subheading */
+        }
+
+        .volcanocard {
+            padding: 1em;
+            font-size: 1rem; /* Slightly adjust font size for smaller screens */
+        }
+    }
+
+    @media (max-width: 768px) {
+        /* For mobile devices */
+        .cardcontainer {
+            grid-template-columns: 1fr; /* Stack cards in one column */
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+
+        h2 {
+            font-size: 1.6rem; /* Slightly smaller heading for smaller screens */
+        }
+
+        h3 {
+            font-size: 1.3rem; /* Slightly smaller subheading */
+        }
+
+        .volcanocard {
+            padding: 1.2em; /* Increase padding slightly on small screens */
+            font-size: 0.9rem; /* Reduce font size on small screens */
+        }
+
+        .Code {
+            padding: 0.8em;
+            flex-direction: row; /* Stack the color code blocks vertically */
+            margin-left: 1em;
+        }
+
+        .zero, .one, .two, .three, .four, .five {
+            width: 35px; /* Adjust the size of the color blocks */
+            height: 25px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* For very small screens (phones in portrait mode) */
+        .cardcontainer {
+            grid-template-columns: 1fr; /* Stack cards in one column */
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.4rem; /* Even smaller font for mobile */
+        }
+
+        h3 {
+            font-size: 1.2rem; /* Smaller subheading for mobile */
+        }
+
+        .volcanocard {
+            padding: 1em; /* Adjust padding */
+            font-size: 0.8rem; /* Adjust font size */
+        }
+
+        .Code {
+            flex-direction: row;
+            margin-left: 0.5em;
+            padding: 0.5em;
+        }
+
+        .zero, .one, .two, .three, .four, .five {
+            width: 30px; /* Even smaller color blocks */
+            height: 20px;
+        }
     }
 </style>

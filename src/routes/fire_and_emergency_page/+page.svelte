@@ -87,4 +87,50 @@
   #Extreme{
     background-color: red;
   }
+  @media (max-width: 1200px) {
+  h1 {
+    font-size: 1.8em; /* Adjust heading size for tablets */
+  }
+
+  h3 {
+    font-size: 1.2em; /* Adjust subheading size */
+  }
+
+  .card {
+    width: calc(50% - 2em); /* Adjust card width for tablets, 2 cards per row */
+    margin: 1em; /* Adjust margin for cards */
+  }
+}
+
+/* For mobile devices (phones in portrait mode) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6em; /* Adjust heading size for smaller screens */
+  }
+
+  h3 {
+    font-size: 1.1em; /* Adjust subheading size for smaller screens */
+  }
+
+  .card {
+    width: 100%; /* Cards take full width on mobile */
+    margin: 0.8em 0; /* Adjust margin for mobile */
+  }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4em; /* Further reduce heading size */
+  }
+
+  h3 {
+    font-size: 1em; /* Further reduce subheading size */
+  }
+
+  .card {
+    width: 100%; /* Ensure the card takes full width */
+    margin: 0.5em 0; /* Further reduce margin for very small screens */
+  }
+}
 </style>

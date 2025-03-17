@@ -123,6 +123,105 @@
         padding:1em;
         border: none;
     }
+    @media (max-width: 1200px) {
+    h1 {
+        font-size: 2rem; /* Adjust page title font size */
+    }
 
+    h2 {
+        font-size: 1.8rem; /* Adjust quake details heading size */
+    }
+
+    h3 {
+        font-size: 1.4rem; /* Adjust subheading font size */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    .container {
+        padding: 1.5em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    details {
+        padding: 1em;
+    }
+
+    summary {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
+}
+
+/* For mobile devices (phones in portrait mode) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem; /* Adjust page title font size */
+    }
+
+    h2 {
+        font-size: 1.6rem; /* Adjust quake details heading size */
+    }
+
+    h3 {
+        font-size: 1.3rem; /* Adjust subheading font size */
+    }
+
+    p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+
+    .container {
+        padding: 1.2em;
+        margin-left: 0.8em;
+        margin-right: 0.8em;
+    }
+
+    details {
+        padding: 0.8em;
+    }
+
+    summary {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem; /* Even smaller page title font size */
+    }
+
+    h2 {
+        font-size: 1.4rem; /* Even smaller quake details heading size */
+    }
+
+    h3 {
+        font-size: 1.2rem; /* Smaller subheading font size */
+    }
+
+    p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+
+    .container {
+        padding: 1em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    details {
+        padding: 0.6em;
+    }
+
+    summary {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
 </style>
 
