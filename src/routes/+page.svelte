@@ -18,7 +18,11 @@
       <h3>Recent Alerts</h3>
       <ul class="AlertsList">
         {#each alerts as alert}
-          <li>{alert}</li>
+          <li>{alert.title}</li>
+          <li>{alert.emergencyType}</li>
+          <li>{alert.alertLevel}</li>
+          <li>{alert.region}</li>
+          <li>{alert.description}</li>
         {/each}
       </ul>
     </div>
@@ -57,6 +61,7 @@
     width: 25em;
     min-height: 80vh;
     justify-self: left;
+    color: #333;
   }
 
   .AlertsList li {
