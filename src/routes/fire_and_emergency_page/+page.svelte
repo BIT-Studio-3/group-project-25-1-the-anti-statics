@@ -70,8 +70,19 @@
     border: 2px solid black;
     border-radius: 5px;
     width:calc(min-content + 2em);
-    float:left
+    float:left;
+    background-color: #ECA869;
   }
+
+.card p{
+  background-color: #ECA869; 
+}
+
+.card h1{
+  background-color: #ECA869; 
+  color: black;
+}
+
   p{
     margin: 3px;
   }
