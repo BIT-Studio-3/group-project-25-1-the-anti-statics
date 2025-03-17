@@ -90,13 +90,15 @@
         }
 
         .pinmap {
-            width: 100%; /* Make the map take full width */
-            max-width: 500px; /* Limit map size */
+            width: 90%;
         }
     }
 
     @media (max-width: 768px) {
         /* For mobile devices */
+        .AlertsCard{
+            height: 50vh;
+        }
         .PageContentContainer {
             flex-direction: column; /* Stack the items vertically */
             align-items: center; /* Center items */
@@ -109,8 +111,7 @@
         }
 
         .pinmap {
-            width: 100%; /* Make map fill the screen */
-            max-width: 400px; /* Limit map size */
+            width: 90%; 
         }
     }
 
@@ -122,8 +123,7 @@
         }
 
         .pinmap {
-            width: 100%; /* Full width for map */
-            max-width: 300px; /* Limit map size on small screens */
+            width: 90%; 
         }
     }
 </style>
