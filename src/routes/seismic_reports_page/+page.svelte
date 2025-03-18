@@ -92,20 +92,6 @@
         font-weight: bold;
     }
 
-    div {
-        
-        margin: 0.6em;
-    }
-
-    h3 {
-        padding-left: 0.3em;
-    }
-
-    p {
-        padding-top: 0.1em;
-        padding-left: 0.8em;
-    }
-
     details {
         padding: 1em;
         background-color: #ecf0f1;
@@ -115,7 +101,7 @@
     }
 
     summary {
-        background-color: #3498db;
+        /* background-color: #3498db; */
         color: white;
         padding: 10px 15px;
         border-radius: 5px;
