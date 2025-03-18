@@ -34,7 +34,6 @@ export async function load({ fetch }) {
       region: camera.region.name,
     }));
 
-    console.log(cameras);
     return { cameras }
   } catch (error) {
     console.error('Error fetching data:', error);
