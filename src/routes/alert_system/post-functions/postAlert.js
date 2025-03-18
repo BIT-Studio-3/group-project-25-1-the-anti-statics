@@ -3,7 +3,7 @@ export async function postAlert(alertData) {
     console.log("Posting alert with data:", alertData);
 
     alertData.alertLevel = parseInt(alertData.alertLevel);
-    const response = await fetch("http://localhost:3000/api/v1/alerts", {
+    const response = await fetch('https://group-project-25-1-the-anti-statics-api.onrender.com/api/v1/alerts', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
