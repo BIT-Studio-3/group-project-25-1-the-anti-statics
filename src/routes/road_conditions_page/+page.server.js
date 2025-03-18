@@ -34,7 +34,10 @@ export async function load({ fetch }) {
       region: camera.region.name,
     }));
 
-    return { cameras }
+    //Filter for Otago Cameras
+    let otagoCameras = cameras.filter(camera => camera.region === 'Otago');
+
+    return { cameras: otagoCameras }
   } catch (error) {
     console.error('Error fetching data:', error);
     return { error: 'The server is currently unreachable.' }
