@@ -8,7 +8,7 @@
 <h1>Quakes</h1>
 <div class="container">
     <details close>
-        <summary><h2>MMI 5 Quakes</h2></summary>
+        <summary><h2 class="section-title">MMI 5 Quakes</h2></summary>
         <div class="card-grid">
         {#each data.quakes.features as thing}
             <div class="card">
@@ -26,7 +26,7 @@
 </div>
 <div class="container">
     <details close>
-        <summary><h2>MMI 6 Quakes</h2></summary>
+        <summary><h2 class="section-title">MMI 6 Quakes</h2></summary>
         <div class="card-grid">
             {#each data.quakes2.features as thing}
                 <div class="card">
@@ -44,7 +44,7 @@
 </div>
 <div class="container">
     <details open>
-        <summary><h2>MMI 7 Quakes</h2></summary>
+        <summary><h2 class="section-title">MMI 7 Quakes</h2></summary>
         <div class="card-grid">
             {#each data.quakes3.features as thing}
                 <div class="card">
@@ -62,7 +62,7 @@
 </div>
 <div class="container">
     <details open>
-        <summary><h2>MMI 8 Quakes</h2></summary>
+        <summary><h2 class="section-title">MMI 8 Quakes</h2></summary>
         <div class="card-grid">
             {#each data.quakes4.features as thing}
                 <div class="card">
@@ -86,6 +86,10 @@
         margin-bottom: 1em;
         font-weight: bold;
         color: #2c3e50;
+    }
+    .section-title {
+        font-size: 1.8em;
+        font-weight: bold;
     }
 
     div {
