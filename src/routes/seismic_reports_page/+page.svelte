@@ -64,7 +64,7 @@
     <details open>
         <summary><h2>MMI 8 Quakes</h2></summary>
         <div class="card-grid">
-            {#each data.quakes2.features as thing}
+            {#each data.quakes4.features as thing}
                 <div class="card">
                     <h3 class="quake-locality">{thing.properties.locality}</h3>
                     <div class="quake-info">
@@ -111,13 +111,41 @@
     }
 
     summary {
-        background-color: #689fd4;
+        background-color: #3498db;
         color: white;
-        list-style-position: outside;
-        margin-left: 10px;
-        padding: 10px 10px 10px 20px;
+        padding: 10px 15px;
         border-radius: 5px;
+        font-size: 1.2em;
+        cursor: pointer;
+        list-style-type: none;
     }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5em;
+    }
+
+    .card {
+        background-color: #ffffff;
+        padding: 1.5em;
+        border-radius: 10px;
+        border: 1px solid #bdc3c7;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .quake-locality {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 0.8em;
+        color: #34495e;
+    }
+
+    .quake-info p {
+        margin: 0.5em 0;
+        font-size: 1.1em;
+        color: #7f8c8d;
+    }
+
 
     .container{
         padding: 1.5em;
