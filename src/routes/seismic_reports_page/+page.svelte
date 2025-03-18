@@ -9,81 +9,73 @@
 <div class="container">
     <details close>
         <summary><h2>MMI 5 Quakes</h2></summary>
+        <div class="card-grid">
         {#each data.quakes.features as thing}
-            <div>
-                <h2>{thing.properties.locality}</h2>
-                <h3>Coordinates (y, x):</h3>
-                <p>{thing.geometry.coordinates}</p>
-                <h3>Depth:</h3>
-                <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <h3>Time:</h3>
-                <p>
-                    Date: {thing.properties.time
-                        .replace(/[T]/g, " Time: ")
-                        .replace(/[Z]/g, " ")}
-                </p>
+            <div class="card">
+                <h3 class="quake-locality">{thing.properties.locality}</h3>
+                <div class="quake-info">
+                    <p><strong>Coordinates:</strong> {thing.geometry.coordinates}</p>
+                    <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
+                    <p><strong>Time:</strong> {thing.properties.time.replace(/[T]/g, " Time: ").replace(/[Z]/g, " ")}</p>
+                </div>
             </div>
         {/each}
+    </div>
+
     </details>
 </div>
 <div class="container">
     <details close>
         <summary><h2>MMI 6 Quakes</h2></summary>
-        {#each data.quakes2.features as thing}
-            <div>
-                <h2>{thing.properties.locality}</h2>
-                <h3>Coordinates (y, x):</h3>
-                <p>{thing.geometry.coordinates}</p>
-                <h3>Depth:</h3>
-                <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <h3>Time:</h3>
-                <p>
-                    {thing.properties.time
-                        .replace(/[TZ]/g, " ")
-                        .replace(/[Z]/g, " ")}
-                </p>
-            </div>
-        {/each}
+        <div class="card-grid">
+            {#each data.quakes2.features as thing}
+                <div class="card">
+                    <h3 class="quake-locality">{thing.properties.locality}</h3>
+                    <div class="quake-info">
+                        <p><strong>Coordinates:</strong> {thing.geometry.coordinates}</p>
+                        <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
+                        <p><strong>Time:</strong> {thing.properties.time.replace(/[TZ]/g, " ").replace(/[Z]/g, " ")}</p>
+                    </div>
+                </div>
+            {/each}
+        </div>
+
     </details>
 </div>
 <div class="container">
     <details open>
         <summary><h2>MMI 7 Quakes</h2></summary>
-        {#each data.quakes3.features as thing}
-            <div>
-                <h2>{thing.properties.locality}</h2>
-                <h3>Coordinates (y, x):</h3>
-                <p>{thing.geometry.coordinates}</p>
-                <h3>Depth:</h3>
-                <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <h3>Time:</h3>
-                <p>
-                    {thing.properties.time
-                        .replace(/[TZ]/g, " ")
-                        .replace(/[Z]/g, " ")}
-                </p>
-            </div>
-        {/each}
+        <div class="card-grid">
+            {#each data.quakes3.features as thing}
+                <div class="card">
+                    <h3 class="quake-locality">{thing.properties.locality}</h3>
+                    <div class="quake-info">
+                        <p><strong>Coordinates:</strong> {thing.geometry.coordinates}</p>
+                        <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
+                        <p><strong>Time:</strong> {thing.properties.time.replace(/[TZ]/g, " ").replace(/[Z]/g, " ")}</p>
+                    </div>
+                </div>
+            {/each}
+        </div>
+
     </details>
 </div>
 <div class="container">
     <details open>
         <summary><h2>MMI 8 Quakes</h2></summary>
-        {#each data.quakes4.features as thing}
-            <div>
-                <h2>{thing.properties.locality}</h2>
-                <h3>Coordinates (y, x):</h3>
-                <p>{thing.geometry.coordinates}</p>
-                <h3>Depth:</h3>
-                <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <h3>Time:</h3>
-                <p>
-                    {thing.properties.time
-                        .replace(/[TZ]/g, " ")
-                        .replace(/[Z]/g, " ")}
-                </p>
-            </div>
-        {/each}
+        <div class="card-grid">
+            {#each data.quakes2.features as thing}
+                <div class="card">
+                    <h3 class="quake-locality">{thing.properties.locality}</h3>
+                    <div class="quake-info">
+                        <p><strong>Coordinates:</strong> {thing.geometry.coordinates}</p>
+                        <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
+                        <p><strong>Time:</strong> {thing.properties.time.replace(/[TZ]/g, " ").replace(/[Z]/g, " ")}</p>
+                    </div>
+                </div>
+            {/each}
+        </div>
+
     </details>
 </div>
 
