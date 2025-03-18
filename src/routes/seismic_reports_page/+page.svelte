@@ -89,7 +89,7 @@
     }
 
     div {
-        border: 2px solid black;
+        
         margin: 0.6em;
     }
 
@@ -103,10 +103,11 @@
     }
 
     details {
-        padding: 0.5em;
-        background-color: #b7daf8;
-        border-radius: 0.5em;
-        padding-left: 10px;
+        padding: 1em;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     summary {
@@ -119,8 +120,10 @@
     }
 
     .container{
-        padding:1em;
-        border: none;
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
     }
 
 </style>
