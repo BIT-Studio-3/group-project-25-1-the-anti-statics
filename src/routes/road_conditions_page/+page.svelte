@@ -1,6 +1,14 @@
 <script>
   import Cameras from "../../lib/Cameras.svelte";
   export let data;
+
+  const { error, message } = data;
 </script>
 
-<Cameras {data} />
+{#if error}
+  <p>{error}</p>
+{:else if message}
+  <p>{message}</p>
+{:else}
+  <Cameras {data} />
+{/if}
