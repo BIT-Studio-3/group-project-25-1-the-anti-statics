@@ -1,4 +1,3 @@
-
 <script>
     // exporting quake data
     export let data;
@@ -8,25 +7,25 @@
 <h1>Quakes</h1>
 <div class="container">
     <details close>
-        <summary><h2 class="section-title">MMI 5 Quakes</h2></summary>
+        <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 5 Quakes</h2></summary>
         <div class="card-grid">
-        {#each data.quakes.features as thing}
-            <div class="card">
-                <h3 class="quake-locality">{thing.properties.locality}</h3>
-                <div class="quake-info">
-                    <p><strong>Coordinates:</strong> {thing.geometry.coordinates[0].toFixed(1)} , {thing.geometry.coordinates[1].toFixed(1)}</p>
-                    <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
-                    <p><strong>Time:</strong> {thing.properties.time.replace(/[T]/g, " Time: ").replace(/[Z]/g, " ")}</p>
+            {#each data.quakes.features as thing}
+                <div class="card">
+                    <h3 class="quake-locality">{thing.properties.locality}</h3>
+                    <div class="quake-info">
+                        <p><strong>Coordinates:</strong> {thing.geometry.coordinates[0].toFixed(1)} , {thing.geometry.coordinates[1].toFixed(1)}</p>
+                        <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
+                        <p><strong>Time:</strong> {thing.properties.time.replace(/[T]/g, " Time: ").replace(/[Z]/g, " ")}</p>
+                    </div>
                 </div>
-            </div>
-        {/each}
-    </div>
-
+            {/each}
+        </div>
     </details>
 </div>
+
 <div class="container">
     <details close>
-        <summary><h2 class="section-title">MMI 6 Quakes</h2></summary>
+        <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 6 Quakes</h2></summary>
         <div class="card-grid">
             {#each data.quakes2.features as thing}
                 <div class="card">
@@ -39,12 +38,12 @@
                 </div>
             {/each}
         </div>
-
     </details>
 </div>
+
 <div class="container">
     <details open>
-        <summary><h2 class="section-title">MMI 7 Quakes</h2></summary>
+        <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 7 Quakes</h2></summary>
         <div class="card-grid">
             {#each data.quakes3.features as thing}
                 <div class="card">
@@ -57,12 +56,12 @@
                 </div>
             {/each}
         </div>
-
     </details>
 </div>
+
 <div class="container">
     <details open>
-        <summary><h2 class="section-title">MMI 8 Quakes</h2></summary>
+        <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 8 Quakes</h2></summary>
         <div class="card-grid">
             {#each data.quakes4.features as thing}
                 <div class="card">
@@ -75,7 +74,6 @@
                 </div>
             {/each}
         </div>
-
     </details>
 </div>
 
@@ -94,9 +92,25 @@
         font-weight: bold;
         color: #2c3e50;
     }
+
+    .arrow-icon {
+        transition: transform 0.2s ease;
+    }
+
     .section-title {
         font-size: 1.8em;
         font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .section-title:hover {
+        color: #0b3d72; 
+    }
+
+    .section-title:hover .arrow-icon {
+        transform: rotate(90deg);
     }
 
     details {
@@ -129,12 +143,14 @@
         border-radius: 10px;
         border: 1px solid #bdc3c7;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
     }
-    
+
     .card:hover {
         transform: scale(1.05);
-        transition: transform 0.3s ease-in-out;
     }
+
     .quake-locality {
         font-size: 1.5em;
         font-weight: bold;
@@ -147,6 +163,4 @@
         font-size: 1.1em;
         color: #7f8c8d;
     }
-
 </style>
-
