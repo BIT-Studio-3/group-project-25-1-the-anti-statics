@@ -1,6 +1,6 @@
 <script>
   export let data;
-  const { cameras, error, message } = data;
+  const { cameras } = data;
 
   console.log(cameras);
   let selectedCameraId = null;
@@ -14,7 +14,7 @@
 
 <section>
   <h2 class="text-2xl font-bold mb-2">NZTA Traffic Camera</h2>
-
+    
   <select bind:value={selectedCameraId}>
     <option value="" disabled>Select a camera</option>
     {#each cameras as camera}
