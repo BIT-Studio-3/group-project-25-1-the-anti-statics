@@ -80,6 +80,13 @@
 </div>
 
 <style>
+    h1{
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 1em;
+        font-weight: bold;
+        color: #2c3e50;
+    }
 
     div {
         border: 2px solid black;
