@@ -1,24 +1,43 @@
-/*let map;
+import { XMLParser } from 'fast-xml-parser';
 
-async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
+export async function load({ fetch }) {
+  try {
+    const response = await fetch('https://trafficnz.info/service/traffic/rest/4/cameras/all');
 
-  map = new Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
+    if (!response.ok) {
+      return { message: "No cameras available" }
+    }
 
-initMap();
+    const xmlText = await response.text(); // Get XML as text
 
-function initMap1() {
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 13,
-      center: { lat: 34.04924594193164, lng: -118.24104309082031 },
-    });
-    const trafficLayer = new google.maps.TrafficLayer();
-  
-    trafficLayer.setMap(map);
+    // Create an XMLParser instance
+    const parser = new XMLParser();
+
+    // Parse the XML into a JSON-like object
+    const data = parser.parse(xmlText);
+
+    // Base URL for constructing image URLs
+    const baseUrl = "https://trafficnz.info";
+
+    // Map cameras into a new array
+    let cameras = data.response.camera.map((camera) => ({
+      id: camera.id,
+      name: camera.name,
+      description: camera.description,
+      direction: camera.direction,
+      highway: camera.highway,
+      latitude: camera.latitude,
+      longitude: camera.longitude,
+      imageUrl: `${baseUrl}${camera.imageUrl}`,
+      thumbUrl: `${baseUrl}${camera.thumbUrl}`,
+      regionid: camera.region.id,
+      region: camera.region.name,
+    }));
+
+    console.log(cameras);
+    return { cameras }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return { error: 'The server is currently unreachable.' }
   }
-  
-  window.initMap = initMap;*/
+}
