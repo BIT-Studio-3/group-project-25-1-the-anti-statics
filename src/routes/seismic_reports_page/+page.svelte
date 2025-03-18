@@ -14,7 +14,7 @@
             <div class="card">
                 <h3 class="quake-locality">{thing.properties.locality}</h3>
                 <div class="quake-info">
-                    <p><strong>Coordinates:</strong> {thing.geometry.coordinates}</p>
+                    <p><strong>Coordinates:</strong> {thing.geometry.coordinates[0].toFixed(1)} , {thing.geometry.coordinates[1].toFixed(1)}</p>
                     <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
                     <p><strong>Time:</strong> {thing.properties.time.replace(/[T]/g, " Time: ").replace(/[Z]/g, " ")}</p>
                 </div>
