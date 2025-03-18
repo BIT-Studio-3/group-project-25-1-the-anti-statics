@@ -80,6 +80,13 @@
 </div>
 
 <style>
+    .container{
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
     h1{
         text-align: center;
         font-size: 2.5em;
@@ -123,6 +130,11 @@
         border: 1px solid #bdc3c7;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+    
+    .card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+    }
     .quake-locality {
         font-size: 1.5em;
         font-weight: bold;
@@ -134,14 +146,6 @@
         margin: 0.5em 0;
         font-size: 1.1em;
         color: #7f8c8d;
-    }
-
-
-    .container{
-        padding: 1.5em;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em;
     }
 
 </style>
