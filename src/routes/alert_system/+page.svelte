@@ -1,23 +1,30 @@
-<h1>Alerts</h1>
-<p>
-  This where users will be able to post alerts. They will be able to choose
-  emergency type, level, and region.
-</p>
-<p>
-  Alerts will show up in a feed on another page. This form currently does
-  nothing. Once we learn more about logins, this page will be functional.
-</p>
+<script>
+    let formAlert = {
+        title: '',
+        type: '',
+        level: '',
+        region: '',
+        description: ''
+    }
 
-<form>
+    function handleSubmit() {
+        const alertData = JSON.stringify(formAlert);
+        console.log(alertData);
+    }
+</script>
+
+<h1>Alerts</h1>
+
+<form on:submit|preventDefault={handleSubmit}>
   <h2>Post Alert:</h2>
   <div class="container">
     <label for="title">Title:</label>
 
-    <input typ="text" id="title" name="alert-title" />
+    <input type="text" id="title" name="alert-title" bind:value={formAlert.title}/>
 
     <label for="type">Emergency type:</label>
 
-    <select for="type" id="type">
+    <select for="type" id="type" bind:value={formAlert.type}>
       <option value="">Please select an emergency type</option>
       <option value="fire">Fire</option>
       <option value="flood">Flooding</option>
@@ -26,7 +33,7 @@
 
     <label for="level">Select alert level:</label>
 
-    <select name="level" id="level">
+    <select name="level" id="level" bind:value={formAlert.level}>
       <option value="one">1</option>
       <option value="two">2</option>
       <option value="three">3</option>
@@ -36,16 +43,16 @@
 
     <label for="region">Choose Region:</label>
 
-    <select name="region" id="region">
+    <select name="region" id="region" bind:value={formAlert.region}>
       <option value="">Please select a region</option>
-      <option value="otago">Otago</option>
-      <option value="canterbury">Canterbury</option>
-      <option value="southland">Southland</option>
+      <option value="Otago">Otago</option>
+      <option value="Canterbury">Canterbury</option>
+      <option value="Southland">Southland</option>
     </select>
 
     <label for="description">Description:</label>
 
-    <textarea id="description" name="description"></textarea>
+    <textarea id="description" name="description" bind:value={formAlert.description}></textarea>
   </div>
   <div>
     <button type="submit">Submit</button>
@@ -66,6 +73,7 @@
     border-color: black;
     border: solid;
     padding: 1em;
+    background-color:#ECA869;
   }
   label {
     text-align: right;
@@ -90,15 +98,64 @@
   textarea{
     margin: 0.5em;
   }
-  @media (max-width: 1281px) {
-    .container {
-      display: block;
-    }
-    textarea {
-      width: auto;
-    }
-    label {
-      align-self:center;
-    }
+  @media (max-width: 1200px) {
+  .container {
+    display: block; /* Stack the form fields vertically */
+  }
+
+  textarea {
+    width: 100%; /* Ensure textarea takes full width */
+  }
+
+  label {
+    align-self: center; /* Align labels properly */
+  }
+
+  input, select {
+    width: 100%; /* Ensure input/select fields take full width */
+    margin: 0.5em 0; /* Add space between fields */
+  }
+}
+
+/* For mobile devices (phones in portrait mode) */
+@media (max-width: 768px) {
+  textarea {
+    width: 100%; /* Ensure textarea takes full width on small screens */
+  }
+
+  .container {
+    display: block; /* Stack the form fields vertically */
+  }
+
+  label {
+    font-size: 0.9em; /* Adjust font size for labels */
+    text-align: left; /* Align labels to the left on mobile */
+  }
+
+  input, select {
+    width: 100%; /* Ensure input/select fields take full width */
+    margin: 0.5em 0; /* Add space between fields */
+  }
+
+  button {
+    width: 100%; /* Ensure the submit button takes full width */
+    padding: 1em; /* Add padding for better usability */
+  }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+  label {
+    font-size: 0.85em; /* Further reduce label font size */
+  }
+
+  input, select {
+    width: 100%; /* Ensure input/select fields take full width */
+  }
+
+  button {
+    padding: 1em; /* Ensure button is touch-friendly */
+    font-size: 1em; /* Adjust font size for button */
+  }
   }
 </style>

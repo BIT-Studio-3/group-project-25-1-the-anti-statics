@@ -16,6 +16,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@maptiler/sdk": "^3.0.1",
 		"maplibre-gl": "^5.1.1",
 		"moment": "^2.30.1",
 		"rss-parser": "^3.13.0"
