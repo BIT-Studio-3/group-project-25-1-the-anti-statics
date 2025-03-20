@@ -91,4 +91,20 @@
         background-color: #B7DAF8;
     }
 
+    @media (max-width: 400px) {
+        .PageContentContainer {
+            flex-direction: column;
+        }
+
+        .AlertsCards {
+            width: 100%;
+            height: 78vh;
+        }
+
+        .pinmap {
+            width: 100%;
+            height: 50vh;
+        }
+    }
+
 </style>

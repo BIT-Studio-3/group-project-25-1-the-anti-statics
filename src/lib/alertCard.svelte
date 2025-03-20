@@ -29,4 +29,10 @@
     p{
         margin-top: 0.5em;
     }
+
+    @media (max-width: 400px) {
+        .alertCard {
+            width: 36vh;
+        }
+    }
 </style>
