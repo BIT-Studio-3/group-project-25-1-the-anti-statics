@@ -1,30 +1,80 @@
 <script>
-    let formAlert = {
-        title: '',
-        type: '',
-        level: '',
-        region: '',
-        description: ''
-    }
+  //Import post alert function
+  import { postAlert } from './post-functions/postAlert.js';  // Import the postAlert function
+  //Import post alert function variables
+  let postError = ''; 
+  let data = null; 
+  let error = ''; 
 
-    function handleSubmit() {
-        const alertData = JSON.stringify(formAlert);
-        console.log(alertData);
+  let title = '';
+  let type = '';
+  let level = '';
+  let region = '';
+  let description = '';
+
+
+
+  // Function to handle form submission
+  const submitAlert = async (event) => {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Form data object
+    const alertData = {
+      title,
+      emergencyType: type,   // Assuming you are using 'emergencyType' on the backend
+      alertLevel: level,
+      region,
+      description,
+    };
+
+    // Call the postAlert function and use the result directly
+    const result = await postAlert(alertData);
+
+    // Update the state with the result values directly
+    postError = result.postError;
+    data = result.data;
+    error = result.error;
+
+    // Log the result for debugging
+    console.log('Result from postAlert:', result);
+    console.log('Post error:', postError);
+    console.log('Post data:', data);
+    console.log('Error:', error);
+    
+    if (result.data) {
+      alert('Alert posted successfully!');
+      
+      // Reset form fields
+      title = '';
+      type = '';
+      level = '';
+      region = '';
+      description = '';
     }
+  };
+
 </script>
 
-<h1>Alerts</h1>
 
-<form on:submit|preventDefault={handleSubmit}>
+
+<h1>Alerts</h1>
+<p>
+  This where users will be able to post alerts. They will be able to choose
+  emergency type, level, and region.
+</p>
+<p>
+  Alerts will show up in a feed on another page. This form currently does
+  nothing. Once we learn more about logins, this page will be functional.
+</p>
+
+<form on:submit={submitAlert}>
   <h2>Post Alert:</h2>
   <div class="container">
     <label for="title">Title:</label>
-
-    <input type="text" id="title" name="alert-title" bind:value={formAlert.title}/>
+    <input type="text" id="title" bind:value={title} required />
 
     <label for="type">Emergency type:</label>
-
-    <select for="type" id="type" bind:value={formAlert.type}>
+    <select bind:value={type} required>
       <option value="">Please select an emergency type</option>
       <option value="fire">Fire</option>
       <option value="flood">Flooding</option>
@@ -32,18 +82,16 @@
     </select>
 
     <label for="level">Select alert level:</label>
-
-    <select name="level" id="level" bind:value={formAlert.level}>
-      <option value="one">1</option>
-      <option value="two">2</option>
-      <option value="three">3</option>
-      <option value="four">4</option>
-      <option value="five">5</option>
+    <select bind:value={level} required>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
     </select>
 
     <label for="region">Choose Region:</label>
-
-    <select name="region" id="region" bind:value={formAlert.region}>
+    <select bind:value={region} required>
       <option value="">Please select a region</option>
       <option value="Otago">Otago</option>
       <option value="Canterbury">Canterbury</option>
@@ -51,13 +99,24 @@
     </select>
 
     <label for="description">Description:</label>
-
-    <textarea id="description" name="description" bind:value={formAlert.description}></textarea>
+    <textarea id="description" bind:value={description} required></textarea>
   </div>
   <div>
     <button type="submit">Submit</button>
   </div>
 </form>
+
+{#if postError}
+  <p style="color: red;">{postError}</p>
+{/if}
+
+{#if error}
+  <p style="color: red;">{error}</p>
+{/if}
+
+{#if data}
+  <p style="color: green;">Alert posted successfully!</p>
+{/if}
 
 <style>
   * {

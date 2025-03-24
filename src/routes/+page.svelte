@@ -1,52 +1,73 @@
 <script>
+  import { selectedAgency } from "$lib/stores.js";
 
-    import { selectedAgency } from '$lib/stores.js';
+  import Map from "../lib/Map.svelte";
 
+  //Export the load function
+  export let data;
+  const { alerts, error, message } = data;
 
-
-
-    import Map from '../lib/Map.svelte';
+  import { format } from 'date-fns';
 </script>
 
 <div class="PageContentContainer">
+  {#if error}
+    <div>{error}</div>
+  {:else if message}
+    <p>{message}</p>
+  {:else}
     <div class="AlertsCard">
-        <h3>Recent Alerts</h3>
-        <ul class="AlertsList">
-            <li>A cave has collapsed in Southland<br>
-                1 injury, 1 unknown<br>
-            <em>1/11/2024 10:20am</em></li>
-            <li>Theres been a mutiny in Nelson<br>
-                <em>18/10/2024 9:32am</em></li>
-        </ul>
-    </div>
+      <h3>Recent Alerts</h3>
+      <ul class="AlertsList">
+        {#each alerts as alert}
+          <li>{alert.title}</li>
+          <li>{alert.emergencyType}</li>
+          <li>{alert.alertLevel}</li>
+          <li>{alert.region}</li>
+          <li>{alert.description}</li>
 
-    <figure class="pinmap">
-        <h3>Active Disasters</h3>
-        <Map />
-    </figure>
-    
+          <li>Alerted posted at: {format(new Date(alert.createdAt), 'MM/dd/yyyy hh:mm a')}</li>
+          <li>Updated at: {format(new Date(alert.updatedAt), 'MM/dd/yyyy hh:mm a')}</li>
+        {/each}
+      </ul>
+    </div>
+  {/if}
+
+  <figure class="pinmap">
+    <h3>Active Disasters</h3>
+    <Map />
+  </figure>
 </div>
 
 <style>
+  h3 {
+    margin-top: 0.5em;
+    font-size: 180%;
+    text-align: center;
+  }
 
-    h3 {
-        margin-top: 0.5em;
-        font-size: 180%;
-        text-align: center;
-    }
+  img {
+    max-height: 90%;
+    width: auto;
+  }
 
-    img {
-        max-height: 90%;
-        width: auto;
-    }
+  .PageContentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
 
-    .PageContentContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        height: 100%;
-        width: 100%;
-    }
+  .AlertsCard {
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    width: 25em;
+    min-height: 80vh;
+    justify-self: left;
+    color: #333;
+  }
 
     .AlertsCard{
         display: flex;
