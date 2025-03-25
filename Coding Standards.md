@@ -124,6 +124,10 @@ Name the Pull Request e.g. Sprint 3, and give it the label 'Sprint'.
 
 > Note: (If there are merge conflicts) Before merging ``STAGING`` into ``main``, open ``main`` **locally** and pull ``STAGING`` as per described in **rule 8** above.
 
+**10. Knowing when to close Pull Requests**
+
+If a pull request is open longer than a week, it must be closed.
+
 ## Housekeeping
 
 **1. Don't place your local repo on OneDrive**
