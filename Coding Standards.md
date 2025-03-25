@@ -77,13 +77,13 @@ The branch name should be a brief description of the feature you are working on
 **5. Main Branch Commit Rules**
 **Do not** commit directly to the **main** branch unless the entire team has allowed you to do so.
 
-The **main** branch is the project's live production branch
+The ``main`` branch is the project's live production branch
 
-The **STAGING** branch is where all continous staged changes are pushed to, to prevent buggy changes entering **main**
+The ``STAGING`` branch is where all continous staged changes are pushed to, to prevent buggy changes entering **main**
 
-The only commits than can merged into **main** should be commits from the **STAGING** branch
+The only commits than can merged into ``main`` should be commits from the ``STAGING`` branch
 
-When creating pull requests on feature branches, make sure the **STAGING** branch is the base branch for the feature branch to be compared to.
+When creating pull requests on feature branches, make sure the ``STAGING`` branch is the base branch for the feature branch to be compared to.
 
 **6. Merging own Pull Requests**
 
