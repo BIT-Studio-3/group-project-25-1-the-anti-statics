@@ -18,9 +18,11 @@
   const submitAlert = async (event) => {
     event.preventDefault(); // Prevent the form from refreshing the page
 
+    let formattedTitle = isNaN(title) ? title : Number(title); //Check if the title contains numbers or not
+
     // Form data object
     const alertData = {
-      title,
+      title: formattedTitle,
       emergencyType: type,   // Assuming you are using 'emergencyType' on the backend
       alertLevel: level,
       region,
