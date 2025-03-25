@@ -116,6 +116,14 @@ The Merge editor will give you option to accept the incoming changes, the curren
 
 5. Once all files with merge conflicts have been resolved you can successfully commit and push the new changes to ``STAGING``.
 
+**9. Merging sprints from ``STAGING`` into ``main``**
+
+On the first Monday of a new sprint (following the end of a previous sprint), create a pull request to merge ``STAGING`` into ``main`` to integrate the previous sprint into the production environment of the website.
+
+Name the Pull Request e.g. Sprint 3, and give it the label 'Sprint'.
+
+> Note: (If there are merge conflicts) Before merging ``STAGING`` into ``main``, open ``main`` **locally** and pull ``STAGING`` as per described in **rule 8** above.
+
 ## Housekeeping
 
 **1. Don't place your local repo on OneDrive**
