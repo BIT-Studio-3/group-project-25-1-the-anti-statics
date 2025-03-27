@@ -1,0 +1,224 @@
+<script>
+    //Import post damage function
+    import { postDamage } from "./post-functions/postDamage.js"; // Import the postDamage function
+    //Import post alert function variables
+    let postError = "";
+    let data = null;
+    let error = "";
+
+    let name = "";
+    let type = "";
+    let level = "";
+    let location = "";
+    let count = "";
+    let cause = "";
+
+    // Function to handle form submission
+    const submitDamage = async (event) => {
+        event.preventDefault(); // Prevent the form from refreshing the page
+
+        // Form data object
+        const damageData = {
+            reporterName: name,
+            damageType: type, // Assuming you are using 'emergencyType' on the backend
+            damageLevel: level,
+            location: location,
+            count: count,
+            cause: cause,
+        };
+
+        // Call the postAlert function and use the result directly
+        const result = await postDamage(damageData);
+
+        // Update the state with the result values directly
+        postError = result.postError;
+        data = result.data;
+        error = result.error;
+
+        // Log the result for debugging
+        console.log("Result from postDamage:", result);
+        console.log("Post error:", postError);
+        console.log("Post data:", data);
+        console.log("Error:", error);
+
+        if (result.data) {
+            damage("Damage posted successfully!");
+
+            // Reset form fields
+            name = "";
+            type = "";
+            level = "";
+            location = "";
+            count = "";
+            cause = "";
+        }
+    };
+</script>
+
+<h1>Damage Log</h1>
+
+<form on:submit={submitDamage}>
+    <h2>Post Damage:</h2>
+    <div class="container">
+        <label for="title">Reporter Name:</label>
+        <input type="text" id="reporterName" bind:value={name} required />
+
+        <label for="type">Damage type:</label>
+        <select bind:value={type} required>
+            <option value="">Please select damage type</option>
+            <option value="fire">Residential</option>
+            <option value="flood">Environmental</option>
+            <option value="quake">Vehicle</option>
+            <option value="quake">Public Faacilities</option>
+        </select>
+
+        <label for="level">Select damage level:</label>
+        <select bind:value={level} required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="location">Choose location:</label>
+        <select bind:value={location} required>
+            <option value="">Please select location of damage</option>
+            <option value="Otago">Otago</option>
+            <option value="Canterbury">Canterbury</option>
+            <option value="Southland">Southland</option>
+        </select>
+
+        <label for="countAffected">Choose the range of individuals affected:</label>
+        <select bind:value={level} required>
+            <option value="1">less than 5</option>
+            <option value="2">5+</option>
+            <option value="3">10+</option>
+            <option value="4">20+</option>
+            <option value="5">50+</option>
+            <option value="6">100+</option>
+        </select>
+
+        <label for="cause">Possible cause of damage :</label>
+        <textarea id="cause" bind:value={cause} required></textarea>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+{#if postError}
+    <p style="color: red;">{postError}</p>
+{/if}
+
+{#if error}
+    <p style="color: red;">{error}</p>
+{/if}
+
+{#if data}
+    <p style="color: green;">Thank you reporter {name}, the damage has been logged successfully!</p>
+{/if}
+
+<style>
+    * {
+        font-family: sans-serif;
+        color: #333;
+    }
+    textarea {
+        vertical-align: top;
+        height: 10em;
+        width: 25em;
+    }
+    form {
+        border-color: black;
+        border: solid;
+        padding: 1em;
+        background-color: #eca869;
+    }
+    label {
+        text-align: right;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    div {
+        padding: 0.5em;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 10% 90%;
+    }
+    input {
+        max-width: fit-content;
+        margin: 0.5em;
+    }
+    select {
+        max-width: fit-content;
+        margin: 0.5em;
+    }
+    textarea {
+        margin: 0.5em;
+    }
+    @media (max-width: 1200px) {
+        .container {
+            display: block; /* Stack the form fields vertically */
+        }
+
+        textarea {
+            width: 100%; /* Ensure textarea takes full width */
+        }
+
+        label {
+            align-self: center; /* Align labels properly */
+        }
+
+        input,
+        select {
+            width: 100%; /* Ensure input/select fields take full width */
+            margin: 0.5em 0; /* Add space between fields */
+        }
+    }
+
+    /* For mobile devices (phones in portrait mode) */
+    @media (max-width: 768px) {
+        textarea {
+            width: 100%; /* Ensure textarea takes full width on small screens */
+        }
+
+        .container {
+            display: block; /* Stack the form fields vertically */
+        }
+
+        label {
+            font-size: 0.9em; /* Adjust font size for labels */
+            text-align: left; /* Align labels to the left on mobile */
+        }
+
+        input,
+        select {
+            width: 100%; /* Ensure input/select fields take full width */
+            margin: 0.5em 0; /* Add space between fields */
+        }
+
+        button {
+            width: 100%; /* Ensure the submit button takes full width */
+            padding: 1em; /* Add padding for better usability */
+        }
+    }
+
+    /* For very small screens (phones in portrait mode) */
+    @media (max-width: 480px) {
+        label {
+            font-size: 0.85em; /* Further reduce label font size */
+        }
+
+        input,
+        select {
+            width: 100%; /* Ensure input/select fields take full width */
+        }
+
+        button {
+            padding: 1em; /* Ensure button is touch-friendly */
+            font-size: 1em; /* Adjust font size for button */
+        }
+    }
+</style>
