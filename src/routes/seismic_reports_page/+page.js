@@ -7,6 +7,9 @@ export async function load({fetch}) {
     const quakes3 = await response3.json();
     const response4 = await fetch(`https://api.geonet.org.nz/quake?MMI=7`);
     const quakes4 = await response4.json();
-    return {quakes, quakes2, quakes3, quakes4};
+    const response5 = await fetch(`https://api.geonet.org.nz/volcano/val`);
+    const volcanos = await response5.json();
+    return {quakes, quakes2, quakes3, quakes4, volcanos};
 }
+
 
