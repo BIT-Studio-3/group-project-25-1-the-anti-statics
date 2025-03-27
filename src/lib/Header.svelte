@@ -1,13 +1,13 @@
 <script>
 const navLinks = [
-    {href: '/', text: 'weather_reports_page'},
-    {href: '/', text: 'seismic_reports_page'},
-    {href: '/', text: 'road_conditions_page'},
-    {href: '/', text: 'volcanic_activity_page'},
-    {href: '/', text: 'fire_and_emergency_page'},
-    {href: '/', text: 'rss'},
-    {href: '/', text: 'alert_system'},
-    {href: '/', text: 'Resources_Availability_Form'}
+    {href: '/weather_reports_page', text: 'weather_reports_page'},
+    {href: '/seismic_reports_page', text: 'seismic_reports_page'},
+    {href: '/road_conditions_page', text: 'road_conditions_page'},
+    {href: '/volcanic_activity_page', text: 'volcanic_activity_page'},
+    {href: '/fire_and_emergency_page', text: 'fire_and_emergency_page'},
+    {href: '/rss', text: 'rss'},
+    {href: '/alert_system', text: 'alert_system'},
+    {href: '/Resources_Availability_Form', text: 'Resources_Availability_Form'}
 ];
 
 let isDropdownOpen = false;
@@ -15,11 +15,23 @@ function toggleDropdown() {
         isDropdownOpen = !isDropdownOpen;
     }
 
+    function closeDropdown() {
+        isDropdownOpen = false;
+    }
+
     import { page } from "$app/stores";
 
     $: route = $page.route.id;
 
     import AgencySelect from "$lib/agencySelect.svelte";
+
+    let isSmallScreen = window.innerWidth <= 768;
+    window.addEventListener('resize', () => {
+        isSmallScreen = window.innerWidth <= 768;
+        if (!isSmallScreen) {
+            isDropdownOpen = false;
+        }
+    });
 </script>
 
 
@@ -34,7 +46,7 @@ function toggleDropdown() {
            
             <nav class="nav-links"> <!--navigation links for larger screens-->
                 {#each navLinks as { href, text }}  <!--loop through the navLinks arrays to create a link for each item-->
-                  <a href={href} class="nav-link">{text}</a>
+                <a href={href} class="nav-link" on:click={closeDropdown}>{text}</a>
                 {/each}
                 <AgencySelect />
               </nav>
