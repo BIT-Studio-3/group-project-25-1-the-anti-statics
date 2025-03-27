@@ -1,4 +1,3 @@
-
 <script>
     // exporting quake data
     export let data;
@@ -8,120 +7,134 @@
 <h1>Quakes</h1>
 <div class="container">
     <details close>
-        <summary><h2>MMI 5 Quakes</h2></summary>
-        {#each data.quakes.features as thing}
-            <div>
-                <h2>{thing.properties.locality}</h2>
-                <h3>Coordinates (y, x):</h3>
-                <p>{thing.geometry.coordinates}</p>
-                <h3>Depth:</h3>
-                <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <h3>Time:</h3>
-                <p>
-                    Date: {thing.properties.time
-                        .replace(/[T]/g, " Time: ")
-                        .replace(/[Z]/g, " ")}
-                </p>
-            </div>
-        {/each}
+        <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 5 Quakes</h2></summary>
+        <div class="card-grid">
+            {#each data.quakes.features as thing}
+                <div class="card">
+                    <h3 class="quake-locality">{thing.properties.locality}</h3>
+                    <div class="quake-info">
+                        <p><strong>Coordinates:</strong> {thing.geometry.coordinates[0].toFixed(1)} , {thing.geometry.coordinates[1].toFixed(1)}</p>
+                        <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
+                        <p><strong>Time:</strong> {thing.properties.time.replace(/[T]/g, " Time: ").replace(/[Z]/g, " ")}</p>
+                    </div>
+                </div>
+            {/each}
+        </div>
     </details>
 </div>
+
 <div class="container">
     <details close>
-        <summary><h2>MMI 6 Quakes</h2></summary>
-        {#each data.quakes2.features as thing}
-            <div>
-                <h2>{thing.properties.locality}</h2>
-                <h3>Coordinates (y, x):</h3>
-                <p>{thing.geometry.coordinates}</p>
-                <h3>Depth:</h3>
-                <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <h3>Time:</h3>
-                <p>
-                    {thing.properties.time
-                        .replace(/[TZ]/g, " ")
-                        .replace(/[Z]/g, " ")}
-                </p>
-            </div>
-        {/each}
+        <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 6 Quakes</h2></summary>
+        <div class="card-grid">
+            {#each data.quakes2.features as thing}
+                <div class="card">
+                    <h3 class="quake-locality">{thing.properties.locality}</h3>
+                    <div class="quake-info">
+                        <p><strong>Coordinates:</strong> {thing.geometry.coordinates[0].toFixed(1)} , {thing.geometry.coordinates[1].toFixed(1)}</p>
+                        <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
+                        <p><strong>Time:</strong> {thing.properties.time.replace(/[TZ]/g, " ").replace(/[Z]/g, " ")}</p>
+                    </div>
+                </div>
+            {/each}
+        </div>
     </details>
 </div>
+
 <div class="container">
     <details open>
-        <summary><h2>MMI 7 Quakes</h2></summary>
-        {#each data.quakes3.features as thing}
-            <div>
-                <h2>{thing.properties.locality}</h2>
-                <h3>Coordinates (y, x):</h3>
-                <p>{thing.geometry.coordinates}</p>
-                <h3>Depth:</h3>
-                <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <h3>Time:</h3>
-                <p>
-                    {thing.properties.time
-                        .replace(/[TZ]/g, " ")
-                        .replace(/[Z]/g, " ")}
-                </p>
-            </div>
-        {/each}
+        <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 7 Quakes</h2></summary>
+        <div class="card-grid">
+            {#each data.quakes3.features as thing}
+                <div class="card">
+                    <h3 class="quake-locality">{thing.properties.locality}</h3>
+                    <div class="quake-info">
+                        <p><strong>Coordinates:</strong> {thing.geometry.coordinates[0].toFixed(1)} , {thing.geometry.coordinates[1].toFixed(1)}</p>
+                        <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
+                        <p><strong>Time:</strong> {thing.properties.time.replace(/[TZ]/g, " ").replace(/[Z]/g, " ")}</p>
+                    </div>
+                </div>
+            {/each}
+        </div>
     </details>
 </div>
+
 <div class="container">
     <details open>
-        <summary><h2>MMI 8 Quakes</h2></summary>
-        {#each data.quakes4.features as thing}
-            <div>
-                <h2>{thing.properties.locality}</h2>
-                <h3>Coordinates (y, x):</h3>
-                <p>{thing.geometry.coordinates}</p>
-                <h3>Depth:</h3>
-                <p>{thing.properties.depth.toFixed(3)} KM</p>
-                <h3>Time:</h3>
-                <p>
-                    {thing.properties.time
-                        .replace(/[TZ]/g, " ")
-                        .replace(/[Z]/g, " ")}
-                </p>
-            </div>
-        {/each}
+        <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 8 Quakes</h2></summary>
+        <div class="card-grid">
+            {#each data.quakes4.features as thing}
+                <div class="card">
+                    <h3 class="quake-locality">{thing.properties.locality}</h3>
+                    <div class="quake-info">
+                        <p><strong>Coordinates:</strong> {thing.geometry.coordinates[0].toFixed(1)} , {thing.geometry.coordinates[1].toFixed(1)}</p>
+                        <p><strong>Depth:</strong> {thing.properties.depth.toFixed(3)} KM</p>
+                        <p><strong>Time:</strong> {thing.properties.time.replace(/[TZ]/g, " ").replace(/[Z]/g, " ")}</p>
+                    </div>
+                </div>
+            {/each}
+        </div>
     </details>
 </div>
 
 <style>
-
-    div {
-        border: 2px solid black;
-        margin: 0.6em;
+    .container{
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
     }
 
-    h3 {
-        padding-left: 0.3em;
+    h1{
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 1em;
+        font-weight: bold;
+        color: #2c3e50;
     }
 
-    p {
-        padding-top: 0.1em;
-        padding-left: 0.8em;
+    .arrow-icon {
+        transition: transform 0.2s ease;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .section-title:hover {
+        color: #0b3d72; 
+    }
+
+    .section-title:hover .arrow-icon {
+        transform: rotate(90deg);
     }
 
     details {
-        padding: 0.5em;
-        background-color: #eed5be;
-        border-radius: 0.5em;
-        padding-left: 10px;
+        padding: 1em;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     summary {
-        background-color: #ECA869;
+        /* background-color: #3498db; */
         color: white;
-        list-style-position: outside;
-        margin-left: 10px;
-        padding: 10px 10px 10px 20px;
+        padding: 10px 15px;
         border-radius: 5px;
+        font-size: 1.2em;
+        cursor: pointer;
+        list-style-type: none;
     }
 
-    .container{
-        padding:1em;
-        border: none;
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5em;
     }
     @media (max-width: 1200px) {
     h1 {
@@ -223,5 +236,30 @@
         font-size: 0.9rem;
     }
 }
-</style>
+    .card {
+        background-color: #ffffff;
+        padding: 1.5em;
+        border-radius: 10px;
+        border: 1px solid #bdc3c7;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+    }
 
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .quake-locality {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 0.8em;
+        color: #34495e;
+    }
+
+    .quake-info p {
+        margin: 0.5em 0;
+        font-size: 1.1em;
+        color: #7f8c8d;
+    }
+</style>
