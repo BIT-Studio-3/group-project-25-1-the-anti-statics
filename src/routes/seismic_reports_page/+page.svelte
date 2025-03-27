@@ -1,10 +1,13 @@
 <script>
     // exporting quake data
     export let data;
+
+    const volcanos = data.volcanos;
+
 </script>
 
 <!-- Page title -->
-<h1>Quakes</h1>
+<h2>Quakes</h2>
 <div class="container">
     <details close>
         <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 5 Quakes</h2></summary>
@@ -77,6 +80,18 @@
     </details>
 </div>
 
+<h2>Volcanic Activity</h2>
+<div class>
+    <div class="card-grid">
+        {#each volcanos.features as volcano}
+        <div class="card"><h3>{volcano.properties.volcanoTitle}</h3>
+            <p>Activity: {volcano.properties.activity}</p>
+            <p>Hazard Level: {volcano.properties.level}</p>
+            <p>Hazards: {volcano.properties.hazards}</p></div>
+        {/each}
+    </div>
+</div>
+
 <style>
     .container{
         padding: 1.5em;
@@ -85,7 +100,7 @@
         gap: 1.5em;
     }
 
-    h1{
+    h2{
         text-align: center;
         font-size: 2.5em;
         margin-bottom: 1em;

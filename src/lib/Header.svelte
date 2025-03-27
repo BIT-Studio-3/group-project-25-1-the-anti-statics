@@ -12,7 +12,7 @@
     <nav>
         <ul>
             <a href="/weather_reports_page" class="firstrow"><li class:active={route === "/weather_reports_page"}>Weather Reports</li></a>
-            <a href="/seismic_reports_page" class="firstrow"><li class:active={route === "/seismic_reports_page"}>Seismic Activity</li></a>
+            <a href="/seismic_reports_page" class="firstrow"><li class:active={route === "/seismic_reports_page"}>Seismic & Volcanic Activity</li></a>
             <a href="/road_conditions_page" class="firstrow"><li class:active={route === "/road_conditions_page"}>Road Conditions</li></a>
             <a href="/volcanic_activity_page" class="secondrow"><li class:active={route === "/volcanic_activity_page"}>Volcanic Activity</li></a>
             <a href="/fire_and_emergency_page" class="secondrow"><li class:active={route === "/fire_and_emergency_page"}>Fire and Emergency Reports</li></a>
