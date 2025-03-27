@@ -70,7 +70,6 @@
     </div>
     
     <style>
-          @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
          * {
           margin: 0;
           padding: 0;
@@ -88,9 +87,11 @@
           padding: 20px;
           color: #333;
           display: flex;
-          flex-direction: column; /*items are stacked one below another*/
+          flex-direction: column; 
           align-items: center;
-          position: relative; /*so the button can go over this area*/
+          position: relative;
+          width: 100%;
+          box-sizing: border-box;
         }
     
         .nav-links {
@@ -99,6 +100,7 @@
           width: 100%;
           gap: 40px;
           background-color: #B5D5C5;
+          flex-wrap: wrap;
         }
     
         .menu-toggle { /*style for the hamburger button, hide it by default*/
@@ -121,8 +123,7 @@
           font-size: 1.4em;
           font-weight: 500;
           border-radius: 5px;
-          transition: background-color 0.3s ease; /*Smooth background change*/
-          font-family: 'Saira Condensed', sans-serif;
+          transition: background-color 0.3s ease;
         }
       
         .nav-link:hover {
@@ -166,6 +167,8 @@
     
           .nav-links {
             display: none;
+            width: 100%;
+            flex-direction: column;
           }
       
           .menu-toggle {
