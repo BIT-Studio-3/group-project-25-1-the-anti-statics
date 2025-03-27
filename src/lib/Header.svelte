@@ -1,4 +1,20 @@
 <script>
+const navLinks = [
+    {href: '/', text: 'weather_reports_page'},
+    {href: '/', text: 'seismic_reports_page'},
+    {href: '/', text: 'road_conditions_page'},
+    {href: '/', text: 'volcanic_activity_page'},
+    {href: '/', text: 'fire_and_emergency_page'},
+    {href: '/', text: 'rss'},
+    {href: '/', text: 'alert_system'},
+    {href: '/', text: 'Resources_Availability_Form'}
+];
+
+let isDropdownOpen = false;
+function toggleDropdown() {
+        isDropdownOpen = !isDropdownOpen;
+    }
+
     import { page } from "$app/stores";
 
     $: route = $page.route.id;
@@ -6,113 +22,140 @@
     import AgencySelect from "$lib/agencySelect.svelte";
 </script>
 
-<header>
-    <h1><a href="/">The Anti-Statics Disaster Management System</a></h1>
 
+<div class="navbar">
+    <a href="/">The Anti-Statics Disaster Management System</a>
+
+    
+        <button class="menu-toggle" on:click={toggleDropdown}> <!--Burger menu button for smaller screens-->
+            ☰
+        </button>
     <nav>
-        <ul>
-            <a href="/weather_reports_page" class="firstrow"><li class:active={route === "/weather_reports_page"}>Weather Reports</li></a>
-            <a href="/seismic_reports_page" class="firstrow"><li class:active={route === "/seismic_reports_page"}>Seismic Activity</li></a>
-            <a href="/road_conditions_page" class="firstrow"><li class:active={route === "/road_conditions_page"}>Road Conditions</li></a>
-            <a href="/volcanic_activity_page" class="secondrow"><li class:active={route === "/volcanic_activity_page"}>Volcanic Activity</li></a>
-            <a href="/fire_and_emergency_page" class="secondrow"><li class:active={route === "/fire_and_emergency_page"}>Fire and Emergency Reports</li></a>
-            <a href="/rss" class="secondrow"><li class:active={route === "/rss"}>RSS Feed</li></a>
-            <a href="/alert_system" class="secondrow"><li class:active={route === "/alert_system"}>Post an Alert</li></a>
-
-            <AgencySelect />
-
-            <a href="/Resources_Availability_Form" class="secondrow"><li class:active={route === "/Resources_Availability_Form"}>Resources_Availability_Form</li></a>
-
-        </ul>
+           
+            <nav class="nav-links"> <!--navigation links for larger screens-->
+                {#each navLinks as { href, text }}  <!--loop through the navLinks arrays to create a link for each item-->
+                  <a href={href} class="nav-link">{text}</a>
+                {/each}
+                <AgencySelect />
+              </nav>
     </nav>
 
-</header>
+    {#if isDropdownOpen}    <!--Conditional statement checking when isDropdownOpen variable is true or close-->
+    <div class="dropdown">
+      {#each navLinks as { href, text }} <!--loop through the navLinks arrays to create a link for each item in dropdown menu-->
+        <a href={href} class="dropdown-link">{text}</a>
+      {/each}
+    </div>
+{/if}
+</div>
 
 <style>
-
-    a {
-        text-decoration: none;
-        background-color: inherit;
-        border-right: 1px solid grey;
-        align-self: center;
+      @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    a:last-child {
-        border-right: 0px;
+    a{
+      background-color: #B5D5C5;
+      font-size: 35px;
+      text-decoration: none;
+     }
+
+    .navbar {
+      background-color: #B5D5C5;
+      padding: 20px;
+      color: #333;
+      display: flex;
+      flex-direction: column; /*items are stacked one below another*/
+      align-items: center;
+      position: relative; /*so the button can go over this area*/
     }
 
-    h1 a {
-        border-right: 0px;
+    .nav-links {
+      display: flex;
+      justify-content: space-evenly; /*spread links equally*/
+      width: 100%;
+      gap: 40px;
+      background-color: #B5D5C5;
     }
 
-    header {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
-        max-width: 100%;
-        position: relative;
-        top: 0;
-        box-shadow: 0 4px 5px #333;
-        padding: 2em;
-        margin-bottom: 0.5em;
-        box-sizing: border-box;
+    .menu-toggle { /*style for the hamburger button, hide it by default*/
+      display: none; /*initially hide it*/
+      font-size: 30px;
+      background: none;
+      border: 1px solid;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute; /*place it on top-right corner*/
+      right: 20px;
+      top: 20px;
     }
 
-    nav {
-        display: flex;
-        flex-direction: row;
+    .nav-link {  /*style for navigation links*/
+      text-decoration: none;
+      background-color:#B5D5C5;
+      color: #333;
+      font-size: 1.4em;
+      font-weight: 500;
+      border-radius: 5px;
+      transition: background-color 0.3s ease; /*Smooth background change*/
+      font-family: 'Saira Condensed', sans-serif;
+    }
+  
+    .nav-link:hover {
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+        padding: 0px 10px;
+      background-color: #555;
+      color: white; 
     }
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-around;
+    .dropdown {  /*style, will be shown when menu is open*/
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: #333;
+      position: absolute; /*so it appears below navbar*/
+      top: 110px;
+      right: 0;
+      padding: 10px 0;
+      z-index: 999; /*so it can show up on the top of other ealiments*/
     }
 
-    li {
-        list-style: none;
-        padding: 0.5em;
-        font-size: 120%;
+    .dropdown-link {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 1rem;
+      border-bottom: 1px solid #555;
+    }
+
+    .dropdown-link:hover {
+      background-color: #78ad67;
+      color: #333;
+    }
+
+
+    @media (max-width: 768px) {  /*this is for small screen devices with (max-width 768px)*/
+      .navbar {
+        padding: 15px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+  
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-link {
+        width: 100%;
         text-align: center;
+      }
     }
-
-    nav ul li:hover {
-        background-color: lightgrey;
-    }
-
-    .active {
-        background-color: #689FD4;
-        font-weight: bold;
-    }
-
-    @media (max-width: 800px) {
-
-        header {
-            padding: 1em;
-        }
-
-        ul {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            justify-content: stretch;
-        }
-        a:last-child {
-            border-right: 1px solid grey;
-        }
-    }
-
-    @media (max-width: 600px) {
-        h1 {
-            display: none;
-        }
-
-        header {
-            font-size: 70%;
-        }
-    }
-
-
 </style>
+
