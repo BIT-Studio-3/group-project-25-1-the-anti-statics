@@ -25,13 +25,20 @@
     
         import AgencySelect from "$lib/agencySelect.svelte";
     
-        let isSmallScreen = window.innerWidth <= 768;
-        window.addEventListener('resize', () => {
+        import { onMount } from 'svelte';
+
+        let isSmallScreen = false;
+
+        onMount(() => {
             isSmallScreen = window.innerWidth <= 768;
-            if (!isSmallScreen) {
-                isDropdownOpen = false;
-            }
+            window.addEventListener('resize', () => {
+                isSmallScreen = window.innerWidth <= 768;
+                if (!isSmallScreen) {
+                    isDropdownOpen = false;
+                }
+            });
         });
+
     </script>
     
     
@@ -46,7 +53,8 @@
                
                 <nav class="nav-links"> <!--navigation links for larger screens-->
                     {#each navLinks as { href, text }}  <!--loop through the navLinks arrays to create a link for each item-->
-                    <a href={href} class="nav-link" on:click={closeDropdown}>{text}</a>
+                    <a href={href} class="nav-link" on:click={closeDropdown} class:active={$page.route.id === href}>{text}</a>
+
                     {/each}
                     <AgencySelect />
                   </nav>
