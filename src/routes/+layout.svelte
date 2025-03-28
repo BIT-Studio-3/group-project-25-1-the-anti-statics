@@ -19,8 +19,9 @@
   $: isLoginPage = $page.url.pathname === "/login";
 
   onMount(() => {
+    //If the user is not logged in and not on the login page
     !login && !isLoginPage ? goto("/login") : loading = false;
-
+    //If the user is logged in and loading disabled
     login ? goto("/") : loading = false;
   });
 </script>
