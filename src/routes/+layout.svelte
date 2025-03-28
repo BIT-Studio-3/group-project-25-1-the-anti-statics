@@ -1,16 +1,25 @@
 <script>
-    import '../app.css';
-    import Header from '../lib/Header.svelte';
-    import Footer from '../lib/Footer.svelte';
+  import "../app.css";
+  import Header from "../lib/Header.svelte";
+  import Footer from "../lib/Footer.svelte";
 
-    let login = true;
-    // Watch for route changes
+  import user from "../stores/user.js";
+  import { goto } from "$app/navigation";
+  import { onMount } from "svelte";
+
+  $: login = $user === null ? true : false;
+  
+  onMount(() => {
+    if (!login) {
+      goto("/login");
+    }else{
+      goto("/");
+    }
+  });
 </script>
 
 {#if login}
   <Header />
   <slot />
   <Footer />
-{:else}
-  <h1>Please login</h1>
 {/if}
