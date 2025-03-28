@@ -3,6 +3,7 @@
   let username = "";
   let password = "";
   let error = "";
+  let data = "";
 
   const submitLogin = async (event) => {
     // Form data object
@@ -37,6 +38,14 @@
   </div>
   <button type="submit">Submit</button>
 </form>
+
+{#if error}
+  <p style="color: red;">{error}</p>
+{/if}
+
+{#if data}
+  <p style="color: green;">You have succesfully logged in!</p>
+{/if}
 
 <style>
 </style>
