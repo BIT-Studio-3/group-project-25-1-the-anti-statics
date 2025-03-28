@@ -1,3 +1,5 @@
+import user from '../../../stores/user.js';
+
 export async function postLogin(userData) {
     try {
       console.log("Posting user with data:", alertData);
@@ -12,10 +14,14 @@ export async function postLogin(userData) {
   
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok) { //When user data is invalid
         return { error: data.message };
       }
   
+      if (data){ //Update the user using the data
+        user.update(val => val = {...data});
+      }
+
       return { data: data }; // Return the response data (e.g., the created alert)
     } catch (error) {
       //Console the error
