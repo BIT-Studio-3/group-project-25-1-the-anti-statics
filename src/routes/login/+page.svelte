@@ -35,7 +35,7 @@
   <main>
     <div id="form-container">
       <div id="image-container">
-        <img src={logo} alt="logo" width=200 height=110>
+        <img src={logo} alt="logo" width="200" height="110" />
       </div>
       <div id="login-header">
         <h1>Sign in</h1>
@@ -102,21 +102,28 @@
   #form-container div * {
     background-color: white;
   }
-  #submit button {
-    background-color: #b5d5c5;
-    height: 3em;
-    font-weight: bold;
-  }
   input,
   button {
     padding: 0.3em;
     box-shadow: 3px 3px 3px #333;
   }
-  #image-container{
+  #image-container {
     align-items: center;
   }
-  button:hover{
-    background-color: green;
+  #submit button {
+    background-color: #b5d5c5;
+    height: 3em;
+    font-weight: bold;
+    border: none;
+    transition:
+      background-color 0.3s ease,
+      transform 0.2s ease;
+  }
+
+  #submit button:hover {
+    background-color: #048d2d; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarges the button */
     cursor: pointer;
+    color: white;
   }
 </style>
