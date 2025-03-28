@@ -1,23 +1,16 @@
 <script>
-    import { page } from "$app/stores";
     import '../app.css';
     import Header from '../lib/Header.svelte';
     import Footer from '../lib/Footer.svelte';
 
-    let login = false;
-
-  // Watch for route changes
-  $: {
-    login = $page.url.pathname.startsWith("/login");
-  }
+    let login = true;
+    // Watch for route changes
 </script>
 
-{#if !login}
+{#if login}
   <Header />
-{/if}
-
-<slot />
-
-{#if !login}
+  <slot />
   <Footer />
+{:else}
+  <h1>Please login</h1>
 {/if}
