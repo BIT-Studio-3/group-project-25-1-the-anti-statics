@@ -1,5 +1,5 @@
 <script>
-  import login from "./utils/postLogins.js";
+  import { postLogin } from "./utils/postLogins.js";
   let username = "";
   let password = "";
   let error = "";
@@ -11,7 +11,7 @@
       password,
     };
 
-    const result = await login(loginData);
+    const result = await postLogin(loginData);
 
     data = result.data;
     error = result.error;
