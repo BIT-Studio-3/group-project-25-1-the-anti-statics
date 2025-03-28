@@ -7,7 +7,7 @@
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
 
-  $: login = $user === null ? false : true;
+  $: login = $user === null ? true : false;
   
   onMount(() => {
     !login ? goto("/login") : goto("/");
@@ -16,6 +16,9 @@
 
 {#if login}
   <Header />
-  <slot />
+{/if}
+<slot />
+{#if login}
   <Footer />
 {/if}
+
