@@ -12,11 +12,14 @@
   let isLoginPage = false;
   let loading = true; // Add a loading state
 
+  //Set the login state
   $: login = $user === null ? false : true;
   $: isLoginPage = $page.url.pathname === "/login";
 
   onMount(() => {
     !login && !isLoginPage ? goto("/login") : loading = false;
+
+    login ? goto("/") : loading = false;
   });
 </script>
 

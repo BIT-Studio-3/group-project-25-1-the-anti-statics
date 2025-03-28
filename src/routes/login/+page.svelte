@@ -24,27 +24,32 @@
       alert("Login posted successfully!");
     }
   };
+
+  import user from "../../stores/user.js";
+  $: login = $user === null ? false : true;
 </script>
 
-<h1>Login</h1>
-<form on:submit|preventDefault={submitLogin}>
-  <div>
-    <label for="username">Username</label>
-    <input type="text" id="username" bind:value={username} />
-  </div>
-  <div>
-    <label for="password">Password</label>
-    <input type="password" id="password" bind:value={password} />
-  </div>
-  <button type="submit">Submit</button>
-</form>
+{#if !login}
+  <h1>Login</h1>
+  <form on:submit|preventDefault={submitLogin}>
+    <div>
+      <label for="username">Username</label>
+      <input type="text" id="username" bind:value={username} />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" bind:value={password} />
+    </div>
+    <button type="submit">Submit</button>
+  </form>
 
-{#if error}
-  <p style="color: red;">{error}</p>
-{/if}
+  {#if error}
+    <p style="color: red;">{error}</p>
+  {/if}
 
-{#if data}
-  <p style="color: green;">You have succesfully logged in!</p>
+  {#if data}
+    <p style="color: green;">You have succesfully logged in!</p>
+  {/if}
 {/if}
 
 <style>
