@@ -24,7 +24,9 @@
 </script>
 
 {#if loading}
-  <p>Loading...</p> <!-- Show loading message until the state is settled -->
+  <div id="loading">
+    <p>LOADING... ↻</p>
+  </div>
 {:else if login}
   <Header />
   <slot />
@@ -34,3 +36,18 @@
 {:else}
   <!-- Nothing is shown if the user is not logged in and we're not on the login page -->
 {/if}
+
+<style>
+  #loading{
+    height: 10em;
+    display: grid;
+    place-items: center;
+  }
+  #loading p{
+    background-color: black;
+    color: white;
+    padding: 1em;
+    border-radius: 5%;
+    font-weight: bolder;
+  }
+</style>
