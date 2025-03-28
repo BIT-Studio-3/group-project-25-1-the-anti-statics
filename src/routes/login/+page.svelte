@@ -104,6 +104,8 @@
   }
   #submit button {
     background-color: #b5d5c5;
+    height: 3em;
+    font-weight: bold;
   }
   input,
   button {
@@ -112,5 +114,9 @@
   }
   #image-container{
     align-items: center;
+  }
+  button:hover{
+    background-color: green;
+    cursor: pointer;
   }
 </style>
