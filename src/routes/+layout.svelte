@@ -7,14 +7,10 @@
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
 
-  $: login = $user === null ? true : false;
+  $: login = $user === null ? false : true;
   
   onMount(() => {
-    if (!login) {
-      goto("/login");
-    }else{
-      goto("/");
-    }
+    !login ? goto("/login") : goto("/");
   });
 </script>
 
