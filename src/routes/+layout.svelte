@@ -8,12 +8,14 @@
   import { onMount } from "svelte";
   import { page } from "$app/stores";
 
+  import loginState from '../login.js';
+
   let login = false;
   let isLoginPage = false;
   let loading = true; // Add a loading state
 
   //Set the login state
-  $: login = $user === null ? false : true;
+  $: login = $user === null ? loginState : true;
   $: isLoginPage = $page.url.pathname === "/login";
 
   onMount(() => {

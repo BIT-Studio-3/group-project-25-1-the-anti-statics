@@ -25,8 +25,10 @@
     }
   };
 
+  import loginState from '../../login.js';
+
   import user from "../../stores/user.js";
-  $: login = $user === null ? false : true;
+  $: login = $user === null ? loginState : true;
 
   import logo from "../../lib/Images/dma.png";
 </script>
