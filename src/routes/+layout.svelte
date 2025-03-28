@@ -8,17 +8,16 @@
   import { onMount } from "svelte";
 
   $: login = $user === null ? false : true;
-  
+
   onMount(() => {
     !login ? goto("/login") : goto("/");
   });
 </script>
 
-{#if login}
+{#if !login}
+  <slot/>
+{:else}
   <Header />
-{/if}
-<slot />
-{#if login}
+  <slot />
   <Footer />
 {/if}
-
