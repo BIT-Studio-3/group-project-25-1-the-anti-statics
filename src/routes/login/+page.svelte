@@ -77,7 +77,7 @@
   main {
     display: grid;
     place-items: center;
-    height: 30em;
+    height: 40em;
   }
   #form-container {
     padding: 1em;
