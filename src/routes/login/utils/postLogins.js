@@ -2,14 +2,14 @@ import user from '../../../stores/user.js';
 
 export async function postLogin(userData) {
     try {
-      console.log("Posting user with data:", alertData);
+      console.log("Posting user with data:", userData);
   
       const response = await fetch('', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(alertData),
+        body: JSON.stringify(userData),
       });
   
       const data = await response.json();
