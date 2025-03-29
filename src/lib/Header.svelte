@@ -23,6 +23,7 @@
 
             <a href="/Resources_Availability_Form" class="secondrow"><li class:active={route === "/Resources_Availability_Form"}>Resources_Availability_Form</li></a>
 
+            <button id="log-out">Log Out</button>
         </ul>
     </nav>
 
@@ -116,5 +117,9 @@
         }
     }
 
-
+#log-out{
+    padding: 0em 3em 0em 3em;
+    background-color: white;
+    font-weight: bold;
+}
 </style>
