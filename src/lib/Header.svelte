@@ -23,7 +23,7 @@
 
             <a href="/Resources_Availability_Form" class="secondrow"><li class:active={route === "/Resources_Availability_Form"}>Resources_Availability_Form</li></a>
 
-            <button id="log-out">Log Out</button>
+            <button id="log-out">ꄗ Log Out</button>
         </ul>
     </nav>
 
@@ -117,9 +117,20 @@
         }
     }
 
-#log-out{
-    padding: 0em 3em 0em 3em;
+    #log-out {
+    padding: 0em 2em 0em 2em;
     background-color: white;
-    font-weight: bold;
+    border-radius: 5%;
+    border: #333 solid;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, text-shadow 0.2s ease; /* Add transition */
+    font-weight: bolder;
+}
+
+#log-out:hover {
+    background-color: rgb(243, 243, 37);
+    color: white;
+    border: white solid;
+    text-shadow: 2px 2px 6px hsl(0, 0%, 20%);
+    cursor: pointer;
 }
 </style>
