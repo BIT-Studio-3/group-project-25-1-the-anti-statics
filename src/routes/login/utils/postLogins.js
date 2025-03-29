@@ -19,8 +19,7 @@ export async function postLogin(userData) {
           return;
         }
 
-        // Update user store
-        user.update(val => val = { ...dummyResponse });
+        
 
         resolve({ data: dummyResponse });
       }, 1000); // Simulating a 1-second delay
