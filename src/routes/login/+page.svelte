@@ -14,7 +14,7 @@
   console.log(`Login (Login page): ${$login}`);
 
   $: {
-    $user === null ? login.set(false) : login.set(true);
+    $user ? login.set(true) : login.set(false);
   }
 
   import { goto } from "$app/navigation";
