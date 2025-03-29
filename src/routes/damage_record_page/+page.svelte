@@ -20,7 +20,7 @@
         // Form data object
         const damageData = {
             reporterName: name,
-            damageType: type, // Assuming you are using 'emergencyType' on the backend
+            damageType: type, 
             damageLevel: level,
             location: location,
             count: count,
