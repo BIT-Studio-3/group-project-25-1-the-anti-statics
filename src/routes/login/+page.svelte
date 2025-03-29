@@ -10,6 +10,9 @@
   import user from "../../stores/user.js";
   import { login } from "../../stores/login.js"
 
+  //console value of login
+  console.log(`Login (Login page): ${$login}`);
+
   $: {
     $user === null ? login.set(false) : login.set(true);
   }
@@ -19,9 +22,6 @@
   if ($login){ //Redirect user to main page
     goto("/");
   }
-
-  import { page } from "$app/stores";
-  $: isLoginPage = $page.url.pathname === "/login"; // Check if the current page is the login page
 
   const submitLogin = async (event) => {
     // Form data object
@@ -40,6 +40,8 @@
 
     if (result.data) {
       alert("Login posted successfully!");
+      // Update user store
+      user.set(result.data);
     }
   };
 

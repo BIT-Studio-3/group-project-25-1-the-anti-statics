@@ -21,12 +21,15 @@
 
   onMount(() => {
     if (!$login && !isLoginPage) {
-      loading = false; //Disable loading when on login page
       goto("/login");
+      loading = false; //Disable loading when on login page
     }else{
       loading = false;
     }
   });
+
+  //console value of login
+  console.log(`Login (Website): ${$login}`);
 </script>
 
 {#if loading}
