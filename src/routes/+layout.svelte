@@ -4,25 +4,28 @@
   import Footer from "../lib/Footer.svelte";
 
   import user from "../stores/user.js";
+  import { login } from "../stores/login.js";
+
+  let loading = true; // Add a loading state
+
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
   import { page } from "$app/stores";
 
-  import loginState from '../login.js';
-
-  let login = false;
-  let isLoginPage = false;
-  let loading = true; // Add a loading state
-
   //Set the login state
-  $: login = $user === null ? loginState : true;
-  $: isLoginPage = $page.url.pathname === "/login";
+  $: {
+    $user === null ? login.set(false) : login.set(true);
+  }
+
+  $: isLoginPage = $page.url.pathname === "/login"; // Check if the current page is the login page
 
   onMount(() => {
-    //If the user is not logged in and not on the login page
-    !login && !isLoginPage ? goto("/login") : loading = false;
-    //If the user is logged in and loading disabled
-    login ? goto("/") : loading = false;
+    if (!$login && !isLoginPage) {
+      loading = false; //Disable loading when on login page
+      goto("/login");
+    }else{
+      loading = false;
+    }
   });
 </script>
 
@@ -30,23 +33,21 @@
   <div id="loading">
     <p>LOADING... ↻</p>
   </div>
-{:else if login}
+{:else if $login}
   <Header />
   <slot />
   <Footer />
 {:else if isLoginPage}
-  <slot/> <!-- Content for the login page will be shown here -->
-{:else}
-  <!-- Nothing is shown if the user is not logged in and we're not on the login page -->
+  <slot /> <!-- Content for the login page will be shown here -->
 {/if}
 
 <style>
-  #loading{
+  #loading {
     height: 10em;
     display: grid;
     place-items: center;
   }
-  #loading p{
+  #loading p {
     background-color: black;
     color: white;
     padding: 1em;

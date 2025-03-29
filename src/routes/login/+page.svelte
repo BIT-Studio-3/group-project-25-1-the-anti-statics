@@ -4,6 +4,24 @@
   let password = "";
   let error = "";
   let data = "";
+  
+  import logo from "../../lib/Images/dma.png";
+
+  import user from "../../stores/user.js";
+  import { login } from "../../stores/login.js"
+
+  $: {
+    $user === null ? login.set(false) : login.set(true);
+  }
+
+  import { goto } from "$app/navigation";
+
+  if ($login){ //Redirect user to main page
+    goto("/");
+  }
+
+  import { page } from "$app/stores";
+  $: isLoginPage = $page.url.pathname === "/login"; // Check if the current page is the login page
 
   const submitLogin = async (event) => {
     // Form data object
@@ -25,15 +43,11 @@
     }
   };
 
-  import loginState from '../../login.js';
+  
 
-  import user from "../../stores/user.js";
-  $: login = $user === null ? loginState : true;
-
-  import logo from "../../lib/Images/dma.png";
 </script>
 
-{#if !login}
+{#if !$login}
   <main>
     <div id="form-container">
       <div id="image-container">
