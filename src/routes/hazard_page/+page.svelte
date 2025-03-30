@@ -7,29 +7,90 @@
       type: "fire",
       level: "2",
       city: "Dunedin",
-      description: "There is a fire next to Woolworths",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
     },
     {
       title: "Fire by Woolworths",
       type: "fire",
       level: "2",
       city: "Dunedin",
-      description: "There is a fire next to Woolworths",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
     },
     {
       title: "Fire by Woolworths",
       type: "fire",
       level: "2",
       city: "Dunedin",
-      description: "There is a fire next to Woolworths",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
     },
     {
       title: "Fire by Woolworths",
       type: "fire",
       level: "2",
       city: "Dunedin",
-      description: "There is a fire next to Woolworths",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
     },
+    {
+      title: "Fire by Woolworths",
+      type: "fire",
+      level: "2",
+      city: "Dunedin",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
+    },
+    {
+      title: "Fire by Woolworths",
+      type: "fire",
+      level: "2",
+      city: "Dunedin",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
+    },
+    {
+      title: "Fire by Woolworths",
+      type: "fire",
+      level: "2",
+      city: "Dunedin",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
+    },
+    {
+      title: "Fire by Woolworths",
+      type: "fire",
+      level: "2",
+      city: "Dunedin",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
+    },
+    {
+      title: "Fire by Woolworths",
+      type: "fire",
+      level: "2",
+      city: "Dunedin",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
+    },
+    {
+      title: "Fire by Woolworths",
+      type: "fire",
+      level: "2",
+      city: "Dunedin",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
+    },
+    {
+      title: "Fire by Woolworths",
+      type: "fire",
+      level: "2",
+      city: "Dunedin",
+      location: "323 Andersons Bay Road",
+      description: "There is a fire next to South D Woolworths",
+    },
+    
   ];
 </script>
 
@@ -57,13 +118,11 @@
         <option value="5">5</option>
       </select>
 
-      <label for="city">Choose City:</label>
-      <select required>
-        <option value="">Please select a city</option>
-        <option value="dunedin">Dunedin</option>
-        <option value="christchurch">Christchurch</option>
-        <option value="invercargill">Invercargill</option>
-      </select>
+      <label for="city">City/Town:</label>
+      <input type="text" id="city" required />
+
+      <label for="location">Location (street or suburb):</label>
+      <input type="text" id="location" required />
 
       <label for="description">Description:</label>
       <textarea id="description" required></textarea>
@@ -108,15 +167,22 @@
     border-color: black;
     border: solid;
     padding: 1em;
+    max-height:fit-content;
   }
   .pageContainer {
     display: flex;
+    max-height: 70vh;
   }
   .hazardlogs {
     border-color: black;
+    border: solid;
     display: grid;
     grid-template-columns: auto;
-    width: 55%;
+    max-height: fit-content;
+  }
+  .hazardlogs ul{
+    max-height: 70vh;
+    overflow-y: auto;
   }
   .hazardlogs li {
     margin-top: 0.5em;

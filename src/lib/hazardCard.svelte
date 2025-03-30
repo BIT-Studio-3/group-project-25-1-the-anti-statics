@@ -10,6 +10,8 @@
     <p>{obj.level}</p>
     <h3>City:</h3>
     <p>{obj.city}</p>
+    <h3>Location:</h3>
+    <p>{obj.location}</p>
     <h3>Description:</h3>
     <p>{obj.description}</p>
 </div>
@@ -21,6 +23,8 @@
         margin: 1em;
         padding: 1em;
         width: fit-content;
+        max-width: 17em;
+        margin: 0.5em;
     }
 
     h3 {
