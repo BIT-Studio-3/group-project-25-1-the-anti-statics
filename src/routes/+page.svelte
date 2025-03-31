@@ -80,11 +80,12 @@
   .AlertsList {
     padding: 1em;
     margin-bottom: 1em;
+    background-color: #ec6969;
   }
   .AlertsList li {
     list-style: none;
     padding-left: 0.5em;
-    background-color: #ec6969;
+    
     
   }
 
