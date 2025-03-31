@@ -1,6 +1,8 @@
 <script>
-    //Import post damage function
+    import DamageCard from "../../lib/damageCard.svelte";
     import { postDamage } from "./post-functions/postDamage.js"; // Import the postDamage function
+    import { format } from 'date-fns';
+
     //Import post alert function variables
     let postError = "";
     let data = null;
@@ -12,6 +14,7 @@
     let location = "";
     let count = "";
     let cause = "";
+    let damages = [];
 
     // Function to handle form submission
     const submitDamage = async (event) => {
@@ -20,10 +23,10 @@
         // Form data object
         const damageData = {
             reporterName: name,
-            damageType: type, 
+            damageType: type,
             damageLevel: level,
             location: location,
-            count: count,
+            countAffected: count,
             cause: cause,
         };
 
@@ -42,7 +45,7 @@
         console.log("Error:", error);
 
         if (result.data) {
-            damage("Damage posted successfully!");
+            alert("Damage posted successfully!");
 
             // Reset form fields
             name = "";
@@ -66,19 +69,19 @@
         <label for="type">Damage type:</label>
         <select bind:value={type} required>
             <option value="">Please select damage type</option>
-            <option value="fire">Residential</option>
-            <option value="flood">Environmental</option>
-            <option value="quake">Vehicle</option>
-            <option value="quake">Public Faacilities</option>
+            <option value="Residential">Residential</option>
+            <option value="Environmental">Environmental</option>
+            <option value="Vehicle">Vehicle</option>
+            <option value="Public Faacilities">Public Faacilities</option>
         </select>
 
         <label for="level">Select damage level:</label>
         <select bind:value={level} required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
         </select>
 
         <label for="location">Choose location:</label>
@@ -89,14 +92,16 @@
             <option value="Southland">Southland</option>
         </select>
 
-        <label for="countAffected">Choose the range of individuals affected:</label>
-        <select bind:value={level} required>
-            <option value="1">less than 5</option>
-            <option value="2">5+</option>
-            <option value="3">10+</option>
-            <option value="4">20+</option>
-            <option value="5">50+</option>
-            <option value="6">100+</option>
+        <label for="countAffected"
+            >Choose the range of individuals affected:</label
+        >
+        <select bind:value={count} required>
+            <option value=1>less than 5</option>
+            <option value=2>5</option>
+            <option value=3>10</option>
+            <option value=4>20</option>
+            <option value=5>50</option>
+            <option value=6>100</option>
         </select>
 
         <label for="cause">Possible cause of damage :</label>
@@ -116,8 +121,60 @@
 {/if}
 
 {#if data}
-    <p style="color: green;">Thank you reporter {name}, the damage has been logged successfully!</p>
+    <p style="color: green;">
+        Thank you reporter {name}, the damage has been logged successfully!
+    </p>
 {/if}
+
+<section class="loggedDamage">
+    <div class="damageCards">
+        <h3>Logged Damages</h3>
+        {#if damages.length > 0}
+            <ul class="damageList">
+                {#each damages as damage}
+                    <li>
+                        <strong>Reporter:</strong> {damage.reporterName} <br>
+                        <strong>Type:</strong> {damage.damageType} <br>
+                        <strong>Level:</strong> {damage.damageLevel} <br>
+                        <strong>Location:</strong> {damage.location} <br>
+                        <strong>Count:</strong> {damage.count} <br>
+                        <strong>Cause:</strong> {damage.cause} <br>
+                        <strong>Damage posted at:</strong> {format(new Date(damage.createdAt), 'MM/dd/yyyy hh:mm a')} <br>
+                        <strong>Updated At:</strong> {format(new Date(damage.updatedAt), 'MM/dd/yyyy hh:mm a')} <br>
+                    </li>
+                {/each}
+            </ul>
+        {:else}
+            <p>No damages logged yet.</p>
+        {/if}
+    </div>
+</section>
+
+
+<!-- <section class="loggedDamage">
+    <div class="damageCards">
+        <h3>Logged Damages</h3>
+        <ul class="damageList">
+            {#each damageData as damage}
+                <li>
+                    <DamageCard obj={damage} />
+                </li>
+                <li>
+                    Damage posted at: {format(
+                        new Date(alert.createdAt),
+                        "MM/dd/yyyy hh:mm a",
+                    )}
+                </li>
+                <li>
+                    Updated at: {format(
+                        new Date(alert.updatedAt),
+                        "MM/dd/yyyy hh:mm a",
+                    )}
+                </li>
+            {/each}
+        </ul>
+    </div>
+</section> -->
 
 <style>
     * {
