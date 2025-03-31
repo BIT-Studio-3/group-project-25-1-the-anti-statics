@@ -70,7 +70,7 @@
     display: flex;
     flex-direction: column;
     border: solid;
-    width: 25em;
+    width: 25%;
     color: #333;
     background-color: white;
   }
@@ -89,7 +89,7 @@
 
   .pinmap {
     max-height: 100%;
-    width: 600px;
+    width: 50%;
     border: solid;
     text-align: center;
     background-color: #b7daf8;
