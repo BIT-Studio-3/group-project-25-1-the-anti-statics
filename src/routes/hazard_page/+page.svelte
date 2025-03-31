@@ -3,7 +3,7 @@
   import { postHazard } from "./post-function/postHazard.js";
 
   let postError = "";
-  let data = null;
+  let info = null;
   let error = "";
 
   let name = "";
@@ -16,8 +16,8 @@
   const submitHazard = async (event) => {
     event.preventDefault(); // Prevent the form from refreshing the page
 
-    // Form data object
-    const hazardData = {
+    // Form info object
+    const hazardInfo = {
       name,
       type,
       level,
@@ -27,20 +27,20 @@
     };
 
     // Call the postHazard function and use the result directly
-    const result = await postHazard(hazardData);
+    const result = await postHazard(hazardInfo);
 
     // Update the state with the result values directly
     postError = result.postError;
-    data = result.data;
+    info = result.info;
     error = result.error;
 
     // Log the result for debugging
     console.log("Result from postHazard:", result);
     console.log("Post error:", postError);
-    console.log("Post data:", data);
+    console.log("Post info:", info);
     console.log("Error:", error);
 
-    if (result.data) {
+    if (result.info) {
       alert("Hazard posted successfully!");
 
       // Reset form fields
@@ -53,7 +53,9 @@
     }
   };
 
-  
+  //Export the load function
+  export let data;
+  const { hazards } = data;
 </script>
 
 <div class="pageContainer">
@@ -97,11 +99,11 @@
   <div class="hazardlogs">
     <h3>Recent Hazards</h3>
     <ul class="hazardLogs">
-      <!-- {#each hazards as hazard}
+      {#each hazards as hazard}
         <li>
           <HazardCard obj={hazard} />
         </li>
-      {/each} -->
+      {/each}
     </ul>
   </div>
 </div>

@@ -1,22 +1,22 @@
-export async function postHazard(hazardData) {
+export async function postHazard(hazardInfo) {
   try {
-    console.log("Posting hazard with data:", hazardData);
+    console.log("Posting hazard with info:", hazardInfo);
 
-    hazardData.level = parseInt(hazardData.level);
+    hazardInfo.level = parseInt(hazardInfo.level);
     const response = await fetch('http://localhost:3000/api/v1/hazards', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(hazardData),
+      body: JSON.stringify(hazardInfo),
     });
 
     if (!response.ok) {
       return { postError: "Failed to post hazard. Please try again later." };
     }
 
-    const data = await response.json();
-    return { data };
+    const info = await response.json();
+    return { info };
   } catch (error) {
     console.log(error);
 

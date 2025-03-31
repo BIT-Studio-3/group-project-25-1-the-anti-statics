@@ -3,7 +3,7 @@
 </script>
 
 <div class="hazardCard">
-    <h2>{obj.title}</h2>
+    <h2>{obj.name}</h2>
     <h3>Hazard Type:</h3>
     <p>{obj.type}</p>
     <h3>Hazard Level:</h3>
