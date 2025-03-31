@@ -11,12 +11,15 @@ export async function postAlert(alertData) {
       body: JSON.stringify(alertData),
     });
 
-    if (!response.ok) {
-      return { postError: "Failed to post alert. Please try again later." };
+    const data = await response.json();
+
+    //Return the validation message
+    if (!response.ok) { 
+      return { error: data.message };
     }
 
-    const data = await response.json();
-    return { data }; // Return the response data (e.g., the created alert)
+    return { data: data }; // Return the data
+
   } catch (error) {
     //Console the error
     console.log(error);
