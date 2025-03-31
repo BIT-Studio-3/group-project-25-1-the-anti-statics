@@ -72,18 +72,26 @@
     justify-content: space-between;
     gap: 20px;
     margin: 2em;
+    place-items: center;
   }
 
   .AlertsCard,
   #response {
     display: flex;
     flex-direction: column;
-    border: solid;
+    border: 5px black solid;
+    border-radius: 15px;
     width: 25%;
     color: #333;
     background-color: white;
     height: 55em;
     overflow-y: auto;
+    padding: 1em;
+  }
+
+  .AlertsCard h3,
+  #response h3{
+    background-color: inherit;
   }
 
   .AlertsList,
@@ -125,6 +133,7 @@
       flex-direction: column; /* Stack the items vertically */
       flex-wrap: wrap;
       gap: 10px;
+      place-items: center;
     }
 
     .AlertsCard,
