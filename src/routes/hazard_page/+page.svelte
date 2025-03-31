@@ -1,12 +1,12 @@
 <script>
   import HazardCard from "$lib/hazardCard.svelte";
-  import {postHazard} from "./post-function/postHazard.js";
+  import { postHazard } from "./post-function/postHazard.js";
 
   let postError = "";
   let data = null;
   let error = "";
 
-  let title = "";
+  let name = "";
   let type = "";
   let level = "";
   let city = "";
@@ -18,7 +18,7 @@
 
     // Form data object
     const hazardData = {
-      title,
+      name,
       type,
       level,
       city,
@@ -41,7 +41,7 @@
     console.log("Error:", error);
 
     if (result.data) {
-      hazard("Hazard posted successfully!");
+      alert("Hazard posted successfully!");
 
       // Reset form fields
       title = "";
@@ -53,48 +53,7 @@
     }
   };
 
-  let hazards = [
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-  ];
+  
 </script>
 
 <div class="pageContainer">
@@ -102,7 +61,7 @@
     <h2>Log Hazard:</h2>
     <div class="container">
       <label for="title">Title:</label>
-      <input type="text" id="title" bind:value={title} required />
+      <input type="text" id="title" bind:value={name} required />
 
       <label for="type">Hazard type:</label>
       <select bind:value={type} required>
@@ -114,11 +73,11 @@
 
       <label for="level">Select hazard level:</label>
       <select bind:value={level} required>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
       </select>
 
       <label for="city">City/Town:</label>
@@ -138,11 +97,11 @@
   <div class="hazardlogs">
     <h3>Recent Hazards</h3>
     <ul class="hazardLogs">
-      {#each hazards as hazard}
+      <!-- {#each hazards as hazard}
         <li>
           <HazardCard obj={hazard} />
         </li>
-      {/each}
+      {/each} -->
     </ul>
   </div>
 </div>

@@ -2,7 +2,7 @@ export async function postHazard(hazardData) {
   try {
     console.log("Posting hazard with data:", hazardData);
 
-    hazardData.hazardLevel = parseInt(hazardData.hazardLevel);
+    hazardData.level = parseInt(hazardData.level);
     const response = await fetch('http://localhost:3000/api/v1/hazards', {
       method: "POST",
       headers: {
