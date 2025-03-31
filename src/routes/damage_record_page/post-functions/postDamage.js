@@ -3,8 +3,8 @@ export async function postDamage(damageData) {
       console.log("Posting damage with data:", damageData);
   
       damageData.damageLevel = parseInt(damageData.damageLevel);
-      damageData.count = parseInt(damageData.count);
-      const response = await fetch('https://group-project-25-1-the-anti-statics-api.onrender.com/api/v1/damages', {
+      damageData.countAffected = parseInt(damageData.countAffected);
+      const response = await fetch('http://localhost:3000/api/v1/damages', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
