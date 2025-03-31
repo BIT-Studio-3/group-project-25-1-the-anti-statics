@@ -1,5 +1,57 @@
 <script>
   import HazardCard from "$lib/hazardCard.svelte";
+  import {postHazard} from "./post-function/postHazard.js";
+
+  let postError = "";
+  let data = null;
+  let error = "";
+
+  let title = "";
+  let type = "";
+  let level = "";
+  let city = "";
+  let location = "";
+  let description = "";
+
+  const submitHazard = async (event) => {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Form data object
+    const hazardData = {
+      title,
+      type,
+      level,
+      city,
+      location,
+      description,
+    };
+
+    // Call the postHazard function and use the result directly
+    const result = await postHazard(hazardData);
+
+    // Update the state with the result values directly
+    postError = result.postError;
+    data = result.data;
+    error = result.error;
+
+    // Log the result for debugging
+    console.log("Result from postHazard:", result);
+    console.log("Post error:", postError);
+    console.log("Post data:", data);
+    console.log("Error:", error);
+
+    if (result.data) {
+      hazard("Hazard posted successfully!");
+
+      // Reset form fields
+      title = "";
+      type = "";
+      level = "";
+      city = "";
+      location = "";
+      description = "";
+    }
+  };
 
   let hazards = [
     {
@@ -42,67 +94,18 @@
       location: "323 Andersons Bay Road",
       description: "There is a fire next to South D Woolworths",
     },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    {
-      title: "Fire by Woolworths",
-      type: "fire",
-      level: "2",
-      city: "Dunedin",
-      location: "323 Andersons Bay Road",
-      description: "There is a fire next to South D Woolworths",
-    },
-    
   ];
 </script>
 
 <div class="pageContainer">
-  <form>
+  <form on:submit={submitHazard}>
     <h2>Log Hazard:</h2>
     <div class="container">
       <label for="title">Title:</label>
-      <input type="text" id="title" required />
+      <input type="text" id="title" bind:value={title} required />
 
       <label for="type">Hazard type:</label>
-      <select required>
+      <select bind:value={type} required>
         <option value="">Please select an hazard type</option>
         <option value="fire">Fire</option>
         <option value="chemicals">Chemical Leak</option>
@@ -110,7 +113,7 @@
       </select>
 
       <label for="level">Select hazard level:</label>
-      <select required>
+      <select bind:value={level} required>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -119,13 +122,13 @@
       </select>
 
       <label for="city">City/Town:</label>
-      <input type="text" id="city" required />
+      <input type="text" id="city" bind:value={city} required />
 
       <label for="location">Location (street or suburb):</label>
-      <input type="text" id="location" required />
+      <input type="text" id="location" bind:value={location} required />
 
       <label for="description">Description:</label>
-      <textarea id="description" required></textarea>
+      <textarea id="description" bind:value={description} required></textarea>
     </div>
     <div>
       <button type="submit">Submit</button>
@@ -167,7 +170,7 @@
     border-color: black;
     border: solid;
     padding: 1em;
-    max-height:fit-content;
+    max-height: fit-content;
   }
   .pageContainer {
     display: flex;
@@ -180,7 +183,7 @@
     grid-template-columns: auto;
     max-height: fit-content;
   }
-  .hazardlogs ul{
+  .hazardlogs ul {
     max-height: 70vh;
     overflow-y: auto;
   }
