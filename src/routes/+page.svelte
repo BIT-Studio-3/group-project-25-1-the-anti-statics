@@ -139,8 +139,9 @@
     .AlertsCard,
     #response {
       width: 100%; /* Make both alerts and response cards take full width */
-      height: auto; /* Adjust the height to fit content */
+      height: 40em; /* Adjust the height to fit content */
       margin-bottom: 10px; /* Add spacing between the cards */
+      overflow-y: auto;
     }
 
     .pinmap {
