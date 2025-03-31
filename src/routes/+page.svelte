@@ -13,13 +13,13 @@
 <div class="PageContentContainer">
   {#if error}
     <div>{error}</div>
-  {:else if message}
-    <p>{message}</p>
   {:else}
     <div class="AlertsCard">
       <h3>Recent Alerts</h3>
       {#if alerts.length === 0}
-        <ul></ul>
+        <ul>
+          <li>{message}</li>
+        </ul>
       {:else}
         {#each alerts as alert}
           <ul class="AlertsList">
@@ -70,8 +70,8 @@
   .PageContentContainer {
     display: flex;
     justify-content: space-between;
-    background-color: red;
     gap: 20px;
+    margin: 2em;
   }
 
   .AlertsCard,
@@ -91,9 +91,16 @@
     padding: 1em;
     margin-bottom: 1em;
     list-style: none;
-    border: 3px #ec6969 solid;
     border-radius: 8px;
   }
+
+  .AlertsList {
+    border: 3px #ec6969 solid;
+  }
+  #response ul {
+    border: 3px #7269ec solid;
+  }
+
   .AlertsList li {
     list-style: none;
     background-color: inherit;
@@ -120,7 +127,8 @@
       gap: 10px;
     }
 
-    .AlertsCard, #response {
+    .AlertsCard,
+    #response {
       width: 100%; /* Make both alerts and response cards take full width */
       height: auto; /* Adjust the height to fit content */
       margin-bottom: 10px; /* Add spacing between the cards */
@@ -132,6 +140,4 @@
       max-width: 100%; /* Ensure map doesn't exceed container size */
     }
   }
-
-  
 </style>
