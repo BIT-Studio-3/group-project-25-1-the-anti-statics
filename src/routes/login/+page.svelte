@@ -1,6 +1,6 @@
 <script>
   import { postLogin } from "./utils/postLogins.js";
-  let username = "";
+  let emailAddress = "";
   let password = "";
   let error = "";
   let data = "";
@@ -26,7 +26,7 @@
   const submitLogin = async (event) => {
     // Form data object
     const loginData = {
-      username,
+      emailAddress,
       password,
     };
 
@@ -59,12 +59,12 @@
         <h1>Sign in</h1>
       </div>
       <form on:submit|preventDefault={submitLogin}>
-        <div id="username">
+        <div id="email">
           <input
-            type="text"
-            id="username"
-            placeholder="Username"
-            bind:value={username}
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            bind:value={emailAddress}
           />
         </div>
         <div id="password">
