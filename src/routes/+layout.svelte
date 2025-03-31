@@ -22,10 +22,8 @@
   onMount(() => {
     if (!$login && !isLoginPage) {
       goto("/login");
-      loading = false; //Disable loading when on login page
-    }else{
-      loading = false;
     }
+      loading = false;
   });
 
   //console value of login
