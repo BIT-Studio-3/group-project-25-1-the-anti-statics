@@ -18,28 +18,32 @@
   {:else}
     <div class="AlertsCard">
       <h3>Recent Alerts</h3>
-      {#each alerts as alert}
-      <ul class="AlertsList">
-          <li>Emergency: {alert.title}</li>
-          <li>{alert.emergencyType}</li>
-          <li>{alert.alertLevel}</li>
-          <li>{alert.region}</li>
-          <li>{alert.description}</li>
+      {#if alerts.length === 0}
+        <ul></ul>
+      {:else}
+        {#each alerts as alert}
+          <ul class="AlertsList">
+            <li>Emergency: {alert.title}</li>
+            <li>{alert.emergencyType}</li>
+            <li>{alert.alertLevel}</li>
+            <li>{alert.region}</li>
+            <li>{alert.description}</li>
 
-          <li>
-            Alerted posted at: {format(
-              new Date(alert.createdAt),
-              "MM/dd/yyyy hh:mm a"
-            )}
-          </li>
-          <li>
-            Updated at: {format(
-              new Date(alert.updatedAt),
-              "MM/dd/yyyy hh:mm a"
-            )}
-          </li>
-        </ul>
+            <li>
+              Alerted posted at: {format(
+                new Date(alert.createdAt),
+                "MM/dd/yyyy hh:mm a"
+              )}
+            </li>
+            <li>
+              Updated at: {format(
+                new Date(alert.updatedAt),
+                "MM/dd/yyyy hh:mm a"
+              )}
+            </li>
+          </ul>
         {/each}
+      {/if}
     </div>
   {/if}
 
@@ -50,6 +54,9 @@
 
   <div id="response">
     <h3>Response Guidelines</h3>
+    <ul>
+      <li>No Response Guidelines</li>
+    </ul>
   </div>
 </div>
 
@@ -64,21 +71,26 @@
     display: flex;
     justify-content: space-between;
     background-color: red;
+    gap: 20px;
   }
 
-  .AlertsCard, #response {
+  .AlertsCard,
+  #response {
     display: flex;
     flex-direction: column;
     border: solid;
     width: 25%;
     color: #333;
     background-color: white;
+    height: 55em;
+    overflow-y: auto;
   }
 
-  .AlertsList {
+  .AlertsList,
+  #response ul {
     padding: 1em;
     margin-bottom: 1em;
-    background-color: rgb(248, 190, 190);
+    list-style: none;
     border: 3px #ec6969 solid;
     border-radius: 8px;
   }
@@ -88,11 +100,12 @@
   }
 
   .pinmap {
-    max-height: 100%;
+    height: 55em;
     width: 50%;
     border: solid;
     text-align: center;
     background-color: #b7daf8;
+    overflow-y: auto;
   }
 
   .pinmap h3 {
@@ -103,51 +116,22 @@
     /* For tablets and smaller desktops */
     .PageContentContainer {
       flex-direction: column; /* Stack the items vertically */
-      align-items: center; /* Center items */
+      flex-wrap: wrap;
       gap: 10px;
     }
 
-    .AlertsCard {
-      width: 100%; /* Take full width on smaller screens */
-      min-height: auto; /* Adjust height */
-      margin-bottom: 1em; /* Add spacing between cards */
+    .AlertsCard, #response {
+      width: 100%; /* Make both alerts and response cards take full width */
+      height: auto; /* Adjust the height to fit content */
+      margin-bottom: 10px; /* Add spacing between the cards */
     }
 
     .pinmap {
-      width: 100%; /* Make the map take full width */
-      max-width: 500px; /* Limit map size */
+      width: 100%; /* Make map take full width on smaller screens */
+      height: 30%; /* Adjust map height for better fit on mobile */
+      max-width: 100%; /* Ensure map doesn't exceed container size */
     }
   }
 
-  @media (max-width: 768px) {
-    /* For mobile devices */
-    .PageContentContainer {
-      flex-direction: column; /* Stack the items vertically */
-      align-items: center; /* Center items */
-      gap: 15px;
-    }
-
-    .AlertsCard {
-      width: 90%; /* Reduce the width to fit mobile screens */
-      min-height: auto;
-    }
-
-    .pinmap {
-      width: 100%; /* Make map fill the screen */
-      max-width: 400px; /* Limit map size */
-    }
-  }
-
-  @media (max-width: 480px) {
-    /* For very small screens (phones in portrait mode) */
-    .AlertsCard {
-      width: 100%; /* Full width */
-      padding: 0.5em; /* Reduce padding for mobile */
-    }
-
-    .pinmap {
-      width: 100%; /* Full width for map */
-      max-width: 300px; /* Limit map size on small screens */
-    }
-  }
+  
 </style>
