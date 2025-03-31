@@ -20,7 +20,7 @@
       <h3>Recent Alerts</h3>
       {#each alerts as alert}
       <ul class="AlertsList">
-          <li>{alert.title}</li>
+          <li>Emergency: {alert.title}</li>
           <li>{alert.emergencyType}</li>
           <li>{alert.alertLevel}</li>
           <li>{alert.region}</li>
@@ -47,6 +47,10 @@
     <h3>Active Disasters</h3>
     <Map />
   </figure>
+
+  <div id="response">
+    <h3>Response Guidelines</h3>
+  </div>
 </div>
 
 <style>
@@ -59,34 +63,28 @@
   .PageContentContainer {
     display: flex;
     justify-content: space-between;
-    height: 100%;
-    width: 100%;
+    background-color: red;
   }
 
-  .AlertsCard {
+  .AlertsCard, #response {
     display: flex;
     flex-direction: column;
     border: solid;
     width: 25em;
-    min-height: 80vh;
-    justify-self: left;
     color: #333;
-  }
-
-  .AlertsCard *{
-    gap: 3em;
+    background-color: white;
   }
 
   .AlertsList {
     padding: 1em;
     margin-bottom: 1em;
-    background-color: #ec6969;
+    background-color: rgb(248, 190, 190);
+    border: 3px #ec6969 solid;
+    border-radius: 8px;
   }
   .AlertsList li {
     list-style: none;
-    padding-left: 0.5em;
-    
-    
+    background-color: inherit;
   }
 
   .pinmap {
