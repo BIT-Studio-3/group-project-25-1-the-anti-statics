@@ -2,13 +2,15 @@
   import { postLogin } from "./utils/postLogins.js";
   let emailAddress = "";
   let password = "";
+  //Login function props
+  let postError = "";
   let error = "";
   let data = "";
-  
+
   import logo from "../../lib/Images/dma.png";
 
   import user from "../../stores/user.js";
-  import { login } from "../../stores/login.js"
+  import { login } from "../../stores/login.js";
 
   //console value of login
   console.log(`Login (Login page): ${$login}`);
@@ -19,7 +21,8 @@
 
   import { goto } from "$app/navigation";
 
-  if ($login){ //Redirect user to main page
+  if ($login) {
+    //Redirect user to main page
     goto("/");
   }
 
@@ -34,19 +37,18 @@
 
     data = result.data;
     error = result.error;
+    postError = result.postError;
 
     console.log("Post data:", data);
     console.log("Error:", error);
 
     if (result.data) {
-      alert("Login posted successfully!");
       // Update user store
-      user.set(result.data);
+      setTimeout(() => {
+      user.set(data); // Set user after delay
+    }, 2000);
     }
   };
-
-  
-
 </script>
 
 {#if !$login}
@@ -79,19 +81,43 @@
           <button type="submit">Sign in</button>
         </div>
       </form>
+      {#if error}
+        <p class="message" id="error">{error}</p>
+      {/if}
+      {#if postError}
+        <p class="message" id="postError">⚠️{postError}</p>
+      {/if}
+      {#if data}
+        <p class="message" id="loggedIn">You have succesfully logged in!</p>
+      {/if}
     </div>
   </main>
-
-  {#if error}
-    <p style="color: red;">{error}</p>
-  {/if}
-
-  {#if data}
-    <p style="color: green;">You have succesfully logged in!</p>
-  {/if}
 {/if}
 
 <style>
+  .message{
+    margin-top: 0.4em;
+    padding: 1em;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 3px dashed black;
+  }
+  #postError{
+    background-color: rgb(237, 74, 74);
+    color: white;
+    text-shadow: 2px 2px 3px #333;
+  }
+  #error{
+    background-color: rgb(142, 125, 125);
+    color: white;
+    text-shadow: 2px 2px 3px #333;
+  }
+  #loggedIn{
+    background-color: rgb(7, 189, 28);
+    color: white;
+    text-shadow: 2px 2px 3px #333;
+  }
   main {
     display: grid;
     place-items: center;
