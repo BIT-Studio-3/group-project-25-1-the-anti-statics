@@ -4,6 +4,16 @@
     $: route = $page.route.id;
 
     import AgencySelect from "$lib/agencySelect.svelte";
+
+    import user from "../stores/user.js";  // Import the user store
+    import { goto } from "$app/navigation";
+
+    // Define the logout function
+    const logout = () => {
+        // Clear the user from the store
+        user.set(null);
+        goto("/login");
+    };
 </script>
 
 <header>
@@ -22,6 +32,7 @@
 
             <a href="/Resources_Availability_Form" class="secondrow"><li class:active={route === "/Resources_Availability_Form"}>Resources_Availability_Form</li></a>
 
+            <button id="log-out" on:click={logout}>ꄗ Log Out</button>
         </ul>
     </nav>
 
@@ -115,5 +126,20 @@
         }
     }
 
+    #log-out {
+    padding: 0em 2em 0em 2em;
+    background-color: white;
+    border-radius: 5%;
+    border: #333 solid;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, text-shadow 0.2s ease; /* Add transition */
+    font-weight: bolder;
+}
 
+#log-out:hover {
+    background-color: rgb(243, 243, 37);
+    color: white;
+    border: white solid;
+    text-shadow: 2px 2px 6px hsl(0, 0%, 20%);
+    cursor: pointer;
+}
 </style>
