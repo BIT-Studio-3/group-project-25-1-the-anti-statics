@@ -1,13 +1,12 @@
 <script>
     const navLinks = [
-        {href: '/weather_reports_page', text: 'weather_reports_page'},
-        {href: '/seismic_reports_page', text: 'seismic_reports_page'},
-        {href: '/road_conditions_page', text: 'road_conditions_page'},
-        {href: '/volcanic_activity_page', text: 'volcanic_activity_page'},
-        {href: '/fire_and_emergency_page', text: 'fire_and_emergency_page'},
-        {href: '/rss', text: 'rss'},
-        {href: '/alert_system', text: 'alert_system'},
-        {href: '/Resources_Availability_Form', text: 'Resources_Availability_Form'}
+        {href: '/weather_reports_page', text: 'Weather Reports'},
+        {href: '/seismic_reports_page', text: 'Seismic and Volcanic Activity'},
+        {href: '/road_conditions_page', text: 'Road Conditions'},
+        {href: '/fire_and_emergency_page', text: 'Fire and Emergency Reports'},
+        {href: '/rss', text: 'RSS Feed'},
+        {href: '/alert_system', text: 'Post an Alert'},
+        {href: '/Resources_Availability_Form', text: 'Post Resources Availability'}
     ];
     
     let isDropdownOpen = false;
@@ -46,13 +45,13 @@
         <a href="/">The Anti-Statics Disaster Management System</a>
     
         
-            <button class="menu-toggle" on:click={toggleDropdown}> <!--Burger menu button for smaller screens-->
+            <button class="menu-toggle" on:click={toggleDropdown}> 
                 ☰
             </button>
         <nav>
                
-                <nav class="nav-links"> <!--navigation links for larger screens-->
-                    {#each navLinks as { href, text }}  <!--loop through the navLinks arrays to create a link for each item-->
+                <nav class="nav-links"> 
+                    {#each navLinks as { href, text }} 
                     <a href={href} class="nav-link" on:click={closeDropdown} class:active={$page.route.id === href}>{text}</a>
 
                     {/each}
@@ -60,9 +59,9 @@
                   </nav>
         </nav>
     
-        {#if isDropdownOpen}    <!--Conditional statement checking when isDropdownOpen variable is true or close-->
+        {#if isDropdownOpen} 
         <div class="dropdown">
-          {#each navLinks as { href, text }} <!--loop through the navLinks arrays to create a link for each item in dropdown menu-->
+          {#each navLinks as { href, text }}
             <a href={href} class="dropdown-link">{text}</a>
           {/each}
         </div>
@@ -96,27 +95,27 @@
     
         .nav-links {
           display: flex;
-          justify-content: space-evenly; /*spread links equally*/
+          justify-content: space-evenly;
           width: 100%;
           gap: 40px;
           background-color: #B5D5C5;
           flex-wrap: wrap;
         }
     
-        .menu-toggle { /*style for the hamburger button, hide it by default*/
-          display: none; /*initially hide it*/
+        .menu-toggle { 
+          display: none;
           font-size: 30px;
           background: none;
           border: 1px solid;
           color: white;
           cursor: pointer;
           padding: 10px;
-          position: absolute; /*place it on top-right corner*/
+          position: absolute;
           right: 20px;
           top: 20px;
         }
     
-        .nav-link {  /*style for navigation links*/
+        .nav-link { 
           text-decoration: none;
           background-color:#B5D5C5;
           color: #333;
@@ -133,16 +132,16 @@
           color: white; 
         }
     
-        .dropdown {  /*style, will be shown when menu is open*/
+        .dropdown {  
           display: flex;
           flex-direction: column;
           width: 100%;
           background-color: #333;
-          position: absolute; /*so it appears below navbar*/
+          position: absolute; 
           top: 110px;
           right: 0;
           padding: 10px 0;
-          z-index: 999; /*so it can show up on the top of other ealiments*/
+          z-index: 999; 
         }
     
         .dropdown-link {
@@ -160,7 +159,7 @@
         }
     
     
-        @media (max-width: 768px) {  /*this is for small screen devices with (max-width 768px)*/
+        @media (max-width: 768px) {  
           .navbar {
             padding: 15px;
           }
