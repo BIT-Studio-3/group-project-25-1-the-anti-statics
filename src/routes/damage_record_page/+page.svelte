@@ -1,11 +1,11 @@
 <script>
-    //import DamageCard from "../../lib/damageCard.svelte";
+    import DamageCard from "../../lib/damageCard.svelte";
     import { postDamage } from "./post-functions/postDamage.js"; // Import the postDamage function
-    import { format } from 'date-fns';
+    // import { format } from 'date-fns';
 
     //Import post alert function variables
     let postError = "";
-    let data = null;
+    let info = null;
     let error = "";
 
     let name = "";
@@ -35,18 +35,21 @@
 
         // Update the state with the result values directly
         postError = result.postError;
-        data = result.data;
+        info = result.info;
         error = result.error;
 
         // Log the result for debugging
         console.log("Result from postDamage:", result);
         console.log("Post error:", postError);
-        console.log("Post data:", data);
+        console.log("Post data:", info);
         console.log("Error:", error);
 
         if (result.data) {
             alert("Damage posted successfully!");
 
+            //export let data;
+
+            damages = [... damages, result.data]
             // Reset form fields
             name = "";
             type = "";
@@ -55,7 +58,12 @@
             count = "";
             cause = "";
         }
+        console.log("Received API response:", result.data);
+
     };
+
+ 
+    //const { damageLogs } = data;
 </script>
 
 <h1>Damage Log</h1>
@@ -120,17 +128,30 @@
     <p style="color: red;">{error}</p>
 {/if}
 
-{#if data}
+{#if info}
     <p style="color: green;">
-        Thank you reporter {name}, the damage has been logged successfully!
+        The damage has been logged successfully!
     </p>
 {/if}
 
+<!-- <div class="damagelogs">
+    <h3>Logged damages</h3>
+    <ul class="damagelogs">
+      {#each damageLogs as damage}
+        <li>
+          <DamageCard obj={damage} />
+        </li>
+      {/each}
+    </ul>
+  </div> -->
+
+
+
 <section class="loggedDamage">
-    <div class="damageCards">
+    <div class="damagelogs">
         <h3>Logged Damages</h3>
         {#if damages.length > 0}
-            <ul class="damageList">
+            <ul class="damagelogs">
                 {#each damages as damage}
                     <li>
                         <strong>Reporter:</strong> {damage.reporterName} <br>
@@ -139,8 +160,10 @@
                         <strong>Location:</strong> {damage.location} <br>
                         <strong>Count:</strong> {damage.count} <br>
                         <strong>Cause:</strong> {damage.cause} <br>
-                        <strong>Damage posted at:</strong> {format(new Date(damage.createdAt), 'MM/dd/yyyy hh:mm a')} <br>
-                        <strong>Updated At:</strong> {format(new Date(damage.updatedAt), 'MM/dd/yyyy hh:mm a')} <br>
+                        <strong>Damage Log Created At:</strong> {damage.createdAt} <br>
+                        <strong>Damage Log Updated At:</strong> {damage.updatedAt} <br>
+                        <!-- <strong>Damage posted at:</strong> {format(new Date(damage.createdAt), 'MM/dd/yyyy hh:mm a')} <br>
+                        <strong>Updated At:</strong> {format(new Date(damage.updatedAt), 'MM/dd/yyyy hh:mm a')} <br> -->
                     </li>
                 {/each}
             </ul>
@@ -200,6 +223,24 @@
     div {
         padding: 0.5em;
     }
+
+  .damagelogs {
+    border-color: black;
+    border: solid;
+    display: grid;
+    grid-template-columns: auto;
+    max-height: fit-content;
+  }
+  .damagelogs ul {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  .damagelogs li {
+    margin-top: 0.5em;
+    list-style: none;
+    padding-left: 0.5em;
+    float: left;
+  }
     .container {
         display: grid;
         grid-template-columns: 10% 90%;
