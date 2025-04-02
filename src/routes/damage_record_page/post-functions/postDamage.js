@@ -17,8 +17,8 @@ export async function postDamage(damageData) {
         return { postError: "Failed to post damage. Please try again later." };
       }
   
-      const data = await response.json();
-      return { data }; // Return the response data
+      const info = await response.json();
+      return { info }; // Return the response data
     } catch (error) {
       //Console the error
       console.log(error);
