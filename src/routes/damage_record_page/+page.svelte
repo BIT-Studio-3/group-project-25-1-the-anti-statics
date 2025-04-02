@@ -72,7 +72,7 @@
             <option value="Residential">Residential</option>
             <option value="Environmental">Environmental</option>
             <option value="Vehicle">Vehicle</option>
-            <option value="Public Faacilities">Public Faacilities</option>
+            <option value="Public Facilities">Public Facilities</option>
         </select>
 
         <label for="level">Select damage level:</label>
