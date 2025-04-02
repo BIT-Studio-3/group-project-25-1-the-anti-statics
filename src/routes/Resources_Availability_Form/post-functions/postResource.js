@@ -2,7 +2,7 @@ export async function postResource(resourceData) {
     try {
       console.log("Posting resource with data:", resourceData);
   
-      const response = await fetch("http://localhost:3000/api/v1/ResourcesAvailability", {
+      const response = await fetch("https://group-project-25-1-the-anti-statics-api.onrender.com/api/v1/ResourcesAvailability", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
