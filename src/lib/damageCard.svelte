@@ -3,15 +3,15 @@
 </script>
 
 <div class="damageCard">
-    <h2>{obj.name}</h2>
+    <h2>{obj.reporterName}</h2>
     <h3>Damage Type:</h3>
-    <p>{obj.type}</p>
+    <p>{obj.damageType}</p>
     <h3>Level of damage:</h3>
-    <p>{obj.level}</p>
+    <p>{obj.damageLevel}</p>
     <h3>Location:</h3>
     <p>{obj.location}</p>
     <h3>Number of individuals affected:</h3>
-    <p>{obj.count}</p>
+    <p>{obj.countAffected}</p>
     <h3>Description:</h3>
     <p>{obj.cause}</p>
 </div>
