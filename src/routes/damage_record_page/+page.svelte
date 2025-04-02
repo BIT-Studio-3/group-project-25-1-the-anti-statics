@@ -1,5 +1,5 @@
 <script>
-    import DamageCard from "../../lib/damageCard.svelte";
+    //import DamageCard from "../../lib/damageCard.svelte";
     import { postDamage } from "./post-functions/postDamage.js"; // Import the postDamage function
     import { format } from 'date-fns';
 
