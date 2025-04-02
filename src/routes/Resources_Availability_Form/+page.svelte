@@ -1,22 +1,58 @@
 <script>
-   // Variable declarations using camelCase naming convention
-    let orgName = ''; // Organization name input field
-    let contactInfo = ''; // Contact information input field
-    let helpDescription = ''; // Description of how the organization can assist
-    let conditions = ''; // Conditions for providing assistance
-    let submitted = false; // Flag to check if form has been submitted
-    
-    // Function to handle form submission
-    function handleSubmit() {
-      // Check if all required fields are filled before submission
-      if (orgName && contactInfo && helpDescription && conditions) {
-        // Process form data
-        console.log('Form submitted:', { orgName, contactInfo, helpDescription, conditions });
-        submitted = true; // Mark the form as submitted
-      } else {
-        alert('Please fill out all fields'); // Alert user if any required fields are missing
-      }
+   import { onMount } from "svelte";
+  import { postResource } from "./post-functions/postResource.js";
+
+  let orgName = ""; 
+  let contactInfo = ""; 
+  let helpDescription = ""; 
+  let conditions = ""; 
+  let submitted = false; 
+  let errorMessage = "";
+
+  const API_URL = "http://localhost:3000/api/v1/ResourcesAvailability";
+
+  async function handleSubmit(event) {
+    event.preventDefault(); 
+
+    if (!orgName || !contactInfo || !helpDescription || !conditions) {
+      alert("Please fill out all fields");
+      return;
     }
+    const resourceData = {
+      orgName,
+      contactInfo,
+      helpDescription,
+      conditions,
+    };
+
+   
+    const result = await postResource(resourceData);
+
+    if (result.data) {
+      console.log("Form submitted successfully", result.data);
+      submitted = true;
+      errorMessage = "";
+      
+      
+      orgName = "";
+      contactInfo = "";
+      helpDescription = "";
+      conditions = "";
+    } else {
+      errorMessage = result.error || "Failed to submit data";
+    }
+  }
+
+  let resources = [];
+  onMount(async () => {
+    try {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      resources = data.data || [];
+    } catch (err) {
+      console.error("Failed to load resources:", err);
+    }
+  });
   </script>
   
   <main>
