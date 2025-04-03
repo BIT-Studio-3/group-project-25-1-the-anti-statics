@@ -2,26 +2,26 @@
    import { onMount } from "svelte";
   import { postResource } from "./post-functions/postResource.js";
 
-  let orgName = ""; 
+  let name = ""; 
   let contactInfo = ""; 
-  let helpDescription = ""; 
+  let assistance = ""; 
   let conditions = ""; 
   let submitted = false; 
   let errorMessage = "";
 
-  const API_URL = "http://localhost:3000/api/v1/ResourcesAvailability";
+  
 
   async function handleSubmit(event) {
     event.preventDefault(); 
 
-    if (!orgName || !contactInfo || !helpDescription || !conditions) {
+    if (!name || !contactInfo || !assistance || !conditions) {
       alert("Please fill out all fields");
       return;
     }
     const resourceData = {
-      orgName,
+      name,
       contactInfo,
-      helpDescription,
+      assistance,
       conditions,
     };
 
@@ -34,9 +34,9 @@
       errorMessage = "";
       
       
-      orgName = "";
+      name = "";
       contactInfo = "";
-      helpDescription = "";
+      assistance = "";
       conditions = "";
     } else {
       errorMessage = result.error || "Failed to submit data";
@@ -64,8 +64,8 @@
     <section class="form-container">
       <form on:submit={handleSubmit}>
       <div class="form-group">
-        <label for="orgName">Organization Name</label>
-        <input type="text" id="orgName" bind:value={orgName} placeholder="Enter organization name" required />
+        <label for="name">Organization Name</label>
+        <input type="text" id="name" bind:value={name} placeholder="Enter organization name" required />
         </div>
   
       <div class="form-group"> 
@@ -74,8 +74,8 @@
       </div>
   
       <div class="form-group"> 
-        <label for="helpDescription">How can you help?</label>
-        <textarea id="helpDescription" bind:value={helpDescription} placeholder="Describe the ways you can assist" required></textarea>
+        <label for="assistance">How can you help?</label>
+        <textarea id="assistance" bind:value={assistance} placeholder="Describe the ways you can assist" required></textarea>
       </div>
   
       <div class="form-group"> 
@@ -98,7 +98,7 @@
       <ul>
         {#each resources as resource}
           <li>
-            <strong>{resource.orgName}</strong>: {resource.helpDescription}
+            <strong>{resource.name}</strong>: {resource.assistance}
           </li>
         {/each}
       </ul>
@@ -121,9 +121,19 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
+.form-container > *{
+  background-color: white;
+}
+
+
   .form-group {
     margin-bottom: 1.5rem;
+    background-color: white;
     text-align: left;
+  }
+
+  .form-group > * {
+    background-color: white;
   }
   
     label {
