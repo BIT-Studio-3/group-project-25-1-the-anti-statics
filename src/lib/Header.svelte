@@ -48,6 +48,7 @@
 </script>
 
 <header>
+
   <nav>
       <div class="navbar">
           <h1><a href="/">The Anti-Statics Disaster Management System</a></h1>
