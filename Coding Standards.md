@@ -80,13 +80,13 @@ The branch name should be a brief description of the feature you are working on
 **5. Main Branch Commit Rules**
 **Do not** commit directly to the **main** branch unless the entire team has allowed you to do so.
 
-The **main** branch is the project's live production branch
+The ``main`` branch is the project's live production branch
 
-The **STAGING** branch is where all continous staged changes are pushed to, to prevent buggy changes entering **main**
+The ``STAGING`` branch is where all continous staged changes are pushed to, to prevent buggy changes entering **main**
 
-The only commits than can merged into **main** should be commits from the **STAGING** branch
+The only commits than can merged into ``main`` should be commits from the ``STAGING`` branch
 
-When creating pull requests on feature branches, make sure the **STAGING** branch is the base branch for the feature branch to be compared to.
+When creating pull requests on feature branches, make sure the ``STAGING`` branch is the base branch for the feature branch to be compared to.
 
 **6. Merging own Pull Requests**
 
@@ -97,6 +97,39 @@ When creating pull requests on feature branches, make sure the **STAGING** branc
 When opening a pull request ensure you link it to an issue by scrolling down the sidebar to the 'Development' section
 
 Then simply just click on the '⚙️' icon next to 'Development' and a little dropdown should appear, and from there you can link the issue
+
+**8. Dealing with merge conflicts**
+
+When merging a pull request from your feature branch into ``STAGING``, it is not ideal to resolve merge conflicts between the branches on GitHub. Instead try and resolve the conflicts locally on VSCode. 
+
+1. On a VSCode bash terminal, type: ``git checkout STAGING``
+
+2. Pull the feature branch you want to merge into ``STAGING``, by typing: ``git pull origin feature-branch``
+
+You should see: 
+```
+user@machine MINGW64 /path-to/group-project-25-1-the-anti-statics (STAGING|merging)
+```
+
+3. When resolving conflicts in a file, VSCode's built in Merge editor will help you along the way, showing incoming and current changes on the ``STAGING`` branch.
+
+The Merge editor will give you option to accept the incoming changes, the current changes or accept both changes.
+
+4. Click the ``Resolve in Merge Editor`` button, and from there you should be able to resolve the conflicts within the file.
+
+5. Once all files with merge conflicts have been resolved you can successfully commit and push the new changes to ``STAGING``.
+
+**9. Merging sprints from ``STAGING`` into ``main``**
+
+On the first Monday of a new sprint (following the end of a previous sprint), create a pull request to merge ``STAGING`` into ``main`` to integrate the previous sprint into the production environment of the website.
+
+Name the Pull Request e.g. Sprint 3, and give it the label 'Sprint'.
+
+> Note: (If there are merge conflicts) Before merging ``STAGING`` into ``main``, open ``main`` **locally** and pull ``STAGING`` as per described in **rule 8** above.
+
+**10. Knowing when to close Pull Requests**
+
+If a pull request is open longer than a week, it must be closed.
 
 ## Housekeeping
 
