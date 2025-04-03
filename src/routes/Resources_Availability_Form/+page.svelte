@@ -1,137 +1,240 @@
 <script>
-   // Variable declarations using camelCase naming convention
-    let orgName = ''; // Organization name input field
-    let contactInfo = ''; // Contact information input field
-    let helpDescription = ''; // Description of how the organization can assist
-    let conditions = ''; // Conditions for providing assistance
-    let submitted = false; // Flag to check if form has been submitted
-    
-    // Function to handle form submission
-    function handleSubmit() {
-      // Check if all required fields are filled before submission
-      if (orgName && contactInfo && helpDescription && conditions) {
-        // Process form data
-        console.log('Form submitted:', { orgName, contactInfo, helpDescription, conditions });
-        submitted = true; // Mark the form as submitted
-      } else {
-        alert('Please fill out all fields'); // Alert user if any required fields are missing
-      }
+   import { onMount } from "svelte";
+  import { postResource } from "./post-functions/postResource.js";
+
+  let name = ""; 
+  let contactInfo = ""; 
+  let assistance = ""; 
+  let conditions = ""; 
+  let submitted = false; 
+  let errorMessage = "";
+
+  
+
+  async function handleSubmit(event) {
+    event.preventDefault(); 
+
+    if (!name || !contactInfo || !assistance || !conditions) {
+      alert("Please fill out all fields");
+      return;
     }
+    const resourceData = {
+      name,
+      contactInfo,
+      assistance,
+      conditions,
+    };
+
+   
+    const result = await postResource(resourceData);
+
+    if (result.data) {
+      console.log("Form submitted successfully", result.data);
+      submitted = true;
+      errorMessage = "";
+      
+      
+      name = "";
+      contactInfo = "";
+      assistance = "";
+      conditions = "";
+    } else {
+      errorMessage = result.error || "Failed to submit data";
+    }
+  }
+
+  let resources = [];
+  onMount(async () => {
+    try {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      resources = data.data || [];
+    } catch (err) {
+      console.error("Failed to load resources:", err);
+    }
+  });
   </script>
   
   <main>
     <h1>Disaster Relief Organizations Form</h1>
   
-    {#if submitted}  <!-- Display a thank you message after form submission -->
-      <p>Thank you for submitting the information. We will get in touch with you shortly.</p>
-    {/if}
+    {#if submitted}
+    <p class="success-message">✅ Thank you for submitting your information. We will contact you shortly.</p>
+  {:else}
+    <section class="form-container">
+      <form on:submit={handleSubmit}>
+      <div class="form-group">
+        <label for="name">Organization Name</label>
+        <input type="text" id="name" bind:value={name} placeholder="Enter organization name" required />
+        </div>
   
-    <form on:submit|preventDefault={handleSubmit}>  <!-- Form for disaster relief organization submission -->
-      <!-- Organization Name input field -->
-      <div>
-        <label for="orgName">Organization Name</label>
-        <input type="text" id="orgName" bind:value={orgName} placeholder="Enter organization name" required />
-      </div>
-  
-      <div> <!-- Contact Information input field -->
+      <div class="form-group"> 
         <label for="contactInfo">Contact Information</label>
         <input type="text" id="contactInfo" bind:value={contactInfo} placeholder="Enter contact info" required />
       </div>
   
-      <div>  <!-- Help Description input field -->
-        <label for="helpDescription">How can you help?</label>
-        <textarea id="helpDescription" bind:value={helpDescription} placeholder="Describe the ways you can assist" required></textarea>
+      <div class="form-group"> 
+        <label for="assistance">How can you help?</label>
+        <textarea id="assistance" bind:value={assistance} placeholder="Describe the ways you can assist" required></textarea>
       </div>
   
-      <div> <!-- Conditions input field -->
+      <div class="form-group"> 
         <label for="conditions">Conditions</label>
         <textarea id="conditions" bind:value={conditions} placeholder="Explain any conditions for your assistance" required></textarea>
       </div>
   
-      <!-- Submit button to send the form data -->
+      {#if errorMessage}
+      <p class="error-message">⚠️ {errorMessage}</p>
+    {/if}
+
       <button type="submit">Submit</button>
     </form>
+    </section>
+  {/if}
+
+  {#if resources.length > 0}
+    <section class="resources-list">
+      <h2>Existing Resources</h2>
+      <ul>
+        {#each resources as resource}
+          <li>
+            <strong>{resource.name}</strong>: {resource.assistance}
+          </li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
   </main>
   
   <style>
-    /* Main section style */
     main {
       padding: 2rem;
       max-width: 600px;
       margin: 0 auto;
+      text-align: center;
     }
   
-    form div { /* Style for each form div */
-      margin-bottom: 1.5rem;
-    }
+    .form-container {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+.form-container > *{
+  background-color: white;
+}
+
+
+  .form-group {
+    margin-bottom: 1.5rem;
+    background-color: white;
+    text-align: left;
+  }
+
+  .form-group > * {
+    background-color: white;
+  }
   
-    label /* Label styling */ {
+    label {
       display: block;
       margin-bottom: 0.5rem;
+      font-weight: bold;
     }
   
-    input, textarea /* Styling for text inputs and text areas */ {
+    input, textarea {
       width: 100%;
       padding: 0.8rem;
       font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
   
-    button /* Submit button styling */ {
+    button {
       padding: 1rem;
       background-color: #4CAF50;
       color: white;
       border: none;
       cursor: pointer;
       font-size: 1rem;
+      border-radius: 5px;
+      width: 100%;
     }
   
-    button:hover /* Hover effect for button */{
+    button:hover{
       background-color: #45a049;
     }
+    
+    .success-message {
+    color: green;
+    font-size: 1.1rem;
+    font-weight: bold;
+    }
+
+    .error-message {
+    color: red;
+    font-size: 1rem;
+    font-weight: bold;
+    }
+
+    .resources-list {
+    margin-top: 2rem;
+    text-align: left;
+    }
+
+    .resources-list ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .resources-list li {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+  }
+
     @media (max-width: 1200px) {
     main {
-        padding: 1.5rem; /* Reduce padding for tablets */
-        max-width: 500px; /* Reduce form width */
+        padding: 1.5rem;
+        max-width: 500px; 
     }
 
     input, textarea, button {
-        font-size: 1.1rem; /* Slightly larger font for readability */
+        font-size: 1.1rem; 
     }
 
     button {
-        padding: 0.9rem; /* Adjust button padding */
+        padding: 0.9rem;
     }
 }
 
-/* For mobile devices (phones in portrait mode) */
+
 @media (max-width: 768px) {
     main {
-        padding: 1.2rem; /* Reduce padding for smaller screens */
-        max-width: 100%; /* Ensure form takes full width on small screens */
+        padding: 1.2rem;
+        max-width: 100%; 
     }
 
     input, textarea, button {
-        font-size: 1rem; /* Adjust font size */
+        font-size: 1rem;
     }
 
     button {
-        padding: 1rem; /* Adjust button padding */
+        padding: 1rem;
     }
 }
 
-/* For very small screens (phones in portrait mode) */
 @media (max-width: 480px) {
     main {
-        padding: 1rem; /* Further reduce padding */
-        max-width: 100%; /* Ensure form takes full width on very small screens */
+        padding: 1rem;
+        max-width: 100%;
     }
 
     input, textarea, button {
-        font-size: 0.9rem; /* Adjust font size for very small screens */
+        font-size: 0.9rem;
     }
 
     button {
-        padding: 0.9rem; /* Adjust button padding for small screens */
+        padding: 0.9rem;
     }
 }
   </style>
