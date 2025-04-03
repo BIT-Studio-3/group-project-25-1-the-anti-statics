@@ -1,10 +1,21 @@
 <script>
     // exporting quake data
     export let data;
+
+    const volcanos = data.volcanos;
+
+    function getLevelClass(level) {
+        return level === 0 ? 'greenTag' :
+               level === 1 ? 'blueTag' :
+               level === 2 ? 'yellowTag' :
+               level === 3 ? 'orangeTag' :
+               'redTag'; // Default to 'redTag' for levels 4 and above
+    }
+
 </script>
 
 <!-- Page title -->
-<h1>Quakes</h1>
+<h2>Quakes</h2>
 <div class="container">
     <details close>
         <summary><h2 class="section-title"><span class="arrow-icon"> → </span> MMI 5 Quakes</h2></summary>
@@ -77,6 +88,30 @@
     </details>
 </div>
 
+<h2>Volcanic Activity</h2>
+<div class="container">
+    <div class="code">
+        <h3>Key:</h3>
+        <p> 0 </p><div class="zero">█</div>
+        <p> 1 </p><div class="one">█</div>
+        <p> 2 </p><div class="two">█</div>
+        <p> 3 </p><div class="three">█</div>
+        <p> 4 </p><div class="four">█</div>
+    </div>
+    <div class="card-grid">
+        {#each volcanos.features as volcano}
+        <div class="card {getLevelClass(volcano.properties.level)}">
+            <h3 class="quake-locality">{volcano.properties.volcanoTitle}</h3>
+            <div class="quake-info">
+            <p><strong>Activity</strong>: {volcano.properties.activity}</p>
+            <p><strong>Hazard Level</strong>: {volcano.properties.level}</p>
+            <p><strong>Hazards:</strong> {volcano.properties.hazards}</p>
+            </div>
+        </div>
+        {/each}
+    </div>
+</div>
+
 <style>
     .container{
         padding: 1.5em;
@@ -85,7 +120,7 @@
         gap: 1.5em;
     }
 
-    h1{
+    h2{
         text-align: center;
         font-size: 2.5em;
         margin-bottom: 1em;
@@ -113,6 +148,26 @@
         transform: rotate(90deg);
     }
 
+    .card-grid>.greenTag {
+        border-left: solid green 10px;
+    }
+
+    .card-grid>.blueTag {
+        border-left: solid blue 10px;
+    }
+
+    .card-grid>.yellowTag {
+        border-left: solid yellow 10px;
+    }
+
+    .card-grid>.orangeTag {
+        border-left: solid orange 10px;
+    }
+
+    .card-grid>.redTag {
+        border-left: solid red 10px;
+    }
+
     details {
         padding: 1em;
         background-color: #ecf0f1;
@@ -135,6 +190,30 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 1.5em;
+    }
+    .zero {
+        color: #3d995d;
+    }
+    .one {
+        color: #0000ff;
+    }
+    .two {
+        color: #ffff00;
+    }
+    .three {
+        color: #ff6600;
+    }
+    .four {
+        color: #fe0000;
+    }
+    .code {
+        padding: 0.8em;
+        margin-left: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        flex-direction: row;
+        justify-content: center;
     }
     @media (max-width: 1200px) {
     h1 {
