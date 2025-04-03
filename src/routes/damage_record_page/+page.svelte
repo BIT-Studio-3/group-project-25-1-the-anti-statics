@@ -117,7 +117,14 @@
     <p style="color: green;">The damage has been logged successfully!</p>
 {/if}
 
+
+
+
 <div class="damagelogs">
+
+    {#if !data.damages || data.damages.length === 0}
+    <p>No damages logged</p>
+    {:else}
     <h3>Logged damages</h3>
     <ul class="damagelogs">
         {#each damages as damage}
@@ -126,7 +133,9 @@
             </li>
         {/each}
     </ul>
+    {/if}
 </div>
+
 
 <style>
     * {
