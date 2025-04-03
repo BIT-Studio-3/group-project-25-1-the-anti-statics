@@ -3,7 +3,7 @@ export async function postHazard(hazardInfo) {
     console.log("Posting hazard with info:", hazardInfo);
 
     hazardInfo.level = parseInt(hazardInfo.level);
-    const response = await fetch('http://localhost:3000/api/v1/hazards', {
+    const response = await fetch('https://group-project-25-1-the-anti-statics-api-4tz3.onrender.com/api/v1/hazards', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
