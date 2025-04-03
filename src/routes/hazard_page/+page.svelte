@@ -55,6 +55,7 @@
 
   //Export the load function
   export let data;
+  console.log(data);
   const { hazards } = data;
 </script>
 
@@ -97,6 +98,9 @@
   </form>
 
   <div class="hazardlogs">
+    {#if !data.hazards || data.hazards.length === 0}
+      <p>No hazards logged</p>
+    {:else}
     <h3>Recent Hazards</h3>
     <ul class="hazardLogs">
       {#each hazards as hazard}
@@ -105,6 +109,7 @@
         </li>
       {/each}
     </ul>
+    {/if}
   </div>
 </div>
 
