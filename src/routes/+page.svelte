@@ -16,7 +16,7 @@
   {:else}
     <div class="AlertsCard">
       <h3>Recent Alerts</h3>
-      {#if alerts.length === 0}
+      {#if !data.alerts || data.alerts.length === 0}
         <ul>
           <li>{message}</li>
         </ul>
