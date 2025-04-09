@@ -52,6 +52,13 @@
 </header>
 
 <style>
+  h1 {
+    transition:
+      transform 0.5s;
+  }
+  h1:hover{
+    transform: scale(1.2);
+  }
   .logout-button {
     display: flex;
     align-items: center;
@@ -63,9 +70,9 @@
     padding: 0.3em 0.8em 0.3em 0.8em;
   }
   .logout-button:hover {
-      transform: scale(1.1);
-      cursor: pointer;
-    }
+    transform: scale(1.1);
+    cursor: pointer;
+  }
   #hamburger {
     display: none;
     position: absolute;
