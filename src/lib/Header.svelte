@@ -37,7 +37,7 @@
   <style>
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 0.5em;
       background-color: rgb(207, 105, 105);
@@ -49,10 +49,12 @@
         display: flex;
         list-style: none;
         gap: 10px;
+        background-color: yellow;
     }
     .main-menu li{
         background-color: red;
         padding: 0.5em;
+        text-align: center;
     }
   </style>
   
