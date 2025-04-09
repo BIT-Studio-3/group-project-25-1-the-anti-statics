@@ -41,9 +41,7 @@
       align-items: center;
       padding: 0.5em;
       background-color: rgb(207, 105, 105);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      gap: 10px;
     }
     .main-menu{
         display: flex;
@@ -53,7 +51,8 @@
     }
     .main-menu li{
         background-color: red;
-        padding: 0.5em;
+        padding: 0.4em;
+        width: 5em;
         text-align: center;
     }
   </style>
