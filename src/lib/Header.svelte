@@ -140,6 +140,15 @@
     }
     .logout-button-hamburger{
         display: flex;
+        width: 100%;
+        background-color: green;
+        transition: background-color 0.5s, transform 0.5s;
+        color: white;
+        padding: 0.3em;
+    }
+    .logout-button-hamburger:hover{
+        transform: scale(1.1);
+        cursor: pointer;
     }
   }
 </style>
