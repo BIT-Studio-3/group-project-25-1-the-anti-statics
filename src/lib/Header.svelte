@@ -43,13 +43,29 @@
         <li><a href="/alert_system">Post Alerts</a></li>
         <li><a href="/Resources_Availability_Form">Resources</a></li>
         <li><AgencySelect /></li>
-        <button class="logout-button-hamburger" on:click={logout}>ꄗ Log Out</button>
+        <button class="logout-button-hamburger" on:click={logout}
+          >ꄗ Log Out</button
+        >
       </ul>
     </nav>
   {/if}
 </header>
 
 <style>
+  .logout-button {
+    display: flex;
+    align-items: center;
+    background-color: green;
+    transition:
+      background-color 0.5s,
+      transform 0.5s;
+    color: white;
+    padding: 0.3em 0.8em 0.3em 0.8em;
+  }
+  .logout-button:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
   #hamburger {
     display: none;
     position: absolute;
@@ -61,7 +77,7 @@
   .hamburger-btn {
     display: none;
   }
-  .logout-button-hamburger{
+  .logout-button-hamburger {
     display: none;
   }
   * {
@@ -120,35 +136,41 @@
     }
     .hamburger-list li {
       padding: 0.3em;
-      transition: background-color 0.5s, transform 0.5s;
+      transition:
+        background-color 0.5s,
+        transform 0.5s;
       border-radius: 4px;
     }
     .hamburger-list li a {
       background-color: white;
       text-decoration: none;
-      transition: background-color 0.5s, transform 0.5s;
+      transition:
+        background-color 0.5s,
+        transform 0.5s;
       border-radius: 4px;
     }
-    .hamburger-list li:hover a{
+    .hamburger-list li:hover a {
       background-color: green;
       color: white;
     }
-    .hamburger-list li:hover{
+    .hamburger-list li:hover {
       background-color: green;
       border-radius: 4px;
       transform: scale(1.1);
     }
-    .logout-button-hamburger{
-        display: flex;
-        width: 100%;
-        background-color: green;
-        transition: background-color 0.5s, transform 0.5s;
-        color: white;
-        padding: 0.3em;
+    .logout-button-hamburger {
+      display: flex;
+      width: 100%;
+      background-color: green;
+      transition:
+        background-color 0.5s,
+        transform 0.5s;
+      color: white;
+      padding: 0.3em;
     }
-    .logout-button-hamburger:hover{
-        transform: scale(1.1);
-        cursor: pointer;
+    .logout-button-hamburger:hover {
+      transform: scale(1.1);
+      cursor: pointer;
     }
   }
 </style>
