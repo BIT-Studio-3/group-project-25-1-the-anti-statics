@@ -83,8 +83,129 @@
         By clicking on "Sign in now" you agree to our
         <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
       </p>
-
     </div>
-  </div>
-  
+  </div> 
 </main>
+{/if}
+
+<style>
+  main.login-page {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+
+  .login-left {
+    flex: 1;
+    background-image: url("/login.jpg"); /* Replace with your own image path */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .overlay {
+    color: white;
+    padding: 3em;
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .overlay h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+  }
+
+  .overlay p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+  }
+
+  .social-icons i {
+    font-size: 1.5em;
+    margin-right: 1em;
+  }
+
+  .login-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+  }
+
+  #form-container {
+    width: 80%;
+    max-width: 350px;
+  }
+
+  #form-container h2 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    width: 100%;
+    background-color: #3cb371;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.8em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #2e8b57;
+  }
+
+  .message {
+    margin-top: 1em;
+    padding: 0.8em;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .message.error {
+    background: rgb(142, 125, 125);
+    color: white;
+  }
+
+  .message.postError {
+    background: rgb(237, 74, 74);
+    color: white;
+  }
+
+  .message.success {
+    background: rgb(7, 189, 28);
+    color: white;
+  }
+
+  .terms {
+    margin-top: 1em;
+    font-size: 0.8em;
+    text-align: center;
+    color: #666;
+  }
+
+  .terms a {
+    color: #000;
+    text-decoration: underline;
+  }
+</style>
+
