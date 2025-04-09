@@ -44,5 +44,15 @@
       </div>
     </div>
   </div>
+
+  <!--Right Side-->
+  <div class="login-right">
+    <div id="form-container">
+      <div id="image-container">
+        <img src={logo} alt="logo" width="120" height="70" />
+      </div>
+      <h2>Sign in</h2>
+    </div>
+  </div>
   
 </main>
