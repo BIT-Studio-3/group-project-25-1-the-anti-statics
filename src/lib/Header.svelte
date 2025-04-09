@@ -76,13 +76,20 @@
     display: flex;
     list-style: none;
     gap: 10px;
-    background-color: yellow;
   }
   .main-menu li {
     background-color: red;
     padding: 0.4em;
     width: 5em;
     text-align: center;
+    transition: background-color 0.5s, transform 0.5s;
+  }
+  .main-menu li:hover {
+    background-color: green;
+    transform: scale(1.1);
+  }
+  .main-menu li a{
+    text-decoration: none;
   }
   @media (max-width: 1080px) {
     .main-menu li,
