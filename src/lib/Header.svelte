@@ -42,10 +42,10 @@
   <nav id="main-drop">
     <ul>
       <li><a href="/seismic_reports_page">Seismic Reports</a></li>
-      <li><a href="/road_conditions_page">Planets</a></li>
-      <li><a href="/fire_and_emergency_page">Contact</a></li>
-      <li><a href="/rss">Extras</a></li>
-      <li><a href="/alert_system">Post an alert</a></li>
+      <li><a href="/road_conditions_page">Road Conditions</a></li>
+      <li><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
+      <li><a href="/rss">RSS</a></li>
+      <li><a href="/alert_system">Post Alerts</a></li>
       <li><a href="/Resources_Availability_Form">Resources</a></li>
       <li><AgencySelect /></li>
       <li>
@@ -56,12 +56,12 @@
   </nav>
   <nav id="hamburger" bind:this={dropdownMenu} class={isMenuOpen ? "open" : ""}>
     <ul>
-      <li><a href="/seismic_reports_page">Information</a></li>
-      <li><a href="/road_conditions_page">Planets</a></li>
-      <li><a href="/fire_and_emergency_page">Contact</a></li>
-      <li><a href="/rss">Extras</a></li>
-      <li><a href="/alert_system">Post an alert</a></li>
-      <li><a href="/Resources_Availability_Form">Resources</a></li>
+        <li><a href="/seismic_reports_page">Seismic Reports</a></li>
+        <li><a href="/road_conditions_page">Road Conditions</a></li>
+        <li><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="/alert_system">Post Alerts</a></li>
+        <li><a href="/Resources_Availability_Form">Resources</a></li>
     </ul>
   </nav>
 </header>
