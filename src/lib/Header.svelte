@@ -55,13 +55,13 @@
     position: absolute;
     top: 6em;
   }
-  .hamburger-list{
+  .hamburger-list {
     list-style: none;
   }
   .hamburger-btn {
     display: none;
   }
-  *{
+  * {
     background-color: white;
   }
   header {
@@ -82,7 +82,9 @@
     padding: 0.4em;
     width: 5em;
     text-align: center;
-    transition: background-color 0.5s, transform 0.5s;
+    transition:
+      background-color 0.5s,
+      transform 0.5s;
     border-radius: 4px;
   }
   .main-menu li:hover {
@@ -94,7 +96,7 @@
     background-color: inherit;
     color: white;
   }
-  .main-menu li a{
+  .main-menu li a {
     text-decoration: none;
     background-color: inherit;
   }
@@ -106,11 +108,32 @@
     .hamburger-btn {
       display: flex;
     }
-    #hamburger{
-        display: block;
+    #hamburger {
+      display: block;
     }
-    .hamburger-list{
-        display: block;
+    .hamburger-list {
+      display: block;
+      padding: 1em;
+    }
+    .hamburger-list li {
+      padding: 0.3em;
+      transition: background-color 0.5s, transform 0.5s;
+      border-radius: 4px;
+    }
+    .hamburger-list li a {
+      background-color: white;
+      text-decoration: none;
+      transition: background-color 0.5s, transform 0.5s;
+      border-radius: 4px;
+    }
+    .hamburger-list li:hover a{
+      background-color: green;
+      color: white;
+    }
+    .hamburger-list li:hover{
+      background-color: green;
+      border-radius: 4px;
+      transform: scale(1.1);
     }
   }
 </style>
