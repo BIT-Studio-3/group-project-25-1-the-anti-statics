@@ -31,3 +31,18 @@
     }
   };
 </script>
+
+{#if !$login}
+<main class="login-page">
+  <!--Left side-->
+  <div class="login-left">
+    <div class="overlay">
+      <h1>Welcome Back</h1>
+      <p>...text...</p>
+      <div class="social-icons">
+        <i>🐦</i> <i>📘</i> <i>📷</i>
+      </div>
+    </div>
+  </div>
+  
+</main>
