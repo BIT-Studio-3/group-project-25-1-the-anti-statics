@@ -45,5 +45,9 @@
       top: 0;
       z-index: 1000;
     }
+    .main-menu{
+        display: flex;
+        list-style: none;
+    }
   </style>
   
