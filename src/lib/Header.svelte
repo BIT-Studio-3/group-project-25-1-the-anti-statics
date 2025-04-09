@@ -27,7 +27,7 @@
       <li><a href="/rss">RSS</a></li>
       <li><a href="/alert_system">Post Alerts</a></li>
       <li><a href="/Resources_Availability_Form">Resources</a></li>
-      <li><AgencySelect /></li>
+      <div><AgencySelect /></div>
       <button class="logout-button" on:click={logout}>ꄗ Log Out</button>
       <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
     </ul>
@@ -42,7 +42,7 @@
         <li><a href="/rss">RSS</a></li>
         <li><a href="/alert_system">Post Alerts</a></li>
         <li><a href="/Resources_Availability_Form">Resources</a></li>
-        <li><AgencySelect /></li>
+        <div><AgencySelect /></div>
         <button class="logout-button-hamburger" on:click={logout}
           >ꄗ Log Out</button
         >
@@ -130,7 +130,7 @@
     background-color: inherit;
   }
   @media (max-width: 1080px) {
-    .main-menu li,
+    .main-menu li, div,
     .logout-button {
       display: none;
     }

@@ -15,8 +15,6 @@
 </script>
 
 <section>
-    <p>🔍</p>
-
     <select bind:value={$selectedAgency}>
     <option value="All">All</option>
     {#each agencies as agency}
@@ -28,8 +26,15 @@
 <style>
     section{
         display: flex;
-        border-right: 1px solid grey;
+        background-color: inherit;
         padding: 0.2em 1em 0.2em 1em;
         justify-content: center;
+        align-items: center;
+    }
+    p, select{
+        background-color: inherit;
+    }
+    select{
+        padding: 0.5em;
     }
 </style>
