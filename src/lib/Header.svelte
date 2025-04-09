@@ -67,8 +67,11 @@
 </header>
 
 <style>
+  #main-drop ul{
+    color: #333;
+  }
   * {
-    background-color: white;
+    background-color: rgb(207, 105, 105);
   }
   .logout-button {
     background-color: #b5d5c5;
@@ -84,7 +87,7 @@
     background-color: #555;
     color: white;
   }
-
+  
   #main-drop button {
     transition: background-color 0.3s transform 0.3s;
   }
@@ -112,10 +115,6 @@
   h1:hover {
     transform: scale(1.1);
   }
-  h1 a {
-    color: white;
-  }
-
   ul {
     display: flex;
     justify-content: center;
@@ -139,12 +138,11 @@
     cursor: pointer;
   }
   ul li:hover a {
-    color: #333;
+    color: white;
   }
   li a {
     text-decoration: none;
     color: #333;
-    color: white;
     text-transform: uppercase;
   }
   li {
