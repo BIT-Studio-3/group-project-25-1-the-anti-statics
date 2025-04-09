@@ -32,6 +32,22 @@
       <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
     </ul>
   </nav>
+
+  {#if isMenuOpen}
+    <nav id="hamburger">
+      <ul class="hamburger-list">
+        <li><a href="/seismic_reports_page">Seismic Reports</a></li>
+        <li><a href="/road_conditions_page">Road Conditions</a></li>
+        <li><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="/alert_system">Post Alerts</a></li>
+        <li><a href="/Resources_Availability_Form">Resources</a></li>
+        <li><AgencySelect /></li>
+        <button class="logout-button" on:click={logout}>ꄗ Log Out</button>
+        <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
+      </ul>
+    </nav>
+  {/if}
 </header>
 
 <style>
@@ -59,12 +75,12 @@
     text-align: center;
   }
   @media (width <= 1080px) {
-    .main-menu li, .logout-button{
+    .main-menu li,
+    .logout-button {
       display: none;
     }
     .hamburger-btn {
       display: flex;
     }
-    
   }
 </style>
