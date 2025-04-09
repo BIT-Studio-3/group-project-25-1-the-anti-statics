@@ -44,7 +44,6 @@
         <li><a href="/Resources_Availability_Form">Resources</a></li>
         <li><AgencySelect /></li>
         <button class="logout-button" on:click={logout}>ꄗ Log Out</button>
-        <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
       </ul>
     </nav>
   {/if}
