@@ -71,6 +71,7 @@
     padding: 0.5em;
     background-color: white;
     gap: 10px;
+    border-bottom: 3px green solid;
   }
   .main-menu {
     display: flex;
