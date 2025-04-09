@@ -82,6 +82,7 @@
     width: 5em;
     text-align: center;
     transition: background-color 0.5s, transform 0.5s;
+    border-radius: 4px;
   }
   .main-menu li:hover {
     background-color: green;
@@ -90,6 +91,7 @@
   }
   .main-menu li:hover a {
     background-color: inherit;
+    color: white;
   }
   .main-menu li a{
     text-decoration: none;
