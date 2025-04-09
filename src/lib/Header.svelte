@@ -78,7 +78,6 @@
     gap: 10px;
   }
   .main-menu li {
-    background-color: red;
     padding: 0.4em;
     width: 5em;
     text-align: center;
@@ -86,10 +85,15 @@
   }
   .main-menu li:hover {
     background-color: green;
+    border-radius: 4px;
     transform: scale(1.1);
+  }
+  .main-menu li:hover a {
+    background-color: inherit;
   }
   .main-menu li a{
     text-decoration: none;
+    background-color: inherit;
   }
   @media (max-width: 1080px) {
     .main-menu li,
