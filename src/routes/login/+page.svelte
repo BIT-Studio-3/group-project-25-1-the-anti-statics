@@ -92,23 +92,22 @@
   main.login-page {
     display: flex;
     height: 100vh;
-    overflow: hidden;
     font-family: Arial, sans-serif;
+    background-image: url("/src/routes/login/jpg.jpg");
+    background-size: cover;
+    background-position: center;
   }
 
   .login-left {
     flex: 1;
-    background-image: url("/login.jpg"); /* Replace with your own image path */
-    background-size: cover;
-    background-position: center;
     position: relative;
   }
 
   .overlay {
-    color: white;
-    padding: 3em;
-    background: rgba(0, 0, 0, 0.4);
     height: 100%;
+    width: 100%;
+    padding: 3em;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,6 +121,7 @@
   .overlay p {
     font-size: 1.1em;
     margin-bottom: 1.5em;
+    line-height: 1.4em;
   }
 
   .social-icons i {
@@ -132,41 +132,59 @@
   .login-right {
     flex: 1;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: #ffffff;
+    align-items: center;
   }
 
   #form-container {
-    width: 80%;
+    width: 100%;
     max-width: 350px;
+    padding: 2em;
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
-  #form-container h2 {
+  #image-container {
     text-align: center;
     margin-bottom: 1em;
   }
 
+  #form-container h2 {
+    text-align: center;
+    margin-bottom: 1.2em;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
   input[type="email"],
   input[type="password"] {
-    width: 100%;
-    padding: 0.8em;
+    padding: 0.75em;
     margin-bottom: 1em;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 1em;
+    transition: border 0.3s ease;
+  }
+
+  input:focus {
+    border: 1px solid #3cb371;
+    outline: none;
   }
 
   button {
-    width: 100%;
+    padding: 0.75em;
     background-color: #3cb371;
     color: white;
     font-weight: bold;
     border: none;
-    padding: 0.8em;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 1em;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: background-color 0.3s ease;
   }
 
   button:hover {
@@ -198,7 +216,7 @@
 
   .terms {
     margin-top: 1em;
-    font-size: 0.8em;
+    font-size: 0.75em;
     text-align: center;
     color: #666;
   }
