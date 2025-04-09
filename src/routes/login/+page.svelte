@@ -67,6 +67,17 @@
         />
         
         <button type="submit">Sign in now</button>
+
+        {#if error}
+        <p class="message error">{error}</p>
+      {/if}
+      {#if postError}
+        <p class="message postError">⚠️ {postError}</p>
+      {/if}
+      {#if data}
+        <p class="message success">You have successfully logged in!</p>
+      {/if}
+
       </form>     
     </div>
   </div>
