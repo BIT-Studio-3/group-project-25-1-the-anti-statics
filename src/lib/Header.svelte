@@ -52,6 +52,10 @@
 </header>
 
 <style>
+  .main-menu div {
+    display: flex;
+    align-items: center;
+  }
   h1 {
     transition: transform 0.5s;
   }
@@ -74,7 +78,7 @@
     transform: scale(1.1);
     cursor: pointer;
     background-color: yellow;
-      color: #333;
+    color: #333;
   }
   #hamburger {
     display: none;
@@ -130,7 +134,8 @@
     background-color: inherit;
   }
   @media (max-width: 1080px) {
-    .main-menu li, div,
+    .main-menu li,
+    div,
     .logout-button {
       display: none;
     }
@@ -138,8 +143,8 @@
       display: flex;
       padding: 0.4em 0.5em 0.4em 0.5em;
       transition:
-      background-color 0.5s,
-      transform 0.5s;
+        background-color 0.5s,
+        transform 0.5s;
       font-size: large;
       border: none;
       border-radius: 4px;
