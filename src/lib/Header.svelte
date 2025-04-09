@@ -53,10 +53,9 @@
 
 <style>
   h1 {
-    transition:
-      transform 0.5s;
+    transition: transform 0.5s;
   }
-  h1:hover{
+  h1:hover {
     transform: scale(1.2);
   }
   .logout-button {
@@ -68,10 +67,14 @@
       transform 0.5s;
     color: white;
     padding: 0.3em 0.8em 0.3em 0.8em;
+    border: none;
+    border-radius: 4px;
   }
   .logout-button:hover {
     transform: scale(1.1);
     cursor: pointer;
+    background-color: yellow;
+      color: #333;
   }
   #hamburger {
     display: none;
@@ -174,10 +177,14 @@
         transform 0.5s;
       color: white;
       padding: 0.3em;
+      border: none;
+      border-radius: 4px;
     }
     .logout-button-hamburger:hover {
       transform: scale(1.1);
       cursor: pointer;
+      background-color: yellow;
+      color: #333;
     }
   }
 </style>
