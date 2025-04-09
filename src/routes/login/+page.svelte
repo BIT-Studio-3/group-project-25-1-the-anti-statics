@@ -15,4 +15,19 @@
 
   $: $user ? login.set(true) : login.set(false);
   $: if ($login) goto("/");
+
+  const submitLogin = async (event) => {
+  const loginData = { emailAddress, password };
+  const result = await postLogin(loginData);
+
+  data = result.data;
+    error = result.error;
+    postError = result.postError;
+
+    if (data) {
+      setTimeout(() => {
+        user.set(data);
+      }, LOGIN_DELAY);
+    }
+  };
 </script>
