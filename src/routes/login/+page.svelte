@@ -65,11 +65,7 @@
           placeholder="Password"
           bind:value={password}
         />
-        <div class="remember">
-          <label>
-            <input type="checkbox" /> Remember Me
-          </label>
-        </div>
+        
         <button type="submit">Sign in now</button>
       </form>     
     </div>
