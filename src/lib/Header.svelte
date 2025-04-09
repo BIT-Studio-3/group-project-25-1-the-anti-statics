@@ -28,8 +28,8 @@
         <li><a href="/alert_system">Post Alerts</a></li>
         <li><a href="/Resources_Availability_Form">Resources</a></li>
         <li><AgencySelect /></li>
-        <li><button class="logout-button" on:click={logout}>ꄗ Log Out</button>
-        <li><button class="hamburger-btn" on:click={toggleMenu}>☰</button></li>
+        <button class="logout-button" on:click={logout}>ꄗ Log Out</button>
+        <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
       </ul>
     </nav>
   </header>
