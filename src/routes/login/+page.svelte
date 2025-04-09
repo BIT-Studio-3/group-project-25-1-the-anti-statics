@@ -89,13 +89,15 @@
 {/if}
 
 <style>
+  main{
+    background-image: url('/jpg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
   main.login-page {
     display: flex;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-image: url("/src/routes/login/jpg.jpg");
-    background-size: cover;
-    background-position: center;
   }
 
   .login-left {
@@ -140,7 +142,7 @@
     width: 100%;
     max-width: 350px;
     padding: 2em;
-    background-color: white;
+    background-color: transparent;
     border-radius: 0.5em;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
