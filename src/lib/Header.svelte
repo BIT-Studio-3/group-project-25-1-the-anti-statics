@@ -43,7 +43,7 @@
         <li><a href="/alert_system">Post Alerts</a></li>
         <li><a href="/Resources_Availability_Form">Resources</a></li>
         <li><AgencySelect /></li>
-        <button class="logout-button" on:click={logout}>ꄗ Log Out</button>
+        <button class="logout-button-hamburger" on:click={logout}>ꄗ Log Out</button>
       </ul>
     </nav>
   {/if}
@@ -59,6 +59,9 @@
     list-style: none;
   }
   .hamburger-btn {
+    display: none;
+  }
+  .logout-button-hamburger{
     display: none;
   }
   * {
@@ -134,6 +137,9 @@
       background-color: green;
       border-radius: 4px;
       transform: scale(1.1);
+    }
+    .logout-button-hamburger{
+        display: flex;
     }
   }
 </style>
