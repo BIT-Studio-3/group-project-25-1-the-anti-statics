@@ -51,6 +51,13 @@
 </header>
 
 <style>
+  #hamburger {
+    position: absolute;
+    top: 6em;
+  }
+  .hamburger-list{
+    list-style: none;
+  }
   .hamburger-btn {
     display: none;
   }
