@@ -10,4 +10,9 @@
   let postError = "";
   let error = "";
   let data = "";
+
+  const LOGIN_DELAY = 2000;
+
+  $: $user ? login.set(true) : login.set(false);
+  $: if ($login) goto("/");
 </script>
