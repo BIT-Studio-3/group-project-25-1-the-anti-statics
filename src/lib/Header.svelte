@@ -135,7 +135,7 @@
     text-decoration: none;
     background-color: inherit;
   }
-  @media (max-width: 1080px) {
+  @media (max-width: 950px) {
     .main-menu li,
     .logout-button {
       display: none;
