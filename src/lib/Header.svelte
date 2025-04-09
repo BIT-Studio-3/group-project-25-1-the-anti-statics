@@ -52,6 +52,7 @@
 
 <style>
   #hamburger {
+    display: none;
     position: absolute;
     top: 6em;
   }
@@ -81,13 +82,19 @@
     width: 5em;
     text-align: center;
   }
-  @media (width <= 1080px) {
+  @media (max-width: 1080px) {
     .main-menu li,
     .logout-button {
       display: none;
     }
     .hamburger-btn {
       display: flex;
+    }
+    #hamburger{
+        display: block;
+    }
+    .hamburger-list{
+        display: block;
     }
   }
 </style>
