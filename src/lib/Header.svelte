@@ -61,12 +61,15 @@
   .hamburger-btn {
     display: none;
   }
+  *{
+    background-color: white;
+  }
   header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5em;
-    background-color: rgb(207, 105, 105);
+    background-color: white;
     gap: 10px;
   }
   .main-menu {
