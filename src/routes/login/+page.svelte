@@ -65,8 +65,9 @@
           placeholder="Password"
           bind:value={password}
         />
-        
+
         <button type="submit">Sign in now</button>
+      </form> 
 
         {#if error}
         <p class="message error">{error}</p>
@@ -77,8 +78,12 @@
       {#if data}
         <p class="message success">You have successfully logged in!</p>
       {/if}
+    
+      <p class="terms">
+        By clicking on "Sign in now" you agree to our
+        <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+      </p>
 
-      </form>     
     </div>
   </div>
   
