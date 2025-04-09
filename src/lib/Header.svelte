@@ -118,6 +118,9 @@
       background-color 0.5s,
       transform 0.5s;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .main-menu li:hover {
     background-color: green;
