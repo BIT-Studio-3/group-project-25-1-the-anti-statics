@@ -136,6 +136,20 @@
     }
     .hamburger-btn {
       display: flex;
+      padding: 0.4em 0.5em 0.4em 0.5em;
+      transition:
+      background-color 0.5s,
+      transform 0.5s;
+      font-size: large;
+      border: none;
+      border-radius: 4px;
+    }
+    .hamburger-btn:hover {
+      transform: scale(1.1);
+      background-color: green;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
     }
     #hamburger {
       display: block;
