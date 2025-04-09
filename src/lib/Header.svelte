@@ -48,6 +48,11 @@
     .main-menu{
         display: flex;
         list-style: none;
+        gap: 10px;
+    }
+    .main-menu li{
+        background-color: red;
+        padding: 0.5em;
     }
   </style>
   
