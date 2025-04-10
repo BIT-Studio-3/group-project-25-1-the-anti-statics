@@ -29,7 +29,7 @@
       <li><a href="/alert_system">Post Alerts</a></li>
       <li><a href="/Resources_Availability_Form">Resources</a></li>
       <div id="agency"><AgencySelect /></div>
-      <button class="logout-button" on:click={logout}>ꄗ Log Out</button>
+      <button class="logout-button" on:click={logout}>🔑 Log Out</button>
       <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
     </ul>
   </nav>
@@ -78,7 +78,7 @@
       background-color 0.5s,
       transform 0.5s;
     color: white;
-    padding: 1em 0.8em 1em 0.8em;
+    padding: 1em 1em 1em 1em;
     border: none;
     border-radius: 4px;
     animation: fadeIn 0.5s ease forwards;
