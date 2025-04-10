@@ -22,26 +22,40 @@
         </ul>
       {:else}
         {#each alerts as alert}
-          <ul class="AlertsList">
-            <li>Emergency: {alert.title}</li>
-            <li>{alert.emergencyType}</li>
-            <li>{alert.alertLevel}</li>
-            <li>{alert.region}</li>
-            <li>{alert.description}</li>
+          <dl class="AlertsList">
+            <div>
+              <dt>Emergency:</dt>
+              <dd>{alert.title}</dd>
+            </div>
+            <div>
+              <dt>Emergency type:</dt>
+              <dd>{alert.emergencyType}</dd>
+            </div>
+            <div>
+              <dt>Emergency level</dt>
+              <dd>{alert.alertLevel}</dd>
+            </div>
+            <div>
+              <dt>Region:</dt>
+              <dd>{alert.region}</dd>
+            </div>
+            <div>
+              <dt>Description:</dt>
+              <dd>{alert.description}</dd>
+            </div>
 
-            <li>
-              Alerted posted at: {format(
-                new Date(alert.createdAt),
-                "MM/dd/yyyy hh:mm a"
-              )}
-            </li>
-            <li>
-              Updated at: {format(
-                new Date(alert.updatedAt),
-                "MM/dd/yyyy hh:mm a"
-              )}
-            </li>
-          </ul>
+            <div>
+              <dt>Alerted posted at:</dt>
+              <dd>{format(new Date(alert.createdAt), "MM/dd/yyyy hh:mm a")}</dd>
+            </div>
+
+            <div>
+              <dt>Updated at:</dt>
+              <dd>
+                {format(new Date(alert.updatedAt), "MM/dd/yyyy hh:mm a")}
+              </dd>
+            </div>
+          </dl>
         {/each}
       {/if}
     </div>
@@ -90,7 +104,7 @@
   }
 
   .AlertsCard h3,
-  #response h3{
+  #response h3 {
     background-color: inherit;
   }
 
@@ -109,9 +123,21 @@
     border: 3px #7269ec solid;
   }
 
-  .AlertsList li {
-    list-style: none;
+  
+
+  .AlertsList dt {
+    font-weight: 900;
+    display: inline-block;
+  }
+
+  .AlertsList dd {
     background-color: inherit;
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .AlertsList ::first-letter {
+    text-transform: capitalize;
   }
 
   .pinmap {
