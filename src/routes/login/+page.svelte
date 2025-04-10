@@ -53,48 +53,64 @@
 
 {#if !$login}
   <main>
-    <div id="form-container">
-      <div id="image-container">
-        <img src={logo} alt="logo" width="200" height="110" />
+    <div id="login-left">
+      <p>Test</p>
+    </div>
+    <div id="login-right">
+      <div id="form-container">
+        <div id="image-container">
+          <img src={logo} alt="logo" width="200" height="110" />
+        </div>
+        <div id="login-header">
+          <h1>Sign in</h1>
+        </div>
+        <form on:submit|preventDefault={submitLogin}>
+          <div id="email">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              bind:value={emailAddress}
+            />
+          </div>
+          <div id="password">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              bind:value={password}
+            />
+          </div>
+          <div id="submit">
+            <button type="submit">Sign in</button>
+          </div>
+        </form>
+        {#if error}
+          <p class="message" id="error">{error}</p>
+        {/if}
+        {#if postError}
+          <p class="message" id="postError">⚠️{postError}</p>
+        {/if}
+        {#if data}
+          <p class="message" id="loggedIn">You have succesfully logged in!</p>
+        {/if}
       </div>
-      <div id="login-header">
-        <h1>Sign in</h1>
-      </div>
-      <form on:submit|preventDefault={submitLogin}>
-        <div id="email">
-          <input
-            type="email"
-            id="email"
-            placeholder="Email Address"
-            bind:value={emailAddress}
-          />
-        </div>
-        <div id="password">
-          <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            bind:value={password}
-          />
-        </div>
-        <div id="submit">
-          <button type="submit">Sign in</button>
-        </div>
-      </form>
-      {#if error}
-        <p class="message" id="error">{error}</p>
-      {/if}
-      {#if postError}
-        <p class="message" id="postError">⚠️{postError}</p>
-      {/if}
-      {#if data}
-        <p class="message" id="loggedIn">You have succesfully logged in!</p>
-      {/if}
     </div>
   </main>
 {/if}
 
 <style>
+  #login-right{
+    background-color: transparent;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  #login-left{
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 100%;
+    width: 50%;
+  }
   .message{
     margin-top: 0.4em;
     padding: 1em;
@@ -119,8 +135,8 @@
     text-shadow: 2px 2px 3px #333;
   }
   main {
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
     height: 100vh;
     background-image: url(../../lib/Images/background.jpg)
   }
