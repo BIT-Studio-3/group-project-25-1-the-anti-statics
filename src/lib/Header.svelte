@@ -28,7 +28,7 @@
       <li><a href="/rss">RSS</a></li>
       <li><a href="/alert_system">Post Alerts</a></li>
       <li><a href="/Resources_Availability_Form">Resources</a></li>
-      <div><AgencySelect /></div>
+      <div id="agency"><AgencySelect /></div>
       <button class="logout-button" on:click={logout}>ꄗ Log Out</button>
       <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
     </ul>
@@ -53,15 +53,22 @@
 </header>
 
 <style>
+  #agency{
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+  }
   .main-menu div {
     display: flex;
     align-items: center;
   }
   h1 {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
     transition: transform 0.5s;
   }
   h1:hover {
     transform: scale(1.2);
+    opacity: 1;
   }
   .logout-button {
     display: flex;
@@ -74,6 +81,8 @@
     padding: 0.3em 0.8em 0.3em 0.8em;
     border: none;
     border-radius: 4px;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
   }
   .logout-button:hover {
     transform: scale(1.1);
@@ -136,6 +145,7 @@
   .main-menu li a {
     text-decoration: none;
     background-color: inherit;
+    transition: color 0.3s ease;
   }
   @media (max-width: 1050px) {
     .main-menu li,
@@ -208,5 +218,52 @@
       background-color: yellow;
       color: #333;
     }
+  }
+  /*Drop down effect for nav menu*/
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  @keyframes dropIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .main-menu li {
+    animation: dropIn 0.5s ease forwards;
+    opacity: 0;
+  }
+
+  .main-menu li:nth-child(1){
+    animation-delay: 0.1s;
+  }
+  .main-menu li:nth-child(2){
+    animation-delay: 0.2s;
+  }
+  .main-menu li:nth-child(3){
+    animation-delay: 0.3s;
+  }
+  .main-menu li:nth-child(4){
+    animation-delay: 0.4s;
+  }
+  .main-menu li:nth-child(5){
+    animation-delay: 0.5s;
+  }
+  .main-menu li:nth-child(6){
+    animation-delay: 0.6s;
+  }
+  .main-menu li:nth-child(7){
+    animation-delay: 0.7s;
   }
 </style>
