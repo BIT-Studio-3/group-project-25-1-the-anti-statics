@@ -95,6 +95,7 @@
     background-position: center;
     display: flex;
     height: 100vh;
+    display: flex;
     font-family: Arial, sans-serif;
   }
   main.login-page {
@@ -246,49 +247,93 @@
   }
 
   @media (max-width: 768px) {
-    main {
-      background-image: url('/jpg768px.jpg');
-    }
-
-    #form-container {
-      max-width: 90%;
-      padding: 1.5em;
-    }
-
-    .overlay h1 {
-      font-size: 2.5em;
-    }
-
-    .overlay p {
-      font-size: 1em;
-    }
-
-    .login-left {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-    }
+  main {
+    background-image: url('/jpg768px.jpg');
   }
 
-  @media (max-width: 480px) {
-    main {
-      background-image: url('/jpg480.jpeg');
-    }
-
-    #form-container {
-      max-width: 90%;
-      padding: 1.2em;
-    }
-
-    .overlay h1 {
-      font-size: 2em;
-    }
-
-    .overlay p {
-      font-size: 0.9em;
-    }
+  main.login-page {
+    flex-direction: column;
+    height: auto;
   }
+
+  .login-left {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: transparent;
+  }
+
+  .login-right {
+    position: relative; 
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+
+  #form-container {
+    max-width: 90%;
+    padding: 1.5em;
+  }
+
+  .overlay h1 {
+    font-size: 2.5em;
+  }
+
+  .overlay p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    background-image: url('/jpg480.jpeg');
+  }
+
+  main.login-page {
+    flex-direction: column; 
+    height: auto;
+  }
+
+  .login-left {
+    position: relative; 
+    width: 100%;
+    height: 50vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: transparent; 
+  }
+
+  .login-right {
+    position: relative; 
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+
+  #form-container {
+    max-width: 90%;
+    padding: 1.2em;
+  }
+
+  .overlay h1 {
+    font-size: 2em;
+  }
+
+  .overlay p {
+    font-size: 0.9em;
+  }
+}
 </style>
 
