@@ -1,18 +1,16 @@
 <script>
   //Import post alert function
-  import { postAlert } from './post-functions/postAlert.js';  // Import the postAlert function
+  import { postAlert } from "./post-functions/postAlert.js"; // Import the postAlert function
   //Import post alert function variables
-  let postError = ''; 
-  let data = null; 
-  let error = ''; 
+  let postError = "";
+  let data = null;
+  let error = "";
 
-  let title = '';
-  let type = '';
-  let level = '';
-  let region = '';
-  let description = '';
-
-
+  let title = "";
+  let type = "";
+  let level = "";
+  let region = "";
+  let description = "";
 
   // Function to handle form submission
   const submitAlert = async (event) => {
@@ -23,7 +21,7 @@
     // Form data object
     const alertData = {
       title: formattedTitle,
-      emergencyType: type,   // Assuming you are using 'emergencyType' on the backend
+      emergencyType: type, // Assuming you are using 'emergencyType' on the backend
       alertLevel: level,
       region,
       description,
@@ -38,26 +36,23 @@
     error = result.error;
 
     // Log the result for debugging
-    console.log('Result from postAlert:', result);
-    console.log('Post error:', postError);
-    console.log('Post data:', data);
-    console.log('Error:', error);
-    
+    console.log("Result from postAlert:", result);
+    console.log("Post error:", postError);
+    console.log("Post data:", data);
+    console.log("Error:", error);
+
     if (result.data) {
-      alert('Alert posted successfully!');
-      
+      alert("Alert posted successfully!");
+
       // Reset form fields
-      title = '';
-      type = '';
-      level = '';
-      region = '';
-      description = '';
+      title = "";
+      type = "";
+      level = "";
+      region = "";
+      description = "";
     }
   };
-
 </script>
-
-
 
 <h1>Alerts</h1>
 
@@ -77,11 +72,11 @@
 
     <label for="level">Select alert level:</label>
     <select bind:value={level} required>
-      <option value=1>1</option>
-      <option value=2>2</option>
-      <option value=3>3</option>
-      <option value=4>4</option>
-      <option value=5>5</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
     </select>
 
     <label for="region">Choose Region:</label>
@@ -123,10 +118,18 @@
     width: 25em;
   }
   form {
-    border-color: black;
-    border: solid;
+    display: flex;
+    flex-direction: column;
+    border: 5px black solid;
+    border-radius: 15px;
+    width: fit-content;
     padding: 1em;
-    background-color:#ECA869;
+    background-color: #fff4d5;
+    margin-top: 2%;
+  }
+  form h2 {
+    text-align: center;
+    margin-bottom: 2%;
   }
   label {
     text-align: right;
@@ -144,71 +147,74 @@
     max-width: fit-content;
     margin: 0.5em;
   }
-  select{
+  select {
     max-width: fit-content;
     margin: 0.5em;
   }
-  textarea{
+  textarea {
     margin: 0.5em;
   }
   @media (max-width: 1200px) {
-  .container {
-    display: block; /* Stack the form fields vertically */
+    .container {
+      display: block; /* Stack the form fields vertically */
+    }
+
+    textarea {
+      width: 100%; /* Ensure textarea takes full width */
+    }
+
+    label {
+      align-self: center; /* Align labels properly */
+    }
+
+    input,
+    select {
+      width: 100%; /* Ensure input/select fields take full width */
+      margin: 0.5em 0; /* Add space between fields */
+    }
   }
 
-  textarea {
-    width: 100%; /* Ensure textarea takes full width */
+  /* For mobile devices (phones in portrait mode) */
+  @media (max-width: 768px) {
+    textarea {
+      width: 100%; /* Ensure textarea takes full width on small screens */
+    }
+
+    .container {
+      display: block; /* Stack the form fields vertically */
+    }
+
+    label {
+      font-size: 0.9em; /* Adjust font size for labels */
+      text-align: left; /* Align labels to the left on mobile */
+    }
+
+    input,
+    select {
+      width: 100%; /* Ensure input/select fields take full width */
+      margin: 0.5em 0; /* Add space between fields */
+    }
+
+    button {
+      width: 100%; /* Ensure the submit button takes full width */
+      padding: 1em; /* Add padding for better usability */
+    }
   }
 
-  label {
-    align-self: center; /* Align labels properly */
-  }
+  /* For very small screens (phones in portrait mode) */
+  @media (max-width: 480px) {
+    label {
+      font-size: 0.85em; /* Further reduce label font size */
+    }
 
-  input, select {
-    width: 100%; /* Ensure input/select fields take full width */
-    margin: 0.5em 0; /* Add space between fields */
-  }
-}
+    input,
+    select {
+      width: 100%; /* Ensure input/select fields take full width */
+    }
 
-/* For mobile devices (phones in portrait mode) */
-@media (max-width: 768px) {
-  textarea {
-    width: 100%; /* Ensure textarea takes full width on small screens */
-  }
-
-  .container {
-    display: block; /* Stack the form fields vertically */
-  }
-
-  label {
-    font-size: 0.9em; /* Adjust font size for labels */
-    text-align: left; /* Align labels to the left on mobile */
-  }
-
-  input, select {
-    width: 100%; /* Ensure input/select fields take full width */
-    margin: 0.5em 0; /* Add space between fields */
-  }
-
-  button {
-    width: 100%; /* Ensure the submit button takes full width */
-    padding: 1em; /* Add padding for better usability */
-  }
-}
-
-/* For very small screens (phones in portrait mode) */
-@media (max-width: 480px) {
-  label {
-    font-size: 0.85em; /* Further reduce label font size */
-  }
-
-  input, select {
-    width: 100%; /* Ensure input/select fields take full width */
-  }
-
-  button {
-    padding: 1em; /* Ensure button is touch-friendly */
-    font-size: 1em; /* Adjust font size for button */
-  }
+    button {
+      padding: 1em; /* Ensure button is touch-friendly */
+      font-size: 1em; /* Adjust font size for button */
+    }
   }
 </style>
