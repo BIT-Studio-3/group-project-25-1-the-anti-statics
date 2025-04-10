@@ -121,7 +121,8 @@
   main {
     display: grid;
     place-items: center;
-    height: 40em;
+    height: 100vh;
+    background-image: url(../../lib/Images/background.jpg)
   }
   #form-container {
     padding: 1em;
