@@ -112,19 +112,39 @@
     font-family: sans-serif;
     color: #333;
   }
+  button {
+    margin-top: 2px;
+    background-color: #289436;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid rgba(2, 151, 2, 0.658);
+  }
+
+  button:hover {
+    background-color: #427211;
+    transition: 0.2s;
+  }
   textarea {
+    margin: 0.5em;
+    resize: none;
     vertical-align: top;
     height: 10em;
     width: 25em;
   }
+
+  h1 {
+    color: #333;
+    text-align: center;
+  }
   form {
     display: flex;
     flex-direction: column;
-    border: 5px black solid;
+    border: 5px rgb(46, 45, 45) solid;
     border-radius: 15px;
     width: fit-content;
     padding: 1em;
-    background-color: #fff4d5;
     margin-top: 2%;
   }
   form h2 {
@@ -132,6 +152,7 @@
     margin-bottom: 2%;
   }
   label {
+    color: rgb(50, 51, 51);
     text-align: right;
     justify-content: center;
     padding-top: 10px;
@@ -139,10 +160,10 @@
   div {
     padding: 0.5em;
   }
-  .container {
+  /* .container {
     display: grid;
     grid-template-columns: 10% 90%;
-  }
+  } */
   input {
     max-width: fit-content;
     margin: 0.5em;
@@ -151,10 +172,7 @@
     max-width: fit-content;
     margin: 0.5em;
   }
-  textarea {
-    margin: 0.5em;
-    resize: none;
-  }
+
   @media (max-width: 1200px) {
     .container {
       display: block; /* Stack the form fields vertically */
@@ -195,11 +213,6 @@
       width: 100%; /* Ensure input/select fields take full width */
       margin: 0.5em 0; /* Add space between fields */
     }
-
-    button {
-      width: 100%; /* Ensure the submit button takes full width */
-      padding: 1em; /* Add padding for better usability */
-    }
   }
 
   /* For very small screens (phones in portrait mode) */
@@ -213,9 +226,9 @@
       width: 100%; /* Ensure input/select fields take full width */
     }
 
-    button {
-      padding: 1em; /* Ensure button is touch-friendly */
-      font-size: 1em; /* Adjust font size for button */
-    }
+    /* button {
+      padding: 1em;
+      font-size: 1em; 
+    } */
   }
 </style>
