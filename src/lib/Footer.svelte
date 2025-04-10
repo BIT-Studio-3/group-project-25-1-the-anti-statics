@@ -20,14 +20,14 @@
         padding:10px;
         text-align: center;
         background-color: inherit;
-        color: white;
+        color: black;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
     }
 
     a {
         text-decoration: none;
         background-color: inherit;
-        color: white;
+        color: black;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
     }
 
@@ -41,11 +41,12 @@
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
-        background: #37478b;
+        background: #ffffff;
         padding: 1em;
         margin: 0.5em;
         margin-bottom: 0;
         justify-self: center;
+        border-top: 5px rgb(37, 170, 24) solid;
     }
 
     nav {

@@ -134,11 +134,13 @@
       flex-wrap: wrap;
       gap: 10px;
       place-items: center;
+      margin: 0;
     }
 
     .AlertsCard,
     #response {
       width: 100%; /* Make both alerts and response cards take full width */
+      box-sizing: border-box;
       height: 40em; /* Adjust the height to fit content */
       margin-bottom: 10px; /* Add spacing between the cards */
       overflow-y: auto;
@@ -148,6 +150,7 @@
       width: 100%; /* Make map take full width on smaller screens */
       height: 30%; /* Adjust map height for better fit on mobile */
       max-width: 100%; /* Ensure map doesn't exceed container size */
+      box-sizing: border-box;
     }
   }
 </style>
