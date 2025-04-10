@@ -78,7 +78,7 @@
       background-color 0.5s,
       transform 0.5s;
     color: white;
-    padding: 0.3em 0.8em 0.3em 0.8em;
+    padding: 1em 0.8em 1em 0.8em;
     border: none;
     border-radius: 4px;
     animation: fadeIn 0.5s ease forwards;

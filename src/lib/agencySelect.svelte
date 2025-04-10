@@ -24,17 +24,40 @@
 </section>
 
 <style>
-    section{
+    section {
         display: flex;
-        background-color: inherit;
-        padding: 0.2em 1em 0.2em 1em;
         justify-content: center;
         align-items: center;
+        background-color: inherit; /* Light gray background */
+        border-radius: 8px; /* Rounded corners */
+        margin-left: 1em;
+        margin-right: 0.7em;
     }
-    p, select{
-        background-color: inherit;
+
+    select {
+        font-size: 1rem;
+        padding: 1em;
+        width: 130px; /* Fixed width for the select dropdown */
+        border-radius: 5px;
+        background-color: #fff; /* White background */
+        color: #333; /* Dark text */
+        transition: all 0.3s ease; /* Smooth transition for focus and hover */
     }
-    select{
-        padding: 0.5em;
+
+    select:hover {
+        border-color: #3cb371; /* Green border on focus */
+        background-color: lightgreen;
     }
+
+    option {
+        background-color:white ; /* White background for options */
+        color: #333; /* Dark text for options */
+        padding: 1em;
+    }
+
+    option:hover {
+        background-color:lightgreen; /* Light hover effect */
+    }
+
+    
 </style>
