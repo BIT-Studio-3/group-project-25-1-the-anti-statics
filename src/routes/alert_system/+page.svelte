@@ -153,6 +153,7 @@
   }
   textarea {
     margin: 0.5em;
+    resize: none;
   }
   @media (max-width: 1200px) {
     .container {
