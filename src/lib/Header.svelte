@@ -21,6 +21,7 @@
 
   <nav id="main-drop">
     <ul class="main-menu">
+      <li><a href="/weather_reports_page">Weather Reports</a></li>
       <li><a href="/seismic_reports_page">Seismic Reports</a></li>
       <li><a href="/road_conditions_page">Road Conditions</a></li>
       <li><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
@@ -36,6 +37,7 @@
   {#if isMenuOpen}
     <nav id="hamburger">
       <ul class="hamburger-list">
+        <li><a href="/weather_reports_page">Weather Reports</a></li>
         <li><a href="/seismic_reports_page">Seismic Reports</a></li>
         <li><a href="/road_conditions_page">Road Conditions</a></li>
         <li><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
@@ -135,7 +137,7 @@
     text-decoration: none;
     background-color: inherit;
   }
-  @media (max-width: 950px) {
+  @media (max-width: 1050px) {
     .main-menu li,
     .logout-button {
       display: none;
