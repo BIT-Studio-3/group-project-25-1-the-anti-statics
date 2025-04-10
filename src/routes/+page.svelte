@@ -8,6 +8,11 @@
   const { alerts, error, message } = data;
 
   import { format } from "date-fns";
+  
+  function capitalizeFirstLetter(str) {
+    if (!str) return str; // Handle edge case of empty string
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 </script>
 
 <div class="PageContentContainer">
@@ -25,30 +30,28 @@
           <dl class="AlertsList">
             <div>
               <dt>Emergency:</dt>
-              <dd>{alert.title}</dd>
+              <dd>{capitalizeFirstLetter(alert.title)}</dd>
             </div>
             <div>
               <dt>Emergency type:</dt>
-              <dd>{alert.emergencyType}</dd>
+              <dd>{capitalizeFirstLetter(alert.emergencyType)}</dd>
             </div>
             <div>
-              <dt>Emergency level</dt>
+              <dt>Emergency level:</dt>
               <dd>{alert.alertLevel}</dd>
             </div>
             <div>
               <dt>Region:</dt>
-              <dd>{alert.region}</dd>
+              <dd>{capitalizeFirstLetter(alert.region)}</dd>
             </div>
             <div>
               <dt>Description:</dt>
-              <dd>{alert.description}</dd>
+              <dd>{capitalizeFirstLetter(alert.description)}</dd>
             </div>
-
             <div>
               <dt>Alerted posted at:</dt>
               <dd>{format(new Date(alert.createdAt), "MM/dd/yyyy hh:mm a")}</dd>
             </div>
-
             <div>
               <dt>Updated at:</dt>
               <dd>
@@ -126,17 +129,18 @@
   
 
   .AlertsList dt {
-    font-weight: 900;
+    font-weight: 800;
     display: inline-block;
   }
 
   .AlertsList dd {
     background-color: inherit;
-    display: inline-block;
+    display: inline;
     margin-left: 10px;
   }
 
-  .AlertsList ::first-letter {
+  .AlertsList dt::first-letter,
+  .AlertsList dd::first-letter {
     text-transform: capitalize;
   }
 
