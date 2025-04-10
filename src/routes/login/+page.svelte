@@ -40,7 +40,7 @@
       <h1>Welcome Back</h1>
       <p>...text...</p>
       <div class="social-icons">
-        <i>🐦</i> <i>📘</i> <i>📷</i>
+        <!--can put the social media icons here as shown in the demo-->
       </div>
     </div>
   </div>
@@ -93,26 +93,31 @@
     background-image: url('/jpg.jpg');
     background-size: cover;
     background-position: center;
-  }
-  main.login-page {
     display: flex;
     height: 100vh;
     font-family: Arial, sans-serif;
   }
+  main.login-page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
 
   .login-left {
     flex: 1;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: transparent;
+    height: 100vh;
   }
 
   .overlay {
-    height: 100%;
-    width: 100%;
-    padding: 3em;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
+    padding: 2em;
+    max-width: 400px;
+    background-color: transparent;
   }
 
   .overlay h1 {
@@ -129,6 +134,7 @@
   .social-icons i {
     font-size: 1.5em;
     margin-right: 1em;
+    background-color: transparent;
   }
 
   .login-right {
@@ -136,6 +142,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    height: 100vh;
   }
 
   #form-container {
@@ -150,16 +158,19 @@
   #image-container {
     text-align: center;
     margin-bottom: 1em;
+    background-color: transparent;
   }
 
   #form-container h2 {
     text-align: center;
     margin-bottom: 1.2em;
+    background-color: transparent;
   }
 
   form {
     display: flex;
     flex-direction: column;
+    background-color: transparent;
   }
 
   input[type="email"],
@@ -167,9 +178,10 @@
     padding: 0.75em;
     margin-bottom: 1em;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     font-size: 1em;
     transition: border 0.3s ease;
+    background-color: transparent;
   }
 
   input:focus {
@@ -226,6 +238,57 @@
   .terms a {
     color: #000;
     text-decoration: underline;
+  }
+
+  h1,p,a{
+    background-color: transparent;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    main {
+      background-image: url('/jpg768px.jpg');
+    }
+
+    #form-container {
+      max-width: 90%;
+      padding: 1.5em;
+    }
+
+    .overlay h1 {
+      font-size: 2.5em;
+    }
+
+    .overlay p {
+      font-size: 1em;
+    }
+
+    .login-left {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+  }
+
+  @media (max-width: 480px) {
+    main {
+      background-image: url('/jpg480.jpeg');
+    }
+
+    #form-container {
+      max-width: 90%;
+      padding: 1.2em;
+    }
+
+    .overlay h1 {
+      font-size: 2em;
+    }
+
+    .overlay p {
+      font-size: 0.9em;
+    }
   }
 </style>
 
