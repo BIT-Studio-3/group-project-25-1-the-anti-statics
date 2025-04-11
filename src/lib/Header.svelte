@@ -180,7 +180,7 @@
       border-radius: 4px;
     }
     .hamburger-list li:hover a {
-      background-color: green;
+      background-color: inherit;
       color: white;
     }
     .hamburger-list li:hover {
