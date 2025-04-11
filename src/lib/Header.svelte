@@ -14,6 +14,8 @@
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
   };
+
+  import { fly } from 'svelte/transition';
 </script>
 
 <header>
@@ -21,13 +23,13 @@
 
   <nav id="main-drop">
     <ul class="main-menu">
-      <li><a href="/weather_reports_page">Weather Reports</a></li>
-      <li><a href="/seismic_reports_page">Seismic Reports</a></li>
-      <li><a href="/road_conditions_page">Road Conditions</a></li>
-      <li><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
-      <li><a href="/rss">RSS</a></li>
-      <li><a href="/alert_system">Post Alerts</a></li>
-      <li><a href="/Resources_Availability_Form">Resources</a></li>
+      <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports_page">Weather Reports</a></li>
+      <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports_page">Seismic Reports</a></li>
+      <li in:fly={{ y: 30, duration: 500 }}><a href="/road_conditions_page">Road Conditions</a></li>
+      <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
+      <li in:fly={{ y: 30, duration: 700 }}><a href="/rss">RSS</a></li>
+      <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
+      <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
       <div id="agency"><AgencySelect /></div>
       <button class="logout-button" on:click={logout}>🔑 Log Out</button>
       <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
@@ -53,39 +55,20 @@
 </header>
 
 <style>
-  #agency{
-    animation: fadeIn 0.5s ease forwards;
-    opacity: 0;
-  }
   .main-menu div {
     display: flex;
     align-items: center;
-  }
-  h1 {
-    animation: fadeIn 0.5s ease forwards;
-    opacity: 0;
-    transition: transform 0.5s;
-  }
-  h1:hover {
-    transform: scale(1.2);
-    opacity: 1;
   }
   .logout-button {
     display: flex;
     align-items: center;
     background-color: green;
-    transition:
-      background-color 0.5s,
-      transform 0.5s;
     color: white;
     padding: 1em 1em 1em 1em;
     border: none;
     border-radius: 4px;
-    animation: fadeIn 0.5s ease forwards;
-    opacity: 0;
   }
   .logout-button:hover {
-    transform: scale(1.1);
     cursor: pointer;
     background-color: yellow;
     color: #333;
@@ -125,18 +108,15 @@
     padding: 0.4em;
     width: 5em;
     text-align: center;
-    transition:
-      background-color 0.5s,
-      transform 0.5s;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: red;
   }
   .main-menu li:hover {
     background-color: green;
     border-radius: 4px;
-    transform: scale(1.1);
   }
   .main-menu li:hover a {
     background-color: inherit;
@@ -155,15 +135,11 @@
     .hamburger-btn {
       display: flex;
       padding: 0.4em 0.5em 0.4em 0.5em;
-      transition:
-        background-color 0.5s,
-        transform 0.5s;
       font-size: large;
       border: none;
       border-radius: 4px;
     }
     .hamburger-btn:hover {
-      transform: scale(1.1);
       background-color: green;
       color: white;
       cursor: pointer;
@@ -178,17 +154,11 @@
     }
     .hamburger-list li {
       padding: 0.3em;
-      transition:
-        background-color 0.5s,
-        transform 0.5s;
       border-radius: 4px;
     }
     .hamburger-list li a {
       background-color: white;
       text-decoration: none;
-      transition:
-        background-color 0.5s,
-        transform 0.5s;
       border-radius: 4px;
     }
     .hamburger-list li:hover a {
@@ -198,72 +168,22 @@
     .hamburger-list li:hover {
       background-color: green;
       border-radius: 4px;
-      transform: scale(1.1);
     }
     .logout-button-hamburger {
       display: flex;
       width: 100%;
       background-color: green;
-      transition:
-        background-color 0.5s,
-        transform 0.5s;
       color: white;
       padding: 0.3em;
       border: none;
       border-radius: 4px;
     }
     .logout-button-hamburger:hover {
-      transform: scale(1.1);
       cursor: pointer;
       background-color: yellow;
       color: #333;
     }
   }
-  /*Drop down effect for nav menu*/
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-  }
-  @keyframes dropIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .main-menu li {
-    animation: dropIn 0.5s ease forwards;
-    opacity: 0;
-  }
-
-  .main-menu li:nth-child(1){
-    animation-delay: 0.1s;
-  }
-  .main-menu li:nth-child(2){
-    animation-delay: 0.2s;
-  }
-  .main-menu li:nth-child(3){
-    animation-delay: 0.3s;
-  }
-  .main-menu li:nth-child(4){
-    animation-delay: 0.4s;
-  }
-  .main-menu li:nth-child(5){
-    animation-delay: 0.5s;
-  }
-  .main-menu li:nth-child(6){
-    animation-delay: 0.6s;
-  }
-  .main-menu li:nth-child(7){
-    animation-delay: 0.7s;
-  }
+  
+  
 </style>
