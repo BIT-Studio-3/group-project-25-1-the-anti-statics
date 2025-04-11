@@ -56,6 +56,12 @@
 </header>
 
 <style>
+  h1{
+    transition: transform 0.3s;
+  }
+  h1:hover{
+    transform: scale(1.1);
+  }
   .main-menu div {
     display: flex;
     align-items: center;
@@ -68,10 +74,12 @@
     padding: 1em 1em 1em 1em;
     border: none;
     border-radius: 4px;
+    transition: transform 0.3s;
   }
   .logout-button:hover {
     cursor: pointer;
     background-color: yellow;
+    transform: scale(1.1);
     color: #333;
   }
   #hamburger {
@@ -113,11 +121,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    transition: transform 0.3s;
   }
   .main-menu li:hover {
     background-color: green;
     border-radius: 4px;
+    transform: scale(1.1);
   }
   .main-menu li:hover a {
     background-color: inherit;
