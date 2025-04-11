@@ -20,10 +20,14 @@
   $: isLoginPage = $page.url.pathname === "/login"; // Check if the current page is the login page
 
   onMount(() => {
-    if (!$login && !isLoginPage) {
-      goto("/login");
-    }
-      loading = false;
+    const unsubscribe = login.subscribe((value) => {
+      if (!value && !isLoginPage) {
+        goto("/login");
+      }
+    });
+    loading = false;
+
+    return () => unsubscribe(); // Cleanup subscription
   });
 
   //console value of login
