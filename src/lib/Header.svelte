@@ -48,7 +48,7 @@
         <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
         <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
         <button in:fly={{ y: 30, duration: 1000 }} class="logout-button-hamburger" on:click={logout}
-          >ꄗ Log Out</button
+          >🔑 Log Out</button
         >
       </ul>
     </nav>
@@ -166,10 +166,12 @@
     .hamburger-list {
       display: block;
       padding: 1em;
+      border: 3px solid green;
     }
     .hamburger-list li {
-      padding: 0.3em;
+      padding: 0.5em;
       border-radius: 4px;
+      transition: transform 0.3s;
     }
     .hamburger-list li a {
       background-color: white;
@@ -183,6 +185,7 @@
     .hamburger-list li:hover {
       background-color: green;
       border-radius: 4px;
+      transform: scale(1.1);
     }
     .logout-button-hamburger {
       display: flex;
@@ -192,11 +195,13 @@
       padding: 0.3em;
       border: none;
       border-radius: 4px;
+      transition: transform 0.3s;
     }
     .logout-button-hamburger:hover {
       cursor: pointer;
       background-color: yellow;
       color: #333;
+      transform: scale(1.1);
     }
   }
   
