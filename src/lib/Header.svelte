@@ -33,7 +33,7 @@
       <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
       <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
       <button in:fade={{ duration: 500 }} class="logout-button" on:click={logout}>🔑 Log Out</button>
-      <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
+      <button in:fly={{ y: 30, duration: 300 }} class="hamburger-btn" on:click={toggleMenu}>☰</button>
     </ul>
   </nav>
 
@@ -148,12 +148,17 @@
       font-size: large;
       border: none;
       border-radius: 4px;
+      align-items: center;
+      font-weight: bolder;
+      font-size: x-large;
+      transition: transform 0.3s;
     }
     .hamburger-btn:hover {
       background-color: green;
       color: white;
       cursor: pointer;
       border-radius: 4px;
+      transform: scale(1.1);
     }
     #hamburger {
       display: block;
