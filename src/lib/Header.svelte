@@ -137,7 +137,7 @@
     background-color: inherit;
     transition: color 0.3s ease;
   }
-  @media (max-width: 1050px) {
+  @media (max-width: 1200px) {
     .main-menu li,
     .logout-button {
       display: none;
