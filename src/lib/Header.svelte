@@ -16,10 +16,11 @@
   };
 
   import { fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
 </script>
 
 <header>
-  <h1><a href="/"><img src={logo} alt="Main Logo" height="60" /></a></h1>
+  <h1 in:fade={{ duration: 500 }}><a href="/"><img src={logo} alt="Main Logo" height="60" /></a></h1>
 
   <nav id="main-drop">
     <ul class="main-menu">
@@ -30,8 +31,8 @@
       <li in:fly={{ y: 30, duration: 700 }}><a href="/rss">RSS</a></li>
       <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
-      <div id="agency"><AgencySelect /></div>
-      <button class="logout-button" on:click={logout}>🔑 Log Out</button>
+      <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
+      <button in:fade={{ duration: 500 }} class="logout-button" on:click={logout}>🔑 Log Out</button>
       <button class="hamburger-btn" on:click={toggleMenu}>☰</button>
     </ul>
   </nav>
