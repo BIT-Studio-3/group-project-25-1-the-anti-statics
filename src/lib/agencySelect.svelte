@@ -47,6 +47,7 @@
     select:hover {
         border-color: #3cb371; /* Green border on focus */
         background-color: lightgreen;
+        cursor: pointer;
     }
 
     option {
