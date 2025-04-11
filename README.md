@@ -1,8 +1,8 @@
 
 
-<img src="./src/lib/Images/logo.png">
+<img align="center" src="./src/lib/Images/logo.png">
 
-<h2 style="text-align: center">New Zealand's #1 Disaster Management Website</h2 text-align="center">
+<h2 align="center">New Zealand's #1 Disaster Management Website</h2 text-align="center">
 
 ### Development
 Once you've created have cloned the project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
