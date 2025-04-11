@@ -39,15 +39,15 @@
 
   {#if isMenuOpen}
     <nav id="hamburger">
-      <ul class="hamburger-list">
-        <li><a href="/weather_reports_page">Weather Reports</a></li>
-        <li><a href="/seismic_reports_page">Seismic Reports</a></li>
-        <li><a href="/road_conditions_page">Road Conditions</a></li>
-        <li><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
-        <li><a href="/rss">RSS</a></li>
-        <li><a href="/alert_system">Post Alerts</a></li>
-        <li><a href="/Resources_Availability_Form">Resources</a></li>
-        <button class="logout-button-hamburger" on:click={logout}
+      <ul in:fade={{ duration: 100 }} out:fade={{ duration: 100 }}  class="hamburger-list">
+        <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports_page">Weather Reports</a></li>
+        <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports_page">Seismic Reports</a></li>
+        <li in:fly={{ y: 30, duration: 500 }}><a href="/road_conditions_page">Road Conditions</a></li>
+        <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
+        <li in:fly={{ y: 30, duration: 700 }}><a href="/rss">RSS</a></li>
+        <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
+        <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
+        <button in:fly={{ y: 30, duration: 1000 }} class="logout-button-hamburger" on:click={logout}
           >ꄗ Log Out</button
         >
       </ul>
