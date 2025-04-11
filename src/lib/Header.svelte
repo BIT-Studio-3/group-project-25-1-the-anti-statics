@@ -162,6 +162,7 @@
     }
     #hamburger {
       display: block;
+      z-index: 1000;
     }
     .hamburger-list {
       display: block;
