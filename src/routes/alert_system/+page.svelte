@@ -119,12 +119,11 @@
 </main>
 
 <style>
-  * {
-    font-family: sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
+  main {
+    padding: 2rem;
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
   }
 
   button {
