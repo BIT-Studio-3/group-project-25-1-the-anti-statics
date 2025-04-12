@@ -57,8 +57,8 @@
 <h1>Alerts</h1>
 
 <form on:submit={submitAlert}>
-  <h2>Post Alert:</h2>
   <div class="container">
+  <h2>Post Alert:</h2>
     <label for="title">Title:</label>
     <input type="text" id="title" bind:value={title} required />
 
@@ -111,7 +111,11 @@
   * {
     font-family: sans-serif;
     color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
   }
+
   button {
     margin-top: 2px;
     background-color: #289436;
@@ -126,12 +130,14 @@
     background-color: #427211;
     transition: 0.2s;
   }
+
   textarea {
     margin: 0.5em;
     resize: none;
     vertical-align: top;
     height: 10em;
     width: 25em;
+    background-color: white !important; 
   }
 
   h1 {
@@ -139,6 +145,7 @@
     color: #333;
     text-align: center;
   }
+
   form {
     display: flex;
     flex-direction: column;
@@ -149,30 +156,30 @@
     padding: 1em;
     margin-top: 2%;
   }
+
   form h2 {
     text-align: center;
     margin-bottom: 2%;
   }
+
   label {
     color: rgb(50, 51, 51);
     text-align: right;
     justify-content: center;
     padding-top: 10px;
+    background-color: white;
   }
+
   div {
     padding: 0.5em;
+    background-color: white; 
   }
-  /* .container {
-    display: grid;
-    grid-template-columns: 10% 90%;
-  } */
-  input {
-    max-width: fit-content;
-    margin: 0.5em;
-  }
+
+  input,
   select {
     max-width: fit-content;
     margin: 0.5em;
+    background-color: white !important; 
   }
 
   @media (max-width: 1200px) {
