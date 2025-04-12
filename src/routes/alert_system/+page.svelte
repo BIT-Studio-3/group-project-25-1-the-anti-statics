@@ -57,44 +57,53 @@
 <main>
 <h1>Alerts</h1>
 
+  <section class="form-container">
 <form on:submit={submitAlert}>
-  <div class="container">
-  <h2>Post Alert:</h2>
-    <label for="title">Title:</label>
-    <input type="text" id="title" bind:value={title} required />
+      <div class="form-group">
+        <h2>Post Alert</h2>
+        <label for="title">Title</label>
+        <input type="text" id="title" bind:value={title} placeholder="Enter alert title" required />
+      </div>
 
-    <label for="type">Emergency type:</label>
-    <select bind:value={type} required>
+      <div class="form-group">
+        <label for="type">Emergency Type</label>
+        <select id="type" bind:value={type} required>
       <option value=''>Please select an emergency type</option>
       <option value="fire">Fire</option>
       <option value="flood">Flooding</option>
-      <option value="quake">Earthquake damage</option>
+          <option value="quake">Earthquake Damage</option>
     </select>
+      </div>
 
-    <label for="level">Select alert level:</label>
-    <select bind:value={level} required>
-      <option value=1>1</option>
-      <option value=2>2</option>
-      <option value=3>3</option>
-      <option value=4>4</option>
-      <option value=5>5</option>
+      <div class="form-group">
+        <label for="level">Alert Level</label>
+        <select id="level" bind:value={level} required>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
     </select>
+      </div>
 
-    <label for="region">Choose Region:</label>
-    <select bind:value={region} required>
+      <div class="form-group">
+        <label for="region">Region</label>
+        <select id="region" bind:value={region} required>
       <option value="">Please select a region</option>
       <option value="Otago">Otago</option>
       <option value="Canterbury">Canterbury</option>
       <option value="Southland">Southland</option>
     </select>
+      </div>
 
-    <label for="description">Description:</label>
-    <textarea id="description" bind:value={description} required></textarea>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" bind:value={description} placeholder="Provide a description" required></textarea>
   </div>
-  <div>
+
     <button type="submit">Submit</button>
-  </div>
 </form>
+  </section>
 
 {#if postError}
   <p style="color: red;">{postError}</p>
