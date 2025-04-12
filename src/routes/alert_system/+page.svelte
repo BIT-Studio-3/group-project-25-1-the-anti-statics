@@ -126,14 +126,11 @@
     text-align: center;
   }
 
-  button {
-    margin-top: 2px;
-    background-color: #289436;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 10px 15px;
-    border: 1px solid rgba(2, 151, 2, 0.658);
+  .form-container {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   button:hover {
