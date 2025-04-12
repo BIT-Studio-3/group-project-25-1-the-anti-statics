@@ -54,6 +54,7 @@
   };
 </script>
 
+<main>
 <h1>Alerts</h1>
 
 <form on:submit={submitAlert}>
@@ -106,6 +107,7 @@
 {#if data}
   <p style="color: green;">Alert posted successfully!</p>
 {/if}
+</main>
 
 <style>
   * {
