@@ -133,24 +133,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
-  button:hover {
-    background-color: #427211;
-    transition: 0.2s;
-  }
-
-  textarea {
-    margin: 0.5em;
-    resize: none;
-    vertical-align: top;
-    height: 10em;
-    width: 25em;
-    background-color: white !important; 
-  }
-
-  h1 {
-    background-color: white;
-    color: #333;
-    text-align: center;
+  .form-group {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
   }
 
   form {
