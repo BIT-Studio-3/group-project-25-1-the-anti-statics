@@ -106,15 +106,15 @@
   </section>
 
 {#if postError}
-  <p style="color: red;">{postError}</p>
+    <p class="error-message">⚠️ {postError}</p>
 {/if}
 
 {#if error}
-  <p style="color: red;">{error}</p>
+    <p class="error-message">⚠️ {error}</p>
 {/if}
 
 {#if data}
-  <p style="color: green;">Alert posted successfully!</p>
+    <p class="success-message">✅ Alert posted successfully!</p>
 {/if}
 </main>
 
