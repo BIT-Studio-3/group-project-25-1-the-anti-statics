@@ -135,6 +135,7 @@
   }
 
   h1 {
+    background-color: white;
     color: #333;
     text-align: center;
   }
@@ -142,6 +143,7 @@
     display: flex;
     flex-direction: column;
     border: 5px rgb(46, 45, 45) solid;
+    background-color: white;
     border-radius: 15px;
     width: fit-content;
     padding: 1em;
@@ -175,19 +177,23 @@
 
   @media (max-width: 1200px) {
     .container {
+      background-color: white;
       display: block; /* Stack the form fields vertically */
     }
 
     textarea {
+      background-color: white;
       width: 100%; /* Ensure textarea takes full width */
     }
 
     label {
+      background-color: white;
       align-self: center; /* Align labels properly */
     }
 
     input,
     select {
+      background-color: white;
       width: 100%; /* Ensure input/select fields take full width */
       margin: 0.5em 0; /* Add space between fields */
     }
@@ -196,20 +202,24 @@
   /* For mobile devices (phones in portrait mode) */
   @media (max-width: 768px) {
     textarea {
+      background-color: white;
       width: 100%; /* Ensure textarea takes full width on small screens */
     }
 
     .container {
+      background-color: white;
       display: block; /* Stack the form fields vertically */
     }
 
     label {
+      background-color: white;
       font-size: 0.9em; /* Adjust font size for labels */
       text-align: left; /* Align labels to the left on mobile */
     }
 
     input,
     select {
+      background-color: white;
       width: 100%; /* Ensure input/select fields take full width */
       margin: 0.5em 0; /* Add space between fields */
     }
@@ -218,11 +228,13 @@
   /* For very small screens (phones in portrait mode) */
   @media (max-width: 480px) {
     label {
+      background-color: white;
       font-size: 0.85em; /* Further reduce label font size */
     }
 
     input,
     select {
+      background-color: white;
       width: 100%; /* Ensure input/select fields take full width */
     }
 
