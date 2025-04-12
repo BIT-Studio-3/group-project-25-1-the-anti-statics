@@ -2,15 +2,15 @@
   //Import post alert function
   import { postAlert } from "./post-functions/postAlert.js"; // Import the postAlert function
   //Import post alert function variables
-  let postError = "";
+  let postError = '';
   let data = null;
-  let error = "";
+  let error = '';
 
-  let title = "";
-  let type = "";
-  let level = "";
-  let region = "";
-  let description = "";
+  let title = '';
+  let type = '';
+  let level = '';
+  let region = '';
+  let description = '';
 
   // Function to handle form submission
   const submitAlert = async (event) => {
@@ -45,11 +45,11 @@
       alert("Alert posted successfully!");
 
       // Reset form fields
-      title = "";
-      type = "";
-      level = "";
-      region = "";
-      description = "";
+      title = '';
+      type = '';
+      level = '';
+      region = '';
+      description = '';
     }
   };
 </script>
@@ -64,7 +64,7 @@
 
     <label for="type">Emergency type:</label>
     <select bind:value={type} required>
-      <option value="">Please select an emergency type</option>
+      <option value=''>Please select an emergency type</option>
       <option value="fire">Fire</option>
       <option value="flood">Flooding</option>
       <option value="quake">Earthquake damage</option>
@@ -72,11 +72,11 @@
 
     <label for="level">Select alert level:</label>
     <select bind:value={level} required>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
     </select>
 
     <label for="region">Choose Region:</label>
