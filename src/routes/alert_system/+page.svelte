@@ -180,8 +180,9 @@
     }
 
     label {
-      background-color: white;
-      align-self: center; /* Align labels properly */
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
     }
 
     input,
