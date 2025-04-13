@@ -139,28 +139,21 @@
     text-align: left;
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    border: 5px rgb(46, 45, 45) solid;
-    background-color: white;
-    border-radius: 15px;
-    width: fit-content;
-    padding: 1em;
-    margin-top: 2%;
-  }
-
-  form h2 {
+  .form-group h2 {
     text-align: center;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
+    color: #213a49;
   }
 
-  label {
-    color: rgb(50, 51, 51);
-    text-align: right;
-    justify-content: center;
-    padding-top: 10px;
-    background-color: white;
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2b5876;
   }
 
   div {
