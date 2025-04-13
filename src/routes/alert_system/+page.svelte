@@ -209,28 +209,18 @@
   }
 
   button:hover {
-      background-color: white;
-      width: 100%; /* Ensure input/select fields take full width */
-      margin: 0.5em 0; /* Add space between fields */
-    }
+      background-color: #45a049;
   }
 
-  /* For very small screens (phones in portrait mode) */
-  @media (max-width: 480px) {
-    label {
-      background-color: white;
-      font-size: 0.85em; /* Further reduce label font size */
+  .success-message {
+    color: green;
+    font-size: 1.1rem;
+    font-weight: bold;
     }
 
-    input,
-    select {
-      background-color: white;
-      width: 100%; /* Ensure input/select fields take full width */
-    }
-
-    /* button {
-      padding: 1em;
-      font-size: 1em; 
-    } */
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    font-weight: bold;
   }
 </style>
