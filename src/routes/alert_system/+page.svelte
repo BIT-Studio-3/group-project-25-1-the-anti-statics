@@ -185,34 +185,30 @@
     font-weight: bold;
     }
 
-    input,
-    select {
-      background-color: white;
-      width: 100%; /* Ensure input/select fields take full width */
-      margin: 0.5em 0; /* Add space between fields */
-    }
+    input, select {
+    width: 90%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
 
-  /* For mobile devices (phones in portrait mode) */
-  @media (max-width: 768px) {
-    textarea {
-      background-color: white;
-      width: 100%; /* Ensure textarea takes full width on small screens */
-    }
+  textarea{
+    resize: none;
+  }
 
-    .container {
-      background-color: white;
-      display: block; /* Stack the form fields vertically */
-    }
+  button {
+    padding: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+      font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
+  }
 
-    label {
-      background-color: white;
-      font-size: 0.9em; /* Adjust font size for labels */
-      text-align: left; /* Align labels to the left on mobile */
-    }
-
-    input,
-    select {
+  button:hover {
       background-color: white;
       width: 100%; /* Ensure input/select fields take full width */
       margin: 0.5em 0; /* Add space between fields */
