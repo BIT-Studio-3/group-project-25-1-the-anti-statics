@@ -55,10 +55,10 @@
 </script>
 
 <main>
-<h1>Alerts</h1>
+  <h1>Alerts</h1>
 
   <section class="form-container">
-<form on:submit={submitAlert}>
+    <form on:submit={submitAlert}>
       <div class="form-group">
         <h2>Post Alert</h2>
         <label for="title">Title</label>
@@ -68,11 +68,11 @@
       <div class="form-group">
         <label for="type">Emergency Type</label>
         <select id="type" bind:value={type} required>
-      <option value=''>Please select an emergency type</option>
-      <option value="fire">Fire</option>
-      <option value="flood">Flooding</option>
+          <option value=''>Please select an emergency type</option>
+          <option value="fire">Fire</option>
+          <option value="flood">Flooding</option>
           <option value="quake">Earthquake Damage</option>
-    </select>
+        </select>
       </div>
 
       <div class="form-group">
@@ -83,39 +83,39 @@
           <option value=3>3</option>
           <option value=4>4</option>
           <option value=5>5</option>
-    </select>
+        </select>
       </div>
 
       <div class="form-group">
         <label for="region">Region</label>
         <select id="region" bind:value={region} required>
-      <option value="">Please select a region</option>
-      <option value="Otago">Otago</option>
-      <option value="Canterbury">Canterbury</option>
-      <option value="Southland">Southland</option>
-    </select>
+          <option value="">Please select a region</option>
+          <option value="Otago">Otago</option>
+          <option value="Canterbury">Canterbury</option>
+          <option value="Southland">Southland</option>
+        </select>
       </div>
 
       <div class="form-group">
         <label for="description">Description</label>
         <textarea id="description" bind:value={description} placeholder="Provide a description" required></textarea>
-  </div>
+      </div>
 
-    <button type="submit">Submit</button>
-</form>
+      <button type="submit">Submit</button>
+    </form>
   </section>
 
-{#if postError}
+  {#if postError}
     <p class="error-message">⚠️ {postError}</p>
-{/if}
+  {/if}
 
-{#if error}
+  {#if error}
     <p class="error-message">⚠️ {error}</p>
-{/if}
+  {/if}
 
-{#if data}
+  {#if data}
     <p class="success-message">✅ Alert posted successfully!</p>
-{/if}
+  {/if}
 </main>
 
 <style>
@@ -177,15 +177,15 @@
   .form-group textarea {
     resize: none;
     height: 80px;
-    }
+  }
 
-    label {
+  label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
-    }
+  }
 
-    input, select {
+  input, select {
     width: 90%;
     padding: 0.8rem;
     font-size: 1rem;
@@ -203,20 +203,20 @@
     color: white;
     border: none;
     cursor: pointer;
-      font-size: 1rem;
+    font-size: 1rem;
     border-radius: 5px;
     width: 100%;
   }
 
   button:hover {
-      background-color: #45a049;
+    background-color: #45a049;
   }
 
   .success-message {
     color: green;
     font-size: 1.1rem;
     font-weight: bold;
-    }
+  }
 
   .error-message {
     color: red;
