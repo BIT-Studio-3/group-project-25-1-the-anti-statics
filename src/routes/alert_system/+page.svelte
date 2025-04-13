@@ -156,27 +156,27 @@
     color: #2b5876;
   }
 
-  div {
-    padding: 0.5em;
-    background-color: white; 
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
   }
 
-  input,
-  select {
-    max-width: fit-content;
-    margin: 0.5em;
-    background-color: white !important; 
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #4e4376;
+    box-shadow: 0 0 5px rgba(78, 67, 118, 0.5);
   }
 
-  @media (max-width: 1200px) {
-    .container {
-      background-color: white;
-      display: block; /* Stack the form fields vertically */
-    }
-
-    textarea {
-      background-color: white;
-      width: 100%; /* Ensure textarea takes full width */
+  .form-group textarea {
+    resize: none;
+    height: 80px;
     }
 
     label {
