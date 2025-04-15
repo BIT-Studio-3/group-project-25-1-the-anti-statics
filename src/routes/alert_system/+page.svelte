@@ -60,7 +60,7 @@
   <section class="form-container">
     <form on:submit={submitAlert}>
       <div class="form-group">
-        <h2>Post Alert</h2>
+        <h2>Post Alert ⚠️</h2>
         <label for="title">Title</label>
         <input type="text" id="title" bind:value={title} placeholder="Enter alert title" required />
       </div>
