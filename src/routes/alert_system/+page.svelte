@@ -127,11 +127,10 @@
   }
 
   .form-container {
-    background: #f9f9f9;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+    border-color: #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5)  }
 
   .form-group {
     margin-top: 1.5rem;
@@ -170,8 +169,8 @@
   .form-group select:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: #4e4376;
-    box-shadow: 0 0 5px rgba(78, 67, 118, 0.5);
+    border-color: #4CAF50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
   }
 
   .form-group textarea {
