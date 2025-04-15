@@ -1,242 +1,210 @@
 <script>
-  import { page } from "$app/stores";
-  $: route = $page.route.id;
-
-  import AgencySelect from "$lib/agencySelect.svelte";
-  import user from "../stores/user.js";  // Import the user store
   import { goto } from "$app/navigation";
+  import AgencySelect from "$lib/agencySelect.svelte";
+  import user from "../stores/user.js";
+  import logo from "./Images/dma.png";
 
-  // Define the logout function
+  let isMenuOpen = false;
+
   const logout = () => {
-      // Clear the user from the store
-      user.set(null);
-      goto("/login");
+    user.set(null);
+    goto("/login");
   };
 
-  const navLinks = [
-      {href: '/weather_reports_page', text: 'Weather Reports'},
-      {href: '/seismic_reports_page', text: 'Seismic and Volcanic Activity'},
-      {href: '/road_conditions_page', text: 'Road Conditions'},
-      {href: '/fire_and_emergency_page', text: 'Fire and Emergency Reports'},
-      {href: '/rss', text: 'RSS Feed'},
-      {href: '/alert_system', text: 'Post an Alert'},
-      {href: '/Resources_Availability_Form', text: 'Post Resources Availability'}
-  ];
-  
-  let isDropdownOpen = false;
-  function toggleDropdown() {
-      isDropdownOpen = !isDropdownOpen;
-  }
+  const toggleMenu = () => {
+    isMenuOpen = !isMenuOpen;
+  };
 
-  function closeDropdown() {
-      isDropdownOpen = false;
-  }
-
-  import { onMount } from 'svelte';
-
-  let isSmallScreen = false;
-
-  onMount(() => {
-      isSmallScreen = window.innerWidth <= 768;
-      window.addEventListener('resize', () => {
-          isSmallScreen = window.innerWidth <= 768;
-          if (!isSmallScreen) {
-              isDropdownOpen = false;
-          }
-      });
-  });
+  import { fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
 </script>
 
 <header>
+  <h1 in:fade={{ duration: 500 }}><a href="/"><img src={logo} alt="Main Logo" height="60" /></a></h1>
 
-  <nav>
-      <div class="navbar">
-          <h1><a href="/">The Anti-Statics Disaster Management System</a></h1>
-
-          <button class="menu-toggle" on:click={toggleDropdown}>
-              ☰
-          </button>
-
-          <nav class="nav-links">
-              {#each navLinks as { href, text }} 
-                  <a href={href} class="nav-link" on:click={closeDropdown} class:active={$page.route.id === href}>
-                      {text}
-                  </a>
-              {/each}
-              <AgencySelect />
-          </nav>
-
-          {#if isDropdownOpen} 
-              <div class="dropdown">
-                  {#each navLinks as { href, text }}
-                      <a href={href} class="dropdown-link">{text}</a>
-                  {/each}
-              </div>
-          {/if}
-      </div>
-      
-      <button class="logout-button" on:click={logout}>ꄗ Log Out</button>
+  <nav id="main-drop">
+    <ul class="main-menu">
+      <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports_page">Weather Reports</a></li>
+      <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports_page">Seismic Reports</a></li>
+      <li in:fly={{ y: 30, duration: 500 }}><a href="/road_conditions_page">Road Conditions</a></li>
+      <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
+      <li in:fly={{ y: 30, duration: 700 }}><a href="/rss">RSS</a></li>
+      <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
+      <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
+      <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
+      <button in:fade={{ duration: 500 }} class="logout-button" on:click={logout}>🔑 Log Out</button>
+      <button in:fly={{ y: 30, duration: 300 }} class="hamburger-btn" on:click={toggleMenu}>☰</button>
+    </ul>
   </nav>
+
+  {#if isMenuOpen}
+    <nav id="hamburger">
+      <ul in:fade={{ duration: 100 }} out:fade={{ duration: 100 }}  class="hamburger-list">
+        <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports_page">Weather Reports</a></li>
+        <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports_page">Seismic Reports</a></li>
+        <li in:fly={{ y: 30, duration: 500 }}><a href="/road_conditions_page">Road Conditions</a></li>
+        <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
+        <li in:fly={{ y: 30, duration: 700 }}><a href="/rss">RSS</a></li>
+        <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
+        <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
+        <button in:fly={{ y: 30, duration: 1000 }} class="logout-button-hamburger" on:click={logout}
+          >🔑 Log Out</button
+        >
+      </ul>
+    </nav>
+  {/if}
 </header>
 
 <style>
-  * {
-      background-color: #B5D5C5;
+  h1{
+    transition: transform 0.3s;
   }
-
-  a {
-      text-decoration: none;
-      background-color: inherit;
-      border-right: 1px solid grey;
-      align-self: center;
+  h1:hover{
+    transform: scale(1.1);
   }
-
-  a:last-child {
-      border-right: 0px;
+  .main-menu div {
+    display: flex;
+    align-items: center;
   }
-
-  h1 a {
-      border-right: 0px;
-  }
-
-  header {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-around;
-      align-items: center;
-      max-width: 100%;
-      position: relative;
-      top: 0;
-      box-shadow: 0 4px 5px #333;
-      padding: 2em;
-      margin-bottom: 0.5em;
-      box-sizing: border-box;
-  }
-
-  nav {
-      display: flex;
-      flex-direction: row;
-  }
-
-  .navbar {
-      background-color: #B5D5C5;
-      padding: 20px;
-      color: #333;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      position: relative;
-      width: 100%;
-      box-sizing: border-box;
-  }
-
-  .nav-links {
-      display: flex;
-      justify-content: space-evenly;
-      width: 100%;
-      gap: 40px;
-      background-color: #B5D5C5;
-      flex-wrap: wrap;
-  }
-
-  .menu-toggle {
-      display: none;
-      font-size: 30px;
-      background: none;
-      border: 1px solid;
-      color: white;
-      cursor: pointer;
-      padding: 10px;
-      position: absolute;
-      right: 20px;
-      top: 20px;
-  }
-
-  .nav-link {
-      text-decoration: none;
-      background-color: #B5D5C5;
-      color: #333;
-      font-size: 1.4em;
-      font-weight: 500;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-  }
-
-  .nav-link:hover {
-      transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-      padding: 0px 10px;
-      background-color: #555;
-      color: white;
-  }
-
-  .dropdown {  
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      background-color: #333;
-      position: absolute; 
-      top: 110px;
-      right: 0;
-      padding: 10px 0;
-      z-index: 999;
-  }
-
-  .dropdown-link {
-      text-decoration: none;
-      color: white;
-      padding: 10px 20px;
-      text-align: center;
-      font-size: 1rem;
-      border-bottom: 1px solid #555;
-  }
-
-  .dropdown-link:hover {
-      background-color: #78ad67;
-      color: #333;
-  }
-
   .logout-button {
-      background-color: #B5D5C5;
-      font-size: 1.4em;
-      padding: 10px;
-      color: #333;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    background-color: green;
+    color: white;
+    padding: 1em 1em 1em 1em;
+    border: none;
+    border-radius: 4px;
+    transition: transform 0.3s;
   }
-
   .logout-button:hover {
-      background-color: #555;
+    cursor: pointer;
+    background-color: yellow;
+    transform: scale(1.1);
+    color: #333;
+  }
+  #hamburger {
+    display: none;
+    position: absolute;
+    top: 6em;
+  }
+  .hamburger-list {
+    list-style: none;
+  }
+  .hamburger-btn {
+    display: none;
+  }
+  .logout-button-hamburger {
+    display: none;
+  }
+  * {
+    background-color: white;
+  }
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    background-color: white;
+    gap: 10px;
+    border-bottom: 3px green solid;
+  }
+  .main-menu {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+  }
+  .main-menu li {
+    padding: 0.4em;
+    width: 5em;
+    text-align: center;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+  .main-menu li:hover {
+    background-color: green;
+    border-radius: 4px;
+    transform: scale(1.1);
+  }
+  .main-menu li:hover a {
+    background-color: inherit;
+    color: white;
+  }
+  .main-menu li a {
+    text-decoration: none;
+    background-color: inherit;
+    transition: color 0.3s ease;
+  }
+  @media (max-width: 1200px) {
+    .main-menu li,
+    .logout-button {
+      display: none;
+    }
+    .hamburger-btn {
+      display: flex;
+      padding: 0.4em 0.5em 0.4em 0.5em;
+      font-size: large;
+      border: none;
+      border-radius: 4px;
+      align-items: center;
+      font-weight: bolder;
+      font-size: x-large;
+      transition: transform 0.3s;
+    }
+    .hamburger-btn:hover {
+      background-color: green;
       color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      transform: scale(1.1);
+    }
+    #hamburger {
+      display: block;
+      z-index: 1000;
+    }
+    .hamburger-list {
+      display: block;
+      padding: 1em;
+      border: 3px solid green;
+    }
+    .hamburger-list li {
+      padding: 0.5em;
+      border-radius: 4px;
+      transition: transform 0.3s;
+    }
+    .hamburger-list li a {
+      background-color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .hamburger-list li:hover a {
+      background-color: inherit;
+      color: white;
+    }
+    .hamburger-list li:hover {
+      background-color: green;
+      border-radius: 4px;
+      transform: scale(1.1);
+    }
+    .logout-button-hamburger {
+      display: flex;
+      width: 100%;
+      background-color: green;
+      color: white;
+      padding: 0.3em;
+      border: none;
+      border-radius: 4px;
+      transition: transform 0.3s;
+    }
+    .logout-button-hamburger:hover {
+      cursor: pointer;
+      background-color: yellow;
+      color: #333;
+      transform: scale(1.1);
+    }
   }
-
-  .active {
-      background-color: #689FD4;
-      font-weight: bold;
-  }
-
-  @media (max-width: 768px) {
-      .nav-links {
-          display: none;
-          width: 100%;
-          flex-direction: column;
-      }
-
-      .menu-toggle {
-          display: block;
-      }
-
-      .nav-link {
-          width: 100%;
-          text-align: center;
-      }
-
-      .dropdown {
-          display: none;
-      }
-
-      .nav-links.open {
-          display: flex;
-      }
-  }
+  
+  
 </style>
