@@ -130,7 +130,8 @@
     padding: 2rem;
     border-radius: 10px;
     border-color: #10941b;
-    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5)  }
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5)  
+  }
 
   .form-group {
     margin-top: 1.5rem;
@@ -196,6 +197,14 @@
     resize: none;
   }
 
+  #description{
+    width: 87%;
+  }
+
+  #title{
+    width: 87%;
+  }
+
   button {
     padding: 1rem;
     background-color: #4CAF50;
@@ -204,7 +213,7 @@
     cursor: pointer;
     font-size: 1rem;
     border-radius: 5px;
-    width: 100%;
+    width: 20%;
   }
 
   button:hover {
