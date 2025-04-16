@@ -185,10 +185,10 @@
       cursor: pointer;
       font-size: 1rem;
       border-radius: 5px;
-      width: 100%;
+    width: 20%;
     }
   
-    button:hover{
+  button:hover {
       background-color: #45a049;
     }
     
