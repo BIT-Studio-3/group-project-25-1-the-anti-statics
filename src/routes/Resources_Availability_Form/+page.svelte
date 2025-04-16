@@ -115,16 +115,11 @@
     }
   
     .form-container {
-    background: #f9f9f9;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-color: #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5)  
   }
-
-.form-container > *{
-  background-color: white;
-}
-
 
   .form-group {
     margin-bottom: 1.5rem;
