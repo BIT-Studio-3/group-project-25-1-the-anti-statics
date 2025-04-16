@@ -50,6 +50,9 @@ Make sure to put the last closing '}' in an empty line so no one get confused re
     }
 }
 ```
+**5. Mobile Compatibility**
+While working on any feature, make sure it displays properly on mobile. Also check this when doing code reviews.
+
 ## Code Cleanliness and Originality
 **1. Code Cleanliness**
 Try to write as basic and flexible code as possible so it can be easy to edit the code in future (if needed).
