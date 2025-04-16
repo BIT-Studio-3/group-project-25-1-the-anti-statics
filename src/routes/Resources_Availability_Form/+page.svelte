@@ -165,8 +165,8 @@
       font-weight: bold;
     }
   
-    input, textarea {
-      width: 100%;
+  input{
+    width: 90%;
       padding: 0.8rem;
       font-size: 1rem;
       border: 1px solid #ccc;
