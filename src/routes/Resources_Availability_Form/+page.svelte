@@ -109,7 +109,7 @@
   <style>
     main {
       padding: 2rem;
-      max-width: 600px;
+    max-width: 60%;
       margin: 0 auto;
       text-align: center;
     }
