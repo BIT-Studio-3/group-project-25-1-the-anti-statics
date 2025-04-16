@@ -172,6 +172,10 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
+  textarea{
+    resize: none;
+  }
   
     button {
       padding: 1rem;
