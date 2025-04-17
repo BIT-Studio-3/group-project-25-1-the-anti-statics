@@ -170,8 +170,18 @@
 </div>
 
 <style>
-  * {
-    font-family: sans-serif;
+  
+  .page-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hazard-logs {
+    flex: 1;
+    max-width: 25%;
     color: #333;
   }
   textarea {
