@@ -177,67 +177,48 @@
     list-style: none;
     margin-bottom: 1rem;
   }
-  @media (max-width: 1200px) {
-    .container {
-      display: block; /* Stack the form fields vertically */
-    }
 
-    textarea {
-      width: 100%; /* Ensure textarea takes full width */
-    }
-
-    label {
-      align-self: center; /* Align labels properly */
-    }
-
-    input,
-    select {
-      width: 100%; /* Ensure input/select fields take full width */
-      margin: 0.5em 0; /* Add space between fields */
-    }
+  .form-container {
+    flex: 2;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  /* For mobile devices (phones in portrait mode) */
-  @media (max-width: 768px) {
-    textarea {
-      width: 100%; /* Ensure textarea takes full width on small screens */
+  .form-group {
+    margin-bottom: 1.5rem;
     }
 
-    .container {
-      display: block; /* Stack the form fields vertically */
-    }
-
-    label {
-      font-size: 0.9em; /* Adjust font size for labels */
-      text-align: left; /* Align labels to the left on mobile */
-    }
-
-    input,
-    select {
-      width: 100%; /* Ensure input/select fields take full width */
-      margin: 0.5em 0; /* Add space between fields */
-    }
-
-    button {
-      width: 100%; /* Ensure the submit button takes full width */
-      padding: 1em; /* Add padding for better usability */
-    }
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2b5876;
   }
 
-  /* For very small screens (phones in portrait mode) */
-  @media (max-width: 480px) {
-    label {
-      font-size: 0.85em; /* Further reduce label font size */
-    }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
 
-    input,
-    select {
-      width: 100%; /* Ensure input/select fields take full width */
-    }
+  .form-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
 
-    button {
-      padding: 1em; /* Ensure button is touch-friendly */
-      font-size: 1em; /* Adjust font size for button */
-    }
+  .form-button:hover {
+    background-color: #45a049;
   }
 </style>
