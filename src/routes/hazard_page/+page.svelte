@@ -187,7 +187,9 @@
   }
 
   .form-group {
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    text-align: left;
   }
 
   .form-group label {
@@ -200,10 +202,38 @@
   .form-group input,
   .form-group select,
   .form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
+    width: 90%;
+    padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+  }
+
+  .form-group textarea {
+    resize: none;
+    height: 80px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  input, select {
+    width: 90%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
 
   .form-button {
@@ -220,5 +250,9 @@
 
   .form-button:hover {
     background-color: #45a049;
+  }
+
+  #description, #title, #location, #city{
+    width: 87%;
   }
 </style>
