@@ -68,13 +68,13 @@
         <p>No hazards logged.</p>
       {:else}
         <ul class="hazard-list">
-      {#each hazards as hazard}
-        <li>
-          <HazardCard obj={hazard} />
-        </li>
-      {/each}
-    </ul>
-    {/if}
+          {#each hazards as hazard}
+            <li>
+              <HazardCard obj={hazard} />
+            </li>
+          {/each}
+        </ul>
+      {/if}
     </div>
   </div>
 
@@ -188,7 +188,7 @@
 
   .form-group {
     margin-bottom: 1.5rem;
-    }
+  }
 
   .form-group label {
     display: block;
