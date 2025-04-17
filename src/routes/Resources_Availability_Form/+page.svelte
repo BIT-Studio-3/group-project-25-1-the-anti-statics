@@ -1,6 +1,7 @@
 <script>
-   import { onMount } from "svelte";
+  import { onMount } from "svelte";
   import { postResource } from "./post-functions/postResource.js";
+  import FormLayout from "../../lib/formLayout.svelte";
 
   let name = ""; 
   let contactInfo = ""; 
@@ -61,7 +62,7 @@
     {#if submitted}
     <p class="success-message">✅ Thank you for submitting your information. We will contact you shortly.</p>
   {:else}
-    <section class="form-container">
+    <FormLayout title = "Disaster Operations Form">
       <form on:submit={handleSubmit}>
       <div class="form-group">
         <label for="name">Organization Name</label>
@@ -89,8 +90,8 @@
 
       <button type="submit">Submit</button>
     </form>
-    </section>
-  {/if}
+  </FormLayout>
+    {/if}
 
   {#if resources.length > 0}
     <section class="resources-list">
@@ -109,7 +110,7 @@
   <style>
     main {
       padding: 2rem;
-    max-width: 60%;
+      max-width: 60%;
       margin: 0 auto;
       text-align: center;
     }
@@ -185,7 +186,7 @@
       cursor: pointer;
       font-size: 1rem;
       border-radius: 5px;
-    width: 20%;
+      width: 20%;
     }
   
   button:hover {
