@@ -60,50 +60,14 @@
   const { hazards } = data;
 </script>
 
-<div class="pageContainer">
-  <form on:submit={submitHazard}>
-    <h2>Log Hazard:</h2>
-    <div class="container">
-      <label for="title">Title:</label>
-      <input type="text" id="title" bind:value={name} required />
-
-      <label for="type">Hazard type:</label>
-      <select bind:value={type} required>
-        <option value="">Please select an hazard type</option>
-        <option value="fire">Fire</option>
-        <option value="chemicals">Chemical Leak</option>
-        <option value="slip">Slip</option>
-      </select>
-
-      <label for="level">Select hazard level:</label>
-      <select bind:value={level} required>
-        <option value=1>1</option>
-        <option value=2>2</option>
-        <option value=3>3</option>
-        <option value=4>4</option>
-        <option value=5>5</option>
-      </select>
-
-      <label for="city">City/Town:</label>
-      <input type="text" id="city" bind:value={city} required />
-
-      <label for="location">Location (street or suburb):</label>
-      <input type="text" id="location" bind:value={location} required />
-
-      <label for="description">Description:</label>
-      <textarea id="description" bind:value={description} required></textarea>
-    </div>
-    <div>
-      <button type="submit">Submit</button>
-    </div>
-  </form>
-
-  <div class="hazardlogs">
-    {#if !data.hazards || data.hazards.length === 0}
-      <p>No hazards logged</p>
-    {:else}
+<div class="page-container">
+  <div class="hazard-logs">
     <h3>Recent Hazards</h3>
-    <ul class="hazardLogs">
+    <div class="hazard-list-container">
+      {#if !data.hazards || data.hazards.length === 0}
+        <p>No hazards logged.</p>
+      {:else}
+        <ul class="hazard-list">
       {#each hazards as hazard}
         <li>
           <HazardCard obj={hazard} />
@@ -183,62 +147,35 @@
     flex: 1;
     max-width: 25%;
     color: #333;
-  }
-  textarea {
-    vertical-align: top;
-    height: 10em;
-    width: 25em;
-  }
-  label {
-    text-align: right;
-    justify-content: center;
-    padding-top: 10px;
-  }
-  div {
-    padding: 0.5em;
-  }
-  form {
-    display: inline-block;
-    border-color: black;
-    border: solid;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
     padding: 1em;
-    max-height: fit-content;
-  }
-  .pageContainer {
-    display: flex;
-    max-height: 70vh;
-  }
-  .hazardlogs {
-    border-color: black;
-    border: solid;
-    display: grid;
-    grid-template-columns: auto;
-    max-height: fit-content;
-  }
-  .hazardlogs ul {
-    max-height: 70vh;
+    height: 55em;
     overflow-y: auto;
   }
-  .hazardlogs li {
-    margin-top: 0.5em;
+
+  .hazard-logs h3 {
+    margin-bottom: 1rem;
+    color: #2b5876;
+    background-color: inherit;
+  }
+
+  .hazard-list-container {
+    overflow-y: auto;
+    height: calc(100% - 2rem);
+  }
+
+  .hazard-list {
     list-style: none;
-    padding-left: 0.5em;
-    float: left;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
   }
-  .container {
-    display: grid;
-    grid-template-columns: 25% 75%;
-  }
-  input {
-    max-width: fit-content;
-    margin: 0.5em;
-  }
-  select {
-    max-width: fit-content;
-    margin: 0.5em;
-  }
-  textarea {
-    margin: 0.5em;
+
+  .hazard-list li {
+    list-style: none;
+    margin-bottom: 1rem;
   }
   @media (max-width: 1200px) {
     .container {
