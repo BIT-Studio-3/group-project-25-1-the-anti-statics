@@ -1,6 +1,7 @@
 <script>
   import HazardCard from "$lib/hazardCard.svelte";
   import { postHazard } from "./post-function/postHazard.js";
+  import FormLayout from "../../lib/formLayout.svelte";
 
   let postError = "";
   let info = null;
@@ -110,6 +111,61 @@
       {/each}
     </ul>
     {/if}
+    </div>
+  </div>
+
+  <div class="form-container">
+    <FormLayout title="Log Hazard">
+      <form on:submit={submitHazard}>
+        <div class="form-group">
+          <label for="title">Hazard Name</label>
+          <input type="text" id="title" bind:value={name} placeholder="Enter hazard name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="type">Hazard Type</label>
+          <select id="type" bind:value={type} required>
+            <option value="">Select hazard type</option>
+            <option value="fire">Fire</option>
+            <option value="chemicals">Chemical Leak</option>
+            <option value="slip">Slip</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="level">Hazard Level</label>
+          <select id="level" bind:value={level} required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City/Town</label>
+          <input type="text" id="city" bind:value={city} placeholder="Enter city or town" required />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location (Street or Suburb)</label>
+          <input type="text" id="location" bind:value={location} placeholder="Enter location" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            bind:value={description}
+            placeholder="Provide a description"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="form-button">Submit</button>
+      </form>
+    </FormLayout>
   </div>
 </div>
 
