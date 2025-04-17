@@ -237,7 +237,7 @@
   }
 
   .form-button {
-    width: 100%;
+    width: 90%;
     padding: 0.75rem;
     background-color: #4CAF50;
     color: white;
