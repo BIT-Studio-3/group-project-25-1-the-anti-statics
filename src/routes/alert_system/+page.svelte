@@ -101,7 +101,9 @@
         <textarea id="description" bind:value={description} placeholder="Provide a description" required></textarea>
       </div>
 
-      <button type="submit">Submit</button>
+      <div class="button-wrapper">
+        <button type="submit" class="form-button">Submit</button>
+      </div>
     </form>
   </section>
 
@@ -177,6 +179,24 @@
   .form-group textarea {
     resize: none;
     height: 80px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form-button {
+    width: 30%;
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
   }
 
   label {

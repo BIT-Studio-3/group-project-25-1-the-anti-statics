@@ -88,7 +88,9 @@
       <p class="error-message">⚠️ {errorMessage}</p>
     {/if}
 
-      <button type="submit">Submit</button>
+    <div class="button-wrapper">
+      <button type="submit" class="form-button">Submit</button>
+    </div>
     </form>
   </FormLayout>
     {/if}
@@ -114,13 +116,6 @@
       margin: 0 auto;
       text-align: center;
     }
-  
-    .form-container {
-    padding: 2rem;
-    border-radius: 10px;
-    border-color: #10941b;
-    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5)  
-  }
 
   .form-group {
     margin-top: 1.5rem;
@@ -158,6 +153,24 @@
   .form-group textarea {
     resize: none;
     height: 80px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form-button {
+    width: 30%;
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
   }
   
     label {
