@@ -152,7 +152,7 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    margin: 1em;
+    margin: 2em;
     place-items: center;
   }
 
@@ -283,7 +283,6 @@
       flex-wrap: wrap;
       gap: 10px;
       place-items: center;
-      width: 100%;
     }
     
     .form-button{
