@@ -1,260 +1,312 @@
 <script>
-    import DamageCard from "../../lib/damageCard.svelte";
-    import { postDamage } from "./post-functions/postDamage.js"; // Import the postDamage function
+  import DamageCard from "../../lib/damageCard.svelte";
+  import { postDamage } from "./post-functions/postDamage.js";
 
-    let postError = "";
-    let info = null;
-    let error = "";
+  let postError = "";
+  let info = null;
+  let error = "";
 
-    let name = "";
-    let type = "";
-    let level = "";
-    let location = "";
-    let count = "";
-    let cause = "";
+  let name = "";
+  let type = "";
+  let level = "";
+  let location = "";
+  let count = "";
+  let cause = "";
 
-    const submitDamage = async (event) => {
-        event.preventDefault(); // Prevent the form from refreshing the page
+  const submitDamage = async (event) => {
+      event.preventDefault(); // Prevent the form from refreshing the page
 
-        const damageData = {
-            reporterName: name,
-            damageType: type,
-            damageLevel: level,
-            location: location,
-            countAffected: count,
-            cause: cause,
-        };
-
-        const result = await postDamage(damageData);
-
-        postError = result.postError;
-        info = result.info;
-        error = result.error;
-
-        console.log("Result from postDamage:", result);
-        console.log("Post error:", postError);
-        console.log("Post data:", info);
-        console.log("Error:", error);
-
-        if (result.info) {
-            alert("Damage posted successfully!");
-            name = "";
-            type = "";
-            level = "";
-            location = "";
-            count = "";
-            cause = "";
-        }
+    const damageData = {
+      reporterName: name,
+      damageType: type,
+      damageLevel: level,
+      location: location,
+      countAffected: count,
+      cause: cause,
     };
 
-    export let data;
-    const { damages } = data;
+    const result = await postDamage(damageData);
+
+    postError = result.postError;
+    info = result.info;
+    error = result.error;
+
+    console.log("Result from postDamage:", result);
+      console.log("Post error:", postError);
+      console.log("Post data:", info);
+      console.log("Error:", error);
+
+    if (result.info) {
+      alert("Damage posted successfully!");
+      name = "";
+      type = "";
+      level = "";
+      location = "";
+      count = "";
+      cause = "";
+    }
+  };
+
+  export let data;
+  const { damages } = data;
 </script>
 
-<h1>Damage Log</h1>
+<div class="page-container">
+  <div class="damage-logs">
+    <h3>Logged Damages</h3>
+    <div class="damage-list-container">
+      {#if !damages || damages.length === 0}
+        <p>No damages logged</p>
+      {:else}
+        <ul class="damage-list">
+          {#each damages as damage}
+            <li>
+              <DamageCard obj={damage} />
+            </li>
+          {/each}
+        </ul>
+      {/if}
+    </div>
+  </div>
 
-<form on:submit={submitDamage}>
-    <h2>Post Damage:</h2>
-    <div class="container">
-        <label for="title">Reporter Name:</label>
-        <input type="text" id="reporterName" bind:value={name} required />
+  <div class="form-container">
+      <form on:submit={submitDamage}>
+        <h3>Log Damages</h3>
+        <div class="form-group">
+          <label for="reporterName">Reporter Name</label>
+          <input type="text" id="reporterName" bind:value={name} placeholder="Enter your full name" required />
+        </div>
 
-        <label for="type">Damage type:</label>
-        <select bind:value={type} required>
-            <option value="">Please select damage type</option>
+        <div class="form-group">
+          <label for="type">Type</label>
+          <select id="type" bind:value={type} required>
+            <option value="">Select damage type</option>
             <option value="Residential">Residential</option>
             <option value="Environmental">Environmental</option>
             <option value="Vehicle">Vehicle</option>
             <option value="Public Facilities">Public Facilities</option>
-        </select>
+          </select>
+        </div>
 
-        <label for="level">Select damage level:</label>
-        <select bind:value={level} required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
+        <div class="form-group">
+          <label for="level">Level</label>
+          <select id="level" bind:value={level} required>
+            <option value="">Select damage level</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+          </select>
+        </div>
 
-        <label for="location">Choose location:</label>
-        <select bind:value={location} required>
-            <option value="">Please select location of damage</option>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <select id="location" bind:value={location} required>
+            <option value="">Select location of damage</option>
             <option value="Otago">Otago</option>
             <option value="Canterbury">Canterbury</option>
             <option value="Southland">Southland</option>
-        </select>
+          </select>
+        </div>
 
-        <label for="countAffected"
-            >Choose the range of individuals affected:</label
-        >
-        <select bind:value={count} required>
-            <option value="1">less than 5</option>
-            <option value="2">5</option>
-            <option value="3">10</option>
-            <option value="4">20</option>
-            <option value="5">50</option>
-            <option value="6">100</option>
-        </select>
+        <div class="form-group">
+          <label for="count">Individuals Affected</label>
+          <select id="count" bind:value={count} required>
+            <option value="">Select number of individuals affected</option>
+            <option value=1>Less than 5</option>
+            <option value=2>5</option>
+            <option value=3>10</option>
+            <option value=4>20</option>
+            <option value=5>50</option>
+            <option value=6>100</option>
+          </select>
+        </div>
 
-        <label for="cause">Possible cause of damage :</label>
-        <textarea id="cause" bind:value={cause} required></textarea>
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-</form>
+        <div class="form-group">
+          <label for="cause">Cause</label>
+          <textarea id="cause" bind:value={cause} placeholder="Provide the possible cause of the damage" required></textarea>
+        </div>
+
+        <div class="button-wrapper">
+          <button type="submit" class="form-button">Submit</button>
+        </div>
+      </form>
+  </div>
+</div>
 
 {#if postError}
-    <p style="color: red;">{postError}</p>
+<p style="color: red;">{postError}</p>
 {/if}
 
 {#if error}
-    <p style="color: red;">{error}</p>
+<p style="color: red;">{error}</p>
 {/if}
 
 {#if info}
-    <p style="color: green;">The damage has been logged successfully!</p>
+<p style="color: green;">The damage has been logged successfully!</p>
 {/if}
 
-
-
-
-<div class="damagelogs">
-
-    {#if !data.damages || data.damages.length === 0}
-    <p>No damages logged</p>
-    {:else}
-    <h3>Logged damages</h3>
-    <ul class="damagelogs">
-        {#each damages as damage}
-            <li>
-                <DamageCard obj={damage} />
-            </li>
-        {/each}
-    </ul>
-    {/if}
-</div>
-
-
 <style>
-    * {
-        font-family: sans-serif;
-        color: #333;
+  .page-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 2em;
+    place-items: center;
+  }
+
+  .damage-logs {
+    flex: 1;
+    max-width: 25%;
+    min-width: 15%;
+    color: #333;
+    background-color: white;
+    border: 1px solid #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
+    border-radius: 15px;
+    padding: 1em;
+    height: 45em;
+    overflow-y: auto;
+  }
+
+  .damage-logs h3 {
+    margin-bottom: 1rem;
+    color: #2b5876;
+    text-align: center;
+  }
+
+  .damage-list-container {
+    overflow-y: auto;
+    height: calc(100% - 2rem);
+  }
+
+  .damage-list {
+    list-style: none;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+  }
+
+  .damage-list li {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+
+  .form-container {
+    flex: 2;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
+    border-radius: 15px;
+    color: #333;
+    background-color: white;
+    height: 45em;
+    overflow-y: auto;
+  }
+
+  .form-container h3 {
+    margin-bottom: 1rem;
+    color: #2b5876;
+    background-color: inherit;
+    text-align: center;
+    font-size: x-large;
+  }
+
+  .form-group {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2b5876;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+  }
+
+  .form-group textarea {
+    resize: none;
+    height: 80px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form-button {
+    width: 20%;
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .form-button:hover {
+    background-color: #45a049;
+  }
+  #reporterName, #cause{
+    width: 87%;
+  }
+
+  @media (max-width: 1060px) {
+    .page-container {
+      flex-direction: column; 
+      flex-wrap: wrap;
+      gap: 10px;
+      place-items: center;
     }
-    textarea {
-        vertical-align: top;
-        height: 10em;
-        width: 25em;
-    }
-    form {
-        border-color: black;
-        border: solid;
-        padding: 1em;
-        background-color: #eca869;
-    }
-    label {
-        text-align: right;
-        justify-content: center;
-        padding-top: 10px;
-    }
-    div {
-        padding: 0.5em;
+    
+    .form-button{
+      width: 90%;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
     }
 
-    .damagelogs {
-        border-color: black;
-        border: solid;
-        display: grid;
-        grid-template-columns: auto;
-        max-height: fit-content;
-    }
-    .damagelogs ul {
-        max-height: 70vh;
-        overflow-y: auto;
-    }
-    .damagelogs li {
-        margin-top: 0.5em;
-        list-style: none;
-        padding-left: 0.5em;
-        float: left;
-    }
-    .container {
-        display: grid;
-        grid-template-columns: 10% 90%;
-    }
-    input {
-        max-width: fit-content;
-        margin: 0.5em;
-    }
-    select {
-        max-width: fit-content;
-        margin: 0.5em;
-    }
-    textarea {
-        margin: 0.5em;
-    }
-    @media (max-width: 1200px) {
-        .container {
-            display: block; /* Stack the form fields vertically */
-        }
-
-        textarea {
-            width: 100%; /* Ensure textarea takes full width */
-        }
-
-        label {
-            align-self: center; /* Align labels properly */
-        }
-
-        input,
-        select {
-            width: 100%; /* Ensure input/select fields take full width */
-            margin: 0.5em 0; /* Add space between fields */
-        }
+    .damage-logs,
+    .form-container {
+      width: 100%;
+      max-width: 90%;
+      flex: none; 
     }
 
-    /* For mobile devices (phones in portrait mode) */
-    @media (max-width: 768px) {
-        textarea {
-            width: 100%; /* Ensure textarea takes full width on small screens */
-        }
-
-        .container {
-            display: block; /* Stack the form fields vertically */
-        }
-
-        label {
-            font-size: 0.9em; /* Adjust font size for labels */
-            text-align: left; /* Align labels to the left on mobile */
-        }
-
-        input,
-        select {
-            width: 100%; /* Ensure input/select fields take full width */
-            margin: 0.5em 0; /* Add space between fields */
-        }
-
-        button {
-            width: 100%; /* Ensure the submit button takes full width */
-            padding: 1em; /* Add padding for better usability */
-        }
+    .damage-logs {
+      margin-bottom: 10%;
+      height: auto;
     }
 
-    /* For very small screens (phones in portrait mode) */
-    @media (max-width: 480px) {
-        label {
-            font-size: 0.85em; /* Further reduce label font size */
-        }
-
-        input,
-        select {
-            width: 100%; /* Ensure input/select fields take full width */
-        }
-
-        button {
-            padding: 1em; /* Ensure button is touch-friendly */
-            font-size: 1em; /* Adjust font size for button */
-        }
+    .form-container {
+      height: auto;
+      padding: 1rem;
     }
+  }
 </style>

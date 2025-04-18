@@ -1,6 +1,7 @@
 <script>
-   import { onMount } from "svelte";
+  import { onMount } from "svelte";
   import { postResource } from "./post-functions/postResource.js";
+  import FormLayout from "../../lib/formLayout.svelte";
 
   let name = ""; 
   let contactInfo = ""; 
@@ -61,7 +62,7 @@
     {#if submitted}
     <p class="success-message">✅ Thank you for submitting your information. We will contact you shortly.</p>
   {:else}
-    <section class="form-container">
+    <FormLayout title = "Disaster Operations Form">
       <form on:submit={handleSubmit}>
       <div class="form-group">
         <label for="name">Organization Name</label>
@@ -87,10 +88,12 @@
       <p class="error-message">⚠️ {errorMessage}</p>
     {/if}
 
-      <button type="submit">Submit</button>
+    <div class="button-wrapper">
+      <button type="submit" class="form-button">Submit</button>
+    </div>
     </form>
-    </section>
-  {/if}
+  </FormLayout>
+    {/if}
 
   {#if resources.length > 0}
     <section class="resources-list">
@@ -109,31 +112,65 @@
   <style>
     main {
       padding: 2rem;
-      max-width: 600px;
+      max-width: 60%;
       margin: 0 auto;
       text-align: center;
     }
-  
-    .form-container {
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-.form-container > *{
-  background-color: white;
-}
-
 
   .form-group {
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    background-color: white;
     text-align: left;
   }
 
-  .form-group > * {
-    background-color: white;
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2b5876;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+  }
+
+  .form-group textarea {
+    resize: none;
+    height: 80px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form-button {
+    width: 30%;
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
   }
   
     label {
@@ -142,13 +179,17 @@
       font-weight: bold;
     }
   
-    input, textarea {
-      width: 100%;
+  input{
+    width: 90%;
       padding: 0.8rem;
       font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
+  textarea{
+    resize: none;
+  }
   
     button {
       padding: 1rem;
@@ -158,10 +199,10 @@
       cursor: pointer;
       font-size: 1rem;
       border-radius: 5px;
-      width: 100%;
+      width: 20%;
     }
   
-    button:hover{
+  button:hover {
       background-color: #45a049;
     }
     

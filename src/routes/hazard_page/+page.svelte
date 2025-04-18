@@ -59,182 +59,257 @@
   const { hazards } = data;
 </script>
 
-<div class="pageContainer">
-  <form on:submit={submitHazard}>
-    <h2>Log Hazard:</h2>
-    <div class="container">
-      <label for="title">Title:</label>
-      <input type="text" id="title" bind:value={name} required />
-
-      <label for="type">Hazard type:</label>
-      <select bind:value={type} required>
-        <option value="">Please select an hazard type</option>
-        <option value="fire">Fire</option>
-        <option value="chemicals">Chemical Leak</option>
-        <option value="slip">Slip</option>
-      </select>
-
-      <label for="level">Select hazard level:</label>
-      <select bind:value={level} required>
-        <option value=1>1</option>
-        <option value=2>2</option>
-        <option value=3>3</option>
-        <option value=4>4</option>
-        <option value=5>5</option>
-      </select>
-
-      <label for="city">City/Town:</label>
-      <input type="text" id="city" bind:value={city} required />
-
-      <label for="location">Location (street or suburb):</label>
-      <input type="text" id="location" bind:value={location} required />
-
-      <label for="description">Description:</label>
-      <textarea id="description" bind:value={description} required></textarea>
-    </div>
-    <div>
-      <button type="submit">Submit</button>
-    </div>
-  </form>
-
-  <div class="hazardlogs">
-    {#if !data.hazards || data.hazards.length === 0}
-      <p>No hazards logged</p>
-    {:else}
+<div class="page-container">
+  <div class="hazard-logs">
     <h3>Recent Hazards</h3>
-    <ul class="hazardLogs">
-      {#each hazards as hazard}
-        <li>
-          <HazardCard obj={hazard} />
-        </li>
-      {/each}
-    </ul>
-    {/if}
+    <div class="hazard-list-container">
+      {#if !data.hazards || data.hazards.length === 0}
+        <p>No hazards logged.</p>
+      {:else}
+        <ul class="hazard-list">
+          {#each hazards as hazard}
+            <li>
+              <HazardCard obj={hazard} />
+            </li>
+          {/each}
+        </ul>
+      {/if}
+    </div>
+  </div>
+
+  <div class="form-container">
+      <form on:submit={submitHazard}>
+        <h3>Log Hazards</h3>
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input type="text" id="title" bind:value={name} placeholder="Enter hazard name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="type">Type</label>
+          <select id="type" bind:value={type} required>
+            <option value="">Select hazard type</option>
+            <option value="fire">Fire</option>
+            <option value="chemicals">Chemical Leak</option>
+            <option value="slip">Slip</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="level">Level</label>
+          <select id="level" bind:value={level} required>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City/Town</label>
+          <input type="text" id="city" bind:value={city} placeholder="Enter city or town" required />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location (Street or Suburb)</label>
+          <input type="text" id="location" bind:value={location} placeholder="Enter location" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            bind:value={description}
+            placeholder="Provide a description"
+            required
+          ></textarea>
+        </div>
+
+        <div class="button-wrapper">
+        <button type="submit" class="form-button">Submit</button>
+      </div>
+      </form>
   </div>
 </div>
 
 <style>
-  * {
-    font-family: sans-serif;
-    color: #333;
-  }
-  textarea {
-    vertical-align: top;
-    height: 10em;
-    width: 25em;
-  }
-  label {
-    text-align: right;
-    justify-content: center;
-    padding-top: 10px;
-  }
-  div {
-    padding: 0.5em;
-  }
-  form {
-    display: inline-block;
-    border-color: black;
-    border: solid;
-    padding: 1em;
-    max-height: fit-content;
-  }
-  .pageContainer {
+  
+  .page-container {
     display: flex;
-    max-height: 70vh;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 2em;
+    place-items: center;
   }
-  .hazardlogs {
-    border-color: black;
-    border: solid;
-    display: grid;
-    grid-template-columns: auto;
-    max-height: fit-content;
-  }
-  .hazardlogs ul {
-    max-height: 70vh;
+
+  .hazard-logs {
+    flex: 1;
+    max-width: 25%;
+    min-width: 15%;
+    color: #333;
+    background-color: white;
+    border: 1px solid #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
+    border-radius: 15px;
+    padding: 1em;
+    height: 45em;
     overflow-y: auto;
   }
-  .hazardlogs li {
-    margin-top: 0.5em;
+
+  .hazard-logs h3 {
+    margin-bottom: 1rem;
+    color: #2b5876;
+    background-color: inherit;
+    text-align: center;
+  }
+
+  .hazard-list-container {
+    overflow-y: auto;
+    height: calc(100% - 2rem);
+  }
+
+  .hazard-list {
     list-style: none;
-    padding-left: 0.5em;
-    float: left;
-  }
-  .container {
-    display: grid;
-    grid-template-columns: 25% 75%;
-  }
-  input {
-    max-width: fit-content;
-    margin: 0.5em;
-  }
-  select {
-    max-width: fit-content;
-    margin: 0.5em;
-  }
-  textarea {
-    margin: 0.5em;
-  }
-  @media (max-width: 1200px) {
-    .container {
-      display: block; /* Stack the form fields vertically */
-    }
-
-    textarea {
-      width: 100%; /* Ensure textarea takes full width */
-    }
-
-    label {
-      align-self: center; /* Align labels properly */
-    }
-
-    input,
-    select {
-      width: 100%; /* Ensure input/select fields take full width */
-      margin: 0.5em 0; /* Add space between fields */
-    }
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
   }
 
-  /* For mobile devices (phones in portrait mode) */
-  @media (max-width: 768px) {
-    textarea {
-      width: 100%; /* Ensure textarea takes full width on small screens */
-    }
-
-    .container {
-      display: block; /* Stack the form fields vertically */
-    }
-
-    label {
-      font-size: 0.9em; /* Adjust font size for labels */
-      text-align: left; /* Align labels to the left on mobile */
-    }
-
-    input,
-    select {
-      width: 100%; /* Ensure input/select fields take full width */
-      margin: 0.5em 0; /* Add space between fields */
-    }
-
-    button {
-      width: 100%; /* Ensure the submit button takes full width */
-      padding: 1em; /* Add padding for better usability */
-    }
+  .hazard-list li {
+    list-style: none;
+    margin-bottom: 1rem;
   }
 
-  /* For very small screens (phones in portrait mode) */
-  @media (max-width: 480px) {
-    label {
-      font-size: 0.85em; /* Further reduce label font size */
-    }
-
-    input,
-    select {
-      width: 100%; /* Ensure input/select fields take full width */
-    }
-
-    button {
-      padding: 1em; /* Ensure button is touch-friendly */
-      font-size: 1em; /* Adjust font size for button */
-    }
+  .form-container h3 {
+    margin-bottom: 1rem;
+    color: #2b5876;
+    background-color: inherit;
+    text-align: center;
+    font-size: x-large;
   }
+
+  .form-container {
+    flex: 2;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);    
+    border-radius: 15px;
+    color: #333;
+    background-color: white;
+    height: 45em;
+    overflow-y: auto;
+  }
+
+  .form-group {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2b5876;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+  }
+
+  .form-group textarea {
+    resize: none;
+    height: 80px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  input, select {
+    width: 90%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form-button {
+    width: 20%;
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .form-button:hover {
+    background-color: #45a049;
+  }
+
+  #description, #title, #location, #city{
+    width: 87%;
+  }
+  @media (max-width: 1060px) {
+    .page-container {
+      flex-direction: column; 
+      flex-wrap: wrap;
+      gap: 10px;
+      place-items: center;
+    }
+    .form-button{
+      width: 90%;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .hazard-logs,
+    .form-container {
+      width: 100%;
+      max-width: 90%;
+      flex: none; 
+    }
+
+    .hazard-logs {
+      margin-bottom: 10%;
+      height: auto;
+    }
+
+    .form-container {
+      height: auto;
+      padding: 1rem;
+    }
+}
 </style>
