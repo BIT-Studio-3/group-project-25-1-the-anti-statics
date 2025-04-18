@@ -187,15 +187,23 @@
     }
   
     .damage-list li {
+    list-style: none;
       margin-bottom: 1rem;
     }
   
     .form-container {
       flex: 2;
-      padding: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
+    border-radius: 15px;
+    color: #333;
       background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 45em;
+    overflow-y: auto;
     }
   
     .form-group {
@@ -234,22 +242,14 @@
     height: 80px;
   }
 
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-
-  input, select {
-    width: 90%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
   
     .form-button {
-      width: 90%;
+    width: 20%;
       padding: 0.75rem;
       background-color: #4CAF50;
       color: white;
