@@ -304,8 +304,13 @@
     }
 
     .hazard-logs {
-      max-width: 100%; 
-      height: auto; 
-  }
-  }
+      margin-bottom: 10%;
+      height: auto;
+    }
+
+    .form-container {
+      height: auto;
+      padding: 1rem;
+    }
+}
 </style>
