@@ -78,7 +78,7 @@
         </div>
 
         <div class="form-group">
-          <label for="type">Damage Type</label>
+          <label for="type">Type</label>
           <select id="type" bind:value={type} required>
             <option value="">Select damage type</option>
             <option value="Residential">Residential</option>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="form-group">
-          <label for="level">Damage Level</label>
+          <label for="level">Level</label>
           <select id="level" bind:value={level} required>
             <option value="">Select damage level</option>
             <option value=1>1</option>
