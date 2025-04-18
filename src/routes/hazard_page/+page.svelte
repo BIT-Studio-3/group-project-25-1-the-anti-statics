@@ -288,6 +288,7 @@
       flex-wrap: wrap;
       gap: 10px;
       place-items: center;
+      width: 100%;
     }
     .form-button{
       width: 90%;
@@ -295,6 +296,13 @@
       overflow: hidden;
       white-space: nowrap;
     }
+    .hazard-logs,
+    .form-container {
+      width: 100%;
+      max-width: 90%;
+      flex: none; 
+    }
+
     .hazard-logs {
       max-width: 100%; 
       height: auto; 
