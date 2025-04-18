@@ -135,10 +135,10 @@
   
   .page-container {
     display: flex;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 2em;
+    place-items: center;
   }
 
   .hazard-logs {
