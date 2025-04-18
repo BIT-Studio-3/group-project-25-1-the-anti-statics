@@ -152,7 +152,7 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    margin: 2em;
+    margin: 1em;
     place-items: center;
   }
 
