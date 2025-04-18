@@ -82,12 +82,12 @@
     <FormLayout title="Log Hazard">
       <form on:submit={submitHazard}>
         <div class="form-group">
-          <label for="title">Hazard Name</label>
+          <label for="title">Name</label>
           <input type="text" id="title" bind:value={name} placeholder="Enter hazard name" required />
         </div>
 
         <div class="form-group">
-          <label for="type">Hazard Type</label>
+          <label for="type">Type</label>
           <select id="type" bind:value={type} required>
             <option value="">Select hazard type</option>
             <option value="fire">Fire</option>
@@ -97,7 +97,7 @@
         </div>
 
         <div class="form-group">
-          <label for="level">Hazard Level</label>
+          <label for="level">Level</label>
           <select id="level" bind:value={level} required>
             <option value=1>1</option>
             <option value=2>2</option>
