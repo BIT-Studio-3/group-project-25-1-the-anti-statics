@@ -157,17 +157,21 @@
     .damage-logs {
       flex: 1;
       max-width: 25%;
+    min-width: 15%;
+    color: #333;
       background-color: white;
-      border: 2px solid black;
+    border: 1px solid #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
       border-radius: 15px;
       padding: 1em;
-      height: 55em;
+    height: 45em;
       overflow-y: auto;
     }
   
     .damage-logs h3 {
       margin-bottom: 1rem;
       color: #2b5876;
+    text-align: center;
     }
   
     .damage-list-container {
