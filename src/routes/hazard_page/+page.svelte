@@ -179,9 +179,17 @@
 
   .form-container {
     flex: 2;
-    padding: 2rem;
-    background-color: white;
+    padding: 1rem;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);    
+    border-radius: 15px;
+    color: #333;
+    background-color: white;
+    height: 45em;
+    overflow-y: auto;
   }
 
   .form-group {
