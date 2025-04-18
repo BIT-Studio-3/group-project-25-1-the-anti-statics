@@ -1,8 +1,6 @@
 <script>
     import DamageCard from "../../lib/damageCard.svelte";
-    import { postDamage } from "./post-functions/postDamage.js"; // Import the postDamage function
-    import FormLayout from "../../lib/formLayout.svelte";
-
+  import { postDamage } from "./post-functions/postDamage.js";
   
     let postError = "";
     let info = null;
@@ -72,8 +70,8 @@
     </div>
   
     <div class="form-container">
-    <FormLayout title="Log Damages">
       <form on:submit={submitDamage}>
+        <h3>Log Damages</h3>
         <div class="form-group">
           <label for="reporterName">Reporter Name</label>
           <input type="text" id="reporterName" bind:value={name} placeholder="Enter your full name" required />
@@ -81,7 +79,7 @@
   
         <div class="form-group">
           <label for="type">Damage Type</label>
-          <select bind:value={type} required>
+          <select id="type" bind:value={type} required>
             <option value="">Please select damage type</option>
             <option value="Residential">Residential</option>
             <option value="Environmental">Environmental</option>
@@ -130,7 +128,6 @@
   
         <button type="submit" class="form-button">Submit</button>
       </form>
-     </FormLayout>
     </div>
   </div>
     
