@@ -288,7 +288,6 @@
       flex-wrap: wrap;
       gap: 10px;
       place-items: center;
-      width: 100%;
     }
     .form-button{
       width: 90%;
