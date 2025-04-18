@@ -80,7 +80,7 @@
         <div class="form-group">
           <label for="type">Damage Type</label>
           <select id="type" bind:value={type} required>
-            <option value="">Please select damage type</option>
+            <option value="">Select damage type</option>
             <option value="Residential">Residential</option>
             <option value="Environmental">Environmental</option>
             <option value="Vehicle">Vehicle</option>
@@ -89,8 +89,9 @@
         </div>
 
         <div class="form-group">
-          <label for="level">Select Damage Level</label>
+          <label for="level">Damage Level</label>
           <select id="level" bind:value={level} required>
+            <option value="">Select damage level</option>
             <option value=1>1</option>
             <option value=2>2</option>
             <option value=3>3</option>
@@ -102,7 +103,7 @@
         <div class="form-group">
           <label for="location">Location</label>
           <select id="location" bind:value={location} required>
-            <option value="">Please select location of damage</option>
+            <option value="">Select location of damage</option>
             <option value="Otago">Otago</option>
             <option value="Canterbury">Canterbury</option>
             <option value="Southland">Southland</option>
@@ -112,6 +113,7 @@
         <div class="form-group">
           <label for="count">Individuals Affected</label>
           <select id="count" bind:value={count} required>
+            <option value="">Select number of individuals affected</option>
             <option value=1>Less than 5</option>
             <option value=2>5</option>
             <option value=3>10</option>
@@ -204,6 +206,14 @@
     background-color: white;
     height: 45em;
     overflow-y: auto;
+  }
+
+  .form-container h3 {
+    margin-bottom: 1rem;
+    color: #2b5876;
+    background-color: inherit;
+    text-align: center;
+    font-size: x-large;
   }
 
   .form-group {
