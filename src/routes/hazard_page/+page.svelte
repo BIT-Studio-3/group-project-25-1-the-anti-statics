@@ -1,7 +1,6 @@
 <script>
   import HazardCard from "$lib/hazardCard.svelte";
   import { postHazard } from "./post-function/postHazard.js";
-  import FormLayout from "../../lib/formLayout.svelte";
 
   let postError = "";
   let info = null;
@@ -79,8 +78,8 @@
   </div>
 
   <div class="form-container">
-    <FormLayout title="Log Hazard">
       <form on:submit={submitHazard}>
+        <h3>Log Hazards</h3>
         <div class="form-group">
           <label for="title">Name</label>
           <input type="text" id="title" bind:value={name} placeholder="Enter hazard name" required />
@@ -129,7 +128,6 @@
 
         <button type="submit" class="form-button">Submit</button>
       </form>
-    </FormLayout>
   </div>
 </div>
 
