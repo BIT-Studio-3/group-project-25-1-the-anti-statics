@@ -1,6 +1,8 @@
 <script>
   //Import post alert function
   import { postAlert } from "./post-functions/postAlert.js"; // Import the postAlert function
+  import FormLayout from "../../lib/formLayout.svelte";
+
   //Import post alert function variables
   let postError = '';
   let data = null;
@@ -57,10 +59,9 @@
 <main>
   <h1>Alerts</h1>
 
-  <section class="form-container">
+  <FormLayout title = "Post Alert ⚠️">
     <form on:submit={submitAlert}>
       <div class="form-group">
-        <h2>Post Alert ⚠️</h2>
         <label for="title">Title</label>
         <input type="text" id="title" bind:value={title} placeholder="Enter alert title" required />
       </div>
@@ -105,7 +106,7 @@
         <button type="submit" class="form-button">Submit</button>
       </div>
     </form>
-  </section>
+  </FormLayout>
 
   {#if postError}
     <p class="error-message">⚠️ {postError}</p>
@@ -128,23 +129,11 @@
     text-align: center;
   }
 
-  .form-container {
-    padding: 2rem;
-    border-radius: 10px;
-    border-color: #10941b;
-    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5)  
-  }
 
   .form-group {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: left;
-  }
-
-  .form-group h2 {
-    text-align: center;
-    margin-bottom: 5%;
-    color: #213a49;
   }
 
   .form-group {
@@ -251,4 +240,50 @@
     font-size: 1rem;
     font-weight: bold;
   }
+
+  @media (max-width: 1200px) {
+    main {
+        padding: 1.5rem;
+        max-width: 500px; 
+    }
+
+    input, textarea, button {
+        font-size: 1.1rem; 
+    }
+
+    button {
+        padding: 0.9rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    main {
+        padding: 1.2rem;
+        max-width: 100%; 
+    }
+
+    input, textarea, button {
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    input, textarea, button {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 0.9rem;
+    }
+}
 </style>
