@@ -158,6 +158,7 @@
     margin-bottom: 1rem;
     color: #2b5876;
     background-color: inherit;
+    text-align: center;
   }
 
   .hazard-list-container {
@@ -175,6 +176,14 @@
   .hazard-list li {
     list-style: none;
     margin-bottom: 1rem;
+  }
+
+  .form-container h3 {
+    margin-bottom: 1rem;
+    color: #2b5876;
+    background-color: inherit;
+    text-align: center;
+    font-size: x-large;
   }
 
   .form-container {
