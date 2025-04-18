@@ -150,7 +150,7 @@
     box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
     border-radius: 15px;
     padding: 1em;
-    height: 55em;
+    height: 45em;
     overflow-y: auto;
   }
 
