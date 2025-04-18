@@ -146,6 +146,7 @@
   .hazard-logs {
     flex: 1;
     max-width: 25%;
+    min-width: 15%;
     color: #333;
     background-color: white;
     border: 1px solid #10941b;
@@ -294,5 +295,9 @@
       overflow: hidden;
       white-space: nowrap;
     }
+    .hazard-logs {
+      max-width: 100%; 
+      height: auto; 
+  }
   }
 </style>
