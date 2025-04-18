@@ -1,6 +1,7 @@
+import url from "../../../url/url";
 export async function postLogin(userData) {
   try {
-    const res = await fetch("https://group-project-25-1-the-anti-statics-api.onrender.com/api/v1/auth/login", {
+    const res = await fetch(`${url}/api/v1/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

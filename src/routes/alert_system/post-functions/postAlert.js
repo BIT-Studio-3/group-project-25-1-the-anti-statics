@@ -1,9 +1,10 @@
+import url from "../../../url/url";
 export async function postAlert(alertData) {
   try {
     console.log("Posting alert with data:", alertData);
 
     alertData.alertLevel = parseInt(alertData.alertLevel);
-    const response = await fetch('https://group-project-25-1-the-anti-statics-api.onrender.com/api/v1/alerts', {
+    const response = await fetch(`${url}/api/v1/alerts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
