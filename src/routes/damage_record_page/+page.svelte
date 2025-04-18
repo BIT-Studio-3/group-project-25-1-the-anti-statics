@@ -126,7 +126,9 @@
           <textarea id="cause" bind:value={cause} placeholder="Provide the possible cause of the damage" required></textarea>
         </div>
   
+        <div class="button-wrapper">
         <button type="submit" class="form-button">Submit</button>
+        </div>
       </form>
     </div>
   </div>
