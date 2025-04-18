@@ -255,4 +255,12 @@
   #description, #title, #location, #city{
     width: 87%;
   }
+  @media (max-width: 1060px) {
+    .page-container {
+      flex-direction: column; 
+      flex-wrap: wrap;
+      gap: 10px;
+      place-items: center;
+    }
+  }
 </style>
