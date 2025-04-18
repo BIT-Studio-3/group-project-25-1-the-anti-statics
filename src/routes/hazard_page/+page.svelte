@@ -253,8 +253,14 @@
     border-radius: 5px;
   }
 
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
   .form-button {
-    width: 90%;
+    width: 20%;
     padding: 0.75rem;
     background-color: #4CAF50;
     color: white;
