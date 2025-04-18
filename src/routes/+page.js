@@ -1,7 +1,8 @@
+import url from "../url/url";
 export async function load() {
     try {
         //Fetch the data from the back-end API
-        const response = await fetch('https://group-project-25-1-the-anti-statics-api.onrender.com/api/v1/alerts');
+        const response = await fetch(`${url}/api/v1/alerts`);
         
         //If the response has no data
         if(!response.ok){
