@@ -269,6 +269,9 @@
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .form-button:hover {
@@ -284,6 +287,12 @@
       flex-wrap: wrap;
       gap: 10px;
       place-items: center;
+    }
+    .form-button{
+      width: 90%;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 </style>
