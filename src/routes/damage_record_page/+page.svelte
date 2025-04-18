@@ -90,18 +90,18 @@
   
         <div class="form-group">
           <label for="level">Select Damage Level</label>
-          <select bind:value={level} required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+          <select id="level" bind:value={level} required>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
           </select>
         </div>
   
         <div class="form-group">
           <label for="location">Location</label>
-          <select bind:value={location} required>
+          <select id="location" bind:value={location} required>
             <option value="">Please select location of damage</option>
             <option value="Otago">Otago</option>
             <option value="Canterbury">Canterbury</option>
@@ -111,7 +111,7 @@
   
         <div class="form-group">
           <label for="count">Individuals Affected</label>
-          <select bind:value={count} required>
+          <select id="count" bind:value={count} required>
             <option value=1>Less than 5</option>
             <option value=2>5</option>
             <option value=3>10</option>
