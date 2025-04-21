@@ -17,7 +17,7 @@ npm run dev -- --open
 
 ### Back-End API
 
-[![Repo Activity](https://github-readme-stats.vercel.app/api/pin/?username=BIT-Studio-3&repo=group-project-25-1-the-anti-statics-API)](https://github.com/BIT-Studio-3/group-project-25-1-the-anti-statics)
+[![Repo Activity](https://github-readme-stats.vercel.app/api/pin/?username=BIT-Studio-3&repo=group-project-25-1-the-anti-statics-API)](https://github.com/BIT-Studio-3/group-project-25-1-the-anti-statics-API)
 
 ### Contributors
 
