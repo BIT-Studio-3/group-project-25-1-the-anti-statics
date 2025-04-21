@@ -1,18 +1,18 @@
 <script>
   //Import post alert function
-  import { postAlert } from './post-functions/postAlert.js';  // Import the postAlert function
+  import { postAlert } from "./post-functions/postAlert.js"; // Import the postAlert function
+  import FormLayout from "../../lib/formLayout.svelte";
+
   //Import post alert function variables
-  let postError = ''; 
-  let data = null; 
-  let error = ''; 
+  let postError = '';
+  let data = null;
+  let error = '';
 
   let title = '';
   let type = '';
   let level = '';
   let region = '';
   let description = '';
-
-
 
   // Function to handle form submission
   const submitAlert = async (event) => {
@@ -23,7 +23,7 @@
     // Form data object
     const alertData = {
       title: formattedTitle,
-      emergencyType: type,   // Assuming you are using 'emergencyType' on the backend
+      emergencyType: type, // Assuming you are using 'emergencyType' on the backend
       alertLevel: level,
       region,
       description,
@@ -38,14 +38,14 @@
     error = result.error;
 
     // Log the result for debugging
-    console.log('Result from postAlert:', result);
-    console.log('Post error:', postError);
-    console.log('Post data:', data);
-    console.log('Error:', error);
-    
+    console.log("Result from postAlert:", result);
+    console.log("Post error:", postError);
+    console.log("Post data:", data);
+    console.log("Error:", error);
+
     if (result.data) {
-      alert('Alert posted successfully!');
-      
+      alert("Alert posted successfully!");
+
       // Reset form fields
       title = '';
       type = '';
@@ -54,161 +54,236 @@
       description = '';
     }
   };
-
 </script>
 
+<main>
+  <h1>Alerts</h1>
 
+  <FormLayout title = "Post Alert ⚠️">
+    <form on:submit={submitAlert}>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" bind:value={title} placeholder="Enter alert title" required />
+      </div>
 
-<h1>Alerts</h1>
+      <div class="form-group">
+        <label for="type">Emergency Type</label>
+        <select id="type" bind:value={type} required>
+          <option value=''>Please select an emergency type</option>
+          <option value="fire">Fire</option>
+          <option value="flood">Flooding</option>
+          <option value="quake">Earthquake Damage</option>
+        </select>
+      </div>
 
-<form on:submit={submitAlert}>
-  <h2>Post Alert:</h2>
-  <div class="container">
-    <label for="title">Title:</label>
-    <input type="text" id="title" bind:value={title} required />
+      <div class="form-group">
+        <label for="level">Alert Level</label>
+        <select id="level" bind:value={level} required>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+      </div>
 
-    <label for="type">Emergency type:</label>
-    <select bind:value={type} required>
-      <option value="">Please select an emergency type</option>
-      <option value="fire">Fire</option>
-      <option value="flood">Flooding</option>
-      <option value="quake">Earthquake damage</option>
-    </select>
+      <div class="form-group">
+        <label for="region">Region</label>
+        <select id="region" bind:value={region} required>
+          <option value="">Please select a region</option>
+          <option value="Otago">Otago</option>
+          <option value="Canterbury">Canterbury</option>
+          <option value="Southland">Southland</option>
+        </select>
+      </div>
 
-    <label for="level">Select alert level:</label>
-    <select bind:value={level} required>
-      <option value=1>1</option>
-      <option value=2>2</option>
-      <option value=3>3</option>
-      <option value=4>4</option>
-      <option value=5>5</option>
-    </select>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" bind:value={description} placeholder="Provide a description" required></textarea>
+      </div>
 
-    <label for="region">Choose Region:</label>
-    <select bind:value={region} required>
-      <option value="">Please select a region</option>
-      <option value="Otago">Otago</option>
-      <option value="Canterbury">Canterbury</option>
-      <option value="Southland">Southland</option>
-    </select>
+      <div class="button-wrapper">
+        <button type="submit" class="form-button">Submit</button>
+      </div>
+    </form>
+  </FormLayout>
 
-    <label for="description">Description:</label>
-    <textarea id="description" bind:value={description} required></textarea>
-  </div>
-  <div>
-    <button type="submit">Submit</button>
-  </div>
-</form>
+  {#if postError}
+    <p class="error-message">⚠️ {postError}</p>
+  {/if}
 
-{#if postError}
-  <p style="color: red;">{postError}</p>
-{/if}
+  {#if error}
+    <p class="error-message">⚠️ {error}</p>
+  {/if}
 
-{#if error}
-  <p style="color: red;">{error}</p>
-{/if}
-
-{#if data}
-  <p style="color: green;">Alert posted successfully!</p>
-{/if}
+  {#if data}
+    <p class="success-message">✅ Alert posted successfully!</p>
+  {/if}
+</main>
 
 <style>
-  * {
-    font-family: sans-serif;
-    color: #333;
+  main {
+    padding: 2rem;
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
   }
-  textarea {
-    vertical-align: top;
-    height: 10em;
-    width: 25em;
+
+
+  .form-group {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
   }
-  form {
-    border-color: black;
-    border: solid;
-    padding: 1em;
-    background-color:#ECA869;
+
+  .form-group {
+    margin-bottom: 15px;
   }
-  label {
-    text-align: right;
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2b5876;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+  }
+
+  .form-group textarea {
+    resize: none;
+    height: 80px;
+  }
+
+  .button-wrapper {
+    display: flex;
     justify-content: center;
-    padding-top: 10px;
+    width: 100%;
   }
-  div {
-    padding: 0.5em;
+
+  .form-button {
+    width: 30%;
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
   }
-  .container {
-    display: grid;
-    grid-template-columns: 10% 90%;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
   }
-  input {
-    max-width: fit-content;
-    margin: 0.5em;
+
+  input, select {
+    width: 90%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
-  select{
-    max-width: fit-content;
-    margin: 0.5em;
-  }
+
   textarea{
-    margin: 0.5em;
+    resize: none;
   }
+
+  #description{
+    width: 87%;
+  }
+
+  #title{
+    width: 87%;
+  }
+
+  button {
+    padding: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 20%;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .success-message {
+    color: green;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
   @media (max-width: 1200px) {
-  .container {
-    display: block; /* Stack the form fields vertically */
-  }
+    main {
+        padding: 1.5rem;
+        max-width: 500px; 
+    }
 
-  textarea {
-    width: 100%; /* Ensure textarea takes full width */
-  }
+    input, textarea, button {
+        font-size: 1.1rem; 
+    }
 
-  label {
-    align-self: center; /* Align labels properly */
-  }
-
-  input, select {
-    width: 100%; /* Ensure input/select fields take full width */
-    margin: 0.5em 0; /* Add space between fields */
-  }
+    button {
+        padding: 0.9rem;
+    }
 }
 
-/* For mobile devices (phones in portrait mode) */
+
 @media (max-width: 768px) {
-  textarea {
-    width: 100%; /* Ensure textarea takes full width on small screens */
-  }
+    main {
+        padding: 1.2rem;
+        max-width: 100%; 
+    }
 
-  .container {
-    display: block; /* Stack the form fields vertically */
-  }
+    input, textarea, button {
+        font-size: 1rem;
+    }
 
-  label {
-    font-size: 0.9em; /* Adjust font size for labels */
-    text-align: left; /* Align labels to the left on mobile */
-  }
-
-  input, select {
-    width: 100%; /* Ensure input/select fields take full width */
-    margin: 0.5em 0; /* Add space between fields */
-  }
-
-  button {
-    width: 100%; /* Ensure the submit button takes full width */
-    padding: 1em; /* Add padding for better usability */
-  }
+    button {
+        padding: 1rem;
+    }
 }
 
-/* For very small screens (phones in portrait mode) */
 @media (max-width: 480px) {
-  label {
-    font-size: 0.85em; /* Further reduce label font size */
-  }
+    main {
+        padding: 1rem;
+        max-width: 100%;
+    }
 
-  input, select {
-    width: 100%; /* Ensure input/select fields take full width */
-  }
+    input, textarea, button {
+        font-size: 0.9rem;
+    }
 
-  button {
-    padding: 1em; /* Ensure button is touch-friendly */
-    font-size: 1em; /* Adjust font size for button */
-  }
-  }
+    button {
+        padding: 0.9rem;
+    }
+}
 </style>
