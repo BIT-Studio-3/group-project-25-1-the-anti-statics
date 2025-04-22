@@ -139,7 +139,7 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    margin: 2em;
+    padding: 2em;
     place-items: center;
   }
 
