@@ -36,13 +36,22 @@
   </div>
 {:else if $login}
   <Header />
+  <main>
   <slot />
+  </main>
   <Footer />
 {:else if isLoginPage}
   <slot /> <!-- Content for the login page will be shown here -->
 {/if}
 
 <style>
+  main {
+  background-image: url(../src/lib/Images/background.png);
+  background-size: cover; /* or 'contain' depending on your needs */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  }
   #loading {
     height: 10em;
     display: grid;
