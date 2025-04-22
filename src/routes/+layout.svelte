@@ -14,10 +14,7 @@
   import { page } from "$app/stores";
 
   //Set the login state
-  $: {
-    $user === null ? login.set(false) : login.set(true);
-  }
-
+  
   $: isLoginPage = $page.url.pathname === "/login"; // Check if the current page is the login page
 
   onMount(() => {
