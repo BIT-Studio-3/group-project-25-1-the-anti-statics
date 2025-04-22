@@ -23,7 +23,7 @@
     if (!$login && !isLoginPage) {
       goto("/login");
     }
-      loading = false;
+    loading = false;
   });
 
   //console value of login
@@ -37,7 +37,7 @@
 {:else if $login}
   <Header />
   <main>
-  <slot />
+    <slot />
   </main>
   <Footer />
 {:else if isLoginPage}
@@ -46,11 +46,11 @@
 
 <style>
   main {
-  background-image: url(../src/lib/Images/background.png);
-  background-size: cover; /* or 'contain' depending on your needs */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+    background-image: url(../src/lib/Images/background.png);
+    background-size: cover; /* or 'contain' depending on your needs */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
   }
   #loading {
     height: 10em;
