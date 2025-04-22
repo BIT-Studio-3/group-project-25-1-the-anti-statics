@@ -24,7 +24,7 @@
     if (!$login && !isLoginPage) {
       goto("/login");
     }
-    
+    loading = false;
   });
 
   //console value of login
