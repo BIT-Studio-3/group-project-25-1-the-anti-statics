@@ -42,7 +42,7 @@
   .map-wrap {
     position: relative;
     width: 100%;             
-    height: calc(100vh - 77px);
+    height: 100%;
   }
 
   .map {
