@@ -44,7 +44,7 @@
 
 <style>
   main {
-    background-image: url(../src/lib/Images/background.png);
+    background-image: url(/src/lib/Images/background.png);
     background-size: cover; /* or 'contain' depending on your needs */
     background-repeat: no-repeat;
     background-position: center;
