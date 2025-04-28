@@ -1,8 +1,10 @@
+import url from "../../url/url";
 export async function load() {
     try {
         //Fetch the data from the back-end API
-        const response = await fetch('http://localhost:3000/api/v1/damages');
-        
+
+        const response = await fetch(`${url}/api/v1/damages`);
+
         //If the response has no data
         if(!response.ok){
             return {message: "No damages available"};

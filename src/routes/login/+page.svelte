@@ -15,10 +15,6 @@
   //console value of login
   console.log(`Login (Login page): ${$login}`);
 
-  $: {
-    $user ? login.set(true) : login.set(false);
-  }
-
   import { goto } from "$app/navigation";
 
   if ($login) {
