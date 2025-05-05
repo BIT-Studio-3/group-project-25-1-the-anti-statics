@@ -38,7 +38,7 @@
     console.log("Post data:", data);
     console.log("Error:", error);
 
-    if (result.data) {
+    if (data) {
       // Update user store
       setTimeout(() => {
       user.set(data); // Set user after delay
