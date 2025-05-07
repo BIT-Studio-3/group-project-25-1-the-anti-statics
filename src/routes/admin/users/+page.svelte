@@ -113,9 +113,6 @@
     background-color: transparent;
     font-weight: bold;
   }
-  .actions button:hover{
-    cursor: pointer;
-  }
   #filters select {
     padding: 0.5em;
   }
@@ -190,10 +187,22 @@
     padding: 0.5em;
     margin-top: 1em;
     background-color: green;
-    border: 3px solid green;
+    border: 2px solid green;
     border-radius: 7px;
     color: white;
     font-size: medium;
+    transition:
+      transform 0.3s,
+      background-color 0.3s,
+      color 0.3s;
+  }
+  #addUser:hover{
+    transform: scale(1.1);
+    background-color: white;
+    color: #333;
+  }
+  button:hover{
+    cursor: pointer;
   }
   @media (width <= 910px) {
     #query {
