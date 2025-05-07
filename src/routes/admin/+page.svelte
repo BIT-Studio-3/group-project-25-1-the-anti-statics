@@ -1,26 +1,17 @@
 <script>
-
+    import Admin from "../../lib/Admin.svelte";
 </script>
 
 <main>
+    <Admin/>
     <section>
-        <h1>Admin User</h1>
-    </section>
-    <section>
-        <h1>Portal</h1>
+        <h1>Admin Portal</h1>
     </section>
 </main>
 
 <style>
     main{
         display: grid;
-        grid-template-columns: 1fr 3fr;
-    }
-    section:nth-child(1){
-        background-color: rgb(1, 100, 1);
-        border-right: 3px solid white;
-    }
-    section:nth-child(1) *{
-        color: white;
+        grid-template-columns: 1fr 2.3fr;
     }
 </style>
