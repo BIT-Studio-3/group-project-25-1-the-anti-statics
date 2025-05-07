@@ -14,8 +14,27 @@
 
     <section id="user-background">
       <section id="query">
-        <section id="search-bar"></section>
-        <section id="filters"></section>
+        <section id="search-bar">
+          <input type="text" placeholder="⌕ Search users..." />
+        </section>
+        <section id="filters">
+            <p>Filter by:</p>
+          <select>
+            <option>All Roles</option>
+            <option>Administrator</option>
+            <option>Incident Controller</option>
+            <option>Planning Officer</option>
+            <option>Operations Officer</option>
+            <option>Logistics Officer</option>
+            <option>Viewer</option>
+          </select>
+          <select>
+            <option>All Status</option>
+            <option>Active</option>
+            <option>Inactive</option>
+            <option>Pending</option>
+          </select>
+        </section>
       </section>
       <section id="table-container">
         <section id="table"></section>
@@ -25,19 +44,34 @@
 </main>
 
 <style>
-  #table-container{
+  #filters select{
+    padding: 0.5em;
+  }
+  #table-container {
     background-color: red;
     overflow-x: auto;
   }
-  #table{
+  #table {
     background-color: blue;
     width: 1000px;
   }
   #filters {
     background-color: aqua;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 5px;
   }
   #search-bar {
     background-color: greenyellow;
+    display: flex;
+    align-items: center;
+  }
+  #search-bar input{
+    border-radius: 5px;
+    border: none;
+    padding: 1em;
+    height: 1em;
   }
   #query {
     background-color: yellow;
@@ -52,7 +86,6 @@
     margin-inline: 0.7em;
     display: flex;
     flex-direction: column;
-     
   }
   h1 {
     background-color: white;
@@ -78,10 +111,16 @@
     color: white;
     font-size: medium;
   }
-  @media (width <= 810px) {
+  @media (width <= 910px) {
     #query {
       grid-auto-flow: row;
       grid-template-columns: 1fr;
+    }
+    #filters{
+        justify-content: center;
+    }
+    #search-bar input{
+        width: 100%;
     }
   }
 </style>
