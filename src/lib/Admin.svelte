@@ -60,6 +60,7 @@
   }
   ul li a{
     padding: 0.5em;
+    text-decoration: none;
   }
   ul li a:hover{
     background-color: white;
