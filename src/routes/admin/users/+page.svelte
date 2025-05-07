@@ -122,9 +122,7 @@
   tbody td {
     padding: 0.8em;
   }
-  tbody {
-    background-color: yellow;
-  }
+  
   thead {
     background-color: rgb(240, 230, 230);
     text-align: left;
