@@ -34,11 +34,59 @@
           </select>
         </section>
       </section>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Last Active</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Samuel Batchelor</td>
+            <td>batcsg1@student.op.ac.nz</td>
+            <td>Admin</td>
+          </tr>
+          <tr>
+            <td>Hazel Mapuranga</td>
+            <td>mapuhn1@student.op.ac.nz</td>
+            <td>Admin</td>
+          </tr>
+          <tr>
+            <td>George Adamson</td>
+            <td>adamgm3@student.op.ac.nz</td>
+            <td>Admin</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </section>
 </main>
 
 <style>
+  tbody td{
+    padding: 0.8em;
+  }
+  tbody{
+    background-color: yellow;
+  }
+  table {
+    width: 100%;
+  }
+  thead {
+    background-color: gainsboro;
+    text-align: left;
+  }
+  thead th {
+    padding-left: 1em;
+    padding-block: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
   select {
     padding: 1em;
     border: 2px green solid;
