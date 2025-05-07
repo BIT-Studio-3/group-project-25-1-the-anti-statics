@@ -90,6 +90,9 @@
 </main>
 
 <style>
+  #last_a{
+    white-space: nowrap;
+  }
   .actions {
     display: grid;
     grid-auto-flow: column;
