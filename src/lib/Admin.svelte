@@ -12,6 +12,11 @@
         <p>Administrator</p>
       </section>
     </section>
+    <ul>
+      <li>Dashboard</li>
+      <li>User Management</li>
+      <li>Website Logs</li>
+    </ul>
   </section>
 </main>
 
@@ -40,7 +45,20 @@
   #user p:nth-child(2) {
     font-size: small;
   }
-  #profile{
+  #profile {
     margin-left: 0.8em;
+  }
+  ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1em;
+  }
+  ul li{
+    padding: 0.5em;
+  }
+  li:hover{
+    cursor: pointer;
   }
 </style>
