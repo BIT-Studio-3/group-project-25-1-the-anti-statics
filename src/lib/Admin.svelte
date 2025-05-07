@@ -58,7 +58,12 @@
   ul li{
     padding: 0.5em;
   }
-  li:hover{
-    cursor: pointer;
+  ul li a{
+    padding: 0.5em;
+  }
+  ul li a:hover{
+    background-color: white;
+    padding: 0.5em;
+    color: #333;
   }
 </style>
