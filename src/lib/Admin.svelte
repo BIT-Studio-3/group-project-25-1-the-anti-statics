@@ -15,7 +15,7 @@
     <ul>
       <li><a href="/admin">📊 Dashboard</a></li>
       <li><a href="/admin/users">👥 User Management</a></li>
-      <li>📁 Website Logs</li>
+      <li><a href="/admin/logs">📁 Website Logs</a></li>
     </ul>
   </section>
 </main>
