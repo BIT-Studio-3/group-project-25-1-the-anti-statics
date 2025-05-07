@@ -54,7 +54,7 @@
               <td>batcsg1@student.op.ac.nz</td>
               <td>Admin</td>
               <td>2 hours</td>
-              <td>Active</td>
+              <td class="status"><p>Active</p></td>
               <td class="actions">
                 <button>Edit</button>
                 <button>Delete</button>
@@ -65,7 +65,7 @@
               <td>mapuhn1@student.op.ac.nz</td>
               <td>Admin</td>
               <td>4 hours</td>
-              <td>Active</td>
+              <td class="status"><p>Active</p></td>
               <td class="actions">
                 <button>Edit</button>
                 <button>Delete</button>
@@ -76,7 +76,7 @@
               <td>adamgm3@student.op.ac.nz</td>
               <td>Admin</td>
               <td>8 hours</td>
-              <td>Active</td>
+              <td class="status"><p>Active</p></td>
               <td class="actions">
                 <button>Edit</button>
                 <button>Delete</button>
@@ -90,6 +90,16 @@
 </main>
 
 <style>
+  .status p{
+    background-color: rgb(107, 242, 123);
+    width: 95%;
+    padding: 0.1em;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 4px;
+    font-weight: bold;
+    color: green;
+  }
   #last_a{
     white-space: nowrap;
   }
