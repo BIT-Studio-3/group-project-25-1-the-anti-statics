@@ -11,16 +11,17 @@
       <h3>Here is an overview of what's happening across New Zealand</h3>
     </section>
 
-    <p>Active Users</p>
-    <p>Total Disasters</p>
-    <p>Active Disasters</p>
-    <p>Total Hazards</p>
-    <p>Total Damages</p>
-    <p>Filter hazards and damages by incident</p>
+    <section class="tabs">
+        <h3>Active Incidents</h3>
+    </section>
+
   </section>
 </main>
 
 <style>
+  .tabs{
+    background-color: white;
+  }
   #container {
     background-color: rgba(255, 255, 255, 0.5);
     overflow-x: hidden;
