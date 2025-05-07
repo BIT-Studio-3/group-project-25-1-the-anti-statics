@@ -11,20 +11,54 @@
       <h3>Here is an overview of what's happening across New Zealand</h3>
     </section>
 
-    <section class="tabs" id="incidents">
-      <section class="info">
-        <h4>Active Incidents</h4>
-        <p>12</p>
+    <section id="card-container">
+      <section class="tabs" id="incidents">
+        <section class="info">
+          <h4>Active Incidents</h4>
+          <p>12</p>
+        </section>
+        <section class="icon">
+          <p>Icon</p>
+        </section>
       </section>
-      <section class="icon">
-        <p>Icon</p>
+      <section class="tabs" id="incidents">
+        <section class="info">
+          <h4>Active Incidents</h4>
+          <p>12</p>
+        </section>
+        <section class="icon">
+          <p>Icon</p>
+        </section>
+      </section>
+      <section class="tabs" id="incidents">
+        <section class="info">
+          <h4>Active Incidents</h4>
+          <p>12</p>
+        </section>
+        <section class="icon">
+          <p>Icon</p>
+        </section>
+      </section>
+      <section class="tabs" id="incidents">
+        <section class="info">
+          <h4>Active Incidents</h4>
+          <p>12</p>
+        </section>
+        <section class="icon">
+          <p>Icon</p>
+        </section>
       </section>
     </section>
   </section>
 </main>
 
 <style>
-  .icon{
+  #card-container {
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row on large screens */
+  }
+  .icon {
     background-color: red;
   }
   #incidents {
@@ -39,9 +73,7 @@
     border-radius: 7px;
     box-shadow: -1px 1px 8px #333;
     margin-inline: 0.7em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    gap: 1em;
   }
   #container {
     background-color: rgba(255, 255, 255, 0.5);
