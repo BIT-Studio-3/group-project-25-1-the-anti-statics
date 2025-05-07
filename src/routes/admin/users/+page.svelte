@@ -13,105 +13,46 @@
     </section>
 
     <section id="user-background">
-      <section id="create-users">
-        <input type="text" placeholder="Search users..." />
-        <section id="filter-box">
-          <p>Filter by:</p>
-          <select>
-            <option>All Roles</option>
-            <option>Administrator</option>
-            <option>Incident Controller</option>
-            <option>Planning Officer</option>
-            <option>Operations Officer</option>
-            <option>Logistics Officer</option>
-            <option>Viewer</option>
-          </select>
-          <select>
-            <option>All Status</option>
-            <option>Active</option>
-            <option>Inactive</option>
-            <option>Pending</option>
-          </select>
-        </section>
+      <section id="query">
+        <section id="search-bar"></section>
+        <section id="filters"></section>
       </section>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Last Active</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Samuel Batchelor</td>
-            <td>batcsg1@student.op.ac.nz</td>
-            <td>Admin</td>
-          </tr>
-          <tr>
-            <td>Hazel Mapuranga</td>
-            <td>mapuhn1@student.op.ac.nz</td>
-            <td>Admin</td>
-          </tr>
-          <tr>
-            <td>George Adamson</td>
-            <td>adamgm3@student.op.ac.nz</td>
-            <td>Admin</td>
-          </tr>
-        </tbody>
-      </table>
+      <section id="table-container">
+        <section id="table"></section>
+      </section>
     </section>
   </section>
 </main>
 
 <style>
-  tbody td{
-    padding: 0.8em;
+  #table-container{
+    background-color: red;
+    overflow-x: auto;
   }
-  tbody{
+  #table{
+    background-color: blue;
+    width: 1000px;
+  }
+  #filters {
+    background-color: aqua;
+  }
+  #search-bar {
+    background-color: greenyellow;
+  }
+  #query {
     background-color: yellow;
-  }
-  table {
-    width: 100%;
-  }
-  thead {
-    background-color: gainsboro;
-    text-align: left;
-  }
-  thead th {
-    padding-left: 1em;
-    padding-block: 0.7em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  select {
-    padding: 1em;
-    border: 2px green solid;
-    border-radius: 7px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1.5fr;
   }
   #user-background {
     background-color: white;
     border-radius: 7px;
     box-shadow: -1px 1px 8px #333;
     margin-inline: 0.7em;
-  }
-  #create-users input {
-    padding-left: 0.9em;
-    border-radius: 7px;
-    border: 2px green solid;
-  }
-  #filter-box {
     display: flex;
-    margin-left: auto;
-    align-items: center;
-    gap: 10px;
-  }
-  #create-users {
-    display: flex;
-    height: 3em;
+    flex-direction: column;
+     
   }
   h1 {
     background-color: white;
@@ -120,10 +61,10 @@
   main {
     display: grid;
     grid-template-columns: 1fr 2.3fr;
-    overflow-y: auto;
   }
   #container {
     background-color: rgba(255, 255, 255, 0.5);
+    overflow-x: hidden;
   }
   #container section {
     padding: 1em;
@@ -136,5 +77,11 @@
     border-radius: 7px;
     color: white;
     font-size: medium;
+  }
+  @media (width <= 810px) {
+    #query {
+      grid-auto-flow: row;
+      grid-template-columns: 1fr;
+    }
   }
 </style>
