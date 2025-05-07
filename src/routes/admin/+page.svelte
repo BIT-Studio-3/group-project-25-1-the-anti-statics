@@ -4,8 +4,13 @@
 
 <main>
   <Admin />
-  <section>
+  <section id="container">
     <h1>Dashboard</h1>
+    <section>
+    <h2>User Accounts</h2>
+      <h3>Manage all system users and their 
+    </section>
+
     <p>Active Users</p>
     <p>Total Disasters</p>
     <p>Active Disasters</p>
@@ -16,6 +21,9 @@
 </main>
 
 <style>
+  #container section{
+    padding: 1em;
+  }
   h1 {
     background-color: white;
     padding: 1em;
