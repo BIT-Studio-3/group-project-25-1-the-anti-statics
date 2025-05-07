@@ -103,15 +103,19 @@
     border: none;
     background-color: transparent;
   }
+  .actions button:hover{
+    cursor: pointer;
+  }
   #filters select {
     padding: 0.5em;
   }
   #table-container {
-    background-color: red;
+    background-color: rgb(214, 210, 210);
     overflow-x: auto;
+    border-radius: 4px;
   }
-  table {
-    background-color: greenyellow;
+  table{
+    border-collapse: collapse;
   }
   tbody td {
     padding: 0.8em;
@@ -120,35 +124,32 @@
     background-color: yellow;
   }
   thead {
-    background-color: gainsboro;
+    background-color: rgb(240, 230, 230);
     text-align: left;
   }
   thead th {
-    padding-left: 1em;
+    padding-left: 0.6em;
     padding-block: 0.7em;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
   #filters {
-    background-color: aqua;
     display: flex;
     justify-content: right;
     align-items: center;
     gap: 5px;
   }
   #search-bar {
-    background-color: greenyellow;
     display: flex;
     align-items: center;
   }
   #search-bar input {
     border-radius: 5px;
-    border: none;
+    border: 1.5px solid gray;
     padding: 1em;
     height: 1em;
   }
   #query {
-    background-color: yellow;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1.5fr;
