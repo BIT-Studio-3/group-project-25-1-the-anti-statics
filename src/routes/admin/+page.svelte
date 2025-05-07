@@ -21,10 +21,10 @@
           <p>Icon</p>
         </section>
       </section>
-      <section class="tabs" id="incidents">
+      <section class="tabs" id="teams">
         <section class="info">
-          <h4>Active Incidents</h4>
-          <p>12</p>
+          <h4>Response Teams</h4>
+          <p>23</p>
         </section>
         <section class="icon">
           <p>Icon</p>
@@ -54,15 +54,20 @@
 
 <style>
   #card-container {
-    background-color: red;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cards per row on large screens */
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* 4 cards per row on large screens */
   }
   .icon {
     background-color: red;
   }
   #incidents {
     border-left: 4px solid red;
+  }
+  #teams{
+    border-left: 4px solid blue;
   }
   .tabs p:first-of-type {
     font-weight: bolder;
@@ -93,10 +98,22 @@
     display: grid;
     grid-template-columns: 1fr 2.3fr;
   }
-  @media(width<=1600px){
+  @media (width<=1600px) {
     #card-container {
-    grid-template-columns: repeat(2, 1fr); /* 4 cards per row on large screens */
-    gap: 1em;
+      grid-template-columns: repeat(
+        2,
+        1fr
+      ); /* 4 cards per row on large screens */
+      gap: 1em;
+    }
   }
+  @media (width<=885px) {
+    #card-container {
+      grid-template-columns: repeat(
+        1,
+        1fr
+      ); /* 1 card per row on large screens */
+      gap: 1em;
+    }
   }
 </style>
