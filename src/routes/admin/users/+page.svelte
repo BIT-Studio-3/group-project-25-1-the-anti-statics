@@ -43,7 +43,7 @@
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
-              <th>Last Active</th>
+              <th id="last_a">Last Active</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -110,7 +110,6 @@
     padding: 0.5em;
   }
   #table-container {
-    background-color: rgb(214, 210, 210);
     overflow-x: auto;
     border-radius: 4px;
   }
@@ -128,10 +127,12 @@
     text-align: left;
   }
   thead th {
-    padding-left: 0.6em;
+    padding-left: 0.9em;
+    padding-right: 2em;
     padding-block: 0.7em;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    color: grey;
+    border-block: 1px solid rgb(179, 174, 174);
   }
   #filters {
     display: flex;
