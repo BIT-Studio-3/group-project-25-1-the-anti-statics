@@ -12,15 +12,25 @@
     </section>
 
     <section class="tabs">
-        <h3>Active Incidents</h3>
+        <h4>Active Incidents</h4>
+        <p>12</p>
     </section>
 
   </section>
 </main>
 
 <style>
+  .tabs p:first-of-type{
+    font-weight: bolder;
+    font-size: xx-large;
+  }
   .tabs{
     background-color: white;
+    border-radius: 7px;
+    box-shadow: -1px 1px 8px #333;
+    margin-inline: 0.7em;
+    display: flex;
+    flex-direction: column;
   }
   #container {
     background-color: rgba(255, 255, 255, 0.5);
