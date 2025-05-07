@@ -7,8 +7,8 @@
   <section id="container">
     <h1>Dashboard</h1>
     <section>
-      <h2>User Accounts</h2>
-      <h3>Manage all system users and their</h3>
+      <h2>Disaster Response Overview</h2>
+      <h3>Here is an overview of what's happening across New Zealand</h3>
     </section>
 
     <p>Active Users</p>
