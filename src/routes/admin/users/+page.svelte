@@ -53,7 +53,7 @@
               <td>Samuel Batchelor</td>
               <td>batcsg1@student.op.ac.nz</td>
               <td class="role"><p>Admin</p></td>
-              <td>2 hours ago</td>
+              <td class="l_active">2 hours ago</td>
               <td class="status"><p>Active</p></td>
               <td class="actions">
                 <button>Edit</button>
@@ -64,7 +64,7 @@
               <td>Hazel Mapuranga</td>
               <td>mapuhn1@student.op.ac.nz</td>
               <td class="role"><p>Admin</p></td>
-              <td>4 hours ago</td>
+              <td class="l_active">4 hours ago</td>
               <td class="status"><p>Active</p></td>
               <td class="actions">
                 <button>Edit</button>
@@ -75,7 +75,7 @@
               <td>George Adamson</td>
               <td>adamgm3@student.op.ac.nz</td>
               <td class="role"><p>Admin</p></td>
-              <td>8 hours ago</td>
+              <td class="l_active">8 hours ago</td>
               <td class="status"><p>Active</p></td>
               <td class="actions">
                 <button>Edit</button>
@@ -90,6 +90,9 @@
 </main>
 
 <style>
+  .l_active{
+    color: rgb(174, 169, 169);
+  }
   .role p{
     background-color:red;
     margin-inline: 0.5em;
