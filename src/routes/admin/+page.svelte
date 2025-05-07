@@ -12,28 +12,36 @@
     </section>
 
     <section class="tabs" id="incidents">
+      <section class="info">
         <h4>Active Incidents</h4>
         <p>12</p>
+      </section>
+      <section class="icon">
+        <p>Icon</p>
+      </section>
     </section>
-
   </section>
 </main>
 
 <style>
-  #incidents{
+  .icon{
+    background-color: red;
+  }
+  #incidents {
     border-left: 4px solid red;
   }
-  .tabs p:first-of-type{
+  .tabs p:first-of-type {
     font-weight: bolder;
     font-size: xx-large;
   }
-  .tabs{
+  .tabs {
     background-color: white;
     border-radius: 7px;
     box-shadow: -1px 1px 8px #333;
     margin-inline: 0.7em;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
   #container {
     background-color: rgba(255, 255, 255, 0.5);
