@@ -9,7 +9,7 @@
     <section>
       <h2>User Accounts</h2>
       <h3>Manage all system users and their permissions</h3>
-      <button>+ Add New User</button>
+      <button id="addUser">+ Add New User</button>
     </section>
 
     <section id="user-background">
@@ -18,7 +18,7 @@
           <input type="text" placeholder="⌕ Search users..." />
         </section>
         <section id="filters">
-            <p>Filter by:</p>
+          <p>Filter by:</p>
           <select>
             <option>All Roles</option>
             <option>Administrator</option>
@@ -38,33 +38,51 @@
       </section>
       <section id="table-container">
         <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Last Active</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Samuel Batchelor</td>
-                <td>batcsg1@student.op.ac.nz</td>
-                <td>Admin</td>
-              </tr>
-              <tr>
-                <td>Hazel Mapuranga</td>
-                <td>mapuhn1@student.op.ac.nz</td>
-                <td>Admin</td>
-              </tr>
-              <tr>
-                <td>George Adamson</td>
-                <td>adamgm3@student.op.ac.nz</td>
-                <td>Admin</td>
-              </tr>
-            </tbody>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Last Active</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Samuel Batchelor</td>
+              <td>batcsg1@student.op.ac.nz</td>
+              <td>Admin</td>
+              <td>2 hours</td>
+              <td>Active</td>
+              <td class="actions">
+                <button>Edit</button>
+                <button>Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Hazel Mapuranga</td>
+              <td>mapuhn1@student.op.ac.nz</td>
+              <td>Admin</td>
+              <td>4 hours</td>
+              <td>Active</td>
+              <td class="actions">
+                <button>Edit</button>
+                <button>Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>George Adamson</td>
+              <td>adamgm3@student.op.ac.nz</td>
+              <td>Admin</td>
+              <td>8 hours</td>
+              <td>Active</td>
+              <td class="actions">
+                <button>Edit</button>
+                <button>Delete</button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </section>
     </section>
@@ -72,7 +90,20 @@
 </main>
 
 <style>
-  #filters select{
+  .actions {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 0.9em;
+  }
+  .actions button {
+    padding: 0.9em 1em 0.9em 1em;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+  }
+  #filters select {
     padding: 0.5em;
   }
   #table-container {
@@ -81,8 +112,6 @@
   }
   table {
     background-color: greenyellow;
-    width: 100%;
-    min-width: 600px;
   }
   tbody td {
     padding: 0.8em;
@@ -112,7 +141,7 @@
     display: flex;
     align-items: center;
   }
-  #search-bar input{
+  #search-bar input {
     border-radius: 5px;
     border: none;
     padding: 1em;
@@ -147,7 +176,7 @@
   #container section {
     padding: 1em;
   }
-  button {
+  #addUser {
     padding: 0.5em;
     margin-top: 1em;
     background-color: green;
@@ -161,11 +190,11 @@
       grid-auto-flow: row;
       grid-template-columns: 1fr;
     }
-    #filters{
-        justify-content: center;
+    #filters {
+      justify-content: center;
     }
-    #search-bar input{
-        width: 100%;
+    #search-bar input {
+      width: 100%;
     }
   }
 </style>
