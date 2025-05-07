@@ -100,11 +100,18 @@
     align-items: center; 
     gap: 0.9em;
   }
+  .actions button:first-of-type{
+    color: blue;
+  }
+  .actions button:last-of-type{
+    color: red;
+  }
   .actions button {
     padding: 0.9em 1em 0.9em 1em;
     text-align: center;
     border: none;
     background-color: transparent;
+    font-weight: bold;
   }
   .actions button:hover{
     cursor: pointer;
