@@ -48,23 +48,31 @@
   #profile {
     margin-left: 0.8em;
   }
-  ul{
+  ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
     padding: 1em;
   }
-  ul li{
+  ul li {
     padding: 0.5em;
   }
-  ul li a{
+  ul li a {
+    display: flex;
     padding: 0.5em;
     text-decoration: none;
+    transition:
+      transform 0.3s,
+      background-color 0.3s,
+      color 0.3s;
+    border-radius: 5px;
   }
-  ul li a:hover{
-    background-color: white;
+  ul li a:hover {
     padding: 0.5em;
     color: #333;
+    background-color: white;
+    color: #333;
+    transform: scale(1.1);
   }
 </style>
