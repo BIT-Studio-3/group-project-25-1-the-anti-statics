@@ -74,6 +74,9 @@
     box-shadow: -1px 1px 8px #333;
     margin-inline: 0.7em;
     gap: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   #container {
     background-color: rgba(255, 255, 255, 0.5);
