@@ -50,7 +50,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>Samuel Batchelor</td>
+              <td class="name">Samuel Batchelor</td>
               <td>batcsg1@student.op.ac.nz</td>
               <td class="role"><p>Admin</p></td>
               <td class="l_active">2 hours ago</td>
@@ -61,7 +61,7 @@
               </td>
             </tr>
             <tr>
-              <td>Hazel Mapuranga</td>
+              <td class="name">Hazel Mapuranga</td>
               <td>mapuhn1@student.op.ac.nz</td>
               <td class="role"><p>Admin</p></td>
               <td class="l_active">4 hours ago</td>
@@ -72,7 +72,7 @@
               </td>
             </tr>
             <tr>
-              <td>George Adamson</td>
+              <td class="name">George Adamson</td>
               <td>adamgm3@student.op.ac.nz</td>
               <td class="role"><p>Admin</p></td>
               <td class="l_active">8 hours ago</td>
@@ -90,6 +90,10 @@
 </main>
 
 <style>
+  .name{
+    white-space: nowrap;
+    font-weight: bold;
+  }
   .l_active{
     color: rgb(174, 169, 169);
   }
