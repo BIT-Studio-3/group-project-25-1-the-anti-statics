@@ -6,7 +6,7 @@
   <section>
     <h1>🛡️ Admin Portal</h1>
     <section id="user">
-      <img src={pfp} alt="pfp" height="80" />
+      <img src={pfp} alt="pfp" height="60" />
       <section id="profile">
         <p>Samuel Batchelor</p>
         <p>Administrator</p>
@@ -28,8 +28,8 @@
     padding: 1em;
   }
   #user {
-    border-top: 2px solid rgb(0, 75, 13);
-    border-bottom: 2px solid grey;
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
     padding: 0.5em;
     display: flex;
     align-items: center;
