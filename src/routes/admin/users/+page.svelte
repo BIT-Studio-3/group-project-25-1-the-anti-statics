@@ -52,7 +52,7 @@
             <tr>
               <td>Samuel Batchelor</td>
               <td>batcsg1@student.op.ac.nz</td>
-              <td>Admin</td>
+              <td class="role"><p>Admin</p></td>
               <td>2 hours ago</td>
               <td class="status"><p>Active</p></td>
               <td class="actions">
@@ -63,7 +63,7 @@
             <tr>
               <td>Hazel Mapuranga</td>
               <td>mapuhn1@student.op.ac.nz</td>
-              <td>Admin</td>
+              <td class="role"><p>Admin</p></td>
               <td>4 hours ago</td>
               <td class="status"><p>Active</p></td>
               <td class="actions">
@@ -74,7 +74,7 @@
             <tr>
               <td>George Adamson</td>
               <td>adamgm3@student.op.ac.nz</td>
-              <td>Admin</td>
+              <td class="role"><p>Admin</p></td>
               <td>8 hours ago</td>
               <td class="status"><p>Active</p></td>
               <td class="actions">
@@ -90,9 +90,19 @@
 </main>
 
 <style>
+  .role p{
+    background-color:red;
+    margin-inline: 0.5em;
+    padding: 0.1em;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 4px;
+    font-weight: bold;
+    color: rgb(85, 5, 5);
+  }
   .status p{
     background-color: rgb(107, 242, 123);
-    width: 95%;
+    margin-inline: 0.5em;
     padding: 0.1em;
     text-align: center;
     white-space: nowrap;
