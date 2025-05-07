@@ -13,9 +13,9 @@
       </section>
     </section>
     <ul>
-      <li>Dashboard</li>
-      <li>User Management</li>
-      <li>Website Logs</li>
+      <li>📊 Dashboard</li>
+      <li>👥 User Management</li>
+      <li>📁 Website Logs</li>
     </ul>
   </section>
 </main>
