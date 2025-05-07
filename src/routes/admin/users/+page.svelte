@@ -122,6 +122,7 @@
     border: none;
     background-color: transparent;
     font-weight: bold;
+    font-size: large;
   }
   #filters select {
     padding: 0.5em;
