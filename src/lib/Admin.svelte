@@ -13,8 +13,8 @@
       </section>
     </section>
     <ul>
-      <li>📊 Dashboard</li>
-      <li>👥 User Management</li>
+      <li><a href="/admin">📊 Dashboard</a></li>
+      <li><a href="/admin/users">👥 User Management</a></li>
       <li>📁 Website Logs</li>
     </ul>
   </section>
