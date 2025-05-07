@@ -5,7 +5,13 @@
 <main>
     <Admin/>
     <section>
-        <h1>Admin Portal</h1>
+        <h1>Dashboard</h1>
+        <p>Active Users</p>
+        <p>Total Disasters</p>
+        <p>Active Disasters</p>
+        <p>Total Hazards</p>
+        <p>Total Damages</p>
+        <p>Filter hazards and damages by incident</p>
     </section>
 </main>
 
