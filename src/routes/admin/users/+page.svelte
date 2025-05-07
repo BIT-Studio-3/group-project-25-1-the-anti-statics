@@ -37,7 +37,35 @@
         </section>
       </section>
       <section id="table-container">
-        <section id="table"></section>
+        <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Last Active</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Samuel Batchelor</td>
+                <td>batcsg1@student.op.ac.nz</td>
+                <td>Admin</td>
+              </tr>
+              <tr>
+                <td>Hazel Mapuranga</td>
+                <td>mapuhn1@student.op.ac.nz</td>
+                <td>Admin</td>
+              </tr>
+              <tr>
+                <td>George Adamson</td>
+                <td>adamgm3@student.op.ac.nz</td>
+                <td>Admin</td>
+              </tr>
+            </tbody>
+        </table>
       </section>
     </section>
   </section>
@@ -51,9 +79,26 @@
     background-color: red;
     overflow-x: auto;
   }
-  #table {
-    background-color: blue;
-    width: 1000px;
+  table {
+    background-color: greenyellow;
+    width: 100%;
+    min-width: 600px;
+  }
+  tbody td {
+    padding: 0.8em;
+  }
+  tbody {
+    background-color: yellow;
+  }
+  thead {
+    background-color: gainsboro;
+    text-align: left;
+  }
+  thead th {
+    padding-left: 1em;
+    padding-block: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   #filters {
     background-color: aqua;
