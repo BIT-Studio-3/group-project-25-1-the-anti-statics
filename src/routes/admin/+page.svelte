@@ -11,7 +11,7 @@
       <h3>Here is an overview of what's happening across New Zealand</h3>
     </section>
 
-    <section class="tabs">
+    <section class="tabs" id="incidents">
         <h4>Active Incidents</h4>
         <p>12</p>
     </section>
@@ -20,6 +20,9 @@
 </main>
 
 <style>
+  #incidents{
+    border-left: 4px solid red;
+  }
   .tabs p:first-of-type{
     font-weight: bolder;
     font-size: xx-large;
