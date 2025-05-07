@@ -7,8 +7,8 @@
   <section id="container">
     <h1>Dashboard</h1>
     <section>
-    <h2>User Accounts</h2>
-      <h3>Manage all system users and their 
+      <h2>User Accounts</h2>
+      <h3>Manage all system users and their</h3>
     </section>
 
     <p>Active Users</p>
@@ -21,7 +21,11 @@
 </main>
 
 <style>
-  #container section{
+  #container {
+    background-color: rgba(255, 255, 255, 0.5);
+    overflow-x: hidden;
+  }
+  #container section {
     padding: 1em;
   }
   h1 {
