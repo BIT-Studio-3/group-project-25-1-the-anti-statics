@@ -86,7 +86,13 @@
               <p>{type.label}</p>
               <p>{type.value}%</p>
             </div>
-            <meter id="floods" min="0" max="100" value={type.value} low="25" high="75"
+            <meter
+              id="floods"
+              min="0"
+              max="100"
+              value={type.value}
+              low="25"
+              high="75"
             ></meter>
           {/each}
         </section>
@@ -219,6 +225,13 @@
         1,
         1fr
       ); /* 1 card per row on large screens */
+      gap: 1em;
+    }
+  }
+  @media (width<=1015px) {
+    #stats {
+      grid-auto-flow: row;
+      grid-template-columns: repeat(1, 1fr);
       gap: 1em;
     }
   }
