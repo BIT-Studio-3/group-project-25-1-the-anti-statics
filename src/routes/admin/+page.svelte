@@ -4,6 +4,13 @@
   import Teams from "../../lib/SVGs/users-solid.svg";
   import Resources from "../../lib/SVGs/boxes-stacked-solid.svg";
   import Personnel from "../../lib/SVGs/user-plus-solid.svg";
+
+  const incidentTypes = [
+    { label: "Floods", value: 42 },
+    { label: "Fires", value: 25 },
+    { label: "Earthquakes", value: 15 },
+    { label: "Storms", value: 18 }
+  ];
 </script>
 
 <main>
