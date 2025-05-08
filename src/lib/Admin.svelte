@@ -25,6 +25,11 @@
 </main>
 
 <style>
+  header{
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+  }
   main {
     background-color: rgb(1, 100, 1);
     border-right: 3px solid white;
