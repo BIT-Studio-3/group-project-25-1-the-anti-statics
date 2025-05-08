@@ -19,4 +19,9 @@
     overflow-x: hidden;
     height: 85vh;
   }
+  h1 {
+    background-color: white;
+    padding: 1em;
+    border-bottom: 1px solid rgb(182, 164, 164);
+  }
 </style>
