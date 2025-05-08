@@ -77,6 +77,11 @@
 </main>
 
 <style>
+  #trends select{
+    padding: 0.4em;
+    border-radius: 7px;
+    border: 1px solid grey;
+  }
   #trends header{
     background-color: red;
     display: flex;
