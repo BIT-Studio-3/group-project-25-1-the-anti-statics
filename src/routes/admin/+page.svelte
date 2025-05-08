@@ -84,7 +84,7 @@
           {#each incidentTypes as type}
             <div>
               <p>{type.label}</p>
-              <p>{type.value}</p>
+              <p>{type.value}%</p>
             </div>
             <meter id="floods" min="0" max="100" value={type.value} low="25" high="75"
             ></meter>
