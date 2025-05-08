@@ -1,6 +1,6 @@
 <script>
   import Admin from "../../../lib/Admin.svelte";
-  import user from "/src/lib/SVGs/user-plus-solid.svg"
+  import user from "/src/lib/SVGs/users-solid.svg"
   const users = [
     {
       name: "Samuel Batchelor",
@@ -29,7 +29,10 @@
 <main>
   <Admin />
   <section id="container">
-    <h1>User Management</h1>
+    <header>
+        <img src={user} alt="user" height=20>
+        <h1>User Management</h1>
+    </header>
     <section>
       <h2>User Accounts</h2>
       <h3>Manage all system users and their permissions</h3>
@@ -200,7 +203,7 @@
     display: flex;
     flex-direction: column;
   }
-  h1 {
+  header {
     background-color: white;
     padding: 1em;
     border-bottom: 1px solid rgb(182, 164, 164);
