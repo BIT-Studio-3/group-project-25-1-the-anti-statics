@@ -18,10 +18,10 @@ export async function load() {
         
         //Return the data
         return {damages: damages.data};
-    } catch (error) {
+    } catch (serverError) {
         //Console the error
-        console.log('Error fetching data:', error);
+        console.log('Error fetching data:', serverError);
         //Return the error if the API is offline
-        return {error: 'The server is currently unreachable. Please try again later.'}
+        return {serverError: 'The server is currently unreachable. Please try again later.'}
     }
 }
