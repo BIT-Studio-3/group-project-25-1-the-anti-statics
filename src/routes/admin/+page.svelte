@@ -9,7 +9,7 @@
     { label: "Floods", value: 42 },
     { label: "Fires", value: 25 },
     { label: "Earthquakes", value: 15 },
-    { label: "Storms", value: 18 }
+    { label: "Storms", value: 18 },
   ];
 </script>
 
@@ -81,11 +81,14 @@
           <h3>Incident Types</h3>
         </header>
         <section id="bars">
-          <div>
-            <p>Floods:</p>
-            <p>42%</p>
-          </div>
-          <meter id="floods" min=0 max=100 value=42 low=25 high=75></meter>
+          {#each incidentTypes as type}
+            <div>
+              <p>{type.label}</p>
+              <p>{type.value}</p>
+            </div>
+            <meter id="floods" min="0" max="100" value={type.value} low="25" high="75"
+            ></meter>
+          {/each}
         </section>
       </section>
     </section>
