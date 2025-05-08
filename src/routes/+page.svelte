@@ -12,14 +12,12 @@
 
 <div class="PageContentContainer">
   {#if error}
-    <div>{error}</div>
+    <div class="ServerUnavailable">{error}</div>
   {:else}
     <div class="AlertsCard">
       <h3>Recent Alerts</h3>
       {#if !data.alerts || data.alerts.length === 0}
-        <ul>
-          <li>{message}</li>
-        </ul>
+        <div class="NoAlerts">{message}</div>
       {:else}
         {#each alerts as alert}
           <ul class="AlertsList">
@@ -67,6 +65,26 @@
     text-align: center;
   }
 
+  .ServerUnavailable {
+    display: flex;
+    flex-direction: column;
+    border: 5px black solid;
+    border-radius: 15px;
+    width: 25%;
+    color: #333;
+    background-color: white;
+    padding: 1em;
+  }
+
+  .NoAlerts {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    border: 3px green;
+    border-style: solid;
+    border-radius: 15px;
+  }
+
   .PageContentContainer {
     display: flex;
     justify-content: space-between;
@@ -106,7 +124,7 @@
     border: 3px #ec6969 solid;
   }
   #response ul {
-    border: 3px #7269ec solid;
+    border: 3px green solid;
   }
 
   .AlertsList li {
