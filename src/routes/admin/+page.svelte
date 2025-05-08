@@ -80,7 +80,7 @@
 
 <style>
   #trends section{
-    background-color: red;
+    background-color: rgb(173, 143, 143);
   }
   #trends select{
     padding: 0.4em;
