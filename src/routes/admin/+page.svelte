@@ -58,7 +58,7 @@
 
 <style>
   .icon {
-    border-radius: 40px;
+    border-radius: 100px;
     display: flex;
     align-items: center;
     background-color: red;
