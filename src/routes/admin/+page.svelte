@@ -59,7 +59,10 @@
 
     <section id="stats">
         <section id="trends">
-            <h3>Incident Trends</h3>
+            <header>
+                <h3>Incident Trends</h3>
+                
+            </header>
             <p>Test</p>
         </section>
         <section>
@@ -70,7 +73,7 @@
 </main>
 
 <style>
-  #trends h3{
+  #trends header{
     background-color: red;
     display: flex;
     align-items: center;
