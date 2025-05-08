@@ -76,6 +76,10 @@
                 <h3>Incident Types</h3>
             </header>
             <section id="bars">
+                <div>
+                    <p>Floods:</p>
+                    <p>42%</p>
+                </div>
                 <progress id="floods" value="42" max="100"></progress>
             </section>
         </section>
@@ -84,6 +88,11 @@
 </main>
 
 <style>
+  #bars div{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
   progress{
     width: 100%;
   }
