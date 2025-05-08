@@ -1,5 +1,6 @@
 <script>
   import Admin from "../../../lib/Admin.svelte";
+  import user from "/src/lib/SVGs/user-plus-solid.svg"
   const users = [
     {
       name: "Samuel Batchelor",
