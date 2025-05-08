@@ -61,11 +61,13 @@
 </main>
 
 <style>
+  #icon1{
+    background-color: rgb(221, 116, 116);
+  }
   .icon {
     border-radius: 100px;
     display: flex;
     align-items: center;
-    background-color: red;
     justify-content: center;
     width: 50px;
     justify-self: flex-end;
