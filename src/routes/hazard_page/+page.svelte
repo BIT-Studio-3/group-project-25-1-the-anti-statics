@@ -56,85 +56,106 @@
   //Export the load function
   export let data;
   console.log(data);
-  const { hazards } = data;
+  const { hazards, serverError, message } = data;
 </script>
 
 <div class="page-container">
-  <div class="hazard-logs">
-    <h3>Recent Hazards</h3>
-    <div class="hazard-list-container">
-      {#if !data.hazards || data.hazards.length === 0}
-        <p>No hazards logged.</p>
-      {:else}
-        <ul class="hazard-list">
-          {#each hazards as hazard}
-            <li>
-              <HazardCard obj={hazard} />
-            </li>
-          {/each}
-        </ul>
-      {/if}
+  {#if serverError}
+    <div class="ServerUnavailable">{serverError}</div>
+  {:else}
+    <div class="hazard-logs">
+      <h3>Recent Hazards</h3>
+      <div class="hazard-list-container">
+        {#if !data.hazards || data.hazards.length === 0}
+          <p>No hazards logged.</p>
+        {:else}
+          <ul class="hazard-list">
+            {#each hazards as hazard}
+              <li>
+                <HazardCard obj={hazard} />
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      </div>
     </div>
-  </div>
+  {/if}
 
   <div class="form-container">
-      <form on:submit={submitHazard}>
-        <h3>Log Hazards</h3>
-        <div class="form-group">
-          <label for="title">Name</label>
-          <input type="text" id="title" bind:value={name} placeholder="Enter hazard name" required />
-        </div>
+    <form on:submit={submitHazard}>
+      <h3>Log Hazards</h3>
+      <div class="form-group">
+        <label for="title">Name</label>
+        <input
+          type="text"
+          id="title"
+          bind:value={name}
+          placeholder="Enter hazard name"
+          required
+        />
+      </div>
 
-        <div class="form-group">
-          <label for="type">Type</label>
-          <select id="type" bind:value={type} required>
-            <option value="">Select hazard type</option>
-            <option value="fire">Fire</option>
-            <option value="chemicals">Chemical Leak</option>
-            <option value="slip">Slip</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select id="type" bind:value={type} required>
+          <option value="">Select hazard type</option>
+          <option value="fire">Fire</option>
+          <option value="chemicals">Chemical Leak</option>
+          <option value="slip">Slip</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label for="level">Level</label>
-          <select id="level" bind:value={level} required>
-            <option value=1>1</option>
-            <option value=2>2</option>
-            <option value=3>3</option>
-            <option value=4>4</option>
-            <option value=5>5</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label for="level">Level</label>
+        <select id="level" bind:value={level} required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label for="city">City/Town</label>
-          <input type="text" id="city" bind:value={city} placeholder="Enter city or town" required />
-        </div>
+      <div class="form-group">
+        <label for="city">City/Town</label>
+        <input
+          type="text"
+          id="city"
+          bind:value={city}
+          placeholder="Enter city or town"
+          required
+        />
+      </div>
 
-        <div class="form-group">
-          <label for="location">Location (Street or Suburb)</label>
-          <input type="text" id="location" bind:value={location} placeholder="Enter location" required />
-        </div>
+      <div class="form-group">
+        <label for="location">Location (Street or Suburb)</label>
+        <input
+          type="text"
+          id="location"
+          bind:value={location}
+          placeholder="Enter location"
+          required
+        />
+      </div>
 
-        <div class="form-group">
-          <label for="description">Description</label>
-          <textarea
-            id="description"
-            bind:value={description}
-            placeholder="Provide a description"
-            required
-          ></textarea>
-        </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          bind:value={description}
+          placeholder="Provide a description"
+          required
+        ></textarea>
+      </div>
 
-        <div class="button-wrapper">
+      <div class="button-wrapper">
         <button type="submit" class="form-button">Submit</button>
       </div>
-      </form>
+    </form>
   </div>
 </div>
 
 <style>
-  
   .page-container {
     display: flex;
     justify-content: space-between;
@@ -196,7 +217,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid #10941b;
-    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);    
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
     border-radius: 15px;
     color: #333;
     background-color: white;
@@ -231,7 +252,7 @@
   .form-group select:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: #4CAF50;
+    border-color: #4caf50;
     box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
   }
 
@@ -240,13 +261,26 @@
     height: 80px;
   }
 
+  .ServerUnavailable {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
+    border-radius: 15px;
+    width: 25%;
+    color: #333;
+    background-color: white;
+    padding: 1em;
+  }
+
   label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
   }
 
-  input, select {
+  input,
+  select {
     width: 90%;
     padding: 0.8rem;
     font-size: 1rem;
@@ -263,7 +297,7 @@
   .form-button {
     width: 20%;
     padding: 0.75rem;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 8px;
@@ -279,17 +313,20 @@
     background-color: #45a049;
   }
 
-  #description, #title, #location, #city{
+  #description,
+  #title,
+  #location,
+  #city {
     width: 87%;
   }
   @media (max-width: 1060px) {
     .page-container {
-      flex-direction: column; 
+      flex-direction: column;
       flex-wrap: wrap;
       gap: 10px;
       place-items: center;
     }
-    .form-button{
+    .form-button {
       width: 90%;
       text-align: center;
       overflow: hidden;
@@ -299,7 +336,7 @@
     .form-container {
       width: 100%;
       max-width: 90%;
-      flex: none; 
+      flex: none;
     }
 
     .hazard-logs {
@@ -311,5 +348,5 @@
       height: auto;
       padding: 1rem;
     }
-}
+  }
 </style>
