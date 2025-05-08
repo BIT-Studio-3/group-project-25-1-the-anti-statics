@@ -25,6 +25,7 @@
           <img src={Fire} alt="fire" height="50" />
         </section>
       </section>
+
       <section class="tabs" id="teams">
         <section class="info">
           <h4>Response Teams</h4>
@@ -34,6 +35,7 @@
             <img src={Teams} alt="teams" height="50" />
         </section>
       </section>
+
       <section class="tabs" id="resources">
         <section class="info">
           <h4>Resources Deployed</h4>
@@ -43,6 +45,7 @@
             <img src={Resources} alt="resources" height="50" />
         </section>
       </section>
+
       <section class="tabs" id="personnel">
         <section class="info">
           <h4>Personnel Active</h4>
@@ -52,6 +55,7 @@
             <img src={Personnel} alt="personnel" height="50" />
         </section>
       </section>
+      
     </section>
   </section>
 </main>
