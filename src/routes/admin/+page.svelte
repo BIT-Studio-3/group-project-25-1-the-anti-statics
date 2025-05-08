@@ -16,7 +16,10 @@
 <main>
   <Admin />
   <section id="container">
-    <h1>Dashboard</h1>
+    <header>
+        <img src="" alt="">
+        <h1>Dashboard</h1>
+    </header>
     <section>
       <h2>Disaster Response Overview</h2>
       <h3>Here is an overview of what's happening across New Zealand</h3>
@@ -202,10 +205,12 @@
   #container section {
     padding: 1em;
   }
-  h1 {
+  header {
     background-color: white;
     padding: 1em;
     border-bottom: 1px solid rgb(182, 164, 164);
+    display: flex;
+    gap: 1em;
   }
   main {
     display: grid;
