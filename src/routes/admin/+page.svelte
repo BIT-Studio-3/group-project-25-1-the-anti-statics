@@ -1,5 +1,6 @@
 <script>
   import Admin from "../../lib/Admin.svelte";
+  import Fire from "../../lib/SVGs/fire-solid.svg"
 </script>
 
 <main>
@@ -18,7 +19,7 @@
           <p>12</p>
         </section>
         <section class="icon">
-          <p>Icon</p>
+            <img src={Fire} alt="fire" height=50>
         </section>
       </section>
       <section class="tabs" id="teams">
@@ -65,9 +66,6 @@
       4,
       1fr
     ); /* 4 cards per row on large screens */
-  }
-  .icon {
-    background-color: red;
   }
   #incidents {
     border-left: 4px solid red;
