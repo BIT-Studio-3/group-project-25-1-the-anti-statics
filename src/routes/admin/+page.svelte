@@ -58,8 +58,9 @@
     </section>
 
     <section id="stats">
-        <section>
-
+        <section id="trends">
+            <h3>Incident Trends</h3>
+            <p>Test</p>
         </section>
         <section>
             
@@ -69,6 +70,9 @@
 </main>
 
 <style>
+  #trends h3{
+    background-color: red;
+  }
   #stats{
     display: grid;
     grid-template-columns: 2fr 1fr;
