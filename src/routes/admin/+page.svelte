@@ -75,6 +75,8 @@
   }
   #trends h3{
     background-color: red;
+    display: flex;
+    align-items: center;
   }
   #stats{
     display: grid;
