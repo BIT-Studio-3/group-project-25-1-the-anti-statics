@@ -31,7 +31,7 @@
           <p>23</p>
         </section>
         <section class="icon">
-            <img src={Teams} alt="fire" height="50" />
+            <img src={Teams} alt="teams" height="50" />
         </section>
       </section>
       <section class="tabs" id="resources">
@@ -40,7 +40,7 @@
           <p>12</p>
         </section>
         <section class="icon">
-            <img src={Resources} alt="fire" height="50" />
+            <img src={Resources} alt="resources" height="50" />
         </section>
       </section>
       <section class="tabs" id="personnel">
@@ -49,7 +49,7 @@
           <p>12</p>
         </section>
         <section class="icon">
-            <img src={Personnel} alt="fire" height="50" />
+            <img src={Personnel} alt="personnel" height="50" />
         </section>
       </section>
     </section>
