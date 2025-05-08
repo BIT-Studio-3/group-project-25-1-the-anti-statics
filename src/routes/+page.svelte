@@ -23,20 +23,20 @@
       {:else}
         {#each alerts as alert}
           <ul class="AlertsList">
-            <li>Emergency: {alert.title}</li>
-            <li>{alert.emergencyType}</li>
-            <li>{alert.alertLevel}</li>
-            <li>{alert.region}</li>
+            <li><strong>Emergency:</strong> {alert.title}</li>
+            <li><strong>Type:</strong> {alert.emergencyType}</li>
+            <li><strong>Level:</strong> {alert.alertLevel}</li>
+            <li><strong>Region:</strong> {alert.region}</li>
             <li>{alert.description}</li>
 
             <li>
-              Alerted posted at: {format(
+              <strong>Alerted posted at:</strong> {format(
                 new Date(alert.createdAt),
                 "MM/dd/yyyy hh:mm a"
               )}
             </li>
             <li>
-              Updated at: {format(
+              <strong>Updated at:</strong> {format(
                 new Date(alert.updatedAt),
                 "MM/dd/yyyy hh:mm a"
               )}
@@ -112,6 +112,7 @@
   .AlertsList li {
     list-style: none;
     background-color: inherit;
+    padding: 3px;
   }
 
   .pinmap {
