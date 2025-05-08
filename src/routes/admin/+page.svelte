@@ -72,13 +72,19 @@
             </section>
         </section>
         <section id="types">
-            
+            <header>
+                <h3>Incident Types</h3>
+            </header>
         </section>
     </section>
   </section>
 </main>
 
 <style>
+  #types header{
+    display: flex;
+    align-items: center;
+  }
   #trends section{
     background-color: rgb(173, 143, 143);
   }
