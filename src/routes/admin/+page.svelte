@@ -70,9 +70,6 @@
 </main>
 
 <style>
-  #trends{
-    grid-template-rows: 1fr 6fr;
-  }
   #trends h3{
     background-color: red;
     display: flex;
@@ -90,6 +87,7 @@
     gap: 1em;
     display: grid;
     height: 20em;
+    grid-template-rows: 1fr 6fr;
   }
   #icon4 {
     background-color: rgb(225, 222, 34);
