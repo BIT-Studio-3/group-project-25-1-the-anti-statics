@@ -30,18 +30,18 @@
           <p>Icon</p>
         </section>
       </section>
-      <section class="tabs" id="incidents">
+      <section class="tabs" id="resources">
         <section class="info">
-          <h4>Active Incidents</h4>
+          <h4>Resources Deployed</h4>
           <p>12</p>
         </section>
         <section class="icon">
           <p>Icon</p>
         </section>
       </section>
-      <section class="tabs" id="incidents">
+      <section class="tabs" id="personnel">
         <section class="info">
-          <h4>Active Incidents</h4>
+          <h4>Personnel Active</h4>
           <p>12</p>
         </section>
         <section class="icon">
@@ -53,6 +53,12 @@
 </main>
 
 <style>
+  #personnel {
+    border-left: 4px solid goldenrod;
+  }
+  #resources {
+    border-left: 4px solid green;
+  }
   #card-container {
     display: grid;
     grid-template-columns: repeat(
@@ -66,7 +72,7 @@
   #incidents {
     border-left: 4px solid red;
   }
-  #teams{
+  #teams {
     border-left: 4px solid blue;
   }
   .tabs p:first-of-type {
