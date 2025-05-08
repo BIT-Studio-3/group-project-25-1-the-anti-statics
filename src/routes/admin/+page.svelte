@@ -21,7 +21,7 @@
           <h4>Active Incidents</h4>
           <p>12</p>
         </section>
-        <section class="icon" id="incidents">
+        <section class="icon" id="icon1">
           <img src={Fire} alt="fire" height="40" />
         </section>
       </section>
@@ -31,7 +31,7 @@
           <h4>Response Teams</h4>
           <p>23</p>
         </section>
-        <section class="icon" id="teams">
+        <section class="icon" id="icon2">
             <img src={Teams} alt="teams" height="40" />
         </section>
       </section>
@@ -41,7 +41,7 @@
           <h4>Resources Deployed</h4>
           <p>12</p>
         </section>
-        <section class="icon">
+        <section class="icon" id="icon3">
             <img src={Resources} alt="resources" height="40" />
         </section>
       </section>
@@ -51,7 +51,7 @@
           <h4>Personnel Active</h4>
           <p>12</p>
         </section>
-        <section class="icon">
+        <section class="icon" id="icon4">
             <img src={Personnel} alt="personnel" height="40" />
         </section>
       </section>
