@@ -58,66 +58,65 @@
     </section>
 
     <section id="stats">
-        <section id="trends">
-            <header>
-                <h3>Incident Trends</h3>
-                <select>
-                    <option>Last 2 days</option>
-                    <option>Last 7 days</option>
-                    <option>Last 30 days</option>
-                </select>
-            </header>
-            <section>
-
-            </section>
+      <section id="trends">
+        <header>
+          <h3>Incident Trends</h3>
+          <select>
+            <option>Last 2 days</option>
+            <option>Last 7 days</option>
+            <option>Last 30 days</option>
+          </select>
+        </header>
+        <section></section>
+      </section>
+      <section id="types">
+        <header>
+          <h3>Incident Types</h3>
+        </header>
+        <section id="bars">
+          <div>
+            <p>Floods:</p>
+            <p>42%</p>
+          </div>
+          <meter id="floods" min=0 max=100 value=42 low=25 high=75></meter>
         </section>
-        <section id="types">
-            <header>
-                <h3>Incident Types</h3>
-            </header>
-            <section id="bars">
-                <div>
-                    <p>Floods:</p>
-                    <p>42%</p>
-                </div>
-                <progress id="floods" value="42" max="100"></progress>
-            </section>
-        </section>
+      </section>
     </section>
   </section>
 </main>
 
 <style>
-  #bars div{
+  #bars div {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
   }
-  progress{
+  meter {
     width: 100%;
   }
-  #types header{
+  #types header {
     display: flex;
     align-items: center;
   }
-  #trends section{
+  #trends section {
     background-color: rgb(173, 143, 143);
   }
-  #trends select{
+  #trends select {
     padding: 0.4em;
     border-radius: 7px;
     border: 1px solid grey;
   }
-  #trends header{
+  #trends header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  #stats{
+  #stats {
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
-  #trends, #types{
+  #trends,
+  #types {
     background-color: white;
     border-radius: 7px;
     box-shadow: -1px 1px 8px #333;
