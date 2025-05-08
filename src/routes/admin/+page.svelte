@@ -4,6 +4,7 @@
   import Teams from "../../lib/SVGs/users-solid.svg";
   import Resources from "../../lib/SVGs/boxes-stacked-solid.svg";
   import Personnel from "../../lib/SVGs/user-plus-solid.svg";
+  import Dashboard from "../../lib/SVGs/gauge-solid.svg"
 
   const incidentTypes = [
     { label: "Floods", value: 42 },
@@ -17,7 +18,7 @@
   <Admin />
   <section id="container">
     <header>
-        <img src="" alt="">
+        <img src={Dashboard} alt="gauge" height=20>
         <h1>Dashboard</h1>
     </header>
     <section>
@@ -211,6 +212,7 @@
     border-bottom: 1px solid rgb(182, 164, 164);
     display: flex;
     gap: 1em;
+    align-items: center;
   }
   main {
     display: grid;
