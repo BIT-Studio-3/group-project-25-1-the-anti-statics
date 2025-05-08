@@ -211,6 +211,7 @@
   #container {
     background-color: rgba(255, 255, 255, 0.5);
     overflow-x: hidden;
+    height: 85vh;
   }
   #container section {
     padding: 1em;

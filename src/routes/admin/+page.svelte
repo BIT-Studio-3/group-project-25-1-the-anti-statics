@@ -197,6 +197,7 @@
   #container {
     background-color: rgba(255, 255, 255, 0.5);
     overflow-x: hidden;
+    height: 85vh;
   }
   #container section {
     padding: 1em;
@@ -209,6 +210,7 @@
   main {
     display: grid;
     grid-template-columns: 1fr 2.3fr;
+    height: 100%;
   }
   @media (width<=1600px) {
     #card-container {
