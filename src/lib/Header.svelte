@@ -28,7 +28,6 @@
       <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports_page">Seismic Reports</a></li>
       <li in:fly={{ y: 30, duration: 500 }}><a href="/road_conditions_page">Road Conditions</a></li>
       <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
-      <li in:fly={{ y: 30, duration: 700 }}><a href="/rss">RSS</a></li>
       <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/admin">Admin</a></li>
@@ -45,7 +44,6 @@
         <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports_page">Seismic Reports</a></li>
         <li in:fly={{ y: 30, duration: 500 }}><a href="/road_conditions_page">Road Conditions</a></li>
         <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
-        <li in:fly={{ y: 30, duration: 700 }}><a href="/rss">RSS</a></li>
         <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
         <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
         <button in:fly={{ y: 30, duration: 1000 }} class="logout-button-hamburger" on:click={logout}
