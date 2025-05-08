@@ -1,5 +1,28 @@
 <script>
   import Admin from "../../../lib/Admin.svelte";
+  const users = [
+    {
+      name: "Samuel Batchelor",
+      email: "batcsg1@student.op.ac.nz",
+      role: "Admin",
+      lastActive: "2 hours ago",
+      status: "Active",
+    },
+    {
+      name: "Hazel Mapuranga",
+      email: "mapuhn1@student.op.ac.nz",
+      role: "Admin",
+      lastActive: "4 hours ago",
+      status: "Active",
+    },
+    {
+      name: "George Adamson",
+      email: "adamgm3@student.op.ac.nz",
+      role: "Admin",
+      lastActive: "8 hours ago",
+      status: "Active",
+    },
+  ];
 </script>
 
 <main>
@@ -49,39 +72,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="name">Samuel Batchelor</td>
-              <td>batcsg1@student.op.ac.nz</td>
-              <td class="role"><p>Admin</p></td>
-              <td class="l_active">2 hours ago</td>
-              <td class="status"><p>Active</p></td>
-              <td class="actions">
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td class="name">Hazel Mapuranga</td>
-              <td>mapuhn1@student.op.ac.nz</td>
-              <td class="role"><p>Admin</p></td>
-              <td class="l_active">4 hours ago</td>
-              <td class="status"><p>Active</p></td>
-              <td class="actions">
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td class="name">George Adamson</td>
-              <td>adamgm3@student.op.ac.nz</td>
-              <td class="role"><p>Admin</p></td>
-              <td class="l_active">8 hours ago</td>
-              <td class="status"><p>Active</p></td>
-              <td class="actions">
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tr>
+            {#each users as user}
+              <tr>
+                <td class="name">{user.name}</td>
+                <td>{user.email}</td>
+                <td class="role"><p>{user.role}</p></td>
+                <td class="l_active">{user.lastActive}</td>
+                <td class="status"><p>{user.status}</p></td>
+                <td class="actions">
+                  <button>Edit</button>
+                  <button>Delete</button>
+                </td>
+              </tr>
+            {/each}
           </tbody>
         </table>
       </section>
@@ -90,15 +93,15 @@
 </main>
 
 <style>
-  .name{
+  .name {
     white-space: nowrap;
     font-weight: bold;
   }
-  .l_active{
+  .l_active {
     color: rgb(174, 169, 169);
   }
-  .role p{
-    background-color:red;
+  .role p {
+    background-color: red;
     margin-inline: 0.5em;
     padding: 0.1em;
     text-align: center;
@@ -107,7 +110,7 @@
     font-weight: bold;
     color: rgb(85, 5, 5);
   }
-  .status p{
+  .status p {
     background-color: rgb(107, 242, 123);
     margin-inline: 0.5em;
     padding: 0.1em;
@@ -117,20 +120,20 @@
     font-weight: bold;
     color: green;
   }
-  #last_a{
+  #last_a {
     white-space: nowrap;
   }
   .actions {
     display: grid;
     grid-auto-flow: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     gap: 0.9em;
   }
-  .actions button:first-of-type{
+  .actions button:first-of-type {
     color: blue;
   }
-  .actions button:last-of-type{
+  .actions button:last-of-type {
     color: red;
   }
   .actions button {
@@ -148,13 +151,13 @@
     overflow-x: auto;
     border-radius: 4px;
   }
-  table{
+  table {
     border-collapse: collapse;
   }
   tbody td {
     padding: 0.8em;
   }
-  
+
   thead {
     background-color: rgb(240, 230, 230);
     text-align: left;
@@ -225,12 +228,12 @@
       background-color 0.3s,
       color 0.3s;
   }
-  #addUser:hover{
+  #addUser:hover {
     transform: scale(1.1);
     background-color: white;
     color: #333;
   }
-  button:hover{
+  button:hover {
     cursor: pointer;
   }
   @media (width <= 910px) {
