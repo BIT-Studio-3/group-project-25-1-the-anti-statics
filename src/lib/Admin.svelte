@@ -1,10 +1,14 @@
 <script>
   import pfp from "/src/lib/Images/pfp.png";
+  import icon from "/src/lib/SVGs/server-solid.svg"
 </script>
 
 <main>
   <section>
-    <h1>🛡️ Admin Portal</h1>
+    <header>
+        <img src={icon} alt="icon" height=20>
+        <h1>Admin Portal</h1>
+    </header>
     <section id="user">
       <img src={pfp} alt="pfp" height="60" />
       <section id="profile">
