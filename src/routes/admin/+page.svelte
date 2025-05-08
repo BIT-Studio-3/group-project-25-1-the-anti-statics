@@ -69,7 +69,10 @@
 </main>
 
 <style>
-  
+  #stats{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
   #stats section{
     background-color: white;
     border-radius: 7px;
@@ -78,6 +81,7 @@
     gap: 1em;
     display: grid;
     grid-auto-flow: column;
+    height: 20em;
   }
   #icon4 {
     background-color: rgb(225, 222, 34);
