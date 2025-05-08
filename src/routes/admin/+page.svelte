@@ -67,9 +67,11 @@
                     <option>Last 30 days</option>
                 </select>
             </header>
-            <p>Test</p>
+            <section>
+
+            </section>
         </section>
-        <section>
+        <section id="types">
             
         </section>
     </section>
@@ -77,6 +79,9 @@
 </main>
 
 <style>
+  #trends section{
+    background-color: red;
+  }
   #trends select{
     padding: 0.4em;
     border-radius: 7px;
@@ -91,7 +96,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
-  #stats section{
+  #trends, #types{
     background-color: white;
     border-radius: 7px;
     box-shadow: -1px 1px 8px #333;
