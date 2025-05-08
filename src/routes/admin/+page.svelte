@@ -56,10 +56,29 @@
         </section>
       </section>
     </section>
+
+    <section id="stats">
+        <section>
+
+        </section>
+        <section>
+            
+        </section>
+    </section>
   </section>
 </main>
 
 <style>
+  
+  #stats section{
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: -1px 1px 8px #333;
+    margin-inline: 0.7em;
+    gap: 1em;
+    display: grid;
+    grid-auto-flow: column;
+  }
   #icon4 {
     background-color: rgb(225, 222, 34);
   }
