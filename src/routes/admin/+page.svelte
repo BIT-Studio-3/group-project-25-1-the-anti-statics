@@ -1,9 +1,9 @@
 <script>
   import Admin from "../../lib/Admin.svelte";
   import Fire from "../../lib/SVGs/fire-solid.svg";
-  import Teams from "../../lib/SVGs/users-solid.svg"
-  import Resources from "../../lib/SVGs/boxes-stacked-solid.svg"
-  import Personnel from "../../lib/SVGs/user-plus-solid.svg"
+  import Teams from "../../lib/SVGs/users-solid.svg";
+  import Resources from "../../lib/SVGs/boxes-stacked-solid.svg";
+  import Personnel from "../../lib/SVGs/user-plus-solid.svg";
 </script>
 
 <main>
@@ -32,7 +32,7 @@
           <p>23</p>
         </section>
         <section class="icon" id="icon2">
-            <img src={Teams} alt="teams" height="40" />
+          <img src={Teams} alt="teams" height="40" />
         </section>
       </section>
 
@@ -42,7 +42,7 @@
           <p>12</p>
         </section>
         <section class="icon" id="icon3">
-            <img src={Resources} alt="resources" height="40" />
+          <img src={Resources} alt="resources" height="40" />
         </section>
       </section>
 
@@ -52,16 +52,18 @@
           <p>12</p>
         </section>
         <section class="icon" id="icon4">
-            <img src={Personnel} alt="personnel" height="40" />
+          <img src={Personnel} alt="personnel" height="40" />
         </section>
       </section>
-
     </section>
   </section>
 </main>
 
 <style>
-  #icon1{
+  #icon2 {
+    background-color: rgb(128, 107, 236);
+  }
+  #icon1 {
     background-color: rgb(221, 116, 116);
   }
   .icon {
