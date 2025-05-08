@@ -60,6 +60,9 @@
 </main>
 
 <style>
+  #icon4 {
+    background-color: rgb(225, 222, 34);
+  }
   #icon3 {
     background-color: rgb(61, 213, 122);
   }
