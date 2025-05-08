@@ -3,6 +3,7 @@
   import Fire from "../../lib/SVGs/fire-solid.svg";
   import Teams from "../../lib/SVGs/users-solid.svg"
   import Resources from "../../lib/SVGs/boxes-stacked-solid.svg"
+  import Personnel from "../../lib/SVGs/user-plus-solid.svg"
 </script>
 
 <main>
@@ -48,7 +49,7 @@
           <p>12</p>
         </section>
         <section class="icon">
-          <p>Icon</p>
+            <img src={Personnel} alt="fire" height="50" />
         </section>
       </section>
     </section>
