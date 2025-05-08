@@ -29,7 +29,6 @@
     color: white;
   }
   h1 {
-    text-align: center;
     padding: 1em;
   }
   #user {
