@@ -61,7 +61,11 @@
         <section id="trends">
             <header>
                 <h3>Incident Trends</h3>
-                
+                <select>
+                    <option>Last 2 days</option>
+                    <option>Last 7 days</option>
+                    <option>Last 30 days</option>
+                </select>
             </header>
             <p>Test</p>
         </section>
