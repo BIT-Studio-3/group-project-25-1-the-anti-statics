@@ -21,7 +21,7 @@
           <h4>Active Incidents</h4>
           <p>12</p>
         </section>
-        <section class="icon" id="">
+        <section class="icon" id="incidents">
           <img src={Fire} alt="fire" height="50" />
         </section>
       </section>
@@ -30,7 +30,7 @@
           <h4>Response Teams</h4>
           <p>23</p>
         </section>
-        <section class="icon">
+        <section class="icon" id="teams">
             <img src={Teams} alt="teams" height="50" />
         </section>
       </section>
