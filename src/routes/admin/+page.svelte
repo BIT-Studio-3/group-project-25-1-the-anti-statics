@@ -70,6 +70,9 @@
 </main>
 
 <style>
+  #trends{
+    grid-template-rows: 1fr 6fr;
+  }
   #trends h3{
     background-color: red;
   }
@@ -84,7 +87,6 @@
     margin-inline: 0.7em;
     gap: 1em;
     display: grid;
-    grid-auto-flow: column;
     height: 20em;
   }
   #icon4 {
