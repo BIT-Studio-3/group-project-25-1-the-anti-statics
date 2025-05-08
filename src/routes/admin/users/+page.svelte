@@ -207,6 +207,8 @@
     background-color: white;
     padding: 1em;
     border-bottom: 1px solid rgb(182, 164, 164);
+    display: flex;
+    gap: 1em;
   }
   main {
     display: grid;
