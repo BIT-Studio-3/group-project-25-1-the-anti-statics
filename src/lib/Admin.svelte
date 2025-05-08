@@ -6,7 +6,7 @@
 <main>
   <section>
     <header>
-        <img src={icon} alt="icon" height=20>
+        <img src={icon} alt="icon" height=40>
         <h1>Admin Portal</h1>
     </header>
     <section id="user">
