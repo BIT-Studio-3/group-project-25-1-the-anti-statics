@@ -31,6 +31,7 @@
       <li in:fly={{ y: 30, duration: 700 }}><a href="/rss">RSS</a></li>
       <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
+      <li in:fly={{ y: 30, duration: 900 }}><a href="/admin">Admin</a></li>
       <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
       <button in:fade={{ duration: 500 }} class="logout-button" on:click={logout}>🔑 Log Out</button>
       <button in:fly={{ y: 30, duration: 300 }} class="hamburger-btn" on:click={toggleMenu}>☰</button>
