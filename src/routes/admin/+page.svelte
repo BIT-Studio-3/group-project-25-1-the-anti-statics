@@ -75,12 +75,18 @@
             <header>
                 <h3>Incident Types</h3>
             </header>
+            <section id="bars">
+                <progress id="floods" value="42" max="100"></progress>
+            </section>
         </section>
     </section>
   </section>
 </main>
 
 <style>
+  progress{
+    width: 100%;
+  }
   #types header{
     display: flex;
     align-items: center;
