@@ -22,7 +22,7 @@
           <p>12</p>
         </section>
         <section class="icon" id="incidents">
-          <img src={Fire} alt="fire" height="50" />
+          <img src={Fire} alt="fire" height="40" />
         </section>
       </section>
 
@@ -32,7 +32,7 @@
           <p>23</p>
         </section>
         <section class="icon" id="teams">
-            <img src={Teams} alt="teams" height="50" />
+            <img src={Teams} alt="teams" height="40" />
         </section>
       </section>
 
@@ -42,7 +42,7 @@
           <p>12</p>
         </section>
         <section class="icon">
-            <img src={Resources} alt="resources" height="50" />
+            <img src={Resources} alt="resources" height="40" />
         </section>
       </section>
 
@@ -52,10 +52,10 @@
           <p>12</p>
         </section>
         <section class="icon">
-            <img src={Personnel} alt="personnel" height="50" />
+            <img src={Personnel} alt="personnel" height="40" />
         </section>
       </section>
-      
+
     </section>
   </section>
 </main>
