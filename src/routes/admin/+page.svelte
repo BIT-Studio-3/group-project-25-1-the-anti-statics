@@ -2,6 +2,7 @@
   import Admin from "../../lib/Admin.svelte";
   import Fire from "../../lib/SVGs/fire-solid.svg";
   import Teams from "../../lib/SVGs/users-solid.svg"
+  import Resources from "../../lib/SVGs/boxes-stacked-solid.svg"
 </script>
 
 <main>
@@ -38,7 +39,7 @@
           <p>12</p>
         </section>
         <section class="icon">
-          <p>Icon</p>
+            <img src={Resources} alt="fire" height="50" />
         </section>
       </section>
       <section class="tabs" id="personnel">
