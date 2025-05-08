@@ -1,6 +1,6 @@
 <script>
   import Admin from "../../lib/Admin.svelte";
-  import Fire from "../../lib/SVGs/fire-solid.svg"
+  import Fire from "../../lib/SVGs/fire-solid.svg";
 </script>
 
 <main>
@@ -18,8 +18,8 @@
           <h4>Active Incidents</h4>
           <p>12</p>
         </section>
-        <section class="icon">
-            <img src={Fire} alt="fire" height=50>
+        <section class="icon" id="">
+          <img src={Fire} alt="fire" height="50" />
         </section>
       </section>
       <section class="tabs" id="teams">
@@ -54,6 +54,15 @@
 </main>
 
 <style>
+  .icon {
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    background-color: red;
+    justify-content: center;
+    width: 50px;
+    justify-self: flex-end;
+  }
   #personnel {
     border-left: 4px solid goldenrod;
   }
