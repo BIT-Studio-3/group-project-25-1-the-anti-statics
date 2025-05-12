@@ -13,13 +13,8 @@
 
   const LOGIN_DELAY = 2000;
 
-  import user from "../../stores/user.js";
-  import { login } from "../../stores/login.js";
-
   //console value of login
   console.log(`Login (Login page): ${$login}`);
-
-  import { goto } from "$app/navigation";
 
   if ($login) {
     //Redirect user to main page
