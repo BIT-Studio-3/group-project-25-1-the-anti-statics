@@ -32,7 +32,7 @@
         margin-left: 1em;
     }
     main {
-        background-color: rgb(1, 100, 1);
+        background-color: rgba(1, 100, 1, 0.4);
         border-right: 3px solid white;
     }
     section * {
