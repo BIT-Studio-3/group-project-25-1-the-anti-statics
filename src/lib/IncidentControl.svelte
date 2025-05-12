@@ -1,6 +1,6 @@
 <script>
     import pfp from "/src/lib/Images/pfp.png";
-    import icon from "/src/lib/SVGs/server-solid.svg";
+    import icon from "/src/lib/SVGs/shield-check.svg";
 </script>
 
 <main>
@@ -10,10 +10,10 @@
             <h1>Incident Control</h1>
         </header>
         <ul>
-            <li><a href="/incident_controller">📊 Create Incident</a></li>
-            <li><a href="/incident_controller/users">👥 My Incidents</a></li>
-            <li><a href="/incident_controller/logs">📁 My Teams</a></li>
-            <li><a href="/incident_controller/logs">📁 Rescources</a></li>
+            <li><a href="/incident_controller">⚠️ Create Incident</a></li>
+            <li><a href="/incident_controller/incidents">📋 My Incidents</a></li>
+            <li><a href="/incident_controller/teams">👥 My Teams</a></li>
+            <li><a href="/incident_controller/resources">🛠️ Rescources</a></li>
         </ul>
         <section id="user">
             <img src={pfp} alt="pfp" height="60" />
