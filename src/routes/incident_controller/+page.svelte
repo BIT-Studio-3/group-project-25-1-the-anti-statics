@@ -34,7 +34,7 @@
 
     const submitIncident = async (event) => {
         event.preventDefault();
-        const incidentInfo = disaster;
+        const incidentInfo = disasterInfo;
         const result = await postIncident(incidentInfo);
 
         postError = result.postError;
