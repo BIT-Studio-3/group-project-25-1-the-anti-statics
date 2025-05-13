@@ -352,6 +352,9 @@
     .form-button:hover {
         background-color: #2b6cb0;
     }
+    #description {
+        resize: none;
+    }
 
     .error-message {
         background-color: #f56565;
