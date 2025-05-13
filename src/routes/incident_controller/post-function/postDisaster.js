@@ -1,0 +1,28 @@
+import url from "../../../url/url";
+export async function postDisaster(incidentInfo) {
+  try {
+    console.log("Posting disaster with info:", incidentInfo);
+
+    incidentInfo.level = parseInt(incidentInfo.level);
+    const response = await fetch(`${url}/api/v1/disasters`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(incidentInfo),
+    });
+
+    if (!response.ok) {
+      return { postError: "Failed to post disaster. Please try again later." };
+    }
+
+    const info = await response.json();
+    return { info };
+  } catch (error) {
+    console.log(error);
+
+    return {
+      error: "The server is currently unreachable. Please try again later.",
+    };
+  }
+}
