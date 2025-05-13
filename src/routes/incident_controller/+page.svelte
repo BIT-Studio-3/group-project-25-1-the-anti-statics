@@ -40,6 +40,20 @@
         postError = result.postError;
         info = result.info;
         error = result.error;
+
+        if (result.info) {
+            alert("Disaster posted successfully!");
+
+            disaster.title = "";
+            disaster.type = "";
+            disaster.location = "";
+            disaster.description = "";
+            disaster.status = "";
+            disaster.severity = "";
+            disaster.controllerId = "";
+            disaster.startTime = "";
+            disaster.endTime = "";
+        }
     };
 </script>
 
