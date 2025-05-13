@@ -6,7 +6,7 @@
     let info = null;
     let error = "";
 
-    let disaster = {
+    let disasterInfo = {
         title: "",
         type: "",
         location: "",
@@ -44,15 +44,15 @@
         if (result.info) {
             alert("Disaster posted successfully!");
 
-            disaster.title = "";
-            disaster.type = "";
-            disaster.location = "";
-            disaster.description = "";
-            disaster.status = "";
-            disaster.severity = "";
-            disaster.controllerId = "";
-            disaster.startTime = "";
-            disaster.endTime = "";
+            disasterInfo.title = "";
+            disasterInfo.type = "";
+            disasterInfo.location = "";
+            disasterInfo.description = "";
+            disasterInfo.status = "";
+            disasterInfo.severity = "";
+            disasterInfo.controllerId = "";
+            disasterInfo.startTime = "";
+            disasterInfo.endTime = "";
         }
     };
     export let data;
