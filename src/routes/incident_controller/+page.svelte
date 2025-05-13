@@ -1,5 +1,6 @@
 <script>
     import IncidentControl from "../../lib/IncidentControl.svelte";
+    import { postIncident } from "./post-function/postDisaster.js";
 
     let disaster = {
         title: "",
