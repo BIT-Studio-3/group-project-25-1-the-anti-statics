@@ -72,119 +72,141 @@
             <form on:submit={submitIncident}>
                 <h3>Log a Disaster</h3>
 
-                        <div class="form-grid">
+                <div class="form-grid">
                     <div class="form-column">
-                            <div class="form-group">
-                            <label for="title">Title <span class="required">*</span></label>
-                                <input
-                                    type="text"
-                                    id="title"
-                                    bind:value={disasterInfo.title}
-                                    placeholder="Brief description of the incident"
-                                    required
-                                />
-                            </div>
+                        <div class="form-group">
+                            <label for="title"
+                                >Title <span class="required">*</span></label
+                            >
+                            <input
+                                type="text"
+                                id="title"
+                                bind:value={disasterInfo.title}
+                                placeholder="Brief description of the incident"
+                                required
+                            />
+                        </div>
 
-                            <div class="form-group">
-                            <label for="type">Type <span class="required">*</span></label>
-                                <select
-                                    id="type"
-                                    bind:value={disasterInfo.type}
-                                    required
+                        <div class="form-group">
+                            <label for="type"
+                                >Type <span class="required">*</span></label
+                            >
+                            <select
+                                id="type"
+                                bind:value={disasterInfo.type}
+                                required
+                            >
+                                <option value="" disabled
+                                    >Select disaster type</option
                                 >
-                                <option value="" disabled>Select disaster type</option>
-                                    {#each disasterTypes as type}
-                                        <option value={type}>{type}</option>
-                                    {/each}
-                                </select>
-                            </div>
+                                {#each disasterTypes as type}
+                                    <option value={type}>{type}</option>
+                                {/each}
+                            </select>
+                        </div>
 
-                            <div class="form-group">
-                            <label for="location">Location <span class="required">*</span></label>
-                                <input
-                                    type="text"
-                                    id="location"
-                                    bind:value={disasterInfo.location}
-                                    placeholder="Enter location (e.g., coordinates, street)"
-                                    required
-                                />
-                            </div>
+                        <div class="form-group">
+                            <label for="location"
+                                >Location <span class="required">*</span></label
+                            >
+                            <input
+                                type="text"
+                                id="location"
+                                bind:value={disasterInfo.location}
+                                placeholder="Enter location (e.g., coordinates, street)"
+                                required
+                            />
+                        </div>
 
-                            <div class="form-group">
-                            <label for="status">Status <span class="required">*</span></label>
-                                <select
-                                    id="status"
-                                    bind:value={disasterInfo.status}
-                                    required
-                                >
-                                    <option value="" disabled>Select status</option>
-                                    {#each disasterStatuses as status}
-                                        <option value={status}>{status}</option>
-                                    {/each}
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <label for="status"
+                                >Status <span class="required">*</span></label
+                            >
+                            <select
+                                id="status"
+                                bind:value={disasterInfo.status}
+                                required
+                            >
+                                <option value="" disabled>Select status</option>
+                                {#each disasterStatuses as status}
+                                    <option value={status}>{status}</option>
+                                {/each}
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-column">
-                            <div class="form-group">
-                            <label for="severity">Severity <span class="required">*</span></label>
-                                <select
-                                    id="severity"
-                                    bind:value={disasterInfo.severity}
-                                    required
-                                >
-                                <option value="" disabled>Select severity</option>
-                                    {#each disasterSeverities as severity}
-                                        <option value={severity}>{severity}</option>
-                                    {/each}
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="controllerId">Controller ID <span class="required">*</span></label>
-                                <input
-                                    type="text"
-                                    id="controllerId"
-                                    bind:value={disasterInfo.controllerId}
-                                    placeholder="Enter controller ID"
-                                    required
-                                />
-                            </div>
-
-                            <div class="form-group">
-                            <label for="startTime">Start Time <span class="required">*</span></label>
-                                <input
-                                    type="datetime-local"
-                                    id="startTime"
-                                    bind:value={disasterInfo.startTime}
-                                    required
-                                />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="endTime">End Time</label>
-                                <input
-                                    type="datetime-local"
-                                    id="endTime"
-                                    bind:value={disasterInfo.endTime}
-                                />
-                        </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group full-width">
-                    <label for="description">Description <span class="required">*</span></label>
-                            <textarea
-                                id="description"
-                                bind:value={disasterInfo.description}
-                        placeholder="Provide a detailed description of the disaster"
+                        <div class="form-group">
+                            <label for="severity"
+                                >Severity <span class="required">*</span></label
+                            >
+                            <select
+                                id="severity"
+                                bind:value={disasterInfo.severity}
                                 required
-                            ></textarea>
+                            >
+                                <option value="" disabled
+                                    >Select severity</option
+                                >
+                                {#each disasterSeverities as severity}
+                                    <option value={severity}>{severity}</option>
+                                {/each}
+                            </select>
                         </div>
 
-                        <div class="button-wrapper">
-                    <button type="submit" class="form-button">Submit</button>
+                        <div class="form-group">
+                            <label for="controllerId"
+                                >Controller ID <span class="required">*</span
+                                ></label
+                            >
+                            <input
+                                type="text"
+                                id="controllerId"
+                                bind:value={disasterInfo.controllerId}
+                                placeholder="Enter controller ID"
+                                required
+                            />
                         </div>
+
+                        <div class="form-group">
+                            <label for="startTime"
+                                >Start Time <span class="required">*</span
+                                ></label
+                            >
+                            <input
+                                type="datetime-local"
+                                id="startTime"
+                                bind:value={disasterInfo.startTime}
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="endTime">End Time</label>
+                            <input
+                                type="datetime-local"
+                                id="endTime"
+                                bind:value={disasterInfo.endTime}
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="description"
+                        >Description <span class="required">*</span></label
+                    >
+                    <textarea
+                        id="description"
+                        bind:value={disasterInfo.description}
+                        placeholder="Provide a detailed description of the disaster"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="button-wrapper">
+                    <button type="submit" class="form-button">Submit</button>
+                </div>
             </form>
         </div>
     </section>
@@ -291,7 +313,9 @@
         border-radius: 4px;
         outline: none;
         box-sizing: border-box;
-        transition: border-color 0.2s, box-shadow 0.2s;
+        transition:
+            border-color 0.2s,
+            box-shadow 0.2s;
     }
 
     .form-group input:focus,
@@ -337,5 +361,16 @@
         border-radius: 4px;
         max-width: 800px;
         text-align: center;
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .form-container {
+            max-width: 100%;
+        }
     }
 </style>
