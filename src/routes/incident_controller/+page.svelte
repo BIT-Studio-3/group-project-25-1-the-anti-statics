@@ -55,6 +55,9 @@
             disaster.endTime = "";
         }
     };
+    export let data;
+    console.log(data);
+    const { disasters } = data;
 </script>
 
 <main>
