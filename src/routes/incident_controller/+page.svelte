@@ -23,6 +23,8 @@
         "VOLCANIC",
         "OTHER",
     ];
+
+    const disasterStatuses = ["ACTIVE", "CONTAINED", "RESOLVED"];
 </script>
 
 <main>
