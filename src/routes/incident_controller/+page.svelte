@@ -1,12 +1,14 @@
 <script>
   import IncidentControl from "../../lib/IncidentControl.svelte";
+  
 </script>
 
 <main>
   <IncidentControl />
   <section id="container">
     <header>
-      <h1>Website Logs</h1>
+      <h1>Create New Incident</h1><br>
+      <p>Report and track issues efficiently</p>
     </header>
   </section>
 </main>
