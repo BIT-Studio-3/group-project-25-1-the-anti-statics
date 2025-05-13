@@ -1,6 +1,6 @@
 <script>
     import IncidentControl from "../../lib/IncidentControl.svelte";
-    import { postIncident } from "./post-function/postDisaster.js";
+    import { postDisaster } from "./post-function/postDisaster.js";
 
     let postError = "";
     let info = null;
@@ -35,7 +35,7 @@
     const submitIncident = async (event) => {
         event.preventDefault();
         const incidentInfo = disasterInfo;
-        const result = await postIncident(incidentInfo);
+        const result = await postDisaster(incidentInfo);
 
         postError = result.postError;
         info = result.info;
