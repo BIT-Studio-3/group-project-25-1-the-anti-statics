@@ -2,6 +2,10 @@
     import IncidentControl from "../../lib/IncidentControl.svelte";
     import { postIncident } from "./post-function/postDisaster.js";
 
+    let postError = "";
+    let info = null;
+    let error = "";
+
     let disaster = {
         title: "",
         type: "",
@@ -28,12 +32,15 @@
     const disasterStatuses = ["ACTIVE", "CONTAINED", "RESOLVED"];
     const disasterSeverities = ["LOW", "MODERATE", "HIGH", "CRITICAL"];
 
-
     const submitIncident = async (event) => {
         event.preventDefault();
         const incidentInfo = disaster;
         const result = await postIncident(incidentInfo);
-    }
+
+        postError = result.postError;
+        info = result.info;
+        error = result.error;
+    };
 </script>
 
 <main>
