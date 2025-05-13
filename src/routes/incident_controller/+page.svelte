@@ -26,6 +26,13 @@
 
     const disasterStatuses = ["ACTIVE", "CONTAINED", "RESOLVED"];
     const disasterSeverities = ["LOW", "MODERATE", "HIGH", "CRITICAL"];
+
+
+    const submitIncident = async (event) => {
+        event.preventDefault();
+        const incidentInfo = disaster;
+        const result = await postIncident(incidentInfo);
+    }
 </script>
 
 <main>
