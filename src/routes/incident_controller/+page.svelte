@@ -72,11 +72,10 @@
             <form on:submit={submitIncident}>
                 <h3>Log a Disaster</h3>
 
-                <section class="tabs" id="teams">
-                    <section class="info">
                         <div class="form-grid">
+                    <div class="form-column">
                             <div class="form-group">
-                                <label for="title">Title</label>
+                            <label for="title">Title <span class="required">*</span></label>
                                 <input
                                     type="text"
                                     id="title"
@@ -87,15 +86,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="type">Type</label>
+                            <label for="type">Type <span class="required">*</span></label>
                                 <select
                                     id="type"
                                     bind:value={disasterInfo.type}
                                     required
                                 >
-                                    <option value="" disabled
-                                        >Select disaster type</option
-                                    >
+                                <option value="" disabled>Select disaster type</option>
                                     {#each disasterTypes as type}
                                         <option value={type}>{type}</option>
                                     {/each}
@@ -103,7 +100,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="location">Location</label>
+                            <label for="location">Location <span class="required">*</span></label>
                                 <input
                                     type="text"
                                     id="location"
@@ -114,7 +111,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="status">Status</label>
+                            <label for="status">Status <span class="required">*</span></label>
                                 <select
                                     id="status"
                                     bind:value={disasterInfo.status}
@@ -126,17 +123,16 @@
                                     {/each}
                                 </select>
                             </div>
+                    </div>
 
                             <div class="form-group">
-                                <label for="severity">Severity</label>
+                            <label for="severity">Severity <span class="required">*</span></label>
                                 <select
                                     id="severity"
                                     bind:value={disasterInfo.severity}
                                     required
                                 >
-                                    <option value="" disabled
-                                        >Select severity</option
-                                    >
+                                <option value="" disabled>Select severity</option>
                                     {#each disasterSeverities as severity}
                                         <option value={severity}>{severity}</option>
                                     {/each}
@@ -144,7 +140,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="controllerId">Controller ID</label>
+                            <label for="controllerId">Controller ID <span class="required">*</span></label>
                                 <input
                                     type="text"
                                     id="controllerId"
@@ -155,7 +151,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="startTime">Start Time</label>
+                            <label for="startTime">Start Time <span class="required">*</span></label>
                                 <input
                                     type="datetime-local"
                                     id="startTime"
@@ -171,11 +167,12 @@
                                     id="endTime"
                                     bind:value={disasterInfo.endTime}
                                 />
+                        </div>
                             </div>
                         </div>
 
                         <div class="form-group full-width">
-                            <label for="description">Description</label>
+                    <label for="description">Description <span class="required">*</span></label>
                             <textarea
                                 id="description"
                                 bind:value={disasterInfo.description}
