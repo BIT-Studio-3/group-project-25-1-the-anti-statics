@@ -12,6 +12,17 @@
         startTime: "",
         endTime: "",
     };
+
+    const disasterTypes = [
+        "FLOOD",
+        "EARTHQUAKE",
+        "FIRE",
+        "CYCLONE",
+        "TSUNAMI",
+        "LANDSLIDE",
+        "VOLCANIC",
+        "OTHER",
+    ];
 </script>
 
 <main>
