@@ -25,6 +25,7 @@
     ];
 
     const disasterStatuses = ["ACTIVE", "CONTAINED", "RESOLVED"];
+    const disasterSeverities = ["LOW", "MODERATE", "HIGH", "CRITICAL"];
 </script>
 
 <main>
