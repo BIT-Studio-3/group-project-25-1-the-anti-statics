@@ -65,6 +65,7 @@
     <section id="container">
         <header>
             <h1>Create New Incident</h1>
+            <p class="subtitle">Report and track disasters efficiently</p>
         </header>
 
         <div class="form-container">
