@@ -176,18 +176,14 @@
                             <textarea
                                 id="description"
                                 bind:value={disasterInfo.description}
-                                placeholder="Provide a description"
+                        placeholder="Provide a detailed description of the disaster"
                                 required
                             ></textarea>
                         </div>
 
                         <div class="button-wrapper">
-                            <button type="submit" class="form-button"
-                                >Submit</button
-                            >
+                    <button type="submit" class="form-button">Submit</button>
                         </div>
-                    </section>
-                </section>
             </form>
         </div>
     </section>
