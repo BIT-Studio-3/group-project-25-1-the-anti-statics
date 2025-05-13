@@ -125,6 +125,7 @@
                             </div>
                     </div>
 
+                    <div class="form-column">
                             <div class="form-group">
                             <label for="severity">Severity <span class="required">*</span></label>
                                 <select
@@ -190,29 +191,43 @@
 </main>
 
 {#if postError}
-    <p class="error">{postError}</p>
+    <div class="error-message">
+        <p>{postError}</p>
+    </div>
 {/if}
 
 <style>
     main {
         display: grid;
         grid-template-columns: 1fr 2.3fr;
+        height: 100%;
     }
+
     #container {
         background-color: rgba(255, 255, 255, 0.5);
         overflow-x: hidden;
         height: 85vh;
     }
-    #container div {
-        padding: 1em;
-    }
+
     header {
         background-color: white;
         padding: 1em;
         border-bottom: 1px solid rgb(182, 164, 164);
         display: flex;
-        gap: 1em;
-        align-items: center;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        color: #333;
+        margin: 0;
+    }
+
+    header .subtitle {
+        color: #666666f1;
+        font-size: 0.9rem;
+        margin: 0;
     }
     .form-container {
         width: 100%;
