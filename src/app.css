@@ -1,6 +1,46 @@
 * {
-    font-family: sans-serif;
+    font-family: 'Nokora', sans-serif;
     color: #444;
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: 'Nokora';
+    src: url('/fonts/Nokora-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nokora';
+    src: url('/fonts/Nokora-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nokora';
+    src: url('/fonts/Nokora-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nokora';
+    src: url('/fonts/Nokora-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nokora';
+    src: url('/fonts/Nokora-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
 }
