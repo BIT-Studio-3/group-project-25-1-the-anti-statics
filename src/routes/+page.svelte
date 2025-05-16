@@ -12,7 +12,7 @@
 
 <div class="PageContentContainer">
   {#if error}
-    <div class="ServerUnavailable">{error}</div>
+    <div class="AlertsCard"><div class="ServerUnavailable">{error}</div></div>
   {:else}
     <div class="AlertsCard">
       <h3>Recent Alerts</h3>
@@ -66,14 +66,10 @@
   }
 
   .ServerUnavailable {
-    display: flex;
-    flex-direction: column;
-    border: 5px black solid;
-    border-radius: 15px;
-    width: 25%;
-    color: #333;
-    background-color: white;
     padding: 1em;
+    border: 3px green;
+    border-style: solid;
+    border-radius: 15px;
   }
 
   .NoAlerts {

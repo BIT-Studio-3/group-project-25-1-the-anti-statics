@@ -61,7 +61,7 @@
 
 <div class="page-container">
   {#if serverError}
-    <div class="ServerUnavailable">{serverError}</div>
+    <div class="error"><div class="ServerUnavailable">{serverError}</div></div>
   {:else}
     <div class="hazard-logs">
       <h3>Recent Hazards</h3>
@@ -262,15 +262,25 @@
   }
 
   .ServerUnavailable {
-    display: flex;
-    flex-direction: column;
+    padding: 1em;
+    border: 3px green;
+    border-style: solid;
+    border-radius: 15px;
+    margin-top: 60%;
+  }
+
+  .error {
+    flex: 1;
+    max-width: 25%;
+    min-width: 15%;
+    color: #333;
+    background-color: white;
     border: 1px solid #10941b;
     box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
     border-radius: 15px;
-    width: 25%;
-    color: #333;
-    background-color: white;
     padding: 1em;
+    height: 45em;
+    overflow-y: auto;
   }
 
   label {
