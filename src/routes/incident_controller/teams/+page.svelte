@@ -55,7 +55,7 @@
                                 type="text"
                                 id="disasterId"
                                 bind:value={disasterId}
-                                placeholder="Brief description of the incident"
+                                placeholder="Enter unique disaster identifier"
                                 required
                             />
                         </div>
