@@ -38,7 +38,7 @@
     <section id="container">
         <header>
             <h1>New Response Team</h1>
-            <p class="subdisasterId">Create and track teams efficiently</p>
+            <p class="subtitle">Create and track disaster response teams efficiently</p>
         </header>
 
         <div class="form-container">
