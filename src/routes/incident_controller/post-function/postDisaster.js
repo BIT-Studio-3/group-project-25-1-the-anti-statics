@@ -3,7 +3,6 @@ export async function postDisaster(incidentInfo) {
   try {
     console.log("Posting disaster with info:", incidentInfo);
 
-    incidentInfo.level = parseInt(incidentInfo.level);
     const response = await fetch(`${url}/api/v1/disasters`, {
       method: "POST",
       headers: {
