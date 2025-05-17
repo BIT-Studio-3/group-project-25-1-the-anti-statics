@@ -43,7 +43,7 @@
 
         <div class="form-container">
             <form on:submit={submitTeam}>
-                <h3>Log a team</h3>
+                <h3>Create An Emergency Response Team</h3>
 
                 <div class="form-grid">
                     <div class="form-column">
