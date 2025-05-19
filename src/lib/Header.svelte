@@ -4,14 +4,14 @@
   import user from "../stores/user.js";
   import logo from "./Images/dma.png";
 
-  import { isDark } from "../stores/theme.js"; // ✅ This is fine
+  import { isDark } from "../stores/theme.js"; 
   import { fly } from 'svelte/transition';
   import { fade } from 'svelte/transition';
 
   let isMenuOpen = false;
 
   const toggleTheme = () => {
-    isDark.set(!$isDark); // ✅ Just use $isDark directly here
+    isDark.set(!$isDark); 
   };
 
   const logout = () => {
@@ -24,7 +24,7 @@
   };
 </script>
 
-<header>
+<header class:dark-mode={$isDark}>
   <h1 in:fade={{ duration: 500 }}><a href="/"><img src={logo} alt="Main Logo" height="60" /></a></h1>
 
   <nav id="main-drop">
@@ -117,6 +117,7 @@
     background-color: white;
     gap: 10px;
     border-bottom: 3px green solid;
+    transition: background-color 0.3s ease;
   }
   .main-menu {
     display: flex;
@@ -161,6 +162,78 @@
     color: black;
     transform: scale(1.1);
   }
+
+  .hamburger-list li a {
+  background-color: white;
+}
+
+   .dark-mode {
+    background-color: #1f1f1f;
+  }
+
+  .dark-mode a {
+    color: #f0f0f0;
+  }
+
+  .dark-mode nav {
+    background-color: #1f1f1f;
+  }
+
+.dark-mode .main-menu li {
+  background-color: #2b2b2b;
+  color: white;
+}
+
+  .dark-mode .main-menu li:hover {
+    background-color: #444;
+  }
+
+  .dark-mode .main-menu li a {
+  color: white;
+}
+.dark-mode .main-menu li:hover a {
+  color: #f0f0f0;
+}
+
+
+.dark-mode #agency {
+  background-color: transparent;
+  color: white;
+}
+
+.dark-mode .main-menu {
+  background-color: transparent;
+}
+
+.dark-mode .hamburger-list {
+  background-color: #2a2a2a;
+  border-color: #555;
+}
+
+.dark-mode .hamburger-list li a {
+  background-color: inherit;
+  color: white;
+}
+
+.dark-mode .hamburger-list li:hover {
+  background-color: #444;
+}
+
+.dark-mode .hamburger-list li:hover a {
+  color: #f0f0f0;
+}
+
+.dark-mode .hamburger-btn {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #444;
+}
+
+.dark-mode .hamburger-btn:hover {
+  background-color: #444;
+  color: #fff;
+}
+
   @media (max-width: 1200px) {
     .main-menu li,
     .logout-button {
@@ -228,6 +301,28 @@
       color: #333;
       transform: scale(1.1);
     }
+
+    .dark-mode .hamburger-list {
+  background-color: #2a2a2a;
+  border-color: #555;
+}
+
+.dark-mode .hamburger-list li {
+  background-color: #2a2a2a;
+}
+
+.dark-mode .hamburger-list li a {
+  background-color: inherit;
+  color: white;
+}
+
+.dark-mode .hamburger-list li:hover {
+  background-color: #444;
+}
+
+.dark-mode .hamburger-list li:hover a {
+  color: #f0f0f0;
+}
   }
   
   
