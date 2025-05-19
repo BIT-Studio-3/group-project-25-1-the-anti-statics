@@ -1,8 +1,10 @@
 <script>
   import Header from "$lib/Header.svelte";
   import Footer from "$lib/Footer.svelte";
+  import { isDark } from "../../stores/theme.js";
 </script>
 
+<div class:dark={$isDark} class="main-wrapper">
 <div class="card">
   <h1>
     Emergency: <h3 id="Severe">Severe</h3>
@@ -50,8 +52,19 @@
   <p class="headers">Attending Stations/Brigades:</p><p>Leeston</p>
   <p class="headers">Call Type:</p><p>Vegetation Fire</p>
 </div>
-
+</div>
 <style>
+.main-wrapper {
+  background-color: white;
+  min-height: 100vh;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.dark.main-wrapper {
+  background-color: #121212;
+}
+
   h1 {
     font-size: 2em;
     margin: 4px;
