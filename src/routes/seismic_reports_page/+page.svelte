@@ -12,8 +12,10 @@
                'redTag'; // Default to 'redTag' for levels 4 and above
     }
 
-</script>
+import { isDark } from '../../stores/theme.js';
 
+</script>
+<div class:dark={$isDark}>
 <!-- Page title -->
 <h2>Quakes</h2>
 <div class="container">
@@ -111,7 +113,7 @@
         {/each}
     </div>
 </div>
-
+</div>
 <style>
     .container{
         padding: 1.5em;
@@ -215,6 +217,53 @@
         flex-direction: row;
         justify-content: center;
     }
+
+ 
+.dark .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #f0f0f0;
+}
+
+.dark .quake-info p {
+  color: #ddd;
+}
+
+.dark .quake-info p strong {
+  color: #ffffff;
+}
+
+.dark .quake-locality {
+  color: #ffffff;
+}
+
+.dark details {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.dark summary {
+  color: #f0f0f0;
+  background-color: transparent;
+}
+
+.dark .card-grid {
+  background-color: transparent;
+}
+
+.dark .section-title {
+  color: #ffffff;
+}
+
+.dark .section-title:hover {
+  color: #90caf9; 
+}
+
+.dark .arrow-icon {
+  color: #888; 
+}
+
+
     @media (max-width: 1200px) {
     h1 {
         font-size: 2rem; /* Adjust page title font size */

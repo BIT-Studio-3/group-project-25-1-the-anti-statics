@@ -18,7 +18,7 @@
     <div class="AlertsCard">
       <h3>Recent Alerts</h3>
       {#if !data.alerts || data.alerts.length === 0}
-        <ul>
+        <ul class="no-alerts-message">
           <li>{message}</li>
         </ul>
       {:else}
@@ -127,6 +127,18 @@
   .pinmap h3 {
     background-color: #b7daf8;
   }
+
+.no-alerts-message li {
+  color: #555;
+}
+
+.dark .no-alerts-message li {
+  color: #cccccc;
+}
+
+.dark #response ul li {
+  color: #dddddd;
+}
 
   .dark .AlertsCard,
   .dark #response {
