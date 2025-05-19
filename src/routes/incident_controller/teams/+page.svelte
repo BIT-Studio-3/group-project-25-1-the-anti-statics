@@ -212,10 +212,9 @@
     }
 
     .form-button:hover {
-        background-color: #2b6cb0;
-    }
-    #description {
-        resize: none;
+        background-color: #45a049;
+        transform: translateY(-0.5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
 
     .error-message {
