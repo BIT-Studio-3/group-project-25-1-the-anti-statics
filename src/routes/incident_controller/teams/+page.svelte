@@ -154,9 +154,16 @@
         font-size: 0.9rem;
     }
 
-    .full-width {
-        grid-column: 1 / span 2;
-        margin-top: 1rem;
+    .input-wrapper {
+        position: relative;
+    }
+
+    .input-icon {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #759671;
     }
 
     .required {
