@@ -48,7 +48,9 @@
                 <h3>Create An Emergency Response Team</h3>
 
                 <div class="form-group">
-                    <label for="disasterId">Disaster ID <span class="required">*</span></label>
+                    <label for="disasterId"
+                        >Disaster ID <span class="required">*</span></label
+                    >
                     <div class="input-wrapper">
                         <input
                             type="text"
@@ -72,7 +74,9 @@
                             </svg>
                         </span>
                     </div>
-                    <p class="help-text">Unique identifier assigned to this incident</p>
+                    <p class="help-text">
+                        Unique identifier assigned to this incident
+                    </p>
                 </div>
 
                 <div class="button-wrapper">
@@ -188,8 +192,8 @@
     }
 
     .form-group input:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+        border-color: #4caf50;
+        box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
     }
 
     .button-wrapper {
@@ -229,12 +233,53 @@
     }
 
     @media (max-width: 768px) {
-        .form-grid {
+        main {
             grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        #container {
+            height: auto;
         }
 
         .form-container {
-            max-width: 100%;
+            padding: 1.5em;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        .form-group input {
+            padding: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        .form-button {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .form-container {
+            margin: 1rem;
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        .form-button {
+            font-size: 0.8rem;
         }
     }
 </style>
