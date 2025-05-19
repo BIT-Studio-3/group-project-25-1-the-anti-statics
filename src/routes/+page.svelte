@@ -8,9 +8,10 @@
   const { alerts, error, message } = data;
 
   import { format } from "date-fns";
+   import { isDark } from "../stores/theme.js";
 </script>
 
-<div class="PageContentContainer">
+<div class="PageContentContainer" class:dark={$isDark}>
   {#if error}
     <div>{error}</div>
   {:else}
@@ -115,7 +116,7 @@
   }
 
   .pinmap {
-    height: 55em;
+    height: 57em;
     width: 50%;
     border: solid;
     text-align: center;
@@ -125,6 +126,40 @@
 
   .pinmap h3 {
     background-color: #b7daf8;
+  }
+
+  .dark .AlertsCard,
+  .dark #response {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    border-color: #555;
+  }
+
+  .dark .AlertsList {
+    border-color: #cc5c5c;
+  }
+
+  .dark #response ul {
+    border-color: #5c5ccc;
+  }
+
+  .dark .AlertsList li {
+    background-color: inherit;
+    color: #ddd;
+  }
+
+  .dark .pinmap {
+    background-color: #2e2e2e;
+    border-color: #555;
+  }
+
+  .dark .pinmap h3 {
+    background-color: #2e2e2e;
+    color: #f0f0f0;
+  }
+
+  .dark h3 {
+    color: #f0f0f0;
   }
 
   @media (max-width: 1200px) {
