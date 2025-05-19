@@ -187,16 +187,9 @@
         transition: all 0.2s;
     }
 
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
-    }
-
-    .form-group textarea {
-        resize: vertical;
-        min-height: 120px;
+    .form-group input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
     }
 
     .button-wrapper {
