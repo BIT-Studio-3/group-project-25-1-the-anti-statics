@@ -1,6 +1,7 @@
 <script>
   import HazardCard from "$lib/hazardCard.svelte";
   import { postHazard } from "./post-function/postHazard.js";
+  import Address from "$lib/Address.svelte";
 
   let postError = "";
   let info = null;
@@ -113,7 +114,7 @@
 
         <div class="form-group">
           <label for="location">Location (Street or Suburb)</label>
-          <input type="text" id="location" bind:value={location} placeholder="Enter location" required />
+          <Address on:select={(e) => location = e.detail.display_name} ></Address>
         </div>
 
         <div class="form-group">
