@@ -1,4 +1,8 @@
-<footer>
+<script>
+  import { isDark } from '../stores/theme.js';
+</script>
+
+<footer class:dark-mode={$isDark}>
     <p>Copyright © 2024 Otago Polytechnic</p>
     <p>New Zealand 0800 762 786
         International +64 3 477 3014
@@ -32,21 +36,22 @@
     }
 
     footer {
-        display: flex;
-        width: 100%;
-        height: 10vh;
-        box-sizing: border-box;
-        position: relative;
-        top: 0;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
-        background: #ffffff;
-        padding: 1em;
-        margin: 0.5em;
-        margin-bottom: 0;
-        justify-self: center;
-        border-top: 5px rgb(37, 170, 24) solid;
+       display: flex;
+    width: 100%;
+    height: 10vh;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffffff;
+    padding: 1em;
+    margin: 0.5em;
+    margin-bottom: 0;
+    justify-self: center;
+    border-top: 5px rgb(37, 170, 24) solid;
+    transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     nav {
@@ -69,6 +74,19 @@
         padding: 0.5em;
         background-color: inherit;
     }
+
+    .dark-mode {
+    background-color: #1f1f1f;
+  }
+
+  .dark-mode p,
+  .dark-mode a {
+    color: #f0f0f0;
+  }
+
+  .dark-mode a:hover {
+    color: #8fd694;
+  }
 
     @media (max-width: 800px) {
         p {
