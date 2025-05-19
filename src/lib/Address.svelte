@@ -1,5 +1,5 @@
 <script>
-  import { address } from "$lib/stores.js"; // Only keep the address store you want to set
+  import { address } from "$lib/stores.js";
 
   let query = "";
   let suggestions = [];
@@ -55,7 +55,7 @@
     type="text"
     bind:value={query}
     on:input={fetchSuggestions}
-    placeholder="Enter address"
+    placeholder="Enter an address"
     autocomplete="off"
   />
 
