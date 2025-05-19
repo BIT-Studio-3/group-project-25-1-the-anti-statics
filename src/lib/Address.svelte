@@ -1,5 +1,5 @@
 <script>
-  import { address } from "$lib/stores.js";  // Only keep the address store you want to set
+  import { address } from "$lib/stores.js"; // Only keep the address store you want to set
 
   let query = "";
   let suggestions = [];
@@ -15,7 +15,7 @@
       }
 
       const res = await fetch(
-        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1&limit=5`
+        `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=5`
       );
 
       if (!res.ok) {
@@ -24,13 +24,22 @@
       }
 
       const data = await res.json();
-      console.log("Nominatim data:", data);
+      
+      const features = data.features;
 
-      suggestions = data
-      .filter(item => item.address?.country_code === "nz")
-      .map(suggestion => ({
-        full_address: suggestion.display_name
-      }));
+      const nzFeatures = features.filter(
+        (item) => item.properties.countrycode === "NZ"
+      );
+
+      console.log("Nominatim data:", nzFeatures);
+
+      suggestions = nzFeatures.map((suggestion) => {
+          const { housenumber, street, district, city } = suggestion.properties;
+          const full_address = `${housenumber} ${street}, ${district}, ${city}`;
+          return {
+            full_address
+          };
+        });
     }, 500);
   };
 
