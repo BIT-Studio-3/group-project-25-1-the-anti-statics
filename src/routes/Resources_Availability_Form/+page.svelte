@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { postResource } from "./post-functions/postResource.js";
   import FormLayout from "../../lib/formLayout.svelte";
+   import { isDark } from "../../stores/theme.js";
 
   let name = ""; 
   let contactInfo = ""; 
@@ -56,7 +57,7 @@
   });
   </script>
   
-  <main>
+  <main class:dark={$isDark}>
     <h1>Disaster Relief Organizations Form</h1>
   
     {#if submitted}
@@ -112,10 +113,37 @@
   <style>
     main {
       padding: 2rem;
-      max-width: 60%;
-      margin: 0 auto;
-      text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
     }
+
+    .dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark input,
+.dark textarea {
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+  border: 1px solid #444;
+}
+
+.dark .form-group label {
+  color: #f0f0f0;
+}
+
+.dark .resources-list li {
+  border-bottom: 1px solid #555;
+}
+
+.dark h1{
+  color: white;
+}
 
   .form-group {
     margin-top: 1.5rem;
