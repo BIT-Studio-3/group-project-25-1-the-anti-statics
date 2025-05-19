@@ -1,10 +1,18 @@
 <script>
-  import { goto } from "$app/navigation";
+    import { goto } from "$app/navigation";
   import AgencySelect from "$lib/agencySelect.svelte";
   import user from "../stores/user.js";
   import logo from "./Images/dma.png";
 
+  import { isDark } from "../stores/theme.js"; // ✅ This is fine
+  import { fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
+
   let isMenuOpen = false;
+
+  const toggleTheme = () => {
+    isDark.set(!$isDark); // ✅ Just use $isDark directly here
+  };
 
   const logout = () => {
     user.set(null);
@@ -14,9 +22,6 @@
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
   };
-
-  import { fly } from 'svelte/transition';
-  import { fade } from 'svelte/transition';
 </script>
 
 <header>
@@ -32,6 +37,9 @@
       <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/admin">Admin</a></li>
       <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
+      <button in:fade={{ duration: 500 }} class="theme-toggle" on:click={toggleTheme}>
+        {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
+      </button>
       <button in:fade={{ duration: 500 }} class="logout-button" on:click={logout}>🔑 Log Out</button>
       <button in:fly={{ y: 30, duration: 300 }} class="hamburger-btn" on:click={toggleMenu}>☰</button>
     </ul>
@@ -46,6 +54,9 @@
         <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
         <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
         <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
+        <li><button class="theme-toggle" on:click={toggleTheme}>
+          {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
+        </button></li>
         <button in:fly={{ y: 30, duration: 1000 }} class="logout-button-hamburger" on:click={logout}
           >🔑 Log Out</button
         >
@@ -135,6 +146,20 @@
     text-decoration: none;
     background-color: inherit;
     transition: color 0.3s ease;
+  }
+  .theme-toggle {
+    background-color: #333;
+    color: white;
+    padding: 0.6em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .theme-toggle:hover {
+    background-color: yellow;
+    color: black;
+    transform: scale(1.1);
   }
   @media (max-width: 1200px) {
     .main-menu li,

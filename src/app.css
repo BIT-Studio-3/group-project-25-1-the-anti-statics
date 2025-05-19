@@ -44,3 +44,13 @@
     font-style: normal;
     font-display: swap;
 }
+
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark header,
+.dark footer {
+  background-color: #1f1f1f;
+}
