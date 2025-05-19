@@ -10,10 +10,10 @@
             <h1>Incident Control</h1>
         </header>
         <ul>
-            <li><a href="/incident_controller">⚠️ Create Incident</a></li>
             <li><a href="/incident_controller/incidents">📋 My Incidents</a></li>
-            <li><a href="/incident_controller/teams">👥 My Teams</a></li>
             <li><a href="/incident_controller/resources">🛠️ Rescources</a></li>
+            <li><a href="/incident_controller">⚠️ Create Incident</a></li>
+            <li><a href="/incident_controller/teams">👥 Create Response Teams</a></li>
         </ul>
         <section id="user">
             <img src={pfp} alt="pfp" height="60" />
