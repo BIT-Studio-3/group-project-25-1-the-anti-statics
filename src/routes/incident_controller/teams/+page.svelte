@@ -170,9 +170,13 @@
         color: #e53e3e;
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .help-text {
+        font-size: 0.8rem;
+        color: #718096;
+        margin-top: 0.4rem;
+    }
+
+    .form-group input {
         width: 100%;
         padding: 0.8rem;
         font-size: 0.95rem;
