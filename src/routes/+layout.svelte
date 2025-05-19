@@ -42,7 +42,7 @@
   </div>
 {:else if $login}
   <Header />
-  <main>
+  <main class:dark={$isDark}> 
     <slot />
   </main>
   <Footer />
@@ -57,7 +57,14 @@
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    bottom: 0%;
   }
+
+main.dark {
+    background-color: #121212;
+    background-image: url(/src/lib/Images/background_dark.jpg);
+  }
+
   #loading {
     height: 10em;
     display: grid;

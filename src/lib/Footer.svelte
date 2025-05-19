@@ -41,7 +41,7 @@
     height: 10vh;
     box-sizing: border-box;
     position: relative;
-    top: 0;
+    top:0;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
