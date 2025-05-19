@@ -66,7 +66,7 @@
   <div class="hazard-logs">
     <h3>Recent Hazards</h3>
     <div class="hazard-list-container">
-      {#if !data.hazards || data.hazards.length === 0}
+      {#if !hazards || hazards.length === 0}
         <p>No hazards logged.</p>
       {:else}
         <ul class="hazard-list">
