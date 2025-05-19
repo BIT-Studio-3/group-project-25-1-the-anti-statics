@@ -229,6 +229,10 @@ import { isDark } from '../../stores/theme.js';
   color: #ddd;
 }
 
+.dark h2{
+    color: white;
+}
+
 .dark .quake-info p strong {
   color: #ffffff;
 }
