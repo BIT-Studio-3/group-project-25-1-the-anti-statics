@@ -138,13 +138,16 @@
     color: #f0f0f0;
   }
 
+   .dark form {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 2em;
+  }
+
   .form-group {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: left;
-  }
-
-  .form-group {
     margin-bottom: 15px;
   }
 
@@ -153,6 +156,10 @@
     font-weight: bold;
     margin-bottom: 5px;
     color: #2b5876;
+  }
+
+   .dark .form-group label {
+    color: #f0f0f0;
   }
 
   .form-group input,
@@ -174,6 +181,10 @@
     color: #f0f0f0;
     border: 1px solid #444;
   }
+
+.dark h1{
+  color: white;
+}
 
   .form-group input:focus,
   .form-group select:focus,
