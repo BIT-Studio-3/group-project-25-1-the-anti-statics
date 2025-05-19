@@ -1,39 +1,43 @@
 <script>
+  import { address } from "$lib/stores.js";  // Only keep the address store you want to set
+
   let query = "";
   let suggestions = [];
-  let selected = null;
-  import { createEventDispatcher } from "svelte";
-  const dispatch = createEventDispatcher();
+  let debounceTimeout;
 
-  const fetchSuggestions = async () => {
-    if (query.length < 3) {
-      suggestions = [];
-      return;
-    }
+  const fetchSuggestions = () => {
+    clearTimeout(debounceTimeout);
 
-    const res = await fetch(
-      `https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&q=${encodeURIComponent(
-        query
-      )}&limit=5`
-    );
+    debounceTimeout = setTimeout(async () => {
+      if (query.length < 4) {
+        suggestions = [];
+        return;
+      }
 
-    if (res.ok) {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1&limit=5`
+      );
+
+      if (!res.ok) {
+        suggestions = [];
+        return;
+      }
+
       const data = await res.json();
-      suggestions = data.map((entry) => ({
-        display_name: entry.display_name,
-        lat: entry.lat,
-        lon: entry.lon,
+      console.log("Nominatim data:", data);
+
+      suggestions = data
+      .filter(item => item.address?.country_code === "nz")
+      .map(suggestion => ({
+        full_address: suggestion.display_name
       }));
-    } else {
-      suggestions = [];
-    }
+    }, 500);
   };
 
-  const handleSelect = (item) => {
-    selected = item;
-    query = item.display_name;
+  const selectHazard = (hazardAddress) => {
     suggestions = [];
-    dispatch("select", item);
+    address.set(hazardAddress);
+    query = hazardAddress; // Set local input to selected address
   };
 </script>
 
@@ -41,15 +45,17 @@
   <input
     type="text"
     bind:value={query}
-    placeholder="Enter address"
     on:input={fetchSuggestions}
+    placeholder="Enter address"
     autocomplete="off"
   />
 
   {#if suggestions.length > 0}
     <ul class="suggestions">
-      {#each suggestions as item}
-        <li on:click={() => handleSelect(item)}>{item.display_name}</li>
+      {#each suggestions as suggestion}
+        <li on:click={() => selectHazard(suggestion.full_address)}>
+          {suggestion.full_address}
+        </li>
       {/each}
     </ul>
   {/if}
@@ -58,7 +64,7 @@
 <style>
   .autocomplete {
     position: relative;
-    width: 100%;
+    width: 87%;
   }
 
   input {
