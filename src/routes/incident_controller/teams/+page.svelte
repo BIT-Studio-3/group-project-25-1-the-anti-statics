@@ -180,13 +180,11 @@
         width: 100%;
         padding: 0.8rem;
         font-size: 0.95rem;
-        border: 1px solid #ddd;
+        border: 2px solid #e2e8f0;
         border-radius: 4px;
         outline: none;
         box-sizing: border-box;
-        transition:
-            border-color 0.2s,
-            box-shadow 0.2s;
+        transition: all 0.2s;
     }
 
     .form-group input:focus,
