@@ -127,18 +127,6 @@
         font-weight: 600;
     }
 
-    .form-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-
-    .form-column {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
     .form-group {
         margin-bottom: 1rem;
     }
