@@ -37,9 +37,9 @@
       <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/admin">Admin</a></li>
       <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
-      <button in:fade={{ duration: 500 }} class="theme-toggle" on:click={toggleTheme}>
-        {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
-      </button>
+      <button in:fade={{ duration: 500 }} class="theme-toggle desktop-only" on:click={toggleTheme}>
+  {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
+</button>
       <button in:fade={{ duration: 500 }} class="logout-button" on:click={logout}>🔑 Log Out</button>
       <button in:fly={{ y: 30, duration: 300 }} class="hamburger-btn" on:click={toggleMenu}>☰</button>
     </ul>
@@ -149,19 +149,29 @@
     transition: color 0.3s ease;
   }
   .theme-toggle {
-    background-color: #333;
-    color: white;
-    padding: 0.6em;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: transform 0.3s;
+   background-color: white;  
+  color: #333;
+  padding: 0.6em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   }
   .theme-toggle:hover {
     background-color: yellow;
-    color: black;
-    transform: scale(1.1);
+  color: black;
+  transform: scale(1.1);
   }
+
+  :not(.dark-mode) .theme-toggle {
+  background-color: #333;
+  color: white;
+}
+
+:not(.dark-mode) .theme-toggle:hover {
+  background-color: green;
+  color: white;
+}
 
   .hamburger-list li a {
   background-color: white;
@@ -234,7 +244,14 @@
   color: #fff;
 }
 
+.desktop-only {
+  display: inline-block;
+}
+
   @media (max-width: 1200px) {
+     .desktop-only {
+    display: none !important;
+  }
     .main-menu li,
     .logout-button {
       display: none;
