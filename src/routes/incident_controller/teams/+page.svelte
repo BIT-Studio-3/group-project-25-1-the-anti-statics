@@ -47,20 +47,19 @@
             <form on:submit={submitTeam}>
                 <h3>Create An Emergency Response Team</h3>
 
-                <div class="form-grid">
-                    <div class="form-column">
-                        <div class="form-group">
-                            <label for="disasterId"
-                                >disasterId <span class="required">*</span></label
-                            >
-                            <input
-                                type="text"
-                                id="disasterId"
-                                bind:value={disasterId}
-                                placeholder="Enter unique disaster identifier"
-                                required
-                            />
-                        </div>
+                <div class="form-group">
+                    <label for="disasterId">Disaster ID <span class="required">*</span></label>
+                    <div class="input-wrapper">
+                        <input
+                            type="text"
+                            id="disasterId"
+                            bind:value={disasterId}
+                            placeholder="Enter unique disaster identifier"
+                            required
+                        />
+                    </div>
+                    <p class="help-text">Unique identifier assigned to this incident</p>
+                </div>
 
                 <div class="button-wrapper">
                     <button type="submit" class="form-button">Submit</button>
