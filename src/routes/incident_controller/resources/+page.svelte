@@ -80,5 +80,13 @@
                         <option>Air Rescue</option>
                         <option>Water Rescue</option>
                     </select>
+
+                    <select bind:value={selectedStatus}>
+                        <option>All Statuses</option>
+                        <option>Available</option>
+                        <option>Dispatched</option>
+                        <option>Maintenance</option>
+                        <option>Unavailable</option>
+                    </select>
     </section>
 </main>
