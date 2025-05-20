@@ -43,6 +43,24 @@
             icon: "ship",
         },
     ];
+    
+    let searchQuery = "";
+    let selectedType = "All Types";
+    let selectedStatus = "All Statuses";
+    
+    $: filteredResources = resources.filter(resource => {
+        const matchesSearch = searchQuery === "" || 
+            resource.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            resource.type.toLowerCase().includes(searchQuery.toLowerCase());
+            
+        const matchesType = selectedType === "All Types" || 
+            resource.type === selectedType;
+            
+        const matchesStatus = selectedStatus === "All Statuses" || 
+            resource.status === selectedStatus.toLowerCase();
+            
+        return matchesSearch && matchesType && matchesStatus;
+    });
 </script>
 
 <main>
