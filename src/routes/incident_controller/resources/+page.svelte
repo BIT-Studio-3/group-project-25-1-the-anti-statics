@@ -72,5 +72,13 @@
                 View and manage all available emergency response resources
             </p>
         </header>
+                <div class="filters">
+                    <select bind:value={selectedType}>
+                        <option>All Types</option>
+                        <option>Fire Truck</option>
+                        <option>Medical Ambulance</option>
+                        <option>Air Rescue</option>
+                        <option>Water Rescue</option>
+                    </select>
     </section>
 </main>
