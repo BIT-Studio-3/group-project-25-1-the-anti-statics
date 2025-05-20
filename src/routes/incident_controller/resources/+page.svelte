@@ -167,5 +167,15 @@
                                     {/if}
                                 </svg>
                             </div>
+
+                            <div class="resource-info">
+                                <div class="resource-header">
+                                    <h4>{resource.name}</h4>
+                                    <span
+                                        class="status-badge status-{resource.status}"
+                                        >{resource.status}</span
+                                    >
+                                </div>
+
     </section>
 </main>
