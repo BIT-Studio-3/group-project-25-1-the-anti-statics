@@ -114,5 +114,18 @@
                         <option>Maintenance</option>
                         <option>Unavailable</option>
                     </select>
+                </div>
+            </div>
+
+            <div class="resources-list">
+                <div class="resources-header">
+                    <h3>
+                        Available Resources <span class="resource-count"
+                            >{filteredResources.length}</span
+                        >
+                    </h3>
+                </div>
+
+                <div class="resources-container">
     </section>
 </main>
