@@ -72,6 +72,8 @@
                 View and manage all available emergency response resources
             </p>
         </header>
+
+        <div class="content">
             <div class="search-filters">
                 <div class="search-input">
                     <div class="input-wrapper">
