@@ -64,7 +64,13 @@
 </script>
 
 <main>
- <IncidentControl />
-
-
+    <IncidentControl />
+    <section id="container">
+        <header>
+            <h1>Resource Management</h1>
+            <p class="subtitle">
+                View and manage all available emergency response resources
+            </p>
+        </header>
+    </section>
 </main>
