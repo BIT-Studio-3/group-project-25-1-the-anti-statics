@@ -127,5 +127,45 @@
                 </div>
 
                 <div class="resources-container">
+                    {#each filteredResources as resource (resource.id)}
+                        <div class="resource-card status-{resource.status}">
+                            <div class="resource-icon">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    width="20"
+                                    height="20"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    {#if resource.icon === "truck"}
+                                        <path d="M1 3h15v13H1z" />
+                                        <path d="M16 8h4l3 3v5h-7V8z" />
+                                        <circle cx="5.5" cy="18.5" r="2.5" />
+                                        <circle cx="18.5" cy="18.5" r="2.5" />
+                                    {:else if resource.icon === "ambulance"}
+                                        <path d="M1 8h17v8H1z" />
+                                        <path d="M18 8h2l3 3v5h-5V8z" />
+                                        <path d="M6 12h4" />
+                                        <path d="M8 10v4" />
+                                        <circle cx="5.5" cy="18.5" r="2.5" />
+                                        <circle cx="18.5" cy="18.5" r="2.5" />
+                                    {:else if resource.icon === "helicopter"}
+                                        <path
+                                            d="M12 4c0 1-1 2-2 2s-2-1-2-2 1-2 2-2 2 1 2 2z"
+                                        />
+                                        <path d="M10 6v12" />
+                                        <path d="M4 16h12" />
+                                        <path d="M3 10h14" />
+                                    {:else if resource.icon === "ship"}
+                                        <path
+                                            d="M2 20a6 6 0 0 0 12 0c6 0 4-9 4-9H6s-2 9 4 9"
+                                        />
+                                        <path
+                                            d="M12 8V5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v3"
+                                        />
+                                    {/if}
+                                </svg>
+                            </div>
     </section>
 </main>
