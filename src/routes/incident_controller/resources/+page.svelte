@@ -72,6 +72,30 @@
                 View and manage all available emergency response resources
             </p>
         </header>
+            <div class="search-filters">
+                <div class="search-input">
+                    <div class="input-wrapper">
+                        <input
+                            type="text"
+                            bind:value={searchQuery}
+                            placeholder="Search resources..."
+                        />
+                        <span class="input-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="20"
+                                height="20"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="M21 21l-4.35-4.35" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
                 <div class="filters">
                     <select bind:value={selectedType}>
                         <option>All Types</option>
