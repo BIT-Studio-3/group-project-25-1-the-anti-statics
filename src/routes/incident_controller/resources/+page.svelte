@@ -434,3 +434,9 @@
         padding: 0.2rem 0.5rem;
         border-radius: 9999px;
     }
+    .resources-container {
+        background-color: white;
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
