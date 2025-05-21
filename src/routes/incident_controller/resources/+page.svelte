@@ -402,3 +402,8 @@
         transform: translateY(-50%);
         color: #759671;
     }
+
+    .resources-list {
+        width: 100%;
+    }
+
