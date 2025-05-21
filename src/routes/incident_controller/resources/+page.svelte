@@ -317,3 +317,10 @@
         height: 100%;
     }
 
+    #container {
+        background-color: rgba(255, 255, 255, 0.5);
+        overflow-x: hidden;
+        height: 85vh;
+        overflow-y: auto;
+    }
+
