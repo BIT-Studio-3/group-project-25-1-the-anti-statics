@@ -365,3 +365,9 @@
         flex: 2;
         min-width: 40%;
     }
+
+    .filters {
+        flex: 2;
+        display: flex;
+        gap: 0.5rem;
+    }
