@@ -237,7 +237,7 @@
     @media (max-width: 768px) {
         main {
             grid-template-columns: 1fr;
-            gap: 0;
+            grid-template-rows: auto 1fr;
         }
 
         #container {
