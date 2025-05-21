@@ -550,3 +550,13 @@
         gap: 0.5rem;
     }
 
+    @media (max-width: 768px) {
+        main {
+            grid-template-columns: 1fr;
+        }
+
+        .detail-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
