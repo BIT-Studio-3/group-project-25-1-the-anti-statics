@@ -483,3 +483,6 @@
         color: #4f46e5;
     }
 
+    .resource-info {
+        flex: 1;
+    }
