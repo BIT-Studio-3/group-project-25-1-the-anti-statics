@@ -440,3 +440,11 @@
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+
+    .resource-card {
+        padding: 1rem;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        gap: 1rem;
+        transition: all 0.2s ease;
+    }
