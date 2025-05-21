@@ -242,10 +242,14 @@
 
         #container {
             height: auto;
+            min-height: 500px;
+            overflow-y: auto;
         }
 
         .form-container {
             padding: 1.5em;
+            margin: 1em auto;
+            width: 90%;
         }
 
         header h1 {
@@ -256,6 +260,11 @@
             font-size: 1.2rem;
         }
 
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
         .form-group input {
             padding: 0.6rem;
             font-size: 0.9rem;
@@ -264,24 +273,54 @@
         .form-button {
             padding: 0.6rem 1.5rem;
             font-size: 0.9rem;
+            width: 100%;
         }
     }
 
     @media (max-width: 480px) {
         .form-container {
-            margin: 1rem;
+            padding: 1em;
+            margin: 0.5em auto;
+            border-left-width: 2px;
+        }
+
+        header {
+            padding: 0.8em;
         }
 
         header h1 {
             font-size: 1.3rem;
         }
 
+        header .subtitle {
+            font-size: 0.8rem;
+        }
+
         h3 {
             font-size: 1rem;
+            margin-bottom: 1em;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+        }
+
+        .form-group input {
+            padding: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .help-text {
+            font-size: 0.7rem;
+        }
+
+        .button-wrapper {
+            margin-top: 1.5rem;
         }
 
         .form-button {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            padding: 0.6rem 1rem;
         }
     }
 </style>
