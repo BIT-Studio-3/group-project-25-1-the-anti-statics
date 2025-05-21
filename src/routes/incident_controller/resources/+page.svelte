@@ -332,3 +332,9 @@
         flex-direction: column;
         gap: 0.5em;
     }
+
+    header h1 {
+        font-size: 1.8rem;
+        color: #333;
+        margin: 0;
+    }
