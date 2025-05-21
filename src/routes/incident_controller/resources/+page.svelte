@@ -360,3 +360,8 @@
         gap: 1rem;
         align-items: center;
     }
+
+    .search-input {
+        flex: 2;
+        min-width: 40%;
+    }
