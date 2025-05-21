@@ -426,3 +426,11 @@
         align-items: center;
         gap: 0.5rem;
     }
+
+    .resource-count {
+        background-color: #eef2ff;
+        color: #4f46e5;
+        font-size: 0.8rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 9999px;
+    }
