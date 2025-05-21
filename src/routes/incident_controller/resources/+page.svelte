@@ -533,3 +533,10 @@
         color: #666;
         margin-bottom: 1rem;
     }
+
+    .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.5rem;
+    }
+
