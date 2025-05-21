@@ -254,7 +254,7 @@
 
     .form-container {
         width: 100%;
-        max-width: 700px;
+        max-width: 900px;
         margin: 2em auto;
         background-color: white;
         padding: 2em;
