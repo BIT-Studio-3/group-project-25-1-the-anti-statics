@@ -500,3 +500,10 @@
         color: #333;
     }
 
+    .status-badge {
+        padding: 0.2rem 0.5rem;
+        border-radius: 9999px;
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
