@@ -344,3 +344,7 @@
         font-size: 0.9rem;
         margin: 0;
     }
+
+    .content {
+        padding: 1rem;
+    }
