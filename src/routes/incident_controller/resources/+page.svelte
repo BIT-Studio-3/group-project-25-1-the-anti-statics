@@ -338,3 +338,9 @@
         color: #333;
         margin: 0;
     }
+
+    header .subtitle {
+        color: #666666f1;
+        font-size: 0.9rem;
+        margin: 0;
+    }
