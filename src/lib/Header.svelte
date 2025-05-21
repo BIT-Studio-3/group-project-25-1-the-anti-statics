@@ -24,12 +24,12 @@
 
   <nav id="main-drop">
     <ul class="main-menu">
-      <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports_page">Weather Reports</a></li>
-      <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports_page">Seismic Reports</a></li>
-      <li in:fly={{ y: 30, duration: 500 }}><a href="/road_conditions_page">Road Conditions</a></li>
-      <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
-      <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
-      <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
+      <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports">Weather Reports</a></li>
+      <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports">Seismic Reports</a></li>
+      <li in:fly={{ y: 30, duration: 500 }}><a href="/roads">Road Conditions</a></li>
+      <li in:fly={{ y: 30, duration: 600 }}><a href="/fenz">Fire and Emergency</a></li>
+      <li in:fly={{ y: 30, duration: 800 }}><a href="/alerts">Post Alerts</a></li>
+      <li in:fly={{ y: 30, duration: 900 }}><a href="/resources">Resources</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/admin">Admin</a></li>
       <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
       <button in:fade={{ duration: 500 }} class="logout-button" on:click={logout}>🔑 Log Out</button>
@@ -40,12 +40,12 @@
   {#if isMenuOpen}
     <nav id="hamburger">
       <ul in:fade={{ duration: 100 }} out:fade={{ duration: 100 }}  class="hamburger-list">
-        <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports_page">Weather Reports</a></li>
-        <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports_page">Seismic Reports</a></li>
-        <li in:fly={{ y: 30, duration: 500 }}><a href="/road_conditions_page">Road Conditions</a></li>
-        <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
-        <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
-        <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
+        <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports">Weather Reports</a></li>
+        <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports">Seismic Reports</a></li>
+        <li in:fly={{ y: 30, duration: 500 }}><a href="/roads">Road Conditions</a></li>
+        <li in:fly={{ y: 30, duration: 600 }}><a href="/fenz">Fire and Emergency</a></li>
+        <li in:fly={{ y: 30, duration: 800 }}><a href="/alerts">Post Alerts</a></li>
+        <li in:fly={{ y: 30, duration: 900 }}><a href="/resources">Resources</a></li>
         <button in:fly={{ y: 30, duration: 1000 }} class="logout-button-hamburger" on:click={logout}
           >🔑 Log Out</button
         >
