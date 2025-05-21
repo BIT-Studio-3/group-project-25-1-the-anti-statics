@@ -494,3 +494,9 @@
         margin-bottom: 0.5rem;
     }
 
+    .resource-header h4 {
+        margin: 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
