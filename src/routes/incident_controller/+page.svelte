@@ -309,20 +309,18 @@
         width: 100%;
         padding: 0.8rem;
         font-size: 0.95rem;
-        border: 1px solid #ddd;
+        border: 2px solid #e2e8f0;
         border-radius: 4px;
         outline: none;
         box-sizing: border-box;
-        transition:
-            border-color 0.2s,
-            box-shadow 0.2s;
+        transition: all 0.2s;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+        border-color: #4caf50;
+        box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
     }
 
     .form-group textarea {
@@ -350,8 +348,11 @@
     }
 
     .form-button:hover {
-        background-color: #2b6cb0;
+        background-color: #45a049;
+        transform: translateY(-0.5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
+
     #description {
         resize: none;
     }
