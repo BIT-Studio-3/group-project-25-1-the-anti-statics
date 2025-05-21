@@ -395,3 +395,10 @@
         outline: none;
     }
 
+    .input-wrapper .input-icon {
+        position: absolute;
+        left: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #759671;
+    }
