@@ -448,3 +448,10 @@
         gap: 1rem;
         transition: all 0.2s ease;
     }
+
+    .resource-card:hover {
+        background-color: #f9fafb;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
