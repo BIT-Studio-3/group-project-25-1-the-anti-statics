@@ -527,3 +527,9 @@
         background-color: #fee2e2;
         color: #b91c1c;
     }
+
+    .resource-details {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 1rem;
+    }
