@@ -381,3 +381,6 @@
         font-size: 0.9rem;
     }
 
+    .input-wrapper {
+        position: relative;
+    }
