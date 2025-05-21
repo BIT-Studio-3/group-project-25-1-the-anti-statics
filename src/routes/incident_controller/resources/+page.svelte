@@ -507,3 +507,23 @@
         font-weight: 500;
         text-transform: capitalize;
     }
+
+    .status-badge.status-available {
+        background-color: #d1fae5;
+        color: #047857;
+    }
+
+    .status-badge.status-dispatched {
+        background-color: #fef3c7;
+        color: #b45309;
+    }
+
+    .status-badge.status-maintenance {
+        background-color: #e0e7ff;
+        color: #4f46e5;
+    }
+
+    .status-badge.status-unavailable {
+        background-color: #fee2e2;
+        color: #b91c1c;
+    }
