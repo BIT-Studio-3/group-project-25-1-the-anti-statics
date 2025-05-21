@@ -418,3 +418,11 @@
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
 
+    .resources-header h3 {
+        font-size: 1.1rem;
+        margin: 0;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
