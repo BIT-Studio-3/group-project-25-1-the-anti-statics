@@ -368,13 +368,157 @@
         font-weight: 600;
     }
 
+    @media (max-width: 992px) {
+        main {
+            grid-template-columns: 1fr 1.5fr;
+        }
+        
+        .form-container {
+            max-width: 800px;
+        }
+    }
+
     @media (max-width: 768px) {
-        .form-grid {
+        main {
             grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+        }
+
+        #container {
+            height: auto;
+            min-height: 500px;
+            overflow-y: auto;
         }
 
         .form-container {
-            max-width: 100%;
+            padding: 1.5em;
+            margin: 1em auto;
+            width: 90%;
+            max-width: none;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .full-width {
+            grid-column: 1;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        .form-button {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .form-container {
+            padding: 1em;
+            margin: 0.5em auto;
+            border-left-width: 2px;
+        }
+
+        header {
+            padding: 0.8em;
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+        }
+
+        header .subtitle {
+            font-size: 0.8rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 1em;
+        }
+
+        .form-grid {
+            gap: 0.8rem;
+        }
+
+        .form-column {
+            gap: 0.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 0.8rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+        }
+
+        .button-wrapper {
+            margin-top: 1.5rem;
+        }
+
+        .form-button {
+            font-size: 0.85rem;
+            padding: 0.6rem 1rem;
+        }
+
+        .full-width {
+            margin-top: 0.8rem;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .form-container {
+            padding: 0.8em;
+            margin: 0.3em auto;
+        }
+
+        header {
+            padding: 0.6em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.4rem;
+            font-size: 0.8rem;
+        }
+
+        .form-button {
+            font-size: 0.8rem;
+            padding: 0.5rem 0.8rem;
         }
     }
 </style>
