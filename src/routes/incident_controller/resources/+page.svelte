@@ -324,3 +324,11 @@
         overflow-y: auto;
     }
 
+    header {
+        background-color: white;
+        padding: 1em;
+        border-bottom: 1px solid rgb(182, 164, 164);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
