@@ -43,22 +43,24 @@
             icon: "ship",
         },
     ];
-    
+
     let searchQuery = "";
     let selectedType = "All Types";
     let selectedStatus = "All Statuses";
-    
-    $: filteredResources = resources.filter(resource => {
-        const matchesSearch = searchQuery === "" || 
+
+    $: filteredResources = resources.filter((resource) => {
+        const matchesSearch =
+            searchQuery === "" ||
             resource.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             resource.type.toLowerCase().includes(searchQuery.toLowerCase());
-            
-        const matchesType = selectedType === "All Types" || 
-            resource.type === selectedType;
-            
-        const matchesStatus = selectedStatus === "All Statuses" || 
+
+        const matchesType =
+            selectedType === "All Types" || resource.type === selectedType;
+
+        const matchesStatus =
+            selectedStatus === "All Statuses" ||
             resource.status === selectedStatus.toLowerCase();
-            
+
         return matchesSearch && matchesType && matchesStatus;
     });
 </script>
@@ -310,6 +312,7 @@
         </div>
     </section>
 </main>
+
 <style>
     main {
         display: grid;
@@ -434,6 +437,7 @@
         padding: 0.2rem 0.5rem;
         border-radius: 9999px;
     }
+
     .resources-container {
         background-color: white;
         border-radius: 0 0 8px 8px;
