@@ -371,3 +371,13 @@
         display: flex;
         gap: 0.5rem;
     }
+
+    .filters select {
+        flex: 1;
+        padding: 0.6rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        background-color: white;
+        font-size: 0.9rem;
+    }
+
