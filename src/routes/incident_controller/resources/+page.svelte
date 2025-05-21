@@ -177,5 +177,136 @@
                                     >
                                 </div>
 
+                                <div class="resource-details">
+                                    <div class="detail-grid">
+                                        <div>
+                                            <span class="detail-label"
+                                                >Type:</span
+                                            >
+                                            {resource.type}
+                                        </div>
+                                        <div>
+                                            <span class="detail-label"
+                                                >Location:</span
+                                            >
+                                            {resource.location}
+                                        </div>
+
+                                        {#if resource.lastCheck}
+                                            <div>
+                                                <span class="detail-label"
+                                                    >Last Check:</span
+                                                >
+                                                {resource.lastCheck}
+                                            </div>
+                                        {/if}
+
+                                        {#if resource.eta}
+                                            <div>
+                                                <span class="detail-label"
+                                                    >ETA:</span
+                                                >
+                                                {resource.eta}
+                                            </div>
+                                        {/if}
+
+                                        {#if resource.estReady}
+                                            <div>
+                                                <span class="detail-label"
+                                                    >Est. Ready:</span
+                                                >
+                                                {resource.estReady}
+                                            </div>
+                                        {/if}
+
+                                        {#if resource.issue}
+                                            <div>
+                                                <span class="detail-label"
+                                                    >Issue:</span
+                                                >
+                                                {resource.issue}
+                                            </div>
+                                        {/if}
+
+                                        <div>
+                                            <span class="detail-label"
+                                                >Crew:</span
+                                            >
+                                            {resource.crew}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resource-actions">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        width="16"
+                                        height="16"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 8v4" />
+                                        <path d="M12 16h.01" />
+                                    </svg>
+                                    Details
+
+                                    {#if resource.status === "available"}
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            width="16"
+                                            height="16"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        >
+                                            <path d="M22 2L11 13" />
+                                            <path
+                                                d="M22 2l-7 20-4-9-9-4 20-7z"
+                                            />
+                                        </svg>
+                                        Dispatch
+                                    {:else if resource.status === "dispatched"}
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            width="16"
+                                            height="16"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        >
+                                            <path
+                                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                            />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                        Track
+                                    {:else}
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            width="16"
+                                            height="16"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        >
+                                            <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                                            <path
+                                                d="M17 21h-10a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"
+                                            />
+                                            <path d="M9 9h1" />
+                                            <path d="M9 13h6" />
+                                            <path d="M9 17h6" />
+                                        </svg>
+                                        Update Status
+                                    {/if}
+                                </div>
+                            </div>
+                        </div>
+                    {/each}
+                </div>
+            </div>
+        </div>
     </section>
 </main>
