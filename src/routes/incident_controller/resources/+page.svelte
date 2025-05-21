@@ -407,3 +407,14 @@
         width: 100%;
     }
 
+    .resources-header {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px 8px 0 0;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
