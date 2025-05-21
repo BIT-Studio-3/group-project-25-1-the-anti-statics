@@ -7,10 +7,12 @@
     let error = "";
 
     let disasterId = "";
+    let teamInfo = { disasterId: "" };
 
     const submitTeam = async (event) => {
         event.preventDefault();
         const teams = teamInfo;
+        teamInfo.disasterId = disasterId; 
         const result = await postTeam(teams);
 
         postError = result.postError;
