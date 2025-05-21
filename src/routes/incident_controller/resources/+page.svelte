@@ -540,3 +540,8 @@
         grid-gap: 0.5rem;
     }
 
+    .detail-label {
+        font-weight: 500;
+        color: #4b5563;
+    }
+
