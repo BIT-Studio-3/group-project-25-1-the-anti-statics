@@ -471,3 +471,15 @@
         border-left: 4px solid #ef4444;
     }
 
+    .resource-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #eef2ff;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #4f46e5;
+    }
+
