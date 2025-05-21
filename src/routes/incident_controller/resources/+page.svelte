@@ -384,3 +384,14 @@
     .input-wrapper {
         position: relative;
     }
+
+    .input-wrapper input {
+        width: 85%;
+        padding: 0.6rem;
+        padding-left: 2.5rem;
+        font-size: 0.9rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        outline: none;
+    }
+
