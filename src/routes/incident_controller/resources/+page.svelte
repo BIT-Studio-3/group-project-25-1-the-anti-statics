@@ -455,3 +455,19 @@
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
+    .resource-card.status-available {
+        border-left: 4px solid #10b981;
+    }
+
+    .resource-card.status-dispatched {
+        border-left: 4px solid #f59e0b;
+    }
+
+    .resource-card.status-maintenance {
+        border-left: 4px solid #6366f1;
+    }
+
+    .resource-card.status-unavailable {
+        border-left: 4px solid #ef4444;
+    }
+
