@@ -545,3 +545,8 @@
         color: #4b5563;
     }
 
+    .resource-actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+
