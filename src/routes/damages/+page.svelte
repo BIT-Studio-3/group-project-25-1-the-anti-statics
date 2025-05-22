@@ -1,6 +1,9 @@
 <script>
   import DamageCard from "../../lib/damageCard.svelte";
   import { postDamage } from "./post-functions/postDamage.js";
+  import { address } from "$lib/stores.js";
+  import Address from "../../lib/Address.svelte";
+  import { get } from "svelte/store";
 
   let postError = "";
   let info = null;
@@ -20,7 +23,7 @@
       reporterName: name,
       damageType: type,
       damageLevel: level,
-      location: location,
+      location: get(address),
       countAffected: count,
       cause: cause,
     };
@@ -41,7 +44,7 @@
       name = "";
       type = "";
       level = "";
-      location = "";
+      address.set("");
       count = "";
       cause = "";
     }
@@ -102,12 +105,7 @@
 
         <div class="form-group">
           <label for="location">Location</label>
-          <select id="location" bind:value={location} required>
-            <option value="">Select location of damage</option>
-            <option value="Otago">Otago</option>
-            <option value="Canterbury">Canterbury</option>
-            <option value="Southland">Southland</option>
-          </select>
+          <Address bind:value={$address}></Address>
         </div>
 
         <div class="form-group">

@@ -1,6 +1,9 @@
 <script>
   import HazardCard from "$lib/hazardCard.svelte";
   import { postHazard } from "./post-function/postHazard.js";
+  import { address } from "$lib/stores.js";
+  import Address from "../../lib/Address.svelte";
+  import { get } from "svelte/store";
 
   let postError = "";
   let info = null;
@@ -22,7 +25,7 @@
       type,
       level,
       city,
-      location,
+      location: get(address),
       description,
     };
 
@@ -44,11 +47,11 @@
       alert("Hazard posted successfully!");
 
       // Reset form fields
-      title = "";
+      name = "";
       type = "";
       level = "";
       city = "";
-      location = "";
+      address.set("");
       description = "";
     }
   };
@@ -63,7 +66,7 @@
   <div class="hazard-logs">
     <h3>Recent Hazards</h3>
     <div class="hazard-list-container">
-      {#if !data.hazards || data.hazards.length === 0}
+      {#if !hazards || hazards.length === 0}
         <p>No hazards logged.</p>
       {:else}
         <ul class="hazard-list">
@@ -113,7 +116,7 @@
 
         <div class="form-group">
           <label for="location">Location (Street or Suburb)</label>
-          <input type="text" id="location" bind:value={location} placeholder="Enter location" required />
+          <Address bind:value={$address}></Address>
         </div>
 
         <div class="form-group">
