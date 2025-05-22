@@ -1,10 +1,18 @@
 <script>
-  import { goto } from "$app/navigation";
+    import { goto } from "$app/navigation";
   import AgencySelect from "$lib/agencySelect.svelte";
   import user from "../stores/user.js";
   import logo from "./Images/dma.png";
 
+  import { isDark } from "../stores/theme.js"; 
+  import { fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
+
   let isMenuOpen = false;
+
+  const toggleTheme = () => {
+    isDark.set(!$isDark); 
+  };
 
   const logout = () => {
     user.set(null);
@@ -14,12 +22,9 @@
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
   };
-
-  import { fly } from 'svelte/transition';
-  import { fade } from 'svelte/transition';
 </script>
 
-<header>
+<header class:dark-mode={$isDark}>
   <h1 in:fade={{ duration: 500 }}><a href="/"><img src={logo} alt="Main Logo" height="60" /></a></h1>
 
   <nav id="main-drop">
@@ -32,6 +37,9 @@
       <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/admin">Admin</a></li>
       <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
+      <button in:fade={{ duration: 500 }} class="theme-toggle desktop-only" on:click={toggleTheme}>
+  {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
+</button>
       <button in:fade={{ duration: 500 }} class="logout-button" on:click={logout}>🔑 Log Out</button>
       <button in:fly={{ y: 30, duration: 300 }} class="hamburger-btn" on:click={toggleMenu}>☰</button>
     </ul>
@@ -46,6 +54,9 @@
         <li in:fly={{ y: 30, duration: 600 }}><a href="/fire_and_emergency_page">Fire and Emergency</a></li>
         <li in:fly={{ y: 30, duration: 800 }}><a href="/alert_system">Post Alerts</a></li>
         <li in:fly={{ y: 30, duration: 900 }}><a href="/Resources_Availability_Form">Resources</a></li>
+        <li><button class="theme-toggle" on:click={toggleTheme}>
+          {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
+        </button></li>
         <button in:fly={{ y: 30, duration: 1000 }} class="logout-button-hamburger" on:click={logout}
           >🔑 Log Out</button
         >
@@ -106,6 +117,7 @@
     background-color: white;
     gap: 10px;
     border-bottom: 3px green solid;
+    transition: background-color 0.3s ease;
   }
   .main-menu {
     display: flex;
@@ -136,7 +148,110 @@
     background-color: inherit;
     transition: color 0.3s ease;
   }
+  .theme-toggle {
+   background-color: white;  
+  color: #333;
+  padding: 0.6em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  }
+  .theme-toggle:hover {
+    background-color: yellow;
+  color: black;
+  transform: scale(1.1);
+  }
+
+  :not(.dark-mode) .theme-toggle {
+  background-color: #333;
+  color: white;
+}
+
+:not(.dark-mode) .theme-toggle:hover {
+  background-color: green;
+  color: white;
+}
+
+  .hamburger-list li a {
+  background-color: white;
+}
+
+   .dark-mode {
+    background-color: #1f1f1f;
+  }
+
+  .dark-mode a {
+    color: #f0f0f0;
+  }
+
+  .dark-mode nav {
+    background-color: #1f1f1f;
+  }
+
+.dark-mode .main-menu li {
+  background-color: #2b2b2b;
+  color: white;
+}
+
+  .dark-mode .main-menu li:hover {
+    background-color: #444;
+  }
+
+  .dark-mode .main-menu li a {
+  color: white;
+}
+.dark-mode .main-menu li:hover a {
+  color: #f0f0f0;
+}
+
+
+.dark-mode #agency {
+  background-color: transparent;
+  color: white;
+}
+
+.dark-mode .main-menu {
+  background-color: transparent;
+}
+
+.dark-mode .hamburger-list {
+  background-color: #2a2a2a;
+  border-color: #555;
+}
+
+.dark-mode .hamburger-list li a {
+  background-color: inherit;
+  color: white;
+}
+
+.dark-mode .hamburger-list li:hover {
+  background-color: #444;
+}
+
+.dark-mode .hamburger-list li:hover a {
+  color: #f0f0f0;
+}
+
+.dark-mode .hamburger-btn {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #444;
+}
+
+.dark-mode .hamburger-btn:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+.desktop-only {
+  display: inline-block;
+}
+
   @media (max-width: 1200px) {
+     .desktop-only {
+    display: none !important;
+  }
     .main-menu li,
     .logout-button {
       display: none;
@@ -203,6 +318,28 @@
       color: #333;
       transform: scale(1.1);
     }
+
+    .dark-mode .hamburger-list {
+  background-color: #2a2a2a;
+  border-color: #555;
+}
+
+.dark-mode .hamburger-list li {
+  background-color: #2a2a2a;
+}
+
+.dark-mode .hamburger-list li a {
+  background-color: inherit;
+  color: white;
+}
+
+.dark-mode .hamburger-list li:hover {
+  background-color: #444;
+}
+
+.dark-mode .hamburger-list li:hover a {
+  color: #f0f0f0;
+}
   }
   
   

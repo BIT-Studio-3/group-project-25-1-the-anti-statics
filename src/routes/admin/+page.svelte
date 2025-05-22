@@ -4,7 +4,8 @@
   import Teams from "../../lib/SVGs/users-solid.svg";
   import Resources from "../../lib/SVGs/boxes-stacked-solid.svg";
   import Personnel from "../../lib/SVGs/user-plus-solid.svg";
-  import Dashboard from "../../lib/SVGs/gauge-solid.svg"
+  import Dashboard from "../../lib/SVGs/gauge-solid.svg";
+  import { isDark } from "../../stores/theme.js";
 
   const incidentTypes = [
     { label: "Floods", value: 42 },
@@ -14,7 +15,7 @@
   ];
 </script>
 
-<main>
+<main class:dark={$isDark}>
   <Admin />
   <section id="container">
     <header>
@@ -106,142 +107,194 @@
 </main>
 
 <style>
-  #bars div {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-  }
-  meter {
-    width: 100%;
-  }
-  #types header {
-    display: flex;
-    align-items: center;
-  }
-  #trends section {
-    background-color: rgb(173, 143, 143);
-  }
-  #trends select {
-    padding: 0.4em;
-    border-radius: 7px;
-    border: 1px solid grey;
-  }
-  #trends header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  #stats {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-  }
-  #trends,
-  #types {
-    background-color: white;
-    border-radius: 7px;
-    box-shadow: -1px 1px 8px #333;
-    margin-inline: 0.7em;
-    gap: 1em;
-    display: grid;
-    height: 20em;
-    grid-template-rows: 1fr 6fr;
-  }
-  #icon4 {
-    background-color: rgb(225, 222, 34);
-  }
-  #icon3 {
-    background-color: rgb(61, 213, 122);
-  }
-  #icon2 {
-    background-color: rgb(128, 107, 236);
-  }
-  #icon1 {
-    background-color: rgb(221, 116, 116);
-  }
-  .icon {
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    justify-self: flex-end;
-  }
-  #personnel {
-    border-left: 4px solid goldenrod;
-  }
-  #resources {
-    border-left: 4px solid green;
-  }
+main {
+  display: grid;
+  grid-template-columns: 1fr 2.3fr;
+  height: 100%;
+}
+
+#container {
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow-x: hidden;
+  height: 85vh;
+}
+
+#container section {
+  padding: 1em;
+}
+
+header {
+  background-color: white;
+  padding: 1em;
+  border-bottom: 1px solid rgb(182, 164, 164);
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.tabs {
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: -1px 1px 8px #333;
+  margin-inline: 0.7em;
+  gap: 1em;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.tabs p:first-of-type {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+#stats {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+#trends,
+#types {
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: -1px 1px 8px #333;
+  margin-inline: 0.7em;
+  gap: 1em;
+  display: grid;
+  height: 20em;
+  grid-template-rows: 1fr 6fr;
+}
+
+#trends header,
+#types header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#trends section {
+  background-color: rgb(173, 143, 143);
+}
+
+#trends select {
+  padding: 0.4em;
+  border-radius: 7px;
+  border: 1px solid grey;
+}
+
+#bars div {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+meter {
+  width: 100%;
+}
+
+.icon {
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  justify-self: flex-end;
+}
+
+#icon1 { background-color: rgb(221, 116, 116); }
+#icon2 { background-color: rgb(128, 107, 236); }
+#icon3 { background-color: rgb(61, 213, 122); }
+#icon4 { background-color: rgb(225, 222, 34); }
+
+#incidents { border-left: 4px solid red; }
+#teams     { border-left: 4px solid blue; }
+#resources { border-left: 4px solid green; }
+#personnel { border-left: 4px solid goldenrod; }
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.dark #container {
+  background-color: #181818;
+}
+
+.dark header {
+  background-color: #1c1c1c;
+  border-bottom: 1px solid #333;
+}
+
+.dark .tabs,
+.dark #trends,
+.dark #types {
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.dark #trends section {
+  background-color: #333;
+}
+
+.dark #trends select {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.dark #bars div p,
+.dark p,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark div,
+.dark span,
+.dark select,
+.dark option {
+  color: #ffffff !important;
+}
+
+.dark meter {
+  background: #444;
+}
+
+.dark #types meter::-webkit-meter-bar {
+  background: #444;
+}
+
+.dark #types meter::-webkit-meter-optimum-value {
+  background: #4caf50;
+}
+
+.dark aside {
+  background-color: #0f3d0f;
+  color: white;
+}
+
+@media (max-width: 1600px) {
   #card-container {
-    display: grid;
-    grid-template-columns: repeat(
-      4,
-      1fr
-    ); /* 4 cards per row on large screens */
-  }
-  #incidents {
-    border-left: 4px solid red;
-  }
-  #teams {
-    border-left: 4px solid blue;
-  }
-  .tabs p:first-of-type {
-    font-weight: bolder;
-    font-size: xx-large;
-  }
-  .tabs {
-    background-color: white;
-    border-radius: 7px;
-    box-shadow: -1px 1px 8px #333;
-    margin-inline: 0.7em;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1em;
-    display: grid;
-    grid-auto-flow: column;
   }
-  #container {
-    background-color: rgba(255, 255, 255, 0.5);
-    overflow-x: hidden;
-    height: 85vh;
-  }
-  #container section {
-    padding: 1em;
-  }
-  header {
-    background-color: white;
-    padding: 1em;
-    border-bottom: 1px solid rgb(182, 164, 164);
-    display: flex;
+}
+
+@media (max-width: 1015px) {
+  #stats {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(1, 1fr);
     gap: 1em;
-    align-items: center;
   }
-  main {
-    display: grid;
-    grid-template-columns: 1fr 2.3fr;
-    height: 100%;
+}
+
+@media (max-width: 885px) {
+  #card-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
   }
-  @media (width<=1600px) {
-    #card-container {
-      grid-template-columns: repeat(
-        2,
-        1fr
-      ); /* 4 cards per row on large screens */
-      gap: 1em;
-    }
-  }
-  @media (width<=885px) {
-    #card-container {
-      grid-template-columns: repeat(
-        1,
-        1fr
-      ); /* 1 card per row on large screens */
-      gap: 1em;
-    }
-  }
-  @media (width<=1015px) {
-    #stats {
-      grid-auto-flow: row;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 1em;
-    }
-  }
+}
 </style>

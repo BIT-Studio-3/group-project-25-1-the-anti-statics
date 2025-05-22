@@ -1,8 +1,9 @@
 <script>
     import { selectedAgency } from '$lib/stores.js';
+    import { isDark } from '../../stores/theme.js';
 </script>
 
-
+<main class:dark={$isDark}>
 {#if $selectedAgency === "MetService"}
 <iframe
     title="rss"
@@ -21,8 +22,24 @@
 ></iframe>
 <h1>NEMA Stuff</h1>
 {/if}
+</main>
 
 <style>
+main {
+    padding: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: white;
+    color: black;
+  }
+
+  .dark {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+
+.dark h1{
+   color: #f0f0f0; 
+}
 
   .rss {
     width: 100%;

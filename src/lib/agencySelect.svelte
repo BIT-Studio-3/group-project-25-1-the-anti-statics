@@ -1,6 +1,7 @@
 <script>
     import { selectedAgency } from "$lib/stores.js";
     import { page } from "$app/stores"; // Get current page URL
+    import { isDark } from "../stores/theme.js";
 
     // Define which agencies should be available on each page
     const agencyMap = {
@@ -14,7 +15,7 @@
     $: agencies = agencyMap[$page.url.pathname] || ["All"]; // Default to "All" if page not found
 </script>
 
-<section>
+<section class:dark-mode={$isDark}>
     <select bind:value={$selectedAgency}>
     <option value="All">All</option>
     {#each agencies as agency}
@@ -41,6 +42,7 @@
         border-radius: 5px;
         background-color: #fff; /* White background */
         color: #333; /* Dark text */
+        border: 1px solid #ccc;
         transition: all 0.3s ease; /* Smooth transition for focus and hover */
     }
 
@@ -60,5 +62,20 @@
         background-color:lightgreen; /* Light hover effect */
     }
 
+    .dark-mode select {
+        background-color: #2a2a2a;
+        color: white;
+        border: 1px solid #555;
+    }
+
+    .dark-mode select:hover {
+        background-color: #333;
+        border-color: #888;
+    }
+
+    .dark-mode option {
+        background-color: #2a2a2a;
+        color: white;
+    }
     
 </style>

@@ -2,6 +2,7 @@
   //Import post alert function
   import { postAlert } from "./post-functions/postAlert.js"; // Import the postAlert function
   import FormLayout from "../../lib/formLayout.svelte";
+  import { isDark } from "../../stores/theme.js";
 
   //Import post alert function variables
   let postError = '';
@@ -56,10 +57,10 @@
   };
 </script>
 
-<main>
+<main class:dark={$isDark}>
   <h1>Alerts</h1>
 
-  <FormLayout title = "Post Alert ⚠️">
+  <FormLayout title="Post Alert ⚠️">
     <form on:submit={submitAlert}>
       <div class="form-group">
         <label for="title">Title</label>
@@ -123,20 +124,30 @@
 
 <style>
   main {
-    padding: 2rem;
+   padding: 2rem;
     max-width: 60%;
     margin: 0 auto;
     text-align: center;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
+.dark {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+
+   .dark form {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 2em;
+  }
 
   .form-group {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: left;
-  }
-
-  .form-group {
     margin-bottom: 15px;
   }
 
@@ -147,15 +158,33 @@
     color: #2b5876;
   }
 
+   .dark .form-group label {
+    color: #f0f0f0;
+  }
+
   .form-group input,
   .form-group select,
   .form-group textarea {
     width: 90%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    background-color: white;
+    color: black;
   }
+
+  .dark .form-group input,
+  .dark .form-group select,
+  .dark .form-group textarea {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    border: 1px solid #444;
+  }
+
+.dark h1{
+  color: white;
+}
 
   .form-group input:focus,
   .form-group select:focus,
