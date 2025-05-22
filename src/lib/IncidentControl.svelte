@@ -42,7 +42,6 @@
         padding: 1em;
     }
     #user {
-        border-top: 2px solid green;
         border-bottom: 2px solid green;
         padding: 0.5em;
         display: flex;
