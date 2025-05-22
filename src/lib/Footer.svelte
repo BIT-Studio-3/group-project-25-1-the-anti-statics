@@ -1,111 +1,90 @@
 <script>
-  import { isDark } from '../stores/theme.js';
-</script>
-
-<footer class:dark-mode={$isDark}>
-    <p>Copyright © 2024 Otago Polytechnic</p>
-    <p>New Zealand 0800 762 786
-        International +64 3 477 3014
-        Hours: Monday – Friday, 8:00am – 5:00pm
+    import { isDark } from '../stores/theme.js';
+  </script>
+  
+  <footer class:dark-mode={$isDark}>
+    <div class="social-icons">
+      <a href="https://www.police.govt.nz" target="_blank" aria-label="Police">
+        <img src="https://badgesandmedals.com/wp-content/themes/yootheme/cache/7e/New-Zealand-Police-7e93734e.jpeg" alt="Police" />
+      </a>
+      <a href="https://www.fireandemergency.nz" target="_blank" aria-label="Fire and Emergency">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Fire_and_Emergency_New_Zealand_logo.svg/800px-Fire_and_Emergency_New_Zealand_logo.svg.png" alt="Fire Department" />
+      </a>
+      <a href="https://www.metservice.com" target="_blank" aria-label="MetService">
+        <img src="https://about.metservice.com/assets/img/css/400Logo-generic.jpg" alt="Metservice" />
+      </a>
+    </div>
+  
+    <div class="contact-info">
+      <p>Copyright © 2024 Otago Polytechnic</p>
+      <p>
+        New Zealand 0800 762 786 |
+        International +64 3 477 3014 |
+        Mon - Fri, 8:00am - 5:00pm |
         Email: info@op.ac.nz
-    </p>
-    <nav>
-        <ul>
-            <li><a href="https://www.police.govt.nz">Police</a></li>
-            <li><a href="https://www.fireandemergency.nz">Fire and Emergency</a></li>
-            <li><a href="https://www.metservice.com/?gad_source=1&gclid=Cj0KCQjwmt24BhDPARIsAJFYKk3jeOcUrmoC2Wnv3BTx1W7KwfvELbiGuK8cJaudLvKK4y0C8V_8CaAaAiJwEALw_wcB">Metservice</a></li>
-        </ul>
-    </nav>
-</footer>
-
-<style>
-
-    p{
-        padding:10px;
-        text-align: center;
-        background-color: inherit;
-        color: black;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-    a {
-        text-decoration: none;
-        background-color: inherit;
-        color: black;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-    }
-
+      </p>
+    </div>
+  </footer>
+  
+  <style>
     footer {
-       display: flex;
-    width: 100%;
-    height: 10vh;
-    box-sizing: border-box;
-    position: relative;
-    top:0;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    background: #ffffff;
-    padding: 1em;
-    margin: 0.5em;
-    margin-bottom: 0;
-    justify-self: center;
-    border-top: 5px rgb(37, 170, 24) solid;
-    transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 5px solid rgb(37, 170, 24);
+      padding: 1rem;
+      background-color: #ffffff;
+      color: black;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        background-color: inherit;
-        padding: 1em;
+  
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
     }
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        flex-flow: space-around;
-        background-color: inherit;
+  
+    .social-icons a img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      transition: transform 0.2s ease;
     }
-
-    nav ul li {
-        list-style: none;
-        padding: 0.5em;
-        background-color: inherit;
+  
+    .social-icons a:hover img {
+      transform: scale(1.2);
     }
-
+  
+    .contact-info p {
+      margin: 0.3em 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  
     .dark-mode {
-    background-color: #1f1f1f;
-  }
-
-  .dark-mode p,
-  .dark-mode a {
-    color: #f0f0f0;
-  }
-
-  .dark-mode a:hover {
-    color: #8fd694;
-  }
-
-    @media (max-width: 800px) {
-        p {
-            font-size: medium;
-        }
-
-        a {
-            font-size: medium;
-        }
-        
-        footer {
-            font-size: 70%;
-            height: auto;
-            display:block;
-        }
-     
-        nav {
-            justify-content: center;
-        }
+      background-color: #1f1f1f;
+      color: #f0f0f0;
     }
-
-</style>
+  
+    .dark-mode .contact-info p {
+      color: #f0f0f0;
+    }
+  
+    @media (max-width: 768px) {
+      .social-icons {
+        gap: 1rem;
+      }
+  
+      .social-icons a img {
+        width: 38px;
+        height: 38px;
+      }
+  
+      .contact-info p {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+  
