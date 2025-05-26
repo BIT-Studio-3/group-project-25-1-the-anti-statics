@@ -8,6 +8,9 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
         { label: "Earthquakes", value: 15 },
         { label: "Storms", value: 18 },
     ];
+
+    export let data;
+    const { disasters } = data;
 </script>
 
 <main>
@@ -21,7 +24,7 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
             <section class="tabs" id="incidents">
                 <section class="info">
                     <h4>Active Incidents</h4>
-                    <p>12</p>
+                    <p>{disasters.length}</p>
                 </section>
                 <section class="icon" id="icon1">
                     <!-- <img src={Fire} alt="fire" height="40" /> -->
