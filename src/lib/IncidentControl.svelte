@@ -1,6 +1,8 @@
 <script>
     import pfp from "/src/lib/Images/pfp.png";
     import icon from "/src/lib/SVGs/shield-check.svg";
+    import user from "/src/stores/user.js"
+    console.log($user)
 </script>
 
 <main>
