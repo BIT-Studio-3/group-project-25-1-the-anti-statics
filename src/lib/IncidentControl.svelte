@@ -50,7 +50,7 @@
     color: #333;
     cursor: pointer;
   }
-  header:hover h1 {
+  header:hover a {
     color: #333;
   }
   main {
