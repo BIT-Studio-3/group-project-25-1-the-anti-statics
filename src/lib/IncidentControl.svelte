@@ -1,6 +1,8 @@
 <script>
     import pfp from "/src/lib/Images/pfp.png";
     import icon from "/src/lib/SVGs/shield-check.svg";
+
+    //User logic
     import user from "/src/stores/user.js"
     console.log($user)
 </script>
@@ -22,7 +24,7 @@
         <section id="user">
             <img src={pfp} alt="pfp" height="60" />
             <section id="profile">
-                <p>Admin User</p>
+                <p>{$user.name}</p>
                 <p>Incident Controller </p>
             </section>
         </section>
