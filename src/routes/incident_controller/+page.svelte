@@ -2,6 +2,8 @@
     import IncidentControl from "../../lib/IncidentControl.svelte";
     import { postDisaster } from "./post-function/postDisaster.js";
 
+    import user from "../../stores/user";
+
     let postError = "";
     let info = null;
     let error = "";
@@ -13,7 +15,7 @@
         description: "",
         status: "",
         severity: "",
-        controllerId: "",
+        controllerId: $user.id,
         startTime: "",
         endTime: "",
     };
@@ -41,7 +43,7 @@
         info = result.info;
         error = result.error;
 
-        if (result.info) {
+        if (info) {
             alert("Disaster posted successfully!");
 
             disasterInfo.title = "";
