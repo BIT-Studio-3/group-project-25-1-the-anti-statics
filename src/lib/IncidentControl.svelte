@@ -14,6 +14,7 @@
             <li><a href="/incident_controller/resources">🛠️ Rescources</a></li>
             <li><a href="/incident_controller">⚠️ Create Incident</a></li>
             <li><a href="/incident_controller/teams">👥 Create Response Teams</a></li>
+            <li><a href="/incident_controller/teams">👥 View Response Teams</a></li>
         </ul>
         <section id="user">
             <img src={pfp} alt="pfp" height="60" />
