@@ -21,19 +21,21 @@
 
     {#if teams}
       <div class="form-container">
-        <h3>Resources</h3>
-        <ul class="resource-list">
+        <h3>Response Teams</h3>
+        <div class="team-list">
           {#each teams as team}
-            <li>
-              <strong>{team.id}</strong>: {team.disasterId}
-            </li>
+            <div class="team-card">
+              <h4>Team ID: {team.id}</h4>
+              <p><strong>Disaster ID:</strong> {team.disasterId}</p>
+              <!-- Add more team info here if available -->
+            </div>
           {/each}
-        </ul>
+        </div>
       </div>
     {:else if getError}
-    <div class="error-message">
+      <div class="error-message">
         <p>{getError}</p>
-    </div>
+      </div>
     {:else if error}
       <div class="error-message">
         <p>{error}</p>
@@ -43,6 +45,39 @@
 </main>
 
 <style>
+  .team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .team-card {
+    border: 1px solid #e2e8f0;
+    background-color: #f9fdf9;
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .team-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .team-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: #2f855a;
+  }
+
+  .team-card p {
+    margin: 0.25rem 0;
+    color: #444;
+    font-size: 0.95rem;
+  }
   main {
     display: grid;
     grid-template-columns: 1fr 2.3fr;
@@ -95,10 +130,6 @@
     font-weight: 600;
   }
 
-  
-
-  
-
   .error-message {
     background-color: #f56565;
     color: white;
@@ -135,7 +166,6 @@
     h3 {
       font-size: 1.2rem;
     }
-
   }
 
   @media (max-width: 480px) {
@@ -161,6 +191,5 @@
       font-size: 1rem;
       margin-bottom: 1em;
     }
-
   }
 </style>
