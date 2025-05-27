@@ -26,7 +26,7 @@
     console.log("Post info:", info);
     console.log("Error:", error);
 
-    if (result.info) {
+    if (info) {
       alert("Team posted successfully!");
 
       teamInfo.disasterId = "";
