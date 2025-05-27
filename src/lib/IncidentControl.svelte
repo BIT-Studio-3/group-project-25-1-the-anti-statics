@@ -22,6 +22,9 @@
       <li>
         <a href="/incident_controller/view_teams">👥 View Response Teams</a>
       </li>
+      <li>
+        <a href="/incident_controller">📝 Assign Tasks</a>
+      </li>
     </ul>
     <section id="user">
       <img src={pfp} alt="pfp" height="60" />
