@@ -115,14 +115,17 @@
         </div>
       </form>
     </div>
+    {#if postError}
+      <div class="error-message">
+        <p>{postError}</p>
+      </div>
+    {:else if error}
+      <div class="error-message">
+        <p>{error}</p>
+      </div>
+    {/if}
   </section>
 </main>
-
-{#if postError}
-  <div class="error-message">
-    <p>{postError}</p>
-  </div>
-{/if}
 
 <style>
   main {
