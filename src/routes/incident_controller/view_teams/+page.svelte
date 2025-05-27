@@ -26,7 +26,7 @@
           {#each teams as team}
             <div class="team-card">
               <h4>Team ID: {team.id}</h4>
-              <p><strong>Disaster ID:</strong> {team.disasterId}</p>
+              <p><strong>Disaster:</strong> {team.disaster.title}</p>
               <!-- Add more team info here if available -->
             </div>
           {/each}
