@@ -1,5 +1,10 @@
 <script>
-    // import Dashboard from "../../lib/SVGs/gauge-solid.svg";
+import Dashboard from "../../lib/SVGs/gauge-solid.svg";
+import Fire from "/src/lib/SVGs/fire-solid.svg"
+import Teams from "/src/lib/SVGs/users-solid.svg"
+import Personnel from "/src/lib/SVGs/user-plus-solid.svg"
+import Resources from "/src/lib/SVGs/boxes-stacked-solid.svg"
+
 import IncidentControl from "/src/lib/IncidentControl.svelte"
 
     const incidentTypes = [
@@ -17,7 +22,7 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
     <IncidentControl />
     <section id="container">
         <header>
-            <!-- <img src={Dashboard} alt="gauge" height="20" /> -->
+            <img src={Dashboard} alt="gauge" height="20" />
             <h1>Incident Dashboard</h1>
         </header>
         <section id="card-container">
@@ -27,7 +32,7 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
                     <p>{disasters.length}</p>
                 </section>
                 <section class="icon" id="icon1">
-                    <!-- <img src={Fire} alt="fire" height="40" /> -->
+                    <img src={Fire} alt="fire" height="40" />
                 </section>
             </section>
 
@@ -37,7 +42,7 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
                     <p>{teams.length}</p>
                 </section>
                 <section class="icon" id="icon2">
-                    <!-- <img src={Teams} alt="teams" height="40" /> -->
+                    <img src={Teams} alt="teams" height="40" />
                 </section>
             </section>
 
@@ -47,8 +52,7 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
                     <p>12</p>
                 </section>
                 <section class="icon" id="icon3">
-                    <!-- svelte-ignore missing-declaration -->
-                    <!-- <img src={Resources} alt="resources" height="40" /> -->
+                    <img src={Resources} alt="resources" height="40" />
                 </section>
             </section>
 
@@ -58,7 +62,7 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
                     <p>12</p>
                 </section>
                 <section class="icon" id="icon4">
-                    <!-- <img src={Personnel} alt="personnel" height="40" /> -->
+                    <img src={Personnel} alt="personnel" height="40" />
                 </section>
             </section>
         </section>
