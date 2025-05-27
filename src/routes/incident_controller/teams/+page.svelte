@@ -4,24 +4,21 @@
   // POST a team
   import { postTeam } from "../post-function/postTeam.js";
 
-  let postError = "";
-  let info = null;
-  let error = "";
+  // Local page variables
+  let failed = "";
+  let teams = "";
+  let offline = "";
 
   let disasterId = "";
-  let teamInfo = { disasterId: "" };
 
   const submitTeam = async (event) => {
     event.preventDefault();
-    const teams = teamInfo;
-    teamInfo.disasterId = disasterId;
-    const result = await postTeam(teams);
+    const {postError, info, error} = await postTeam({ disasterId });
 
-    postError = result.postError;
-    info = result.info;
-    error = result.error;
+    failed = postError
+    teams = info
+    offline = error
 
-    console.log("Result from postTeam:", result);
     console.log("Post error:", postError);
     console.log("Post info:", info);
     console.log("Error:", error);
@@ -115,13 +112,13 @@
         </div>
       </form>
     </div>
-    {#if postError}
+    {#if failed}
       <div class="error-message">
-        <p>{postError}</p>
+        <p>{failed}</p>
       </div>
-    {:else if error}
+    {:else if offline}
       <div class="error-message">
-        <p>{error}</p>
+        <p>{offline}</p>
       </div>
     {/if}
   </section>
