@@ -72,7 +72,7 @@
 
         <div class="form-group">
           <label for="disasterId"
-            >Disaster ID <span class="required">*</span></label
+            >Disaster Name <span class="required">*</span></label
           >
           <div class="input-wrapper">
             <input
@@ -108,7 +108,6 @@
               </svg>
             </span>
           </div>
-          <p class="help-text">Unique identifier assigned to this incident</p>
         </div>
 
         <div class="button-wrapper">
@@ -204,12 +203,6 @@
 
   .required {
     color: #e53e3e;
-  }
-
-  .help-text {
-    font-size: 0.8rem;
-    color: #718096;
-    margin-top: 0.4rem;
   }
 
   .form-group input {
@@ -375,10 +368,6 @@
     .form-group input {
       padding: 0.5rem;
       font-size: 0.85rem;
-    }
-
-    .help-text {
-      font-size: 0.7rem;
     }
 
     .button-wrapper {
