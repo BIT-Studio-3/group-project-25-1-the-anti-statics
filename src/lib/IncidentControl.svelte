@@ -14,10 +14,9 @@
       <h1><a href="/incident_controller">Incident Control</a></h1>
     </header>
     <ul>
-      <!-- <li><a href="/incident_controller/incidents">📋 My Incidents</a></li> -->
-      <li><a href="/incident_controller/resources">🛠️ Rescources</a></li>
+      <li><a href="/incident_controller/resources">📦 View Resources</a></li>
       <li><a href="/incident_controller/incidents">⚠️ Create Incident</a></li>
-      <li><a href="/incident_controller">⚠️ View Incidents</a></li>
+      <li><a href="/incident_controller">📋 My Incidents</a></li>
       <li><a href="/incident_controller/teams">👥 Create Response Teams</a></li>
       <li>
         <a href="/incident_controller/view_teams">👥 View Response Teams</a>
