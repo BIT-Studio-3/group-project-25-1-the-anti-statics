@@ -10,7 +10,7 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
     ];
 
     export let data;
-    const { disasters } = data;
+    const { disasters, teams } = data;
 </script>
 
 <main>
@@ -34,7 +34,7 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
             <section class="tabs" id="teams">
                 <section class="info">
                     <h4>Response Teams</h4>
-                    <p>23</p>
+                    <p>{teams.length}</p>
                 </section>
                 <section class="icon" id="icon2">
                     <!-- <img src={Teams} alt="teams" height="40" /> -->
