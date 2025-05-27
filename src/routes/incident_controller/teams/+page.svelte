@@ -25,8 +25,7 @@
 
     if (info) {
       alert("Team posted successfully!");
-
-      teamInfo.disasterId = "";
+      disasterId = "";
     }
   };
 
