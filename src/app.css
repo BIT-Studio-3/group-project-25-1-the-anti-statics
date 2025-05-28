@@ -47,6 +47,11 @@
 
 body.dark {
   background-color: #121212;
+  background-image: url('/images/dark-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: #e0e0e0;
 }
 

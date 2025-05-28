@@ -10,5 +10,6 @@ isDark.subscribe(value => {
   if (typeof localStorage !== 'undefined') {
     localStorage.setItem("theme", value ? "dark" : "light");
     document.documentElement.classList.toggle("dark", value);
+    document.body.classList.toggle("dark", value);
   }
 });

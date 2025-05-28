@@ -1,6 +1,7 @@
 <script>
     import IncidentControl from "../../lib/IncidentControl.svelte";
     import { postDisaster } from "./post-function/postDisaster.js";
+    import { isDark } from '../../stores/theme.js';
 
     let postError = "";
     let info = null;
@@ -60,12 +61,13 @@
     const { disasters } = data;
 </script>
 
+<div class:dark={$isDark}>
 <main>
     <IncidentControl />
     <section id="container">
         <header>
             <h1>Create New Incident</h1>
-            <p class="subtitle">Report and track disasters efficiently</p>
+            <h4>Report and track disasters efficiently</h4>
         </header>
 
         <div class="form-container">
@@ -211,6 +213,7 @@
         </div>
     </section>
 </main>
+</div>
 
 {#if postError}
     <div class="error-message">
@@ -255,10 +258,10 @@
     .form-container {
         width: 100%;
         max-width: 700px;
-        margin: 2em auto;
+        margin: 3rem auto;
         background-color: white;
-        padding: 2em;
-        border-radius: 8px;
+        padding: 2rem;
+        border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
@@ -368,6 +371,67 @@
         font-weight: 600;
     }
 
+.dark main > :first-child {
+  background: transparent;
+  color: #ccc;
+}
+
+    .dark .form-container {
+   background-color: rgba(10, 10, 10, 0.9);
+  color: #fff;
+}
+
+.dark main,
+.dark section,
+.dark #container {
+  background-color: rgba(0, 0, 0, 0.152) !important;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #1f1f1f; 
+  color: #ffffff;        
+  border: 1px solid #444;
+}
+
+.dark label {
+  color: #f0f0f0;
+}
+
+.dark h1,
+.dark h3,
+.dark h4 {
+  color: #ffffff;
+}
+
+.dark select option {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+.dark ::placeholder {
+  color: #bbb;
+}
+
+.dark button[type="submit"] {
+  background-color: #27ae60;
+  color: white;
+  border-color: #27ae60;
+}
+
+.dark button[type="submit"]:hover {
+  background-color: white;
+  color: #27ae60;
+}
+
+.dark header{
+    background-color: #333;
+    color: white;
+}
+
     @media (max-width: 992px) {
         main {
             grid-template-columns: 1fr 1.5fr;
@@ -446,10 +510,6 @@
 
         header h1 {
             font-size: 1.3rem;
-        }
-
-        header .subtitle {
-            font-size: 0.8rem;
         }
 
         h3 {

@@ -134,12 +134,12 @@
   }
 
 .dark {
-    background-color: #121212;
+    background-color: transparent;
     color: #f0f0f0;
   }
 
    .dark form {
-    background-color: #1e1e1e;
+    background-color: #1e1e1e6b;
     border-radius: 10px;
     padding: 2em;
   }
