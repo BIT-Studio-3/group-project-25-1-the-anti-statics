@@ -13,8 +13,8 @@ export async function load() {
         console.log(disastersJson, teamsJson);
 
         return {
-            disasters: disastersJson.data ?? [],
-            teams: teamsJson.data ?? []
+            disasters: disastersJson.data,
+            teams: teamsJson.data
         };
 
     } catch (error) {
