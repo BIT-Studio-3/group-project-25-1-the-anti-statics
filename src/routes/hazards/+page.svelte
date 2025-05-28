@@ -4,6 +4,7 @@
   import { address } from "$lib/stores.js";
   import Address from "../../lib/Address.svelte";
   import { get } from "svelte/store";
+  import { isDark } from "../../stores/theme.js";
 
   let postError = "";
   let info = null;
@@ -62,6 +63,7 @@
   const { hazards } = data;
 </script>
 
+<main class:dark={$isDark}>
 <div class="page-container">
   <div class="hazard-logs">
     <h3>Recent Hazards</h3>
@@ -135,6 +137,7 @@
       </form>
   </div>
 </div>
+</main>
 
 <style>
   
@@ -284,6 +287,48 @@
 
   #description, #title, #location, #city{
     width: 87%;
+  }
+
+   main.dark .form-container,
+  main.dark .hazard-logs {
+    background-color: #1f1f1f;
+    color: white;
+    border-color: #4caf50;
+  }
+
+  main.dark label,
+  main.dark h3,
+  main.dark .no-hazards,
+  main.dark input::placeholder,
+  main.dark textarea::placeholder {
+    color: white;
+  }
+
+  main.dark input,
+  main.dark select,
+  main.dark textarea {
+    background-color: #2a2a2a;
+    color: white;
+    border-color: #555;
+  }
+
+  main.dark .form-button {
+    background-color: #27ae60;
+  }
+
+  main.dark .form-button:hover {
+    background-color: white;
+    color: #27ae60;
+  }
+
+  main.dark :global(input[type="text"]) {
+    background-color: #2a2a2a !important;
+    color: white !important;
+    border-color: #555 !important;
+  }
+
+  main.dark :global(input[type="text"]::placeholder) {
+    color: #ccc !important;
   }
   @media (max-width: 1060px) {
     .page-container {
