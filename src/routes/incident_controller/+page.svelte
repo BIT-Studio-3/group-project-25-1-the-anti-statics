@@ -15,7 +15,7 @@ import IncidentControl from "/src/lib/IncidentControl.svelte"
     ];
 
     export let data;
-    const { disasters, teams } = data;
+    const { disasters, teams, message } = data;
 </script>
 
 <main>
