@@ -1,6 +1,7 @@
 <script>
     import IncidentControl from "../../../lib/IncidentControl.svelte";
     import { postTeam } from "../post-function/postTeam.js";
+    import { isDark } from '../../../stores/theme.js';
 
     let postError = "";
     let info = null;
@@ -35,6 +36,7 @@
     //const { teams } = data;
 </script>
 
+<div class:dark={$isDark}>
 <main>
     <IncidentControl />
     <section id="container">
@@ -88,6 +90,7 @@
         </div>
     </section>
 </main>
+</div>
 
 {#if postError}
     <div class="error-message">
@@ -233,6 +236,59 @@
         text-align: center;
         font-weight: 600;
     }
+
+    .dark #container {
+  background-color: rgba(18, 18, 18, 0.7);
+}
+
+.dark header {
+  background-color: #1f1f1f;
+  color: white;
+  border-bottom: 1px solid #444;
+}
+
+.dark header h1,
+.dark .subtitle,
+.dark h3,
+.dark .form-group label,
+.dark .help-text {
+  color: #fff;
+}
+
+.dark .form-container {
+  background-color: #1c1c1c;
+  color: #fff;
+  border-left: 4px solid #2ecc71;
+}
+
+.dark .form-group input {
+  background-color: #222;
+  color: white;
+  border-color: #555;
+}
+
+.dark .form-group input:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 6px rgba(39, 174, 96, 0.5);
+}
+
+.dark .input-icon {
+  color: white;
+}
+
+.dark ::placeholder {
+  color: #bbb;
+}
+
+.dark .form-button {
+  background-color: #27ae60;
+  color: white;
+}
+
+.dark .form-button:hover {
+  background-color: white;
+  color: #27ae60;
+}
 
     @media (max-width: 768px) {
         main {

@@ -1,6 +1,6 @@
 <script>
     import IncidentControl from "../../../lib/IncidentControl.svelte";
-
+import { isDark } from '../../../stores/theme.js';
     const resources = [
         {
             id: "rt12",
@@ -65,6 +65,7 @@
     });
 </script>
 
+<div class:dark={$isDark}>
 <main>
     <IncidentControl />
     <section id="container">
@@ -312,6 +313,7 @@
         </div>
     </section>
 </main>
+</div>
 
 <style>
     main {
@@ -553,6 +555,92 @@
         display: flex;
         gap: 0.5rem;
     }
+    
+
+.dark #container {
+    background-color: rgba(18, 18, 18, 0.7);
+}
+
+.dark header {
+    background-color: #1f1f1f;
+    color: white;
+    border-bottom: 1px solid #444;
+}
+
+.dark .subtitle,
+.dark .resource-header h4,
+.dark .detail-label,
+.dark .resource-details,
+.dark .resource-actions,
+.dark .resources-header h3,
+.dark .filters select,
+.dark input,
+.dark select {
+    color: white;
+    background-color: #1f1f1f;
+    border-color: #555;
+}
+
+.dark .resource-card {
+    background-color: #222;
+    color: white;
+}
+
+.dark .resources-header,
+.dark .search-filters,
+.dark .resources-container {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.dark .resource-icon {
+    background-color: #333;
+    color: white;
+}
+
+.dark .status-badge.status-available {
+    background-color: #14532d;
+    color: #a7f3d0;
+}
+
+.dark .status-badge.status-dispatched {
+    background-color: #78350f;
+    color: #fde68a;
+}
+
+.dark .status-badge.status-maintenance {
+    background-color: #3730a3;
+    color: #e0e7ff;
+}
+
+.dark .status-badge.status-unavailable {
+    background-color: #7f1d1d;
+    color: #fecaca;
+}
+
+.dark .resource-info,
+.dark .resources-header h3,
+.dark .resource-details,
+.dark .resource-header h4,
+.dark .resource-actions,
+.dark .detail-grid div,
+.dark .resource-count,
+.dark header h1,
+.dark .subtitle {
+    color: #fff !important;
+}
+
+.dark svg {
+    stroke: white;
+}
+
+.dark ::placeholder {
+    color: #aaa;
+}
+
+.dark .input-wrapper .input-icon {
+    color: white;
+}
 
     @media (max-width: 768px) {
         main {

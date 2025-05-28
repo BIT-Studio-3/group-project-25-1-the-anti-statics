@@ -249,12 +249,6 @@
         margin: 0;
     }
 
-    header .subtitle {
-        color: #666666f1;
-        font-size: 0.9rem;
-        margin: 0;
-    }
-
     .form-container {
         width: 100%;
         max-width: 700px;
