@@ -26,7 +26,7 @@
 </script>
 
 <header class:dark-mode={$isDark}>
-  <h1 in:fade={{ duration: 500 }}><a href="/"><img src={logoSrc} alt="Main Logo" height="60" style="background-color: #1f1f1f;"/></a></h1>
+  <h1 in:fade={{ duration: 500 }}><a href="/"><img src={logoSrc} alt="Main Logo" height="60" class="logo-img"/></a></h1>
 
   <nav id="main-drop">
     <ul class="main-menu">
@@ -67,6 +67,14 @@
 </header>
 
 <style>
+  .logo-img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 0;
+  background-color: #1f1f1f;
+}
   h1{
     transition: transform 0.3s;
   }
