@@ -20,6 +20,7 @@
     landslides,
     volcanics,
     others,
+    resources,
   } = data;
 
   const total = disasters.length || 1
@@ -67,7 +68,7 @@
       <section class="tabs" id="resources">
         <section class="info">
           <h4>Resources Deployed</h4>
-          <p>12</p>
+          <p>{resources.length}</p>
         </section>
         <section class="icon" id="icon3">
           <img src={Resources} alt="resources" height="40" />
