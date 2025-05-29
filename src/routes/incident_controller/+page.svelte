@@ -8,14 +8,32 @@
   import IncidentControl from "/src/lib/IncidentControl.svelte";
 
   export let data;
-  const { activeDisasters, teams, disasters, fires } = data;
+  const {
+    activeDisasters,
+    teams,
+    disasters,
+    floods,
+    fires,
+    earthquakes,
+    cyclones,
+    tsunamis,
+    landslides,
+    volcanics,
+    others,
+  } = data;
+
+  const total = disasters.length || 1
 
   const incidentTypes = [
-    { label: "Floods", value: 42 },
-    { label: "Fires", value: (fires.length / disasters.length) * 100 },
-    { label: "Earthquakes", value: 15 },
-    { label: "Storms", value: 18 },
-  ];
+  { label: "Floods", value: (floods.length / total) * 100 },
+  { label: "Fires", value: (fires.length / total) * 100 },
+  { label: "Earthquakes", value: (earthquakes.length / total) * 100 },
+  { label: "Cyclones", value: (cyclones.length / total) * 100 },
+  { label: "Tsunamis", value: (tsunamis.length / total) * 100 },
+  { label: "Landslides", value: (landslides.length / total) * 100 },
+  { label: "Volcanic", value: (volcanics.length / total) * 100 },
+  { label: "Other", value: (others.length / total) * 100 },
+]
 </script>
 
 <main>

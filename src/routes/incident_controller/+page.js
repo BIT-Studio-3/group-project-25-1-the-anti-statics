@@ -1,28 +1,43 @@
 import url from "../../url/url";
+const DisasterTypes = [
+    "FLOOD",
+    "EARTHQUAKE",
+    "FIRE",
+    "CYCLONE",
+    "TSUNAMI",
+    "LANDSLIDE",
+    "VOLCANIC",
+    "OTHER"
+];
 
 export async function load() {
     try {
-        // Fetch active disasters
-        const response1 = await fetch(`${url}/api/v1/disasters?status=ACTIVE`);
-        const activeDisastersJson = response1.ok ? await response1.json() : { data: [] };
+        // Fetch teams and all disasters in parallel
+        const [teamsRes, disastersRes] = await Promise.all([
+            fetch(`${url}/api/v1/teams`),
+            fetch(`${url}/api/v1/disasters`)
+        ]);
 
-        // Fetch teams
-        const response2 = await fetch(`${url}/api/v1/teams`);
-        const teamsJson = response2.ok ? await response2.json() : { data: [] };
+        const teamsJson = teamsRes.ok ? await teamsRes.json() : { data: [] };
+        const disastersJson = disastersRes.ok ? await disastersRes.json() : { data: [] };
 
-        // Fetch disasters
-        const response3 = await fetch(`${url}/api/v1/disasters`);
-        const disastersJson = response3.ok ? await response3.json() : { data: [] };
+        // Disasters
+        const disasters = disastersJson.data || [];
 
-        // Fetch disasters by fire
-        const response4 = await fetch(`${url}/api/v1/disasters?type=FIRE`);
-        const fires = response4.ok ? await response4.json() : { data: [] };
+        // Filter disaster by status
+        const activeDisasters = disasters.filter(d => d.status === "ACTIVE");
+
+        // Dynamically filter disasters by type
+        const disastersByType = {};
+        for (const type of DisasterTypes) {
+            disastersByType[`${type.toLowerCase()}s`] = disasters.filter(d => d.type === type);
+        }
 
         return {
-            disasters: disastersJson.data,
-            activeDisasters: activeDisastersJson.data,
+            disasters,
+            activeDisasters,
             teams: teamsJson.data,
-            fires: fires.data
+            ...disastersByType
         };
 
     } catch (error) {
