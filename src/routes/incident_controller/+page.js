@@ -13,18 +13,28 @@ const DisasterTypes = [
 export async function load() {
     try {
         // Fetch teams and all disasters in parallel
-        const [teamsRes, disastersRes] = await Promise.all([
+        const [teamsRes, disastersRes, resourcesRes ] = await Promise.all([
             fetch(`${url}/api/v1/teams`),
-            fetch(`${url}/api/v1/disasters`)
+            fetch(`${url}/api/v1/disasters`),
+            fetch(`${url}/api/v1/ResourcesAvailability`)
         ]);
 
+        // Teams
         const teamsJson = teamsRes.ok ? await teamsRes.json() : { data: [] };
+
+        const teams = teamsJson.data || [];
+
+        // Resources
+        const resourcesJson = resourcesRes.ok ? await resourcesRes.json() : { data: [] };
+
+        const resources = resourcesJson.data || [];
+        
+        // Disasters
         const disastersJson = disastersRes.ok ? await disastersRes.json() : { data: [] };
 
-        // Disasters
         const disasters = disastersJson.data || [];
 
-        // Filter disaster by status
+        // Filter disaster by active status
         const activeDisasters = disasters.filter(d => d.status === "ACTIVE");
 
         // Dynamically filter disasters by type
@@ -36,7 +46,8 @@ export async function load() {
         return {
             disasters,
             activeDisasters,
-            teams: teamsJson.data,
+            teams,
+            resources,
             ...disastersByType
         };
 
