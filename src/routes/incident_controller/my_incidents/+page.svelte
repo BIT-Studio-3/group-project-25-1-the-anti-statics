@@ -62,6 +62,8 @@
     background-color: rgba(255, 255, 255, 0.5);
     overflow-x: hidden;
     height: 85vh;
+    display: flex;
+    flex-direction: column;
   }
 
   header h1 {
@@ -81,6 +83,9 @@
 
   .disaster-list {
     list-style: none;
+    
+    padding: 1em;
+    overflow-y: auto;
   }
 
   .disaster-card {
