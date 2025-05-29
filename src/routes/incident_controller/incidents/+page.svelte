@@ -164,6 +164,7 @@
                             <input
                                 type="text"
                                 id="controllerId"
+                                disabled
                                 bind:value={disasterInfo.controllerId}
                                 placeholder="Enter controller ID"
                                 required
