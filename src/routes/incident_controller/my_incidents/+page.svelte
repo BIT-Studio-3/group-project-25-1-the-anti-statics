@@ -72,6 +72,7 @@
     display: flex;
     padding: 1em;
     justify-content: center;
+    background-color: rgba(141, 214, 167, 0.5);
   }
 
   .search-bar input {
@@ -129,8 +130,8 @@
 
   .disaster-list {
     list-style: none;
-
-    padding: 1em;
+    background-color: rgba(0,0,0,0.5);
+    padding: 1.2em;
     overflow-y: auto;
   }
 
