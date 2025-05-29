@@ -14,10 +14,15 @@ export async function load() {
         const response3 = await fetch(`${url}/api/v1/disasters`);
         const disastersJson = response3.ok ? await response3.json() : { data: [] };
 
+        // Fetch disasters by fire
+        const response4 = await fetch(`${url}/api/v1/disasters?type=FIRE`);
+        const fires = response4.ok ? await response4.json() : { data: [] };
+
         return {
             disasters: disastersJson.data,
             activeDisasters: activeDisastersJson.data,
-            teams: teamsJson.data
+            teams: teamsJson.data,
+            fires: fires.data
         };
 
     } catch (error) {
