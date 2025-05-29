@@ -4,15 +4,19 @@ export async function load() {
         //Fetch the data from the back-end API
         const response = await fetch(`${url}/api/v1/disasters`);
 
-        const disastersRes = response.ok ? await response.json() : { data: [] };
+        if (!response.ok) {
+            const errorData = await response.json();
+            return { getError: errorData.message };
+        }
 
-        const disasters = disastersRes.data || [];
+        //Fetch the data in json format
+        const disasters = await response.json();
 
         //Console the data
         console.log(disasters);
 
         //Return the data
-        return { disasters };
+        return { disasters: disasters.data };
     } catch (error) {
         //Console the error
         console.log('Error fetching data:', error);

@@ -14,9 +14,13 @@
     </header>
 
     {#if error}
-      <p class="error">{error}</p>
+      <div class="error-message">
+        <p>{error}</p>
+      </div>
     {:else if getError}
-      <p>{getError}</p>
+      <div class="error-message">
+        <p>{getError}</p>
+      </div>
     {:else}
       <ul class="disaster-list">
         {#each disasters as disaster}
@@ -35,6 +39,16 @@
 </main>
 
 <style>
+  .error-message {
+    background-color: #f56565;
+    color: white;
+    padding: 0.8rem;
+    margin: 1rem auto;
+    border-radius: 4px;
+    max-width: 800px;
+    text-align: center;
+    font-weight: 600;
+  }
   header {
     background-color: white;
     padding: 1em;
@@ -71,19 +85,9 @@
     margin-bottom: 0.5rem;
   }
 
-  .error {
-    color: #444;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .error {
-    color: #e53e3e;
-  }
-
   .disaster-list {
     list-style: none;
-    
+
     padding: 1em;
     overflow-y: auto;
   }
