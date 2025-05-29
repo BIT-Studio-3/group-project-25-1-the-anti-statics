@@ -3,7 +3,7 @@ import url from "../../url/url";
 export async function load() {
     try {
         // Fetch disasters
-        const response1 = await fetch(`${url}/api/v1/disasters`);
+        const response1 = await fetch(`${url}/api/v1/disasters?status=ACTIVE`);
         const disastersJson = response1.ok ? await response1.json() : { data: [] };
 
         // Fetch teams
