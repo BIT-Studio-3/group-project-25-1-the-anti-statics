@@ -13,11 +13,18 @@
 
   const submitTeam = async (event) => {
     event.preventDefault();
-    const {postError, info, error} = await postTeam({ disasterId });
 
-    failed = postError
-    teams = info
-    offline = error
+    if (!disasterId) {
+      failed = "Please select a valid disaster from the list.";
+      return;
+    }
+
+    console.log({ disasterId });
+    const { postError, info, error } = await postTeam({ disasterId });
+
+    failed = postError;
+    teams = info;
+    offline = error;
 
     console.log("Post error:", postError);
     console.log("Post info:", info);
@@ -43,6 +50,9 @@
     filteredDisasters = query
       ? disasters.filter((d) => d.title.toLowerCase().includes(query))
       : [];
+
+    const exactMatch = disasters.find((d) => d.title.toLowerCase() === query);
+    disasterId = exactMatch ? exactMatch.id : "";
   };
 
   const selectDisaster = (disaster) => {
