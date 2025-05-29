@@ -3,6 +3,20 @@
 
   export let data;
   const { disasters, error, getError } = data;
+
+  let selectedDisasterName = "";
+  let disasterId = "";
+  let filteredDisasters = disasters;
+
+  const handleInput = () => {
+    const query = selectedDisasterName.toLowerCase().trim();
+    filteredDisasters = query
+      ? disasters.filter((d) => d.title.toLowerCase().includes(query))
+      : disasters;
+
+    const exactMatch = disasters.find((d) => d.title.toLowerCase() === query);
+    disasterId = exactMatch ? exactMatch.id : "";
+  };
 </script>
 
 <main>
@@ -22,23 +36,51 @@
         <p>{getError}</p>
       </div>
     {:else}
-      <ul class="disaster-list">
-        {#each disasters as disaster}
-          <li class="disaster-card">
-            <h2>{disaster.title}</h2>
-            <p><strong>Type:</strong> {disaster.type}</p>
-            <p><strong>Status:</strong> {disaster.status}</p>
-            <p><strong>Severity:</strong> {disaster.severity}</p>
-            <p><strong>Location:</strong> {disaster.location}</p>
-            <p><strong>Description:</strong> {disaster.description}</p>
-          </li>
-        {/each}
-      </ul>
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Search disaster by title..."
+          bind:value={selectedDisasterName}
+          on:input={handleInput}
+        />
+      </div>
+
+      {#if filteredDisasters.length > 0}
+        <ul class="disaster-list">
+          {#each filteredDisasters as disaster}
+            <li class="disaster-card">
+              <h2>{disaster.title}</h2>
+              <p><strong>Type:</strong> {disaster.type}</p>
+              <p><strong>Status:</strong> {disaster.status}</p>
+              <p><strong>Severity:</strong> {disaster.severity}</p>
+              <p><strong>Location:</strong> {disaster.location}</p>
+              <p><strong>Description:</strong> {disaster.description}</p>
+            </li>
+          {/each}
+        </ul>
+      {:else}
+        <div class="error-message">
+          <p>No matching disasters.</p>
+        </div>
+      {/if}
     {/if}
   </section>
 </main>
 
 <style>
+  .search-bar {
+    display: flex;
+    padding: 1em;
+    justify-content: center;
+  }
+
+  .search-bar input {
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+
   .error-message {
     background-color: #f56565;
     color: white;
