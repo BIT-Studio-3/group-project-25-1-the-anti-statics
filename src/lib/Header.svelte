@@ -2,8 +2,8 @@
     import { goto } from "$app/navigation";
   import AgencySelect from "$lib/agencySelect.svelte";
   import user from "../stores/user.js";
-  import logo from "./Images/dma.png";
-
+  import logoLight from "./Images/dma.png";
+  import logoDark from "./Images/logo.png";
   import { isDark } from "../stores/theme.js"; 
   import { fly } from 'svelte/transition';
   import { fade } from 'svelte/transition';
@@ -22,10 +22,11 @@
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
   };
+  $: logoSrc = $isDark ? logoDark : logoLight;
 </script>
 
 <header class:dark-mode={$isDark}>
-  <h1 in:fade={{ duration: 500 }}><a href="/"><img src={logo} alt="Main Logo" height="60" /></a></h1>
+  <h1 in:fade={{ duration: 500 }}><a href="/"><img src={logoSrc} alt="Main Logo" height="60" style="background-color: #1f1f1f;"/></a></h1>
 
   <nav id="main-drop">
     <ul class="main-menu">
