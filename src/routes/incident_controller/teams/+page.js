@@ -6,7 +6,7 @@ export async function load() {
 
         if (!response.ok) {
             const errorData = await response.json();
-            return { postError: errorData.message };
+            return { getError: errorData.message };
         }
 
         //Fetch the data in json format
