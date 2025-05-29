@@ -160,7 +160,7 @@
     margin-inline: 0.7em;
     gap: 1em;
     display: grid;
-    height: 20em;
+    height: 28em;
     grid-template-rows: 1fr 6fr;
   }
   #icon4 {
