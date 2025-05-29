@@ -1,6 +1,7 @@
 <script>
     // import Dashboard from "../../lib/SVGs/gauge-solid.svg";
 import IncidentControl from "../../../lib/IncidentControl.svelte"
+ import { isDark } from '../../../stores/theme.js';
 
     const incidentTypes = [
         { label: "Floods", value: 42 },
@@ -10,6 +11,7 @@ import IncidentControl from "../../../lib/IncidentControl.svelte"
     ];
 </script>
 
+<div class:dark={$isDark}>
 <main>
     <IncidentControl />
     <section id="container">
@@ -96,6 +98,7 @@ import IncidentControl from "../../../lib/IncidentControl.svelte"
         </section>
     </section>
 </main>
+</div>
 
 <style>
     #bars div {
@@ -211,6 +214,57 @@ import IncidentControl from "../../../lib/IncidentControl.svelte"
         grid-template-columns: 1fr 2.3fr;
         height: 100%;
     }
+
+.dark main {
+  background-color: transparent;
+  color: #e0e0e0;
+}
+
+.dark #container {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dark header {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #444;
+}
+
+.dark .tabs {
+  background-color: #2a2a2a;
+  box-shadow: -1px 1px 8px #111;
+}
+
+.dark .tabs p:first-of-type {
+  color: #fff;
+}
+
+.dark .tabs p:not(:first-of-type) {
+  color: #ccc;
+}
+
+.dark #trends,
+.dark #types {
+  background-color: #2a2a2a;
+  box-shadow: -1px 1px 8px #111;
+  color: #fff;
+}
+
+.dark #trends section {
+  background-color: #3a3a3a;
+}
+
+.dark #trends select {
+  background-color: #1f1f1f;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark meter::-webkit-meter-bar {
+  background: #333;
+}
+
+
     @media (width<=1600px) {
         #card-container {
             grid-template-columns: repeat(

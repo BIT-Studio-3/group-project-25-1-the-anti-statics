@@ -33,7 +33,7 @@ main {
   }
 
   .dark {
-    background-color: #121212;
+    background-color: transparent;
     color: #f0f0f0;
   }
 

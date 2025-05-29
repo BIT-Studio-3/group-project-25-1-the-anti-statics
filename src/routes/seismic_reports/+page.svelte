@@ -221,7 +221,6 @@ import { isDark } from '../../stores/theme.js';
  
 .dark .card {
   background-color: #1e1e1e;
-  border-color: #333;
   color: #f0f0f0;
 }
 

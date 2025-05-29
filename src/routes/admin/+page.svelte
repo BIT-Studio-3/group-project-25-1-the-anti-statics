@@ -216,12 +216,12 @@ meter {
 #personnel { border-left: 4px solid goldenrod; }
 
 .dark {
-  background-color: #121212;
+  background-color: transparent;
   color: white;
 }
 
 .dark #container {
-  background-color: #181818;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .dark header {
@@ -232,18 +232,20 @@ meter {
 .dark .tabs,
 .dark #trends,
 .dark #types {
-  background-color: #222;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  background-color: rgba(20, 20, 20, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
 }
 
 .dark #trends section {
-  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .dark #trends select {
-  background-color: #2e2e2e;
+  background-color: rgba(30, 30, 30, 0.6);
   color: #ffffff;
-  border: 1px solid #555;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
 }
 
 .dark #bars div p,
@@ -253,7 +255,6 @@ meter {
 .dark h3,
 .dark h4,
 .dark div,
-.dark span,
 .dark select,
 .dark option {
   color: #ffffff !important;
@@ -269,11 +270,6 @@ meter {
 
 .dark #types meter::-webkit-meter-optimum-value {
   background: #4caf50;
-}
-
-.dark aside {
-  background-color: #0f3d0f;
-  color: white;
 }
 
 @media (max-width: 1600px) {

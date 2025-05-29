@@ -62,7 +62,7 @@
 }
 
 .dark.main-wrapper {
-  background-color: #121212;
+  background-color: transparent;
 }
 
   h1 {

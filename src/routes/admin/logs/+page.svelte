@@ -1,8 +1,10 @@
 <script>
   import Admin from "../../../lib/Admin.svelte";
   import Log from "../../../lib/SVGs/scroll-solid.svg";
+  import { isDark } from '../../../stores/theme.js';
 </script>
 
+<div class:dark={$isDark}>
 <main>
   <Admin />
   <section id="container">
@@ -12,6 +14,7 @@
     </header>
   </section>
 </main>
+</div>
 
 <style>
   main {
@@ -30,5 +33,18 @@
     display: flex;
     gap: 1em;
     align-items: center;
+  }
+   .dark #container {
+    background-color: rgba(18, 18, 18, 0.7);
+  }
+
+  .dark header {
+    background-color: #1f1f1f;
+    color: white;
+    border-bottom: 1px solid #555;
+  }
+
+  .dark h1 {
+    color: white;
   }
 </style>

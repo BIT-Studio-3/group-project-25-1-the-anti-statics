@@ -4,6 +4,7 @@
   import { address } from "$lib/stores.js";
   import Address from "../../lib/Address.svelte";
   import { get } from "svelte/store";
+  import { isDark } from "../../stores/theme.js";
 
   let postError = "";
   let info = null;
@@ -12,13 +13,11 @@
   let name = "";
   let type = "";
   let level = "";
-  let location = "";
   let count = "";
   let cause = "";
 
   const submitDamage = async (event) => {
-      event.preventDefault(); // Prevent the form from refreshing the page
-
+    event.preventDefault();
     const damageData = {
       reporterName: name,
       damageType: type,
@@ -29,24 +28,14 @@
     };
 
     const result = await postDamage(damageData);
-
     postError = result.postError;
     info = result.info;
     error = result.error;
 
-    console.log("Result from postDamage:", result);
-      console.log("Post error:", postError);
-      console.log("Post data:", info);
-      console.log("Error:", error);
-
     if (result.info) {
       alert("Damage posted successfully!");
-      name = "";
-      type = "";
-      level = "";
+      name = type = level = count = cause = "";
       address.set("");
-      count = "";
-      cause = "";
     }
   };
 
@@ -54,27 +43,27 @@
   const { damages } = data;
 </script>
 
-<div class="page-container">
-  <div class="damage-logs">
-    <h3>Logged Damages</h3>
-    <div class="damage-list-container">
-      {#if !damages || damages.length === 0}
-        <p>No damages logged</p>
-      {:else}
-        <ul class="damage-list">
-          {#each damages as damage}
-            <li>
-              <DamageCard obj={damage} />
-            </li>
-          {/each}
-        </ul>
-      {/if}
+<main class:dark={$isDark}>
+  <div class="page-container">
+    <div class="damage-logs">
+      <h3>Logged Damages</h3>
+      <div class="damage-list-container">
+        {#if !damages || damages.length === 0}
+          <p class="no-damages">No damages logged</p>
+        {:else}
+          <ul class="damage-list">
+            {#each damages as damage}
+              <li><DamageCard obj={damage} /></li>
+            {/each}
+          </ul>
+        {/if}
+      </div>
     </div>
-  </div>
 
-  <div class="form-container">
+    <div class="form-container">
       <form on:submit={submitDamage}>
         <h3>Log Damages</h3>
+
         <div class="form-group">
           <label for="reporterName">Reporter Name</label>
           <input type="text" id="reporterName" bind:value={name} placeholder="Enter your full name" required />
@@ -84,10 +73,10 @@
           <label for="type">Type</label>
           <select id="type" bind:value={type} required>
             <option value="">Select damage type</option>
-            <option value="Residential">Residential</option>
-            <option value="Environmental">Environmental</option>
-            <option value="Vehicle">Vehicle</option>
-            <option value="Public Facilities">Public Facilities</option>
+            <option>Residential</option>
+            <option>Environmental</option>
+            <option>Vehicle</option>
+            <option>Public Facilities</option>
           </select>
         </div>
 
@@ -95,17 +84,13 @@
           <label for="level">Level</label>
           <select id="level" bind:value={level} required>
             <option value="">Select damage level</option>
-            <option value=1>1</option>
-            <option value=2>2</option>
-            <option value=3>3</option>
-            <option value=4>4</option>
-            <option value=5>5</option>
+            {#each [1,2,3,4,5] as n}<option value={n}>{n}</option>{/each}
           </select>
         </div>
 
         <div class="form-group">
           <label for="location">Location</label>
-          <Address bind:value={$address}></Address>
+          <div class="custom-address-wrapper"><Address bind:value={$address} /></div>
         </div>
 
         <div class="form-group">
@@ -130,20 +115,13 @@
           <button type="submit" class="form-button">Submit</button>
         </div>
       </form>
+    </div>
   </div>
-</div>
 
-{#if postError}
-<p style="color: red;">{postError}</p>
-{/if}
-
-{#if error}
-<p style="color: red;">{error}</p>
-{/if}
-
-{#if info}
-<p style="color: green;">The damage has been logged successfully!</p>
-{/if}
+  {#if postError}<p class="error-text">{postError}</p>{/if}
+  {#if error}<p class="error-text">{error}</p>{/if}
+  {#if info}<p class="success-text">The damage has been logged successfully!</p>{/if}
+</main>
 
 <style>
   .page-container {
@@ -154,69 +132,38 @@
     place-items: center;
   }
 
+  .damage-logs, .form-container {
+    border: 1px solid #10941b;
+    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
+    border-radius: 15px;
+    padding: 1em;
+    height: 45em;
+    overflow-y: auto;
+    background-color: white;
+    color: #333;
+  }
+
   .damage-logs {
     flex: 1;
     max-width: 25%;
     min-width: 15%;
-    color: #333;
-    background-color: white;
-    border: 1px solid #10941b;
-    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
-    border-radius: 15px;
-    padding: 1em;
-    height: 45em;
-    overflow-y: auto;
-  }
-
-  .damage-logs h3 {
-    margin-bottom: 1rem;
-    color: #2b5876;
-    text-align: center;
-  }
-
-  .damage-list-container {
-    overflow-y: auto;
-    height: calc(100% - 2rem);
-  }
-
-  .damage-list {
-    list-style: none;
-    padding: 1em;
-    margin-bottom: 1em;
-    border-radius: 8px;
-  }
-
-  .damage-list li {
-    list-style: none;
-    margin-bottom: 1rem;
   }
 
   .form-container {
     flex: 2;
-    padding: 1rem;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #10941b;
-    box-shadow: 0 0 6px rgba(76, 85, 76, 0.5);
-    border-radius: 15px;
-    color: #333;
-    background-color: white;
-    height: 45em;
-    overflow-y: auto;
   }
 
-  .form-container h3 {
+  h3 {
     margin-bottom: 1rem;
-    color: #2b5876;
-    background-color: inherit;
     text-align: center;
+    color: #2b5876;
     font-size: x-large;
   }
 
   .form-group {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
     text-align: left;
   }
 
@@ -227,9 +174,7 @@
     color: #2b5876;
   }
 
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
+  input, select, textarea {
     width: 90%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -237,15 +182,13 @@
     font-size: 1rem;
   }
 
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
+  input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #4CAF50;
     box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
   }
 
-  .form-group textarea {
+  textarea {
     resize: none;
     height: 80px;
   }
@@ -271,40 +214,73 @@
   .form-button:hover {
     background-color: #45a049;
   }
-  #reporterName, #cause{
-    width: 87%;
+
+  .error-text { color: red; text-align: center; }
+  .success-text { color: green; text-align: center; }
+
+  /* Dark mode overrides */
+  main.dark .form-container,
+  main.dark .damage-logs {
+    background-color: #1f1f1f;
+    color: white;
+    border-color: #4caf50;
+  }
+
+  main.dark label,
+  main.dark h3,
+  main.dark .no-damages,
+  main.dark input::placeholder,
+  main.dark textarea::placeholder {
+    color: white;
+  }
+
+  main.dark input,
+  main.dark select,
+  main.dark textarea {
+    background-color: #2a2a2a;
+    color: white;
+    border-color: #555;
+  }
+
+  main.dark .form-button {
+    background-color: #27ae60;
+  }
+
+  main.dark .form-button:hover {
+    background-color: white;
+    color: #27ae60;
+  }
+
+  main.dark :global(input[type="text"]) {
+    background-color: #2a2a2a !important;
+    color: white !important;
+    border-color: #555 !important;
+  }
+
+  main.dark :global(input[type="text"]::placeholder) {
+    color: #ccc !important;
   }
 
   @media (max-width: 1060px) {
     .page-container {
-      flex-direction: column; 
+      flex-direction: column;
       flex-wrap: wrap;
       gap: 10px;
       place-items: center;
     }
-    
-    .form-button{
+
+    .form-button {
       width: 90%;
       text-align: center;
       overflow: hidden;
       white-space: nowrap;
     }
 
-    .damage-logs,
-    .form-container {
+    .damage-logs, .form-container {
       width: 100%;
       max-width: 90%;
-      flex: none; 
-    }
-
-    .damage-logs {
-      margin-bottom: 10%;
+      flex: none;
       height: auto;
-    }
-
-    .form-container {
-      height: auto;
-      padding: 1rem;
     }
   }
 </style>
