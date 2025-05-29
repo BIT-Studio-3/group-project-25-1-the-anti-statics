@@ -2,7 +2,7 @@
   import IncidentControl from "/src/lib/IncidentControl.svelte";
 
   export let data;
-  const { disasters, error } = data;
+  const { disasters, error, getError } = data;
 </script>
 
 <main>
@@ -15,8 +15,8 @@
 
     {#if error}
       <p class="error">{error}</p>
-    {:else if disasters.length === 0}
-      <p>No disasters reported yet.</p>
+    {:else if getError}
+      <p>{getError}</p>
     {:else}
       <ul class="disaster-list">
         {#each disasters as disaster}
