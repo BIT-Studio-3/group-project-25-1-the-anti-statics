@@ -52,7 +52,6 @@
             disasterInfo.description = "";
             disasterInfo.status = "";
             disasterInfo.severity = "";
-            disasterInfo.controllerId = "";
             disasterInfo.startTime = "";
             disasterInfo.endTime = "";
         }
