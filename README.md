@@ -24,6 +24,10 @@ username: test.test@example.com
 password: password123
 ```
 
+### Staging Environment
+
+https://staging--theantistatics.netlify.app
+
 ### Back-End API
 
 [![Repo Activity](https://github-readme-stats.vercel.app/api/pin/?username=BIT-Studio-3&repo=group-project-25-1-the-anti-statics-API)](https://github.com/BIT-Studio-3/group-project-25-1-the-anti-statics-API)
