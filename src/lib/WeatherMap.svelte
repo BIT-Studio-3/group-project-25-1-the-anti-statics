@@ -182,3 +182,12 @@
 
     // Determine weather condition using Meteocons naming
     let mainWeatherIconURL = "src/lib/Images/weather-icons/wi_";
+
+    // Heavy precipitation
+    if (precipMmH > 5) {
+      if (temperatureDeg < -1) {
+        mainWeatherIconURL += "snow";
+      } else {
+        mainWeatherIconURL += radarDBz > 30 ? "thunderstorms" : "rain";
+      }
+    }
