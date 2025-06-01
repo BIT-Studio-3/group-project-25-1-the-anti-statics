@@ -101,3 +101,26 @@
         markerContainer.appendChild(markerDiv);
       });
     };
+
+    const softUpdateMarkers = () => {
+      if (!markerStatus) return;
+
+      markerStatus.updated.forEach((abstractMarker) => {
+        markerManager.softUpdateAbstractMarker(abstractMarker);
+        const markerDiv = markerLogicContainer[abstractMarker.id];
+        updateMarkerDiv(abstractMarker, markerDiv);
+      });
+
+      markerStatus.new.forEach((abstractMarker) => {
+        markerManager.softUpdateAbstractMarker(abstractMarker);
+        const markerDiv = markerLogicContainer[abstractMarker.id];
+        updateMarkerDiv(abstractMarker, markerDiv);
+      });
+    };
+
+    map.on("move", softUpdateMarkers);
+    map.on("moveend", updateMarkers);
+    map.once("idle", () => {
+      updateMarkers();
+    });
+  });
