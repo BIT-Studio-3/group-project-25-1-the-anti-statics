@@ -69,3 +69,35 @@
     await radarLayer.onSourceReadyAsync();
     await windLayer.onSourceReadyAsync();
     await precipitationLayer.onSourceReadyAsync();
+
+    const updateMarkers = () => {
+      markerStatus = markerManager.update();
+
+      if (!markerStatus) return;
+
+      // Remove the div that corresponds to removed markers
+      markerStatus.removed.forEach((pb) => {
+        const markerDiv = markerLogicContainer[pb.id];
+        delete markerLogicContainer[pb.id];
+        markerContainer.removeChild(markerDiv);
+      });
+
+      // Update the div that corresponds to updated markers
+      markerStatus.updated.forEach((pb) => {
+        const markerDiv = markerLogicContainer[pb.id];
+        updateMarkerDiv(pb, markerDiv);
+      });
+
+      // Create the div that corresponds to the new markers
+      markerStatus.new.forEach((pb) => {
+        const markerDiv = makeMarker(
+          pb,
+          temperatureLayer,
+          radarLayer,
+          precipitationLayer,
+          new Date()
+        );
+        markerLogicContainer[pb.id] = markerDiv;
+        markerContainer.appendChild(markerDiv);
+      });
+    };
