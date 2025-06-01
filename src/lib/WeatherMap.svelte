@@ -14,3 +14,10 @@
     // Configure MapTiler API key
     maptilersdk.config.apiKey = 'PTiQwkSKgUUcZly6mP8K';
 
+    // Creating a map
+    map = new maptilersdk.Map({
+      container: mapContainer,
+      style: maptilersdk.MapStyle.BASIC,
+      geolocate: true,
+    });
+
