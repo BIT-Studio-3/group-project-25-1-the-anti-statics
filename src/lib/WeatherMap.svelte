@@ -218,3 +218,10 @@
 
     mainWeatherIconURL += ".svg";
 
+    marker.innerHTML = `
+      <img class="markerMainWeatherIcon" src=${mainWeatherIconURL}></img>
+      <div class="markerTemperature">${temperature ? `${temperature}°` : ''}</div>
+    `;
+    return marker;
+  }
+
