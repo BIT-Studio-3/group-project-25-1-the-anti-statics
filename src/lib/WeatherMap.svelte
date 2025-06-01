@@ -37,3 +37,22 @@
         );
       },
     });
+
+    // Creating the weather layers...
+    const temperatureLayer = new maptilerweather.TemperatureLayer({
+      opacity: 0.7,
+    });
+
+    const radarLayer = new maptilerweather.RadarLayer({
+      colorramp: maptilerweather.ColorRamp.builtin.RADAR_CLOUD,
+    });
+
+    const windLayer = new maptilerweather.WindLayer({
+      colorramp: maptilerweather.ColorRamp.builtin.NULL,
+      color: [255, 255, 255, 0],
+      fastColor: [255, 255, 255, 100],
+    });
+
+    const precipitationLayer = new maptilerweather.PrecipitationLayer({
+      colorramp: maptilerweather.ColorRamp.builtin.NULL,
+    });
