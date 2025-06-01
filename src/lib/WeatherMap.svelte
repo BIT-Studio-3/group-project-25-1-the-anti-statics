@@ -166,3 +166,16 @@
       "transform",
       `translate(${abstractMarker.position[0]}px, ${abstractMarker.position[1]}px)`
     );
+
+    const lonLat = abstractMarker.features[0].geometry.coordinates;
+    const temperatureData = temperatureLayer.pickAt(lonLat[0], lonLat[1]);
+    const precipitationData = precipitationLayer.pickAt(lonLat[0], lonLat[1]);
+    const radarData = radarLayer.pickAt(lonLat[0], lonLat[1]);
+
+    const radarDBz = radarData?.value || -20;
+    const precipMmH = precipitationData?.value || 0;
+    const temperatureDeg = temperatureData?.value || 0;
+    const temperature = temperatureData?.value.toFixed(1);
+
+    const sunPosition = SunCalc.getPosition(date, lonLat[1], lonLat[0]);
+    const isNight = sunPosition.altitude < 0;
