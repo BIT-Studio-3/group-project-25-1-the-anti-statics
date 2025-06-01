@@ -10,3 +10,7 @@
   onMount(async () => {
     // Load external scripts
     await loadScripts();
+
+    // Configure MapTiler API key
+    maptilersdk.config.apiKey = 'PTiQwkSKgUUcZly6mP8K';
+
