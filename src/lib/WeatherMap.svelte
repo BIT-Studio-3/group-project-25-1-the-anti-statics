@@ -179,3 +179,6 @@
 
     const sunPosition = SunCalc.getPosition(date, lonLat[1], lonLat[0]);
     const isNight = sunPosition.altitude < 0;
+
+    // Determine weather condition using Meteocons naming
+    let mainWeatherIconURL = "src/lib/Images/weather-icons/wi_";
