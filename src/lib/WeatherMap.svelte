@@ -150,3 +150,19 @@
     document.head.appendChild(link);
   }
 
+  function makeMarker(
+    abstractMarker,
+    temperatureLayer,
+    radarLayer,
+    precipitationLayer,
+    date
+  ) {
+    const marker = document.createElement("div");
+    marker.classList.add("marker");
+    marker.classList.add("fade-in-animation");
+    marker.style.setProperty("width", `${abstractMarker.size[0]}px`);
+    marker.style.setProperty("height", `${abstractMarker.size[1]}px`);
+    marker.style.setProperty(
+      "transform",
+      `translate(${abstractMarker.position[0]}px, ${abstractMarker.position[1]}px)`
+    );
