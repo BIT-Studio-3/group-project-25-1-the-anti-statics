@@ -21,3 +21,6 @@
       geolocate: true,
     });
 
+    // Waiting that the map is "loaded"
+    await map.onReadyAsync();
+
