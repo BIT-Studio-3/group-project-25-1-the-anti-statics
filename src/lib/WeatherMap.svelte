@@ -56,3 +56,10 @@
     const precipitationLayer = new maptilerweather.PrecipitationLayer({
       colorramp: maptilerweather.ColorRamp.builtin.NULL,
     });
+
+    // Setting the water layer partially transparent
+    map.setPaintProperty("Water", "fill-color", "rgba(0, 0, 0, 0.7)");
+    map.addLayer(temperatureLayer, "Place labels");
+    map.addLayer(windLayer);
+    map.addLayer(radarLayer);
+    map.addLayer(precipitationLayer);
