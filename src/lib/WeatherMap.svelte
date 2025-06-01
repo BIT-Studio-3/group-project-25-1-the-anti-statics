@@ -125,9 +125,28 @@
     });
   });
 
+  async function loadScripts() {
     const scripts = [
       'https://cdn.maptiler.com/maptiler-sdk-js/v3.2.0/maptiler-sdk.umd.min.js',
       'https://cdn.maptiler.com/maptiler-weather/v3.0.1/maptiler-weather.umd.min.js',
       'https://cdn.maptiler.com/maptiler-marker-layout/v2.0.1/maptiler-marker-layout.umd.min.js',
       'https://cdn.jsdelivr.net/npm/suncalc@1.9.0/suncalc.min.js'
     ];
+
+    for (const src of scripts) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    // Load CSS
+    const link = document.createElement('link');
+    link.href = 'https://cdn.maptiler.com/maptiler-sdk-js/v3.2.0/maptiler-sdk.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  }
+
