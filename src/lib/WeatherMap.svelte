@@ -199,3 +199,19 @@
         mainWeatherIconURL += "drizzle";
       }
     }
+    // No precipitation - based on cloud cover
+    else {
+      if (radarDBz < 0) {
+        // Clear conditions
+        mainWeatherIconURL += isNight ? "clear-night" : "clear-day";
+      } else if (radarDBz < 10) {
+        // Partly cloudy
+        mainWeatherIconURL += isNight ? "partly-cloudy-night" : "partly-cloudy-day";
+      } else if (radarDBz < 20) {
+        // Overcast
+        mainWeatherIconURL += "overcast";
+      } else {
+        // Very cloudy/stormy but no precip
+        mainWeatherIconURL += "cloudy";
+      }
+    }
