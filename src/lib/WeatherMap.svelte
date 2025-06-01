@@ -225,3 +225,12 @@
     return marker;
   }
 
+  function updateMarkerDiv(abstractMarker, marker) {
+    marker.style.setProperty("width", `${abstractMarker.size[0]}px`);
+    marker.style.setProperty("height", `${abstractMarker.size[1]}px`);
+    marker.style.setProperty(
+      "transform",
+      `translate(${abstractMarker.position[0]}px, ${abstractMarker.position[1]}px)`
+    );
+  }
+</script>
