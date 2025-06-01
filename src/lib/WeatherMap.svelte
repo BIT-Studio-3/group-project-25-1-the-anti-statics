@@ -63,3 +63,9 @@
     map.addLayer(windLayer);
     map.addLayer(radarLayer);
     map.addLayer(precipitationLayer);
+
+    // Waiting for weather data readyness
+    await temperatureLayer.onSourceReadyAsync();
+    await radarLayer.onSourceReadyAsync();
+    await windLayer.onSourceReadyAsync();
+    await precipitationLayer.onSourceReadyAsync();
