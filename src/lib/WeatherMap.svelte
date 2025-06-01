@@ -191,3 +191,11 @@
         mainWeatherIconURL += radarDBz > 30 ? "thunderstorms" : "rain";
       }
     }
+    // Light precipitation  
+    else if (precipMmH > 0.2) {
+      if (temperatureDeg < -1) {
+        mainWeatherIconURL += "snow";
+      } else {
+        mainWeatherIconURL += "drizzle";
+      }
+    }
