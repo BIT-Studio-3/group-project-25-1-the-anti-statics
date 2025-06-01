@@ -215,3 +215,6 @@
         mainWeatherIconURL += "cloudy";
       }
     }
+
+    mainWeatherIconURL += ".svg";
+
