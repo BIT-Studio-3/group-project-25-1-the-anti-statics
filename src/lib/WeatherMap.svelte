@@ -7,4 +7,6 @@
   let markerLogicContainer = {};
   let markerStatus = null;
 
-  </script>
+  onMount(async () => {
+    // Load external scripts
+    await loadScripts();
