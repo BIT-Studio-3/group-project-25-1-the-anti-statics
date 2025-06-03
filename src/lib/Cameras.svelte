@@ -1,7 +1,4 @@
 <script>
-  import { nextDay } from "date-fns";
-  import { backIn } from "svelte/easing";
-
   export let data;
   const { cameras, message } = data;
   console.log(cameras);
