@@ -46,8 +46,8 @@
         </div>
       {/if}
       <section id="buttons">
-        <button>Test</button>
-        <button>Test</button>
+        <button> Back </button>
+        <button> Next </button>
       </section>
     </div>
   </section>
@@ -56,6 +56,16 @@
 <style>
   #buttons {
     padding: 1em;
+    display: flex;
+    gap: 20px;
+    background-color: red;
+  }
+  #buttons *{
+    width: 100%;
+    padding: 1em;
+  }
+  button:hover{
+    cursor: pointer;
   }
   a {
     text-decoration: none;
