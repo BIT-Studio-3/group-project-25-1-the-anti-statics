@@ -1,3 +1,4 @@
+<!-- https://docs.maptiler.com/sdk-js/examples/marker-layout-weather/ -->
 <script>
   import { onMount } from 'svelte';
 
