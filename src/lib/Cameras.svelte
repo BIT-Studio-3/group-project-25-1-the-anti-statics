@@ -11,7 +11,7 @@
 <main>
   <aside>
     <header>
-      <h1>🛣️ Road Conditions Page</h1>
+      <h1><a href="/roads">🛣️ Road Conditions Page</a></h1>
     </header>
     <section id="camera-select">
       <h2>Select a camera:</h2>
@@ -47,7 +47,23 @@
 </main>
 
 <style>
-  #camera-box div{
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  h1{
+    transition:
+      transform 0.3s,
+      color 0.3s;
+  }
+  header:hover h1 {
+    color: #333;
+    transform: scale(1.1);
+  }
+  header:hover a{
+    color: #333;
+  }
+  #camera-box div {
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(199, 202, 199);
     padding: 0.3em;
