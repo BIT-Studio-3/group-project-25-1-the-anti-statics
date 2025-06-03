@@ -9,7 +9,7 @@
 </script>
 
 <main>
-  <aside id="side-bar">
+  <aside>
     <h1>🛣️ Road Conditions Page</h1>
 
     <section id="camera-select">
@@ -21,26 +21,37 @@
       </select>
     </section>
   </aside>
-
-  <div id="camera-box">
-    {#if selectedCamera}
-      <p>{selectedCamera.description}</p>
-      <img
-        src={selectedCamera.imageUrl}
-        alt={selectedCamera.name || "Image Loading"}
-      />
-    {:else}
-      <p>{cameras[0].description}</p>
-      <img src={cameras[0].imageUrl} alt={cameras[0].name || "Image Loading"} />
-    {/if}
-  </div>
+  
+  <section id="camera-section">
+    <div id="camera-box">
+      {#if selectedCamera}
+        <p>{selectedCamera.description}</p>
+        <img
+          src={selectedCamera.imageUrl}
+          alt={selectedCamera.name || "Image Loading"}
+        />
+      {:else}
+        <p>{cameras[0].description}</p>
+        <img
+          src={cameras[0].imageUrl}
+          alt={cameras[0].name || "Image Loading"}
+        />
+      {/if}
+    </div>
+  </section>
 </main>
 
 <style>
+  aside {
+    background-color: rgba(1, 100, 1, 0.4);
+  }
   #camera-box p {
     font-weight: bold;
     font-size: x-large;
     padding: 0.2em 0.8em 1em 0em;
+  }
+  #camera-box img{
+    width: 100%;
   }
   #camera-box {
     background-color: rgb(216, 249, 237);
@@ -48,6 +59,9 @@
     box-shadow: 10px 10px 7px;
     border-radius: 0.8em;
     padding: 2em;
+  }
+  #camera-section{
+    padding: 3em;
   }
   #camera-select {
     background-color: white;
@@ -57,6 +71,7 @@
     padding: 1em 3em 1em 3em;
     border-radius: 0.8em;
     box-shadow: 8px 8px 5px;
+    margin: 1em;
   }
   #camera-select h2 {
     color: #333;
@@ -65,9 +80,8 @@
     padding: 1em 4em 1em 4em;
   }
   main {
-    background-color: rgba(1, 100, 1, 0.4);
-    display: flex;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
   }
   h1 {
     color: white;
