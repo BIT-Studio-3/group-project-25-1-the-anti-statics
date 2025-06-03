@@ -234,3 +234,76 @@
     );
   }
 </script>
+
+<div class="app-container">
+  <div bind:this={mapContainer} class="map"></div>
+  <div bind:this={markerContainer} class="marker-container"></div>
+</div>
+
+<style>
+
+  .app-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .marker-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  :global(.marker) {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  :global(.markerMainWeatherIcon) {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+  }
+
+  :global(.markerTemperature) {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    text-shadow: 0px 0px 4px black;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  :global(.fade-in-animation) {
+    animation: fadeIn 0.5s ease forwards;
+  }
+</style>
