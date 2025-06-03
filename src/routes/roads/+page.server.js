@@ -2,7 +2,7 @@ import { XMLParser } from 'fast-xml-parser';
 
 export async function load({ fetch }) {
   try {
-    const response = await fetch('/https://trafficnz.info/service/traffic/rest/4/cameras/all');
+    const response = await fetch('https://trafficnz.info/service/traffic/rest/4/cameras/all');
 
     if (!response.ok) {
       return { message: "No cameras available" }
