@@ -58,14 +58,25 @@
     padding: 1em;
     display: flex;
     gap: 20px;
-    background-color: red;
   }
   #buttons *{
     width: 100%;
     padding: 1em;
+    background-color: white;
+    font-weight: bolder;
+    font-size: larger;
+    transition:
+      transform 0.3s,
+      color 0.3s;
+    border-radius: 0.5em;
+    border: 4px solid green;
   }
-  button:hover{
+  #buttons *:hover {
     cursor: pointer;
+    transform: scale(1.05);
+    background-color: green;
+    color: white;
+    border: 4px solid #333;
   }
   a {
     text-decoration: none;
