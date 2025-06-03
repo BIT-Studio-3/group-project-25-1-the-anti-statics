@@ -1,4 +1,7 @@
 <script>
+  import { nextDay } from "date-fns";
+  import { backIn } from "svelte/easing";
+
   export let data;
   const { cameras, message } = data;
   console.log(cameras);
@@ -6,6 +9,24 @@
   let selectedCamera = null;
   // Find the selected camera based on the ID
   $: selectedCamera = cameras.find((camera) => camera.id === selectedCameraId);
+
+  function getSelectedIndex() {
+    return cameras.findIndex(camera => camera.id === selectedCameraId);
+  }
+
+  function next() {
+    const index = getSelectedIndex();
+    if (index < cameras.length - 1) {
+      selectedCameraId = cameras[index + 1].id;
+    }
+  }
+
+  function back() {
+    const index = getSelectedIndex();
+    if (index > 0) {
+      selectedCameraId = cameras[index - 1].id;
+    }
+  }
 </script>
 
 <main>
@@ -46,8 +67,8 @@
         </div>
       {/if}
       <section id="buttons">
-        <button> Back </button>
-        <button> Next </button>
+        <button on:click={back}> Back </button>
+        <button on:click={next}> Next </button>
       </section>
     </div>
   </section>
@@ -100,6 +121,7 @@
     padding: 0.3em;
     width: 100%;
     overflow-x: auto;
+    height: 30em;
   }
   header {
     padding: 1em;
@@ -119,7 +141,7 @@
   #camera-box img {
     display: inline-block;
     min-width: 100%;
-    height: auto;
+    height: 100%;
   }
   #camera-box {
     background-color: rgb(216, 249, 237);
