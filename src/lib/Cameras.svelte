@@ -10,7 +10,7 @@
 
 <main>
   <section>
-    <h1>NZTA Traffic Camera</h1>
+    <h1>🛣️ Road Conditions Page</h1>
 
     <select bind:value={selectedCameraId}>
       <option value="" disabled>Select a camera</option>
@@ -34,8 +34,11 @@
 <style>
   main{
     background-color: rgba(1, 100, 1, 0.4);
+    display: flex;
+    justify-content: center;
   }
   h1{
     color: white;
+    padding: 1em;
   }
 </style>
