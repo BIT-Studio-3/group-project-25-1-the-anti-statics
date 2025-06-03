@@ -49,8 +49,6 @@
             alt={selectedCamera.name || "Image Loading"}
           />
         </div>
-      {:else if message}
-        <p>{message}</p>
       {:else}
         <!--Default selected camera-->
         <p>{cameras[0].description}</p>
