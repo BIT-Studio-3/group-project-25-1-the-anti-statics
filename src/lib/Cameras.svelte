@@ -10,8 +10,9 @@
 
 <main>
   <aside>
-    <h1>🛣️ Road Conditions Page</h1>
-
+    <header>
+      <h1>🛣️ Road Conditions Page</h1>
+    </header>
     <section id="camera-select">
       <h2>Select a camera:</h2>
       <select bind:value={selectedCameraId}>
@@ -21,7 +22,7 @@
       </select>
     </section>
   </aside>
-  
+
   <section id="camera-section">
     <div id="camera-box">
       {#if selectedCamera}
@@ -42,15 +43,22 @@
 </main>
 
 <style>
+  header{
+    padding: 1em;
+  }
   aside {
     background-color: rgba(1, 100, 1, 0.4);
+    border-right: 4px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   #camera-box p {
     font-weight: bold;
     font-size: x-large;
     padding: 0.2em 0.8em 1em 0em;
   }
-  #camera-box img{
+  #camera-box img {
     width: 100%;
   }
   #camera-box {
@@ -60,7 +68,7 @@
     border-radius: 0.8em;
     padding: 2em;
   }
-  #camera-section{
+  #camera-section {
     padding: 3em;
   }
   #camera-select {
