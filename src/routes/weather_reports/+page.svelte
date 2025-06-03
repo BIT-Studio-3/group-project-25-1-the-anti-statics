@@ -4,26 +4,26 @@
     import Map from "../../lib/WeatherMap.svelte";
 </script>
 
-<main class:dark={$isDark}>
-{#if $selectedAgency === "MetService"}
-<iframe
-    title="rss"
-    class="rss"
-    src="https://rss.app/embed/v1/wall/LgTbpx1cNjP0QQF4"
-    frameborder="0"
-></iframe>
-{:else if $selectedAgency === "NEMA"}
-<h1>NEMA Stuff</h1>
-{:else}
-<iframe
-    title="rss"
-    class="rss"
-    src="https://rss.app/embed/v1/wall/LgTbpx1cNjP0QQF4"
-    frameborder="0"
-></iframe>
-<h1>NEMA Stuff</h1>
-{/if}
-</main>
+<div class="page-container" class:dark={$isDark}>
+    <main class="main-content">
+        {#if $selectedAgency === "MetService"}
+            <iframe
+                title="rss"
+                class="rss"
+                src="https://rss.app/embed/v1/wall/LgTbpx1cNjP0QQF4"
+                frameborder="0"
+            ></iframe>
+        {:else if $selectedAgency === "NEMA"}
+            <h1>NEMA Emergency Information</h1>
+        {:else}
+            <iframe
+                title="rss"
+                class="rss"
+                src="https://rss.app/embed/v1/wall/LgTbpx1cNjP0QQF4"
+                frameborder="0"
+            ></iframe>
+        {/if}
+    </main>
 
 <style>
 main {
