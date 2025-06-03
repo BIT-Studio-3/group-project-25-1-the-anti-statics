@@ -77,7 +77,8 @@
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(199, 202, 199);
     padding: 0.3em;
-    height: 40em;
+    width: 100%;
+    overflow-x: auto;
   }
   header {
     padding: 1em;
@@ -95,8 +96,9 @@
     padding: 0.2em 0.8em 1em 0em;
   }
   #camera-box img {
-    width: 100%;
-    height: 40em;
+    display: inline-block;
+    min-width: 100%;
+    height: auto;
   }
   #camera-box {
     background-color: rgb(216, 249, 237);
@@ -107,6 +109,7 @@
   }
   #camera-section {
     padding: 3em;
+    min-width: 30em;
   }
   #camera-select {
     background-color: white;
