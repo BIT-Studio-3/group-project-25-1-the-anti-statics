@@ -249,12 +249,13 @@
   overflow: hidden;
 }
 
-  .map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-  }
+.map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
 
   .marker-container {
     position: absolute;
