@@ -25,6 +25,14 @@
         {/if}
     </main>
 
+    <aside class="sidebar">
+        <div class="widget map-widget">
+            <h3>Weather Radar</h3>
+            <Map></Map>
+        </div>
+    </aside>
+</div>
+
 <style>
 main {
     padding: 1em;
