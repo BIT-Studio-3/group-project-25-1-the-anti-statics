@@ -34,12 +34,10 @@
 </div>
 
 <style>
-main {
-    padding: 1em;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    background-color: white;
-    color: black;
-  }
+    .page-container {
+        display: flex;
+        min-height: 100vh;
+    }
 
   .dark {
     background-color: #121212;
