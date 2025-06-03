@@ -114,9 +114,8 @@
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(199, 202, 199);
     padding: 0.3em;
-    width: 100%;
     overflow-x: auto;
-    height: 30em;
+    height: auto;
   }
   header {
     padding: 1em;
