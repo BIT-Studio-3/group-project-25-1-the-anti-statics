@@ -1,6 +1,6 @@
 <script>
   export let data;
-  const { cameras } = data;
+  const { cameras, message } = data;
   console.log(cameras);
   let selectedCameraId = null;
   let selectedCamera = null;
@@ -33,7 +33,10 @@
             alt={selectedCamera.name || "Image Loading"}
           />
         </div>
+      {:else if message}
+        <p>{message}</p>
       {:else}
+        <!--Default selected camera-->
         <p>{cameras[0].description}</p>
         <div>
           <img
@@ -51,7 +54,7 @@
     text-decoration: none;
     color: white;
   }
-  h1{
+  h1 {
     transition:
       transform 0.3s,
       color 0.3s;
@@ -60,7 +63,7 @@
     color: #333;
     transform: scale(1.1);
   }
-  header:hover a{
+  header:hover a {
     color: #333;
   }
   #camera-box div {
