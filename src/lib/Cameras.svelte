@@ -45,11 +45,18 @@
           />
         </div>
       {/if}
+      <section id="buttons">
+        <button>Test</button>
+        <button>Test</button>
+      </section>
     </div>
   </section>
 </main>
 
 <style>
+  #buttons {
+    padding: 1em;
+  }
   a {
     text-decoration: none;
     color: white;
