@@ -20,7 +20,7 @@
     </select>
   </section>
 
-  <div>
+  <div id="camera-box">
     {#if selectedCamera}
       <img
         src={selectedCamera.imageUrl}
@@ -30,18 +30,23 @@
     {:else}
       <img src={cameras[0].imageUrl} alt={cameras[0].name || "Image Loading"} />
       <p>{cameras[0].description}</p>
-      />
     {/if}
   </div>
 </main>
 
 <style>
+  #camera-box{
+    background-color: white;
+    padding: 1em;
+  }
   #camera-select{
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1em 3em 1em 3em;
+    border-radius: 0.8em;
+    box-shadow: 8px 8px 5px;
   }
   #camera-select h2{
     color: #333;
@@ -54,6 +59,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
   h1 {
     color: white;
