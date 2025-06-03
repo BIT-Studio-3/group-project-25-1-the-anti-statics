@@ -9,7 +9,6 @@
 </script>
 
 <main>
-  <section>
     <h1>🛣️ Road Conditions Page</h1>
 
     <select bind:value={selectedCameraId}>
@@ -19,25 +18,35 @@
       {/each}
     </select>
 
-    {#if selectedCamera}
-      <div>
+    <div>
+      {#if selectedCamera}
         <img
           src={selectedCamera.imageUrl}
           alt={selectedCamera.name || "Image Loading"}
         />
         <p>{selectedCamera.description}</p>
-      </div>
-    {/if}
-  </section>
+      {:else}
+        <img 
+        src={cameras[0].imageUrl}
+        alt={cameras[0].name || "Image Loading"}
+        />
+        <p>{cameras[0].description}</p>
+        />
+      {/if}
+    </div>
 </main>
 
 <style>
-  main{
+  select {
+    padding: 1em;
+  }
+  main {
     background-color: rgba(1, 100, 1, 0.4);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
-  h1{
+  h1 {
     color: white;
     padding: 1em;
   }
