@@ -268,9 +268,10 @@
   overflow: hidden;
 }
 
-  :global(.marker) {
-    position: absolute;
-    pointer-events: none;
+:global(.marker) {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
   }
 
   :global(.markerMainWeatherIcon) {
