@@ -27,23 +27,33 @@
     <div id="camera-box">
       {#if selectedCamera}
         <p>{selectedCamera.description}</p>
-        <img
-          src={selectedCamera.imageUrl}
-          alt={selectedCamera.name || "Image Loading"}
-        />
+        <div>
+          <img
+            src={selectedCamera.imageUrl}
+            alt={selectedCamera.name || "Image Loading"}
+          />
+        </div>
       {:else}
         <p>{cameras[0].description}</p>
-        <img
-          src={cameras[0].imageUrl}
-          alt={cameras[0].name || "Image Loading"}
-        />
+        <div>
+          <img
+            src={cameras[0].imageUrl}
+            alt={cameras[0].name || "Image Loading"}
+          />
+        </div>
       {/if}
     </div>
   </section>
 </main>
 
 <style>
-  header{
+  #camera-box div{
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(199, 202, 199);
+    padding: 0.3em;
+    height: 40em;
+  }
+  header {
     padding: 1em;
   }
   aside {
@@ -60,6 +70,7 @@
   }
   #camera-box img {
     width: 100%;
+    height: 40em;
   }
   #camera-box {
     background-color: rgb(216, 249, 237);
