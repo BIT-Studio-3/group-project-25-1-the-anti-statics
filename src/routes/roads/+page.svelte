@@ -1,6 +1,6 @@
 <script>
   export let data;
-  const { cameras, message } = data;
+  const { cameras, message, error } = data;
   
   let selectedCameraId = null;
   let selectedCamera = null;
@@ -49,6 +49,8 @@
     <div id="camera-box">
       {#if message}
         <p>{message}</p>
+      {:else if error}
+        <p>{error}</p>
       {:else if cameras && cameras.length > 0 && selectedCamera}
         <p>{selectedCamera.description}</p>
         <div>
