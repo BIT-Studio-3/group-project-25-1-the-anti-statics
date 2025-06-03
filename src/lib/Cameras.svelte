@@ -9,37 +9,47 @@
 </script>
 
 <main>
-  <h1>🛣️ Road Conditions Page</h1>
+  <aside id="side-bar">
+    <h1>🛣️ Road Conditions Page</h1>
 
-  <section id="camera-select">
-    <h2>Select a camera:</h2>
-    <select bind:value={selectedCameraId}>
-      {#each cameras as camera}
-        <option value={camera.id}>{camera.name}</option>
-      {/each}
-    </select>
-  </section>
+    <section id="camera-select">
+      <h2>Select a camera:</h2>
+      <select bind:value={selectedCameraId}>
+        {#each cameras as camera}
+          <option value={camera.id}>{camera.name}</option>
+        {/each}
+      </select>
+    </section>
+  </aside>
 
   <div id="camera-box">
     {#if selectedCamera}
+      <p>{selectedCamera.description}</p>
       <img
         src={selectedCamera.imageUrl}
         alt={selectedCamera.name || "Image Loading"}
       />
-      <p>{selectedCamera.description}</p>
     {:else}
-      <img src={cameras[0].imageUrl} alt={cameras[0].name || "Image Loading"} />
       <p>{cameras[0].description}</p>
+      <img src={cameras[0].imageUrl} alt={cameras[0].name || "Image Loading"} />
     {/if}
   </div>
 </main>
 
 <style>
-  #camera-box{
-    background-color: white;
-    padding: 1em;
+  #camera-box p {
+    font-weight: bold;
+    font-size: x-large;
+    padding: 0.2em 0.8em 1em 0em;
   }
-  #camera-select{
+  #camera-box {
+    background-color: rgb(216, 249, 237);
+    border: 2px solid green;
+    box-shadow: 10px 10px 7px;
+    border-radius: 0.8em;
+    padding: 2em;
+  }
+  #camera-select {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -48,7 +58,7 @@
     border-radius: 0.8em;
     box-shadow: 8px 8px 5px;
   }
-  #camera-select h2{
+  #camera-select h2 {
     color: #333;
   }
   select {
@@ -57,8 +67,6 @@
   main {
     background-color: rgba(1, 100, 1, 0.4);
     display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 10px;
   }
   h1 {
