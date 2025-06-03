@@ -1,6 +1,7 @@
 <script>
-    import { selectedAgency } from '$lib/stores.js';
-    import { isDark } from '../../stores/theme.js';
+    import { selectedAgency } from "$lib/stores.js";
+    import { isDark } from "../../stores/theme.js";
+    import Map from "../../lib/WeatherMap.svelte";
 </script>
 
 <main class:dark={$isDark}>
