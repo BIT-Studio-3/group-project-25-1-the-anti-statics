@@ -5,28 +5,37 @@
   let selectedCameraId = null;
   let selectedCamera = null;
   // Find the selected camera based on the ID
-  $: selectedCamera = cameras.find(
-    (camera) => camera.id === selectedCameraId
-  );
+  $: selectedCamera = cameras.find((camera) => camera.id === selectedCameraId);
 </script>
 
-<section>
-  <h2 class="text-2xl font-bold mb-2">NZTA Traffic Camera</h2>
+<main>
+  <section>
+    <h1>NZTA Traffic Camera</h1>
 
-  <select bind:value={selectedCameraId}>
-    <option value="" disabled>Select a camera</option>
-    {#each cameras as camera}
-      <option value={camera.id}>{camera.name}</option>
-    {/each}
-  </select>
+    <select bind:value={selectedCameraId}>
+      <option value="" disabled>Select a camera</option>
+      {#each cameras as camera}
+        <option value={camera.id}>{camera.name}</option>
+      {/each}
+    </select>
 
-  {#if selectedCamera}
-    <div>
-      <img
-        src={selectedCamera.imageUrl}
-        alt={selectedCamera.name || "Image Loading"}
-      />
-      <p>{selectedCamera.description}</p>
-    </div>
-  {/if}
-</section>
+    {#if selectedCamera}
+      <div>
+        <img
+          src={selectedCamera.imageUrl}
+          alt={selectedCamera.name || "Image Loading"}
+        />
+        <p>{selectedCamera.description}</p>
+      </div>
+    {/if}
+  </section>
+</main>
+
+<style>
+  main{
+    background-color: rgba(1, 100, 1, 0.4);
+  }
+  h1{
+    color: white;
+  }
+</style>
