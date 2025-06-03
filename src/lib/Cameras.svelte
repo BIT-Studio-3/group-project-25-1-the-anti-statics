@@ -7,18 +7,16 @@
   // Find the selected camera based on the ID
   $: selectedCamera = cameras.find((camera) => camera.id === selectedCameraId);
 
-  function getSelectedIndex() {
-    return cameras.findIndex(camera => camera.id === selectedCameraId);
-  }
+  const getSelectedIndex = () => cameras.findIndex(camera => camera.id === selectedCameraId);
 
-  function next() {
+  const next = () => {
     const index = getSelectedIndex();
     if (index < cameras.length - 1) {
       selectedCameraId = cameras[index + 1].id;
     }
   }
 
-  function back() {
+  const back = () => {
     const index = getSelectedIndex();
     if (index > 0) {
       selectedCameraId = cameras[index - 1].id;
