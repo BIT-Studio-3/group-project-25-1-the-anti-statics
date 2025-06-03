@@ -1,7 +1,7 @@
 <script>
   export let data;
   const { cameras, message } = data;
-  console.log(cameras);
+  
   let selectedCameraId = null;
   let selectedCamera = null;
   // Find the selected camera based on the ID
