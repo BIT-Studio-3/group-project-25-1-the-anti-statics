@@ -94,41 +94,31 @@
 {/if}
 
 <style>
-  main{
+  main.login-page {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+    font-family: Arial, sans-serif;
     background-image: url('/jpg.jpg');
     background-size: cover;
     background-position: center;
-    display: flex;
-    height: 100vh;
-    display: flex;
-    font-family: Arial, sans-serif;
-  }
-  main.login-page {
-    display: flex;
-    width: 100%;
-    height: 100%;
   }
 
-  .login-left {
+  .login-left, .login-right {
     flex: 1;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     background-color: transparent;
-    height: 100vh;
+    color: white;
   }
 
   .overlay {
     text-align: center;
     padding: 2em;
     max-width: 400px;
-    background-color: transparent;
-  }
-
-  .overlay h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
   }
 
   .overlay p {
@@ -137,49 +127,30 @@
     line-height: 1.4em;
   }
 
-  .social-icons i {
-    font-size: 1.5em;
-    margin-right: 1em;
+  #image-container,
+  p,
+  a {
     background-color: transparent;
-  }
-
-  .login-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    height: 100vh;
     color: white;
   }
 
   #form-container {
-    width: 100%;
     max-width: 350px;
+    width: 100%;
     padding: 2em;
-    background-color: transparent;
     border-radius: 0.5em;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
-  #image-container {
-    text-align: center;
-    margin-bottom: 1em;
-    background-color: transparent;
-  }
-
-  #form-container h2 {
+  h2 {
     text-align: center;
     margin-bottom: 1.2em;
-    background-color: transparent;
     color: white;
   }
 
   form {
     display: flex;
     flex-direction: column;
-    background-color: transparent;
-    color: white;
   }
 
   input[type="email"],
@@ -189,24 +160,24 @@
     border-radius: 4px;
     border: 1px solid white;
     font-size: 1.2em;
-    transition: border 0.3s ease;
     background-color: transparent;
+    color: white;
   }
 
   input::placeholder {
-  color: white;
-  opacity: 1;
-}
+    color: white;
+    opacity: 1;
+  }
 
   input:focus {
-    border: 1px solid #3cb371;
+    border-color: #3cb371;
     outline: none;
   }
 
   button {
     padding: 0.75em;
     background-color: #3cb371;
-    color: white;
+    color: white !important;
     font-weight: bold;
     border: none;
     border-radius: 4px;
@@ -227,26 +198,14 @@
     font-weight: bold;
   }
 
-  .message.error {
-    background: rgb(142, 125, 125);
-    color: white;
-  }
-
-  .message.postError {
-    background: rgb(237, 74, 74);
-    color: white;
-  }
-
-  .message.success {
-    background: rgb(7, 189, 28);
-    color: white;
-  }
+  .message.error { background: #8e7d7d; }
+  .message.postError { background: #ed4a4a; }
+  .message.success { background: #07bd1c; }
 
   .terms {
     margin-top: 1em;
     font-size: 0.75em;
     text-align: center;
-    color: white;
   }
 
   .terms a {
@@ -255,101 +214,34 @@
     font-weight: bold;
   }
 
-  h1,p,a{
-    background-color: transparent;
-    color: white;
-  }
-
   @media (max-width: 768px) {
-  main {
-    background-image: url('/jpg768px.jpg');
-    min-height: 100vh;
+    main.login-page {
+      flex-direction: column;
+      background-image: url('/jpg768px.jpg');
+    }
+
+    .login-left, .login-right {
+      width: 100%;
+      height: 50vh;
+    }
+
+    #form-container {
+      max-width: 90%;
+      padding: 1.5em;
+    }
+
+    .overlay p { font-size: 1em; }
   }
 
-  main.login-page {
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  @media (max-width: 480px) {
+    main.login-page {
+      background-image: url('/jpg480.jpeg');
+    }
 
-  .login-left {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: transparent;
-  }
+    #form-container {
+      padding: 1.2em;
+    }
 
-  .login-right {
-    position: relative; 
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
+    .overlay p { font-size: 0.9em; }
   }
-
-  #form-container {
-    max-width: 90%;
-    padding: 1.5em;
-  }
-
-  .overlay h1 {
-    font-size: 2.5em;
-  }
-
-  .overlay p {
-    font-size: 1em;
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    background-image: url('/jpg480.jpeg');
-    min-height: 100vh;
-  }
-
-  main.login-page {
-    flex-direction: column; 
-    min-height: 100vh;
-  }
-
-  .login-left {
-    position: relative; 
-    width: 100%;
-    height: 50vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: transparent; 
-  }
-
-  .login-right {
-    position: relative; 
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-  }
-
-  #form-container {
-    max-width: 90%;
-    padding: 1.2em;
-  }
-
-  .overlay h1 {
-    font-size: 2em;
-  }
-
-  .overlay p {
-    font-size: 0.9em;
-  }
-}
 </style>
-
