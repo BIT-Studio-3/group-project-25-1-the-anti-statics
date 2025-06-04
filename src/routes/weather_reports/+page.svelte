@@ -86,6 +86,10 @@
         color: #1f305c;
     }
 
+    .dark .radar-card h2 {
+        color: #60a5fa;
+    }
+
     .map-container {
         flex: 1;
         border-radius: 12px;
