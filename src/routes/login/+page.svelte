@@ -86,7 +86,7 @@
     
       <p class="terms">
         By clicking on "Sign in now" you agree to our
-        <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a> | <a href="#">Privacy Policy</a>
       </p>
     </div>
   </div> 
