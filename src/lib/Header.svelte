@@ -36,6 +36,9 @@
       <li in:fly={{ y: 30, duration: 800 }}><a href="/alerts">Post Alerts</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/resources">Resources</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/admin">Admin</a></li>
+      <li in:fly={{ y: 30, duration: 800 }}><a href="/damages">Damages</a></li>
+      <li in:fly={{ y: 30, duration: 900 }}><a href="/hazards">Hazards</a></li>
+      <li in:fly={{ y: 30, duration: 900 }}><a href="/incident_controller">Incident Controller</a></li>
       <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
       <button in:fade={{ duration: 500 }} class="theme-toggle desktop-only" on:click={toggleTheme}>
   {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
@@ -54,6 +57,10 @@
         <li in:fly={{ y: 30, duration: 600 }}><a href="/fenz">Fire and Emergency</a></li>
         <li in:fly={{ y: 30, duration: 800 }}><a href="/alerts">Post Alerts</a></li>
         <li in:fly={{ y: 30, duration: 900 }}><a href="/resources">Resources</a></li>
+        <li in:fly={{ y: 30, duration: 500 }}><a href="/admin">Admin</a></li>
+        <li in:fly={{ y: 30, duration: 600 }}><a href="/damages">Damages</a></li>
+        <li in:fly={{ y: 30, duration: 800 }}><a href="/hazards">Hazards</a></li>
+        <li in:fly={{ y: 30, duration: 900 }}><a href="/incident_controller">Incident Controller</a></li>
         <li><button class="theme-toggle" on:click={toggleTheme}>
           {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
         </button></li>
