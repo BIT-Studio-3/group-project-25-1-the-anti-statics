@@ -48,6 +48,11 @@
         padding: 1.5rem;
     }
 
+    .dark.container {
+        background: linear-gradient(#000000);
+        color: #f1f5f9;
+    }
+
     .content {
         background: white;
         border-radius: 16px;
@@ -56,6 +61,11 @@
         border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
+    .dark .content {
+        background: #12171f;
+        border: 1px solid #374151;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
 
     .feed {
         width: 100%;
@@ -113,7 +123,7 @@
             grid-template-columns: 1fr;
             gap: 1rem;
             padding: 1rem;
-            margin-bottom:1rem;
+            margin-bottom: 1rem;
         }
 
         .radar-card {
@@ -123,7 +133,6 @@
         .feed {
             height: 500px;
         }
-
     }
 
     @media (max-width: 640px) {
