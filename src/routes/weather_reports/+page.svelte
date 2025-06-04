@@ -47,6 +47,15 @@
         min-height: 100vh;
         padding: 1.5rem;
     }
+
+    .content {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
         }
     }
 </style>
