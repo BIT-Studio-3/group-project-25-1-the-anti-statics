@@ -66,6 +66,18 @@
         display: flex;
         flex-direction: column;
     }
+
+    .radar-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        height: calc(100vh - 3rem);
+        display: flex;
+        flex-direction: column;
+    }
+
         }
     }
 </style>
