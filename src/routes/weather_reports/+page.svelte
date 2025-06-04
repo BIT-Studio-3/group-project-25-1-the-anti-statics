@@ -79,7 +79,7 @@
     }
 
     .dark .radar-card {
-        background: #000000;
+        background: #12171f;
         border: 1px solid #374151;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
