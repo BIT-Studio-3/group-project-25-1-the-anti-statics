@@ -61,6 +61,10 @@
         width: 100%;
         height: calc(100vh - 3rem);
     }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
     }
         }
     }
