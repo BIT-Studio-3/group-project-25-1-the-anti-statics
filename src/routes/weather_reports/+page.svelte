@@ -86,6 +86,13 @@
         color: #1f305c;
     }
 
+    .map-container {
+        flex: 1;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+    }
         }
     }
 </style>
