@@ -78,6 +78,11 @@
         flex-direction: column;
     }
 
+    .dark .radar-card {
+        background: #000000;
+        border: 1px solid #374151;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
 
     .radar-card h2 {
         margin: 0 0 1rem 0;
