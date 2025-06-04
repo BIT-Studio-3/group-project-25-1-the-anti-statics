@@ -93,6 +93,41 @@
         background: #f8fafc;
         border: 1px solid #e2e8f0;
     }
+    @media (max-width: 1024px) {
+        .container {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom:1rem;
+        }
+
+        .radar-card {
+            height: 350px;
+        }
+
+        .feed {
+            height: 500px;
+        }
+
+    }
+
+    @media (max-width: 640px) {
+        .container {
+            padding: 0.75rem;
+        }
+
+        .radar-card,
+        .content {
+            border-radius: 12px;
+        }
+
+        .radar-card {
+            height: 100%;
+            padding: 1rem;
+        }
+
+        .feed {
+            height: 400px;
         }
     }
 </style>
