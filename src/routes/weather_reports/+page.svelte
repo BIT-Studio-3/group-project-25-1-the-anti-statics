@@ -93,6 +93,12 @@
         background: #f8fafc;
         border: 1px solid #e2e8f0;
     }
+
+    .dark .map-container {
+        background: #000000;
+        border: 1px solid #374151;
+    }
+
     @media (max-width: 1024px) {
         .container {
             grid-template-columns: 1fr;
