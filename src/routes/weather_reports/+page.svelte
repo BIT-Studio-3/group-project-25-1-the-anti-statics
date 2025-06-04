@@ -36,6 +36,10 @@
 </div>
 
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
     .page-container {
         display: flex;
         min-height: 100vh;
