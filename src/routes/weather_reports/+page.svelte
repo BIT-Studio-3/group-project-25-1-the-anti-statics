@@ -78,6 +78,14 @@
         flex-direction: column;
     }
 
+
+    .radar-card h2 {
+        margin: 0 0 1rem 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #1f305c;
+    }
+
         }
     }
 </style>
