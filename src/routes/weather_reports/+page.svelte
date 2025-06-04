@@ -4,12 +4,12 @@
     import Map from "../../lib/WeatherMap.svelte";
 </script>
 
-<div class="page-container" class:dark={$isDark}>
-    <main class="main-content">
+<div class="container" class:dark={$isDark}>
+    <main class="content">
         {#if $selectedAgency === "MetService"}
             <iframe
                 title="rss"
-                class="rss"
+                class="feed"
                 src="https://rss.app/embed/v1/wall/LgTbpx1cNjP0QQF4"
                 frameborder="0"
             ></iframe>
@@ -18,7 +18,7 @@
         {:else}
             <iframe
                 title="rss"
-                class="rss"
+                class="feed"
                 src="https://rss.app/embed/v1/wall/LgTbpx1cNjP0QQF4"
                 frameborder="0"
             ></iframe>
