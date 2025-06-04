@@ -14,7 +14,7 @@
 
   let loading = true;
 
-  const publicPages = ["/login", "/terms", "/privacy"];
+  const publicPages = ["/login", "/terms", "/PrivacyPolicy"];
   $: currentPath = $page.url.pathname;
   $: isPublicPage = publicPages.includes(currentPath);
 
