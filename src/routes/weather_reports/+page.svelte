@@ -26,9 +26,11 @@
     </main>
 
     <aside class="sidebar">
-        <div class="widget map-widget">
-            <h3>Weather Radar</h3>
-            <Map></Map>
+        <div class="radar-card">
+            <h2>Weather Radar</h2>
+            <div class="map-container">
+                <Map />
+            </div>
         </div>
     </aside>
 </div>
