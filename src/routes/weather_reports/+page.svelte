@@ -56,6 +56,12 @@
         border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
+
+    .feed {
+        width: 100%;
+        height: calc(100vh - 3rem);
+    }
+    }
         }
     }
 </style>
