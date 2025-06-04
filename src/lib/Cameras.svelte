@@ -1,31 +1,27 @@
 <script>
   export let data;
-  const { cameras, message, error } = data;
-  
+  const { cameras, message } = data;
+  console.log(cameras);
   let selectedCameraId = null;
   let selectedCamera = null;
   // Find the selected camera based on the ID
+  $: selectedCamera = cameras.find((camera) => camera.id === selectedCameraId);
 
-  $: selectedCamera = cameras
-    ? cameras.find((camera) => camera.id === selectedCameraId)
-    : null;
-
-  const getSelectedIndex = () =>
-    cameras.findIndex((camera) => camera.id === selectedCameraId);
+  const getSelectedIndex = () => cameras.findIndex(camera => camera.id === selectedCameraId);
 
   const next = () => {
     const index = getSelectedIndex();
     if (index < cameras.length - 1) {
       selectedCameraId = cameras[index + 1].id;
     }
-  };
+  }
 
   const back = () => {
     const index = getSelectedIndex();
     if (index > 0) {
       selectedCameraId = cameras[index - 1].id;
     }
-  };
+  }
 </script>
 
 <main>
@@ -35,23 +31,17 @@
     </header>
     <section id="camera-select">
       <h2>Select a camera:</h2>
-      {#if cameras}
-        <select bind:value={selectedCameraId}>
-          {#each cameras as camera}
-            <option value={camera.id}>{camera.name}</option>
-          {/each}
-        </select>
-      {/if}
+      <select bind:value={selectedCameraId}>
+        {#each cameras as camera}
+          <option value={camera.id}>{camera.name}</option>
+        {/each}
+      </select>
     </section>
   </aside>
 
   <section id="camera-section">
     <div id="camera-box">
-      {#if message}
-        <p>{message}</p>
-      {:else if error}
-        <p>{error}</p>
-      {:else if cameras && cameras.length > 0 && selectedCamera}
+      {#if selectedCamera}
         <p>{selectedCamera.description}</p>
         <div>
           <img
@@ -59,7 +49,7 @@
             alt={selectedCamera.name || "Image Loading"}
           />
         </div>
-      {:else if cameras && cameras.length > 0}
+      {:else}
         <!--Default selected camera-->
         <p>{cameras[0].description}</p>
         <div>
@@ -83,7 +73,7 @@
     display: flex;
     gap: 20px;
   }
-  #buttons * {
+  #buttons *{
     width: 100%;
     padding: 1em;
     background-color: white;
