@@ -22,6 +22,10 @@
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
   };
+
+  const closeMenu = () => {
+    isMenuOpen = false;
+  };
 </script>
 
 <header class:dark-mode={$isDark}>
