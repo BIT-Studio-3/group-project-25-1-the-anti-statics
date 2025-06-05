@@ -72,9 +72,9 @@
 
 <style>
   main {
-    padding: 2rem;
+    padding: 4rem 2rem;
     max-width: 800px;
-    margin: 5rem auto;
+    margin: 0 auto;
     background: white;
     color: black;
     border-radius: 12px;
@@ -113,4 +113,31 @@ main.dark p {
     font-weight: bold;
     cursor: pointer;
   }
+  
+  @media (max-width: 600px) {
+  main {
+    padding: 2rem 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
 </style>
