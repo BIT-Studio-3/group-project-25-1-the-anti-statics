@@ -1,5 +1,6 @@
 <script>
   import IncidentControl from "../../../lib/IncidentControl.svelte";
+import { isDark } from "../../../stores/theme.js";
 
   // POST a team
   import { postTeam } from "../post-function/postTeam.js";
@@ -62,7 +63,7 @@
   };
 </script>
 
-<main>
+<main class:dark={$isDark}>
   <IncidentControl />
   <section id="container">
     <header>
@@ -302,6 +303,39 @@
     background-color: #e6f4ea; /* light green highlight */
     outline: none;
   }
+
+  :global(.dark) #container {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+:global(.dark) header,
+:global(.dark) .form-container,
+:global(.dark) .autocomplete-list {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+:global(.dark) header h1,
+:global(.dark) .subtitle,
+:global(.dark) h3,
+:global(.dark) label,
+:global(.dark) .form-button,
+:global(.dark) .required,
+:global(.dark) .error-message,
+:global(.dark) input,
+:global(.dark) .autocomplete-list li {
+  color: white;
+}
+
+:global(.dark) input,
+:global(.dark) .autocomplete-list li {
+  background-color: #2b2b2b;
+  border-color: #555;
+}
+
+:global(.dark) .autocomplete-list li:hover {
+  background-color: #3a3a3a;
+}
 
   @media (max-width: 768px) {
     main {
