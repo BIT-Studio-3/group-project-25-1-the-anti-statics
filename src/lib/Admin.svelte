@@ -101,8 +101,15 @@
   }
 
   :global(.dark) section * {
-    color: #ffffff !important;
+     color: white !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
   }
+
+:global(body),
+:global(html) {
+  background: transparent;
+}
 
   :global(.dark) ul li a:hover {
     background-color: #2e2e2e;
