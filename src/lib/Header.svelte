@@ -259,7 +259,7 @@
   display: inline-block;
 }
 
-  @media (max-width: 1600px) {
+  @media (max-width: 1400px) {
      .desktop-only {
     display: none !important;
   }
