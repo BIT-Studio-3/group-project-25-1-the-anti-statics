@@ -1,5 +1,6 @@
 <script>
   import IncidentControl from "../../../lib/IncidentControl.svelte";
+import { isDark } from "../../../stores/theme.js";
 
   // Get resources data
 
@@ -9,7 +10,7 @@
   const { teams, getError, error } = data;
 </script>
 
-<main>
+<main class:dark={$isDark}>
   <IncidentControl />
   <section id="container">
     <header>
@@ -140,6 +141,34 @@
     text-align: center;
     font-weight: 600;
   }
+
+  :global(.dark) #container {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+:global(.dark) header,
+:global(.dark) .form-container,
+:global(.dark) .team-card {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+:global(.dark) header h1,
+:global(.dark) .subtitle,
+:global(.dark) h3,
+:global(.dark) .team-card h4,
+:global(.dark) .team-card p {
+  color: white;
+}
+
+:global(.dark) .team-card {
+  border: 1px solid #444;
+}
+
+:global(.dark) .error-message {
+  background-color: #b91c1c;
+  color: white;
+}
 
   @media (max-width: 768px) {
     main {
