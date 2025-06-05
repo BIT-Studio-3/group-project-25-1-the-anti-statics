@@ -1,8 +1,10 @@
 <script>
   import Admin from "../../../lib/Admin.svelte";
   import Log from "../../../lib/SVGs/scroll-solid.svg";
+  import { isDark } from '../../../stores/theme.js';
 </script>
 
+<div class:dark={$isDark}>
 <main>
   <Admin />
   <section id="container">
@@ -12,6 +14,7 @@
     </header>
   </section>
 </main>
+</div>
 
 <style>
   main {

@@ -2,6 +2,7 @@
   import Admin from "../../../lib/Admin.svelte";
   import user from "/src/lib/SVGs/users-solid.svg"
   import user2 from "/src/lib/SVGs/users-solid-2.svg"
+  import { isDark } from '../../../stores/theme.js';
   const users = [
     {
       name: "Samuel Batchelor",
@@ -24,9 +25,17 @@
       lastActive: "8 hours ago",
       status: "Active",
     },
+    {
+      name: "Paras Paras",
+      email: "para12@student.op.ac.nz",
+      role: "Admin",
+      lastActive: "6 hours ago",
+      status: "Active",
+    },
   ];
 </script>
 
+<div class:dark={$isDark}>
 <main>
   <Admin />
   <section id="container">
@@ -96,9 +105,10 @@
     </section>
   </section>
 </main>
+</div>
 
 <style>
-  .name {
+ .name {
     white-space: nowrap;
     font-weight: bold;
   }
@@ -245,6 +255,73 @@
   button:hover {
     cursor: pointer;
   }
+
+.dark #container {
+  background-color: rgba(18, 18, 18, 0.7);
+}
+
+.dark #user-background {
+  background-color: #1e1e1e;
+  box-shadow: -1px 1px 8px #222;
+}
+
+.dark header {
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+  border-bottom: 1px solid #555;
+}
+
+.dark h1, .dark h2, .dark h3 {
+  color: #f0f0f0;
+}
+
+.dark thead {
+  background-color: #2a2a2a;
+}
+
+.dark thead th {
+  color: #bbb;
+  border-block: 1px solid #555;
+}
+
+.dark tbody td {
+  color: #ddd;
+}
+
+.dark input,
+.dark select {
+  background-color: #2c2c2c37;
+  color: #fff;
+  border: 1.5px solid #777;
+}
+
+.dark #addUser {
+  background-color: #219653;
+  border-color: #219653;
+  color: white;
+}
+
+.dark #addUser:hover {
+  background-color: white;
+  color: #219653;
+}
+
+.dark select,
+.dark option {
+  color: #fff;
+  background-color: #2c2c2c;
+}
+
+.dark #filters p {
+  color: white;
+}
+
+.dark #search-bar input {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1.5px solid #777;
+}
+
   @media (width <= 910px) {
     #query {
       grid-auto-flow: row;
