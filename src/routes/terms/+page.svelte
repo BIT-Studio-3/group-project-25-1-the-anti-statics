@@ -1,46 +1,24 @@
+<script context="module">
+  import { redirect } from '@sveltejs/kit';
+  import { login } from '../../stores/login.js';
+
+  export async function load() {
+    if (login.get()) {
+      throw redirect(302, '/');
+    }
+  }
+</script>
+
 <script>
   import { goto } from '$app/navigation';
+  import { isDark } from '../../stores/theme.js';
 
   const goBack = () => {
     goto('/login');
   };
 </script>
 
-<style>
-  main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 5rem auto;
-    background: white;
-    color: black;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    line-height: 1.8;
-  }
-
-  p {
-    margin-bottom: 1.5rem;
-  }
-
-  h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-  }
-
-  button {
-    margin-top: 2rem;
-    padding: 0.75rem 1.5rem;
-    background: #0e927a;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-</style>
-
-<main>
+<main class:dark={$isDark}>
   <h1>Terms of Service</h1>
 
   <p>
@@ -89,5 +67,50 @@
     If anything here is unclear, feel free to contact the admin team or your instructor. We’re happy to help.
   </p>
 
-  <button on:click={goBack}>Go Back to Login</button>
+  <button on:click={goBack}>Go Back</button>
 </main>
+
+<style>
+  main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 5rem auto;
+    background: white;
+    color: black;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    line-height: 1.8;
+  }
+
+  main.dark {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  main.dark h1,
+main.dark h2,
+main.dark p {
+  color: #f5f5f5;
+}
+
+  button {
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: #0e927a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
