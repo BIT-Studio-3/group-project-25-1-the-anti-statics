@@ -1,6 +1,6 @@
 <script>
   import IncidentControl from "/src/lib/IncidentControl.svelte";
-
+import { isDark } from "../../stores/theme.js";
   export let data;
   const { disasters, error, getError } = data;
 
@@ -19,7 +19,7 @@
   };
 </script>
 
-<main>
+<main class:dark={$isDark}>
   <IncidentControl />
   <section id="container">
     <header>
@@ -157,4 +157,104 @@
   .disaster-card p {
     margin: 0.25rem 0;
   }
+
+  :global(.dark) #container {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+:global(.dark) header {
+  background-color: rgba(20, 20, 20, 0.8);
+  border-color: #333;
+}
+
+:global(.dark) header h1,
+:global(.dark) .subtitle,
+:global(.dark) .disaster-card h2,
+:global(.dark) .disaster-card p {
+  color: white;
+}
+
+:global(.dark) .search-bar {
+  background-color: rgba(30, 30, 30, 0.7);
+}
+
+:global(.dark) .search-bar input {
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid #555;
+}
+
+:global(.dark) .disaster-card {
+  background-color: #222;
+  border: 1px solid #444;
+}
+
+:global(.dark) .disaster-card:hover {
+  background-color: #2e2e2e;
+}
+
+:global(.dark) .error-message {
+  background-color: #e53e3e;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #container {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .disaster-card {
+    padding: 0.8rem;
+  }
+
+  .disaster-card h2 {
+    font-size: 1rem;
+  }
+
+  .search-bar input {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.8rem;
+  }
+
+  .disaster-card p {
+    font-size: 0.85rem;
+  }
+
+  .search-bar input {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .error-message {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
 </style>
