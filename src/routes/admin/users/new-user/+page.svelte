@@ -95,6 +95,17 @@
                     required
                 />
             </div>
+            
+            <div class="form-group">
+                <label for="organization">Organization</label>
+                <input
+                    type="text"
+                    id="title"
+                    bind:value={organization}
+                    placeholder="Organization name"
+                    required
+                />
+            </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
@@ -103,17 +114,6 @@
                     id="title"
                     bind:value={password}
                     placeholder="Enter password"
-                    required
-                />
-            </div>
-
-            <div class="form-group">
-                <label for="organization">Organization</label>
-                <input
-                    type="text"
-                    id="title"
-                    bind:value={organization}
-                    placeholder="Organization name"
                     required
                 />
             </div>
