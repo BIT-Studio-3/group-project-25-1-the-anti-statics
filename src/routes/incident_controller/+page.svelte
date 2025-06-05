@@ -237,6 +237,54 @@
     grid-template-columns: 1fr 2.3fr;
     height: 100%;
   }
+  :global(.dark) {
+  background-color: transparent;
+  color: white;
+}
+
+:global(.dark) #container {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+:global(.dark) header,
+:global(.dark) .tabs,
+:global(.dark) #trends,
+:global(.dark) #types {
+  background-color: rgb(30, 30, 30);
+  color: white;
+}
+
+:global(.dark) h1,
+:global(.dark) h3,
+:global(.dark) h4,
+:global(.dark) p,
+:global(.dark) div,
+:global(.dark) select,
+:global(.dark) option {
+  color: white !important;
+}
+
+:global(.dark) meter {
+  background: #444;
+}
+
+:global(.dark) meter::-webkit-meter-bar {
+  background: #444;
+}
+
+:global(.dark) meter::-webkit-meter-optimum-value {
+  background: #4caf50;
+}
+
+:global(.dark) #trends section {
+  background-color: #333;
+}
+
+:global(.dark) #trends select {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  border: 1px solid #555;
+}
   @media (width<=1600px) {
     #card-container {
       grid-template-columns: repeat(

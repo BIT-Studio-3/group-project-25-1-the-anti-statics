@@ -1,7 +1,7 @@
 <script>
     import IncidentControl from "/src/lib/IncidentControl.svelte";
     import { postDisaster } from "../post-function/postDisaster.js";
-
+    import { isDark } from "../../stores/theme.js";
     import user from "/src/stores/user";
 
     let postError = "";
@@ -61,7 +61,7 @@
     const { disasters } = data;
 </script>
 
-<main>
+<main class:dark={$isDark}>
     <IncidentControl />
     <section id="container">
         <header>
@@ -369,6 +369,60 @@
         text-align: center;
         font-weight: 600;
     }
+
+    :global(.dark) {
+  background-color: transparent;
+  color: white;
+}
+
+:global(.dark) #container {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+:global(.dark) header,
+:global(.dark) .form-container {
+  background-color: rgba(30, 30, 30, 0.7);
+  color: white;
+}
+
+:global(.dark) header h1,
+:global(.dark) .subtitle,
+:global(.dark) h3,
+:global(.dark) label,
+:global(.dark) p,
+:global(.dark) input,
+:global(.dark) select,
+:global(.dark) textarea {
+  color: white !important;
+}
+
+:global(.dark) input,
+:global(.dark) select,
+:global(.dark) textarea {
+  background-color: #1f1f1f;
+  border: 1px solid #444;
+}
+
+:global(.dark) input:focus,
+:global(.dark) select:focus,
+:global(.dark) textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+}
+
+:global(.dark) .form-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+:global(.dark) .form-button:hover {
+  background-color: #66bb6a;
+}
+
+:global(.dark) .error-message {
+  background-color: #e53e3e;
+  color: white;
+}
 
     @media (max-width: 992px) {
         main {
