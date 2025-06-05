@@ -11,13 +11,14 @@
 
 <script>
   import { goto } from '$app/navigation';
+  import { isDark } from '../../stores/theme.js';
 
   const goBack = () => {
     goto('/login');
   };
 </script>
 
-<main>
+<main class:dark={$isDark}>
   <h1>Privacy Policy</h1>
 
   <p>
@@ -72,15 +73,20 @@
 
 <style>
   main {
-    padding: 2rem;
+    padding: 4rem 2rem;
     max-width: 800px;
-    margin: 5rem auto;
+    margin: 0 auto;
     background: white;
     color: black;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     line-height: 1.8;
   }
+
+  main.dark {
+  background-color: #1a1a1a;
+  color: white;
+}
 
   p {
     margin-bottom: 1.5rem;
@@ -92,6 +98,12 @@
     font-size: 1.4rem;
   }
 
+  main.dark h1,
+main.dark h2,
+main.dark p {
+  color: #f5f5f5;
+}
+
   button {
     margin-top: 2rem;
     padding: 0.75rem 1.5rem;
@@ -102,5 +114,32 @@
     font-weight: bold;
     cursor: pointer;
   }
+  
+  @media (max-width: 600px) {
+  main {
+    padding: 2rem 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
 </style>
 
