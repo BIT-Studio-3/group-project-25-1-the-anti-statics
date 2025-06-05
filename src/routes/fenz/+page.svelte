@@ -5,65 +5,90 @@
 </script>
 
 <div class:dark={$isDark} class="main-wrapper">
-<div class="card">
-  <h1>
-    Emergency: <h3 id="Severe">Severe</h3>
-  </h1>
-  <p class="headers">Incident Number:</p><p>F4081881</p>
-  <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
-  <p class="headers">Location:</p><p>Doyleston, Selwyn District</p>
-  <p class="headers">Duration:</p><p>00:00:00</p>
-  <p class="headers">Attending Stations/Brigades:</p><p>Leeston</p>
-  <p class="headers">Call Type:</p><p>Vegetation Fire</p>
+  <div class="card">
+    <h1>
+      Emergency: <h3 id="Severe">Severe</h3>
+    </h1>
+    <p class="headers">Incident Number:</p>
+    <p>F4081881</p>
+    <p class="headers">Date and Time:</p>
+    <p>06/11/2024 11:07:51</p>
+    <p class="headers">Location:</p>
+    <p>Doyleston, Selwyn District</p>
+    <p class="headers">Duration:</p>
+    <p>00:00:00</p>
+    <p class="headers">Attending Stations/Brigades:</p>
+    <p>Leeston</p>
+    <p class="headers">Call Type:</p>
+    <p>Vegetation Fire</p>
+  </div>
+
+  <div class="card">
+    <h1>
+      Emergency: <h3 id="Moderate">Moderate</h3>
+    </h1>
+    <p class="headers">Incident Number:</p>
+    <p>F4081881</p>
+    <p class="headers">Date and Time:</p>
+    <p>06/11/2024 11:07:51</p>
+    <p class="headers">Location:</p>
+    <p>Doyleston, Selwyn District</p>
+    <p class="headers">Duration:</p>
+    <p>00:00:00</p>
+    <p class="headers">Attending Stations/Brigades:</p>
+    <p>Leeston</p>
+    <p class="headers">Call Type:</p>
+    <p>Vegetation Fire</p>
+  </div>
+
+  <div class="card">
+    <h1>
+      Emergency: <h3 id="Severe">Severe</h3>
+    </h1>
+    <p class="headers">Incident Number:</p>
+    <p>F4081881</p>
+    <p class="headers">Date and Time:</p>
+    <p>06/11/2024 11:07:51</p>
+    <p class="headers">Location:</p>
+    <p>Doyleston, Selwyn District</p>
+    <p class="headers">Duration:</p>
+    <p>00:00:00</p>
+    <p class="headers">Attending Stations/Brigades:</p>
+    <p>Leeston</p>
+    <p class="headers">Call Type:</p>
+    <p>Vegetation Fire</p>
+  </div>
+
+  <div class="card">
+    <h1>
+      Emergency: <h3 id="Extreme">Extreme</h3>
+    </h1>
+    <p class="headers">Incident Number:</p>
+    <p>F4081881</p>
+    <p class="headers">Date and Time:</p>
+    <p>06/11/2024 11:07:51</p>
+    <p class="headers">Location:</p>
+    <p>Doyleston, Selwyn District</p>
+    <p class="headers">Duration:</p>
+    <p>00:00:00</p>
+    <p class="headers">Attending Stations/Brigades:</p>
+    <p>Leeston</p>
+    <p class="headers">Call Type:</p>
+    <p>Vegetation Fire</p>
+  </div>
 </div>
 
-<div class="card">
-  <h1>
-    Emergency: <h3 id="Moderate">Moderate</h3>
-  </h1>
-  <p class="headers">Incident Number:</p><p>F4081881</p>
-  <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
-  <p class="headers">Location:</p><p>Doyleston, Selwyn District</p>
-  <p class="headers">Duration:</p><p>00:00:00</p>
-  <p class="headers">Attending Stations/Brigades:</p><p>Leeston</p>
-  <p class="headers">Call Type:</p><p>Vegetation Fire</p>
-</div>
-
-<div class="card">
-  <h1>
-    Emergency: <h3 id="Severe">Severe</h3>
-  </h1>
-  <p class="headers">Incident Number:</p><p>F4081881</p>
-  <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
-  <p class="headers">Location:</p><p>Doyleston, Selwyn District</p>
-  <p class="headers">Duration:</p><p>00:00:00</p>
-  <p class="headers">Attending Stations/Brigades:</p><p>Leeston</p>
-  <p class="headers">Call Type:</p><p>Vegetation Fire</p>
-</div>
-
-<div class="card">
-  <h1>
-    Emergency: <h3 id="Extreme">Extreme</h3>
-  </h1>
-  <p class="headers">Incident Number:</p><p>F4081881</p>
-  <p class="headers">Date and Time:</p><p>06/11/2024 11:07:51</p>
-  <p class="headers">Location:</p><p>Doyleston, Selwyn District</p>
-  <p class="headers">Duration:</p><p>00:00:00</p>
-  <p class="headers">Attending Stations/Brigades:</p><p>Leeston</p>
-  <p class="headers">Call Type:</p><p>Vegetation Fire</p>
-</div>
-</div>
 <style>
-.main-wrapper {
-  background-color: white;
-  min-height: 100vh;
-  padding: 1rem;
-  transition: background-color 0.3s ease;
-}
+  .main-wrapper {
+    background-color: white;
+    min-height: 100vh;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+  }
 
-.dark.main-wrapper {
-  background-color: transparent;
-}
+  .dark.main-wrapper {
+    background-color: transparent;
+  }
 
   h1 {
     font-size: 2em;
@@ -75,86 +100,88 @@
     border: 2px solid black;
     border-radius: 5px;
     margin-bottom: 5px;
-    width:fit-content;
+    width: fit-content;
   }
   .card {
     padding: 10px;
     margin: 10px;
     border: 2px solid black;
     border-radius: 5px;
-    width:calc(min-content + 2em);
-    float:left;
-    background-color: #ECA869;
+    width: calc(min-content + 2em);
+    float: left;
+    background-color: #eca869;
   }
 
-.card p{
-  background-color: #ECA869; 
-}
+  .card p {
+    background-color: #eca869;
+  }
 
-.card h1{
-  background-color: #ECA869; 
-  color: black;
-}
+  .card h1 {
+    background-color: #eca869;
+    color: black;
+  }
 
-  p{
+  p {
     margin: 3px;
   }
-  .headers{
-    font-weight:900;
+  .headers {
+    font-weight: 900;
   }
-  #Moderate{
+  #Moderate {
     background-color: yellow;
   }
-  #Severe{
+  #Severe {
     background-color: orange;
   }
-  #Extreme{
+  #Extreme {
     background-color: red;
   }
   @media (max-width: 1200px) {
-  h1 {
-    font-size: 1.8em; /* Adjust heading size for tablets */
+    h1 {
+      font-size: 1.8em; /* Adjust heading size for tablets */
+    }
+
+    h3 {
+      font-size: 1.2em; /* Adjust subheading size */
+    }
+
+    .card {
+      width: calc(
+        50% - 2em
+      ); /* Adjust card width for tablets, 2 cards per row */
+      margin: 1em; /* Adjust margin for cards */
+    }
   }
 
-  h3 {
-    font-size: 1.2em; /* Adjust subheading size */
+  /* For mobile devices (phones in portrait mode) */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.6em; /* Adjust heading size for smaller screens */
+    }
+
+    h3 {
+      font-size: 1.1em; /* Adjust subheading size for smaller screens */
+    }
+
+    .card {
+      width: 100%; /* Cards take full width on mobile */
+      margin: 0.8em 0; /* Adjust margin for mobile */
+    }
   }
 
-  .card {
-    width: calc(50% - 2em); /* Adjust card width for tablets, 2 cards per row */
-    margin: 1em; /* Adjust margin for cards */
-  }
-}
+  /* For very small screens (phones in portrait mode) */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.4em; /* Further reduce heading size */
+    }
 
-/* For mobile devices (phones in portrait mode) */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.6em; /* Adjust heading size for smaller screens */
-  }
+    h3 {
+      font-size: 1em; /* Further reduce subheading size */
+    }
 
-  h3 {
-    font-size: 1.1em; /* Adjust subheading size for smaller screens */
+    .card {
+      width: 100%; /* Ensure the card takes full width */
+      margin: 0.5em 0; /* Further reduce margin for very small screens */
+    }
   }
-
-  .card {
-    width: 100%; /* Cards take full width on mobile */
-    margin: 0.8em 0; /* Adjust margin for mobile */
-  }
-}
-
-/* For very small screens (phones in portrait mode) */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.4em; /* Further reduce heading size */
-  }
-
-  h3 {
-    font-size: 1em; /* Further reduce subheading size */
-  }
-
-  .card {
-    width: 100%; /* Ensure the card takes full width */
-    margin: 0.5em 0; /* Further reduce margin for very small screens */
-  }
-}
 </style>
