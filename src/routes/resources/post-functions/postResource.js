@@ -4,7 +4,7 @@ export async function postResource(resourceData) {
     try {
       console.log("Posting resource with data:", resourceData);
   
-      const response = await fetch(`${url}/api/v1/ResourcesAvailability`, {
+      const response = await fetch(`${url}/api/v1/resources`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
