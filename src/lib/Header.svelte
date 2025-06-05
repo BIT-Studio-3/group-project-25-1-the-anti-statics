@@ -60,7 +60,7 @@
         <li in:fly={{ y: 30, duration: 500 }}><a href="/roads" on:click={closeMenu}>Road Conditions</a></li>
         <li in:fly={{ y: 30, duration: 600 }}><a href="/fenz" on:click={closeMenu}>Fire and Emergency</a></li>
         <li in:fly={{ y: 30, duration: 800 }}><a href="/alerts" on:click={closeMenu}>Post Alerts</a></li>
-        <li in:fly={{ y: 30, duration: 900 }}><a href="/resources">Resources</a></li>
+        <li in:fly={{ y: 30, duration: 900 }}><a href="/resources" on:click={closeMenu}>Resources</a></li>
         <li in:fly={{ y: 30, duration: 500 }}><a href="/admin">Admin</a></li>
         <li in:fly={{ y: 30, duration: 600 }}><a href="/damages">Damages</a></li>
         <li in:fly={{ y: 30, duration: 800 }}><a href="/hazards">Hazards</a></li>
