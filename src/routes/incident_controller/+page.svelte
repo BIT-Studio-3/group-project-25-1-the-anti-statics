@@ -4,7 +4,7 @@
   import Teams from "/src/lib/SVGs/users-solid.svg";
   import Personnel from "/src/lib/SVGs/user-plus-solid.svg";
   import Resources from "/src/lib/SVGs/boxes-stacked-solid.svg";
-import { isDark } from '../../stores/theme.js';
+
   import IncidentControl from "/src/lib/IncidentControl.svelte";
 
   export let data;
