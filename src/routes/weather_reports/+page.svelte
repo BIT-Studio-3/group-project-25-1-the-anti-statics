@@ -49,7 +49,7 @@
     }
 
     .dark.container {
-        background: linear-gradient(#000000);
+        background: transparent;
         color: #f1f5f9;
     }
 
