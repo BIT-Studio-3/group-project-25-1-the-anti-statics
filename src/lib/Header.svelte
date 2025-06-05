@@ -255,7 +255,7 @@
   display: inline-block;
 }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1600px) {
      .desktop-only {
     display: none !important;
   }
