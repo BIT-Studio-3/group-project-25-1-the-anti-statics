@@ -61,8 +61,8 @@
         <li in:fly={{ y: 30, duration: 600 }}><a href="/fenz" on:click={closeMenu}>Fire and Emergency</a></li>
         <li in:fly={{ y: 30, duration: 800 }}><a href="/alerts" on:click={closeMenu}>Post Alerts</a></li>
         <li in:fly={{ y: 30, duration: 900 }}><a href="/resources" on:click={closeMenu}>Resources</a></li>
-        <li in:fly={{ y: 30, duration: 500 }}><a href="/admin">Admin</a></li>
-        <li in:fly={{ y: 30, duration: 600 }}><a href="/damages">Damages</a></li>
+        <li in:fly={{ y: 30, duration: 500 }}><a href="/admin" on:click={closeMenu}>Admin</a></li>
+        <li in:fly={{ y: 30, duration: 600 }}><a href="/damages" on:click={closeMenu}>Damages</a></li>
         <li in:fly={{ y: 30, duration: 800 }}><a href="/hazards">Hazards</a></li>
         <li in:fly={{ y: 30, duration: 900 }}><a href="/incident_controller">Incident Controller</a></li>
         <li><button class="theme-toggle" on:click={toggleTheme}>
