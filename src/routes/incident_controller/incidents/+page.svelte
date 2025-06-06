@@ -1,7 +1,7 @@
 <script>
     import IncidentControl from "/src/lib/IncidentControl.svelte";
     import { postDisaster } from "../post-function/postDisaster.js";
-    import { isDark } from "../../stores/theme.js";
+    import { isDark } from "../../../stores/theme.js";
     import user from "/src/stores/user";
 
     let postError = "";

@@ -1,6 +1,6 @@
 <script>
   import IncidentControl from "/src/lib/IncidentControl.svelte";
-import { isDark } from "../../stores/theme.js";
+import { isDark } from "../../../stores/theme.js";
   export let data;
   const { disasters, error, getError } = data;
 
