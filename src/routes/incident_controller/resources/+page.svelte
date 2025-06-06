@@ -1,5 +1,6 @@
 <script>
     import IncidentControl from "../../../lib/IncidentControl.svelte";
+import { isDark } from '/src/stores/theme.js';
 
     const resources = [
         {
@@ -65,9 +66,9 @@
     });
 </script>
 
-<main>
+<main class:dark={$isDark}>
     <IncidentControl />
-    <section id="container">
+    <section id="container" class:dark={$isDark}>
         <header>
             <h1>Resource Management</h1>
             <p class="subtitle">
@@ -553,6 +554,68 @@
         display: flex;
         gap: 0.5rem;
     }
+
+    /* DARK MODE */
+    .dark,
+.dark * {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+.dark .resource-count {
+  background-color: white !important;
+  color: black !important;
+}
+
+.dark .status-badge {
+  color: initial !important;
+}
+
+.dark header,
+.dark .search-filters,
+.dark .resources-header,
+.dark .resources-container,
+.dark .resource-card {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.dark .filters select,
+.dark .input-wrapper input {
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+  border-color: #444;
+}
+
+.dark .resource-card:hover {
+  background-color: #2c2c2c;
+}
+
+.dark .resource-icon {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark .status-badge.status-available {
+  background-color: #14532d;
+  color: #bbf7d0;
+}
+
+.dark .status-badge.status-dispatched {
+  background-color: #78350f;
+  color: #fde68a;
+}
+
+.dark .status-badge.status-maintenance {
+  background-color: #312e81;
+  color: #c7d2fe;
+}
+
+.dark .status-badge.status-unavailable {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
 
     @media (max-width: 768px) {
         main {

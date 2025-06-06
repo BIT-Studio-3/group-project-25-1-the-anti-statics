@@ -22,6 +22,10 @@
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
   };
+
+  const closeMenu = () => {
+    isMenuOpen = false;
+  };
 </script>
 
 <header class:dark-mode={$isDark}>
@@ -36,6 +40,9 @@
       <li in:fly={{ y: 30, duration: 800 }}><a href="/alerts">Post Alerts</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/resources">Resources</a></li>
       <li in:fly={{ y: 30, duration: 900 }}><a href="/admin">Admin</a></li>
+      <li in:fly={{ y: 30, duration: 800 }}><a href="/damages">Damages</a></li>
+      <li in:fly={{ y: 30, duration: 900 }}><a href="/hazards">Hazards</a></li>
+      <li in:fly={{ y: 30, duration: 900 }}><a href="/incident_controller">Incident Controller</a></li>
       <div in:fade={{ duration: 500 }} id="agency"><AgencySelect /></div>
       <button in:fade={{ duration: 500 }} class="theme-toggle desktop-only" on:click={toggleTheme}>
   {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
@@ -48,12 +55,16 @@
   {#if isMenuOpen}
     <nav id="hamburger">
       <ul in:fade={{ duration: 100 }} out:fade={{ duration: 100 }}  class="hamburger-list">
-        <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports">Weather Reports</a></li>
-        <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports">Seismic Reports</a></li>
-        <li in:fly={{ y: 30, duration: 500 }}><a href="/roads">Road Conditions</a></li>
-        <li in:fly={{ y: 30, duration: 600 }}><a href="/fenz">Fire and Emergency</a></li>
-        <li in:fly={{ y: 30, duration: 800 }}><a href="/alerts">Post Alerts</a></li>
-        <li in:fly={{ y: 30, duration: 900 }}><a href="/resources">Resources</a></li>
+        <li in:fly={{ y: 30, duration: 300 }}><a href="/weather_reports" on:click={closeMenu}>Weather Reports</a></li>
+        <li in:fly={{ y: 30, duration: 400 }}><a href="/seismic_reports" on:click={closeMenu}>Seismic Reports</a></li>
+        <li in:fly={{ y: 30, duration: 500 }}><a href="/roads" on:click={closeMenu}>Road Conditions</a></li>
+        <li in:fly={{ y: 30, duration: 600 }}><a href="/fenz" on:click={closeMenu}>Fire and Emergency</a></li>
+        <li in:fly={{ y: 30, duration: 800 }}><a href="/alerts" on:click={closeMenu}>Post Alerts</a></li>
+        <li in:fly={{ y: 30, duration: 900 }}><a href="/resources" on:click={closeMenu}>Resources</a></li>
+        <li in:fly={{ y: 30, duration: 500 }}><a href="/admin" on:click={closeMenu}>Admin</a></li>
+        <li in:fly={{ y: 30, duration: 600 }}><a href="/damages" on:click={closeMenu}>Damages</a></li>
+        <li in:fly={{ y: 30, duration: 800 }}><a href="/hazards" on:click={closeMenu}>Hazards</a></li>
+        <li in:fly={{ y: 30, duration: 900 }}><a href="/incident_controller" on:click={closeMenu}>Incident Controller</a></li>
         <li><button class="theme-toggle" on:click={toggleTheme}>
           {#if $isDark}☀️ Light{:else}🌙 Dark{/if}
         </button></li>
@@ -248,7 +259,7 @@
   display: inline-block;
 }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
      .desktop-only {
     display: none !important;
   }

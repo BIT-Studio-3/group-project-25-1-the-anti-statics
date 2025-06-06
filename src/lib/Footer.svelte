@@ -46,8 +46,8 @@
     justify-content: space-around;
     align-items: center;
     background: #ffffff;
-    padding: 1em;
-    margin: 0.5em;
+    padding: 0;
+    margin: 0;
     margin-bottom: 0;
     justify-self: center;
     border-top: 5px rgb(37, 170, 24) solid;
