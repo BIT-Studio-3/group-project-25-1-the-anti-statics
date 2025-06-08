@@ -46,7 +46,7 @@
     <section>
       <h2>User Accounts</h2>
       <h3>Manage all system users and their permissions</h3>
-      <button id="addUser">+ Add New User</button>
+      <button id="addUser"><a href="/admin/users/new-user">+ Add New User</a></button>
     </section>
 
     <section id="user-background">
@@ -165,6 +165,10 @@
   #table-container {
     overflow-x: auto;
     border-radius: 4px;
+  }
+
+  a {
+    color:aliceblue;
   }
   table {
     border-collapse: collapse;
