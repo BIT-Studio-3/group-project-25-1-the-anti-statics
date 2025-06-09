@@ -12,7 +12,8 @@ export async function postTeam(teamInfo) {
     });
 
     if (!response.ok) {
-      return { postError: "Failed to post team. Please try again later." };
+      const errorData = await response.json();
+      return { postError: errorData.message };
     }
 
     const info = await response.json();

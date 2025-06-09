@@ -29,7 +29,7 @@
 
 <style>
   main {
-    background-color: rgb(1, 100, 1);
+    background-color: rgba(1, 100, 1, 0.4);
     border-right: 3px solid white;
   }
 
@@ -96,13 +96,20 @@
   }
 
   :global(.dark) main {
-    background-color: #093009;
+    background-color: rgba(1, 100, 1, 0.4);
     border-right: 3px solid #333;
   }
 
   :global(.dark) section * {
-    color: #ffffff !important;
+     color: white !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
   }
+
+:global(body),
+:global(html) {
+  background: transparent;
+}
 
   :global(.dark) ul li a:hover {
     background-color: #2e2e2e;

@@ -216,12 +216,12 @@ meter {
 #personnel { border-left: 4px solid goldenrod; }
 
 .dark {
-  background-color: #121212;
+  background-color: transparent;
   color: white;
 }
 
 .dark #container {
-  background-color: #181818;
+  background-color: #00000027;
 }
 
 .dark header {
@@ -253,7 +253,6 @@ meter {
 .dark h3,
 .dark h4,
 .dark div,
-.dark span,
 .dark select,
 .dark option {
   color: #ffffff !important;
@@ -269,11 +268,6 @@ meter {
 
 .dark #types meter::-webkit-meter-optimum-value {
   background: #4caf50;
-}
-
-.dark aside {
-  background-color: #0f3d0f;
-  color: white;
 }
 
 @media (max-width: 1600px) {

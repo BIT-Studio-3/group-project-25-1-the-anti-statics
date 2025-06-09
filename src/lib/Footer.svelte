@@ -44,7 +44,7 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
-    }
+
   
     .social-icons a img {
       width: 100px;

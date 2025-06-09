@@ -1,6 +1,6 @@
 <script>
   import { postLogin } from "./utils/postLogins.js";
-  import logo from "../../lib/Images/dma.png";
+  import logo from "../../lib/Images/logo_white.png";
   import user from "../../stores/user.js";
   import { login } from "../../stores/login.js";
   import { goto } from "$app/navigation";
@@ -42,8 +42,9 @@
   <!--Left side-->
   <div class="login-left">
     <div class="overlay">
-      <h1>Welcome Back</h1>
-      <p>...text...</p>
+      <img src={logo} alt="logo" height="400" />
+      <p>Copyright © 2025 Otago Polytechnic</p>
+      <p>Made by the Studio 3 team 'The Anti Statics'</p>
       <div class="social-icons">
         <!--can put the social media icons here as shown in the demo-->
       </div>
@@ -54,7 +55,6 @@
   <div class="login-right">
     <div id="form-container">
       <div id="image-container">
-        <img src={logo} alt="logo" width="120" height="70" />
       </div>
       <h2>Sign in</h2>
       <form on:submit|preventDefault={submitLogin}>
@@ -86,7 +86,7 @@
     
       <p class="terms">
         By clicking on "Sign in now" you agree to our
-        <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a> | <a href="/PrivacyPolicy">Privacy Policy</a>
       </p>
     </div>
   </div> 
